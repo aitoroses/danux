@@ -12,7 +12,9 @@ class Home_Controller extends Base_Controller {
 
 	public function get_tab($id)
 	{
-		return View::make('home.tab'.$id);
+		return View::make('home.tab'.$id)
+			->with('title','Paso '.$id.' Creacion de armario. Semiems')
+			->with('id',$id);
 	}
 
 }
