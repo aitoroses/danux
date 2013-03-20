@@ -34,7 +34,7 @@ var anchoaltillo=0.13;
 $(function() {
 var $tabs = $('#tabs').tabs();	
 //$('#tabs').tabs({ event: '' }); //probably better
-  $('#tabs').bind('tabsshow', function(event, ui) {
+  /*$('#tabs').bind('tabsshow', function(event, ui) {
     window.location.hash = '#' + ui.panel.id;
   });
 	$('.next-tab, .prev-tab').click(function() { 
@@ -48,7 +48,7 @@ var $tabs = $('#tabs').tabs();
 		}
 		ini();
 		return false;
-	});
+	});*/
 
 
 	var lvl = $('#sel_parent');						//selector for the tab menu
@@ -91,7 +91,7 @@ var $tabs = $('#tabs').tabs();
 
 		})
 		materialselect=[];
-		/*var ref = $(this).attr('ref');
+		var ref = $(this).attr('ref');
 		var auxitem=puertaselect.substring(1,2);
 		wardrobe.doors[auxitem].type=ref;
 		var div = $(this).attr('div');
@@ -100,7 +100,7 @@ var $tabs = $('#tabs').tabs();
 		{ 
 			strout_div.push(0);
 		}
-		wardrobe.doors[auxitem].material=strout_div;*/			
+		wardrobe.doors[auxitem].material=strout_div;		
 		pintapuertas();
 		Close_popup();	
 	});

@@ -1,4 +1,4 @@
-$(function() {
+/*$(function() {
   var Router = Backbone.Router.extend({
     routes: {
               "":"paso-1",
@@ -38,4 +38,4 @@ $(function() {
   });
   new Router;
   Backbone.history.start({pushState:true, root: '/semiems/semiems/'});
-})
+})*/
