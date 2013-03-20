@@ -9,7 +9,7 @@
 
 	wardrobe ={
 		data:{
-						"id":"0",
+						//"id":"0",
 						"name":document.frm.name.value,
         				"width":document.frm.mancho.value,
         				"height":document.frm.malto.value,
@@ -138,21 +138,47 @@
 	     }		
 
 
-		var rated_encoded = JSON.stringify(wardrobe);
-		var req =	$.ajax({
-					type: 'POST',
-					url:'php/json_s.php',
-		            dataType: "json",
-		            data: {
-	    				"rated" : rated_encoded,
-	    				"id"	: parseInt(wardrobe.data.id)
-	  				},
-		            // Mostramos un mensaje con la respuesta de PHP
-		            success: function(data) {
-						cargarJson(data)
-		            }
-		        })
+		//var rated_encoded = JSON.stringify(wardrobe);
+		//var req =	$.ajax({
+		$.ajax({
 
+			type: 'POST',
+			url:'API/budget',
+            //dataType: "json",
+            data:   {wardrobe: wardrobe},
+				//"rated" : rated_encoded,
+				//"id"	: parseInt(wardrobe.data.id)
+				//},
+            // Mostramos un mensaje con la respuesta de PHP
+            success: function(data) {
+				cargarJson(data)
+            },
+            error: function(){
+            	alert('Hubo un error');
+            }
+		        
+
+		});
+		// BORRAR
+		$.ajax({
+
+			type: 'PUT',
+			url:'API/budget/1/wardrobe',
+            //dataType: "json",
+            data:   {wardrobe: wardrobe},
+				//"rated" : rated_encoded,
+				//"id"	: parseInt(wardrobe.data.id)
+				//},
+            // Mostramos un mensaje con la respuesta de PHP
+            success: function(data) {
+				//cargarJson(data)
+            },
+            error: function(){
+            	alert('Hubo un error');
+            }
+		        
+
+		});
 	};
 
 

@@ -1,12 +1,13 @@
 @layout('home.default')
 
 @section('tab')
+{{ HTML::script('semiems/js/tabs/tab1.js') }}
 <div id="paso-1" class="ui-tabs-panel">
 	<div>
 	<div class="left">
 	<h2>Crea un presupuesto</h2>
 	<p>Introduce las medidas de tu hueco (mm):</p>
-	<form id="frm" name="frm" action="php/guardadatos.php"> 
+	<form id="frm" name="frm" action="semiems/php/guardadatos.php"> 
 	<fieldset>
  	<p><label> Nombre del presupuesto: </label><input type="text" name="name" size="40"></p>
 	<label> Alto: </label><input type="text" name="malto" size="6">
@@ -43,6 +44,6 @@
  	</div>
  	<div id="result"></div>
  	</div>
- 	<a href='#' class='next-tab mover' rel='2' >Siguiente &#187;</a> 
+ 	<a href='2' class='next-tab mover'>Siguiente &#187;</a> 
 </div>
 @endsection

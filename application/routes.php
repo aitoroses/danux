@@ -35,6 +35,14 @@
 Route::get('/', array('uses' => 'home@index'));
 Route::get('/(:any)', array('uses' => 'home@tab'));
 
+// API Routes
+Route::get('API/budget/(:any)', array('uses' => 'api@budget'));
+Route::post('API/budget', array('uses' => 'api@budget'));
+Route::get('API/budget/(:any)/wardrobe', array('uses' => 'api@wardrobe'));
+Route::put('API/budget/(:any)/wardrobe', array('uses' => 'api@wardrobe'));
+
+
+
 
 /*
 |--------------------------------------------------------------------------

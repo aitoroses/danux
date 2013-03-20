@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$("#flex1").flexigrid
 			(
 			{
-			url: 'js/flexigrid/post2.php',
+			url: 'semiems/js/flexigrid/post2.php',
 			dataType: 'json',
 			colModel : [
 				{display: 'ID', name : 'id', width : 40, sortable : true, align: 'center'},

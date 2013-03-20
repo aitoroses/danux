@@ -51,21 +51,22 @@
 <div id="tabs">
 		
     		<ul>
-        		<li><a href="#paso-1">1. Configuración inicial</a></li>
-        		<li><a href="#paso-2">2. Interior</a></li>
-        		<li><a href="#paso-3">3. Accesorios Int</a></li>
-        		<li><a href="#paso-4">4. Perfil</a></li>
-        		<li><a href="#paso-5">5. Puertas</a></li>
-        		<li><a href="#paso-6">6. Marco</a></li>
-        		<li><a href="#paso-7">7. Accesorios Ext</a></li>
-				<li><a href="#paso-8" onClick="generarpresupuesto()">8. Resumen Final</a></li>
+        		<li><a href="#1">1. Configuración inicial</a></li>
+        		<li><a href="#2">2. Interior</a></li>
+        		<li><a href="#3">3. Accesorios Int</a></li>
+        		<li><a href="#4">4. Perfil</a></li>
+        		<li><a href="#5">5. Puertas</a></li>
+        		<li><a href="#6">6. Marco</a></li>
+        		<li><a href="#7">7. Accesorios Ext</a></li>
+				<li><a href="#8" onClick="generarpresupuesto()">8. Resumen Final</a></li>
 				<li class="shadowtab"></li>
     	   </ul>
 
 @yield('tab')
 </div>
 
-<!-- POPUP Interior Division  --> 
+<!-- POPUP Interior Division  -->
+<div id="page_screen"></div>
 <div id="popup" style="display: none;">
 </div>
 </body>
