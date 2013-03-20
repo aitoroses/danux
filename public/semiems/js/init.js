@@ -32,7 +32,7 @@ var anchoaltillo=0.13;
 
 
 $(function() {
-var $tabs = $('#tabs').tabs();	
+//var $tabs = $('#tabs').tabs();	
 //$('#tabs').tabs({ event: '' }); //probably better
   /*$('#tabs').bind('tabsshow', function(event, ui) {
     window.location.hash = '#' + ui.panel.id;
