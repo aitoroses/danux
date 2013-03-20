@@ -1,0 +1,112 @@
+#page-wrap {
+	width: 700px;
+	margin: 25px auto;
+}
+
+#tabs {
+	border-radius: 3px;
+	background-color: rgba(255, 255, 255, 0.4);
+
+	-webkit-box-shadow: 0 2px 2px rgba(255, 255, 255, 0.2), 0 1px 5px rgba(255, 255, 255, 0.2), 0 0 0 12px rgba(255,255,255,0.4);
+	box-shadow: 0 2px 2px rgba(255, 255, 255, 0.2), 0 1px 5px rgba(255, 255, 255, 0.2), 0 0 0 12px rgba(255,255,255,0.4);
+}
+
+.ui-tabs {
+	zoom: 1;
+}
+
+.ui-tabs .ui-tabs-nav {
+	list-style: none;
+	position: relative;
+	padding: 2px 2px 0;
+	overflow: hidden;
+	top: 1px;
+}
+
+.ui-tabs .ui-tabs-nav li {
+	position: relative;
+	float: left;
+	border-bottom-width: 0 !important;
+	margin: 0 2px -5px 0;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+	float: left;
+	text-decoration: none;
+	padding: 5px 10px;
+	color: black;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+	z-index: 3;
+	border: 1px solid rgb(170, 126, 85);
+	padding-bottom: 1px;
+	border-bottom-width: 0;
+	background: white;
+}
+
+li.ui-state-default {
+	border-radius: 6px;
+	height: 32px;
+	background: rgb(228, 201, 131);
+	border: 1px solid rgb(204, 175, 148);
+}
+
+li.ui-state-disabled {
+	background: rgb(0, 0, 0);
+	border: 1px solid rgb(204, 175, 148);
+	cursor: none;
+}
+
+li.shadowtab {
+	width: 100%;
+	height: 2px;
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	border: none;
+	background: none;
+	z-index: 2;
+
+	-webkit-box-shadow: #111 0 -4px 6px;
+	box-shadow: #111 0 -4px 6px;
+}
+
+.ui-tabs .ui-tabs-panel {
+	padding: 20px;
+	display: block;
+	border-width: 0;
+	border: 1px solid rgb(170, 126, 85);
+	position: relative;
+	min-height: 350px;
+	height: 400px;
+	background: #fff;
+}
+
+.ui-tabs .ui-tabs-hide {
+	display: none !important;
+}
+
+a.mover {
+	padding: 6px 12px 6px 16px;
+	position: absolute;
+	text-decoration: none;
+	background: #F76300;
+	color: white;
+}
+
+.next-tab {
+	cursor: pointer;
+	bottom: 0;
+	right: 0;
+	border-radius-topleft: 10px;
+	-webkit-border-top-left-radius: 10px;
+}
+
+.prev-tab {
+	cursor: pointer;
+	bottom: 0;
+	left: 0;
+	border-radius-topright: 10px;
+	-webkit-border-top-right-radius: 10px;
+}

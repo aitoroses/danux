@@ -1,0 +1,471 @@
+/* RESET CSS **************************************************/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+ol,ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+caption,th,td {
+  text-align: left;
+  font-weight: normal;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+  content: "";
+}
+
+blockquote,q {
+  quotes: "" "";
+}
+
+strong,b {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+/*===== HUVUD-ELEMENT  ===*/
+body {
+  background: #e1c192 url(../img/wood_pattern.jpg);
+  font-family: arial,helvetica,sans-serif;
+  font-size: 12px;
+  color: #555;
+  line-height: 18px;
+}
+
+#main {
+  padding-top: 11px;
+  width: 850px;
+  margin: auto;
+  position: relative;
+}
+
+p {
+  margin-bottom: 18px;
+}
+
+/* Headers */
+h1 {
+  font-size: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  word-spacing: -3px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: "arial","sans-serif";
+  color: #E47911;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* links */
+div#ui-tabs-panel.links {
+  margin-bottom: 70px;
+}
+
+a {
+  color: #F76300;
+}
+
+a.backto {
+  padding: 7px 10px;
+  background: #F76300;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+a.backto:hover {
+  background: #000;
+}
+
+/* quotes */
+blockquote {
+  padding: 10px;
+  background: #ffc;
+  border: 1px dashed #ccc;
+  margin-bottom: 18px;
+}
+
+/* */
+footer.search ul li {
+  float: left;
+}
+
+/*#######################################################################################*/
+/*                                     MEDIDAS                                           */
+/*#######################################################################################*/
+select {
+  -webkit-appearance: button;
+  border-radius: 4px;
+
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 46px;
+  -webkit-padding-start: 4px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  background-image: url(img/ddn.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-image: url(img/ddn.png), -moz-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-image: url(img/ddn.png), -o-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-image: url(img/ddn.png), -ms-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-image: url(img/ddn.png), linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: 1px solid #AAA;
+  color: #555;
+  font-size: inherit;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 6px;
+
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+input {
+  background-color: white;
+  border: 1px solid #CCC;
+  border-radius: 2px;
+
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  padding: 3px;
+  text-align: center;
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+input:active {
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+
+a.selector {
+  padding: 3px 6px;
+  text-decoration: none;
+}
+
+a.selector.onn {
+  background: #F76300;
+  color: #fff;
+}
+
+a.selectormat {
+  text-decoration: none;
+}
+
+#sel_interiores ul li {
+  float: left;
+}
+
+#sel_interiores ul li a {
+  display: block;
+}
+
+#sel_interiores ul li a img {
+  float: left;
+  width: 82px;
+  cursor: pointer;
+  border: 2px solid #0182E7;
+}
+
+#sel_interiores {
+  display: inline-block;
+}
+
+div#mat_puerta ul li {
+  float: left;
+}
+
+div#mat_puerta ul li a {
+  display: block;
+}
+
+div#mat_puerta ul li a img {
+width: 150px;
+max-height: 86px;
+cursor: pointer;
+margin: auto;
+display: block;
+}
+
+div#mat_puerta {
+display: inline-block;
+height: 503px;
+overflow-y: scroll;
+}
+
+div#mat_marc ul li {
+  float: left;
+}
+
+div#mat_marc ul li a {
+  display: block;
+}
+
+div#mat_marc ul li a img {
+  width: 82px;
+  cursor: pointer;
+  margin: auto;
+  display: block;
+}
+
+div#mat_marc {
+display: inline-block;
+height: 503px;
+overflow-y: scroll;
+}
+div#handles ul li {
+  float: left;
+}
+
+div#handles ul li a {
+  display: block;
+}
+
+div#handles ul li a img {
+  width: 82px;
+  cursor: pointer;
+  margin: auto;
+  display: block;
+}
+
+div#handles {
+display: inline-block;
+height: 503px;
+overflow-y: scroll;
+}
+
+#sel_parent ul li {
+  float: left;
+}
+
+#sel_cat_door ul li {
+  padding: 0 0 0 47px;
+}
+
+#sel_parent ul li a {
+  display: block;
+  cursor: pointer;
+}
+
+div.item {
+  padding: 15px;
+}
+
+div.item2 {
+  padding: 15px;
+}
+
+div.mat {
+  padding: 8px 0;
+  width: 228px;
+}
+
+div.mat:hover {
+  background-color: #F76300;
+  color: #fff;
+}
+
+div.title {
+  text-align: center;
+}
+
+div.title span {
+  font-size: 8pt;
+}
+
+/*#######################################################################################*/
+/*                                    PREFILES                                           */
+/*#######################################################################################*/
+.shadow {
+  -webkit-box-shadow: 0px 0px 5px #999;
+  box-shadow: 0px 0px 5px #999;
+}
+
+#menu_ul,#submenu_ul {
+  left: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  padding: 15px;
+  width: 170px;
+}
+
+#submenu_ul {
+  margin-top: 25px;
+  width: 270px;
+}
+
+#menu_ul li,#submenu_ul li {
+  color: #333333;
+  cursor: pointer;
+  font-family: "arial","sans-serif";
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+  padding: 10px 0 10px;
+}
+
+#menu_ul li:active,#menu_ul li:hover {
+  color: #E47911;
+  font-weight: bold;
+  background: url("img/arrow.png") no-repeat right;
+}
+
+#submenu_ul li:active,#submenu_ul li:hover {
+  color: #E47911;
+  font-weight: bold;
+}
+
+#menu_box {
+  border-top: solid 3px #333;
+  border-left: solid 1px #dedede;
+  border-right: solid 1px #dedede;
+  border-bottom: solid 1px #dedede;
+  min-height: 189px;
+  width: 200px;
+  background-color: #fff;
+  margin-left: 20px;
+  float: left;
+  position: relative;
+  z-index: 300;
+}
+
+#menu_slider {
+  border-top: solid 3px #333;
+  border-left: solid 1px #dedede;
+  border-right: solid 1px #dedede;
+  border-bottom: solid 1px #dedede;
+  min-height: 160px;
+  background-color: #fff;
+  margin-left: 220px;
+  position: absolute;
+  width: 250px;
+  position: relative;
+  z-index: 200;
+  display: none;
+  padding: 15px;
+}
+
+.hidebox,.hideul {
+  display: none;
+}
+
+/*FONDO NEGRO*/
+#page_screen {
+  background-color: #000000;
+  filter: alpha(opacity=80);
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  display: none;
+  z-index: 1001;
+}
+
+#handles_sel{
+  margin: 17px 0px;
+}
+#perfil_sel{
+  margin: 17px 0px;
+}
+
+#handles_sel img{
+  width: 100px;
+  float:right;
+}
+
+#marco_sel{
+  margin: 17px 0px;
+}
+
+#marco_sel img{
+  width: 100px;
+  float:right;
+}
+
+#perfiles{
+  padding: 10px;
+border: 1px solid #ccc;
+margin: 10px;
+overflow: hidden;
+}
+
+#perfiles2{
+  padding: 10px;
+border: 1px solid #ccc;
+margin: 10px;
+overflow: hidden;
+}
+#sel_material2{
+  padding: 10px;
+border: 1px solid #ccc;
+margin: 10px;
+overflow: hidden;
+}
+#sel2 a{
+  float:right;
+}
+
+/***************  ACC INT  **********/
+
+.li_acc{
+border: 1px solid #ccc;
+float: left;
+height: 142px;
+margin: 5px;
+}
+.img_acc{
+margin: auto;
+padding: 0;
+max-height: 83px;
+max-width: 220px;
+}
+.minus_acc{
+position: relative;
+bottom: 142px;
+left: 195px;
+}
