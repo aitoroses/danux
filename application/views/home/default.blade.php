@@ -50,7 +50,7 @@
 <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
 		
 	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-
+<!-- Normalmente las vistas no operan sobre datos y delegan esa labor en el controlador -->
 @if ( $id == 1 )
 		<li class='ui-state-default ui-corner-top ui-tabs-selected ui-state-active'><a href="#1" >1. Configuración inicial</a></li>
 @else

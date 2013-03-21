@@ -36,10 +36,15 @@ Route::get('/', array('uses' => 'home@index'));
 Route::get('/(:any)', array('uses' => 'home@tab'));
 
 // API Routes
+	// Budget
 Route::get('API/budget/(:any)', array('uses' => 'api@budget'));
 Route::post('API/budget', array('uses' => 'api@budget'));
 Route::get('API/budget/(:any)/wardrobe', array('uses' => 'api@wardrobe'));
 Route::put('API/budget/(:any)/wardrobe', array('uses' => 'api@wardrobe'));
+	// Flexigrid
+Route::post('API/flexigrid', array('uses' => 'api@flexigrid'));
+Route::delete('API/flexigrid', array('uses' => 'api@flexigrid'));
+
 
 
 
