@@ -14,13 +14,21 @@ class Api_Controller extends Base_Controller {
 		} else return Response::error('500');
 	}
 	public function post_budget(){
-		$budget = new Budget;
-		$budget->save();
 		
 		$object = Input::get('wardrobe');
 
-		$wardrobe = new Wardrobe($object['data']);
-		$budget->wardrobe()->insert($wardrobe);	
+		$validation = Wardrobe::validate($object['data']);
+		if($validation->fails()){
+			return View::make('home.errors')
+				->with('errors', $validation->errors);
+
+		} else {
+			$budget = new Budget;
+			$budget->save();
+			$wardrobe = new Wardrobe($object['data']);
+			$budget->wardrobe()->insert($wardrobe);
+			return "OK";
+		}
 	}
 
 	// WARDROBE

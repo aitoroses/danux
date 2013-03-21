@@ -72,7 +72,6 @@ function doCommand(com,grid)
 		        	for(i=0;i<items.length;i++){
 						itemlist.push(items[i].id.substr(3));
 					}
-					console.log(itemlist);
 					$.ajax({
 					   type: "DELETE",
 					   url: "API/flexigrid",

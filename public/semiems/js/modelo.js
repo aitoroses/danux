@@ -133,9 +133,8 @@
 	     wardrobe.data.paritypos = 0;
 	     if (document.frm.npuertas.value%2!=0 && document.frm.puerta.value == 1){
 	     	wardrobe.data.paritypos = document.frm.donde_imp.value;
-	     }		
-
-		$.ajax({
+	     }
+    	$.ajax({
 
 			type: 'POST',
 			url:'API/budget',
@@ -143,14 +142,20 @@
             data:   {wardrobe: wardrobe},
 
             success: function(data) {
-                confirm('Se ha creado el armario "'+wardrobe.data.name+'"');
+            	if(data !== "OK"){
+            		$('#errors').html(data)
+            	}
+            	else {
+            		location.href = '2';
+            	}
             },
             error: function(){
             	alert('Hubo un error');
-            }
+            
 		        
-
+			}
 		});
+
 	};
 
 
