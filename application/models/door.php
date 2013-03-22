@@ -2,7 +2,7 @@
 
 class Door extends Eloquent 
 {
-	public static $table = 'doors_table';
+	public static $table = 'l_doors_table';
 
 	public function material()
     {

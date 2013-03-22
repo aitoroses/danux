@@ -9,7 +9,7 @@ class Create_Doors_Table {
 	 */
 	public function up()
 	{
-		Schema::create('doors_table', function($table){
+		Schema::create('l_doors_table', function($table){
 			$table->increments('id');
 			$table->integer('wardrobe_id');
 			$table->integer('type');
@@ -24,7 +24,7 @@ class Create_Doors_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('doors_table');
+		Schema::drop('l_doors_table');
 	}
 
 }

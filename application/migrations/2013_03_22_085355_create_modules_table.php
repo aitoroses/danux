@@ -9,7 +9,7 @@ class Create_Modules_Table {
 	 */
 	public function up()
 	{
-		Schema::create('modules_table', function($table){
+		Schema::create('l_modules_table', function($table){
 			$table->increments('id');
 			$table->integer('wardrobe_id');
 			$table->integer('double');
@@ -29,7 +29,7 @@ class Create_Modules_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('modules_table');
+		Schema::drop('l_modules_table');
 	}
 
 }

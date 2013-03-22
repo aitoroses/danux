@@ -2,5 +2,5 @@
 
 class Module extends Eloquent 
 {
-	public static $table = 'modules_table';
+	public static $table = 'l_modules_table';
 }

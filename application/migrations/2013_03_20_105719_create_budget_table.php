@@ -9,7 +9,7 @@ class Create_Budget_Table {
 	 */
 	public function up()
 	{
-		Schema::create('budget_table', function($table){
+		Schema::create('l_budget_table', function($table){
 			$table->increments('id');
 			$table->timestamps();
 		});
@@ -22,7 +22,7 @@ class Create_Budget_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('budget_table');
+		Schema::drop('l_budget_table');
 	}
 
 }

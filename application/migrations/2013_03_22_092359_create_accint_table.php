@@ -9,10 +9,10 @@ class Create_Accint_Table {
 	 */
 	public function up()
 	{
-		Schema::create('accint_table', function($table){
+		Schema::create('l_accint_table', function($table){
 			$table->increments('id');
 			$table->integer('wardrobe_id');
-			$table->integer('accint_ids');
+			$table->integer('acc_id'); //Una sola tabla de accesorios
 			$table->timestamps();
 		});
 	}
@@ -24,7 +24,7 @@ class Create_Accint_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('accint_table');
+		Schema::drop('l_accint_table');
 	}
 
 }

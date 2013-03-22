@@ -2,7 +2,7 @@
 
 class Budget extends Eloquent 
 {
-	public static $table = 'budget_table';
+	public static $table = 'l_budget_table';
 
 	public function wardrobe()
     {
