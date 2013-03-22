@@ -9,7 +9,7 @@ class Create_Wardrobe_Table {
 	 */
 	public function up()
 	{
-		Schema::create('wardrobe_table', function($table){
+		Schema::create('l_wardrobe_table', function($table){
 			$table->increments('id');
 			$table->integer('budget_id');
 			$table->string('name');
@@ -35,7 +35,7 @@ class Create_Wardrobe_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('wardrobe_table');
+		Schema::drop('l_wardrobe_table');
 	}
 
 }
