@@ -1,6 +1,6 @@
 <?php
 
-class Create_Budget_Table {
+class Create_Materials_Door_Table {
 
 	/**
 	 * Make changes to the database.
@@ -9,8 +9,10 @@ class Create_Budget_Table {
 	 */
 	public function up()
 	{
-		Schema::create('l_budget_table', function($table){
+		Schema::create('l_materials_door_table', function($table){
 			$table->increments('id');
+			$table->integer('door_id');
+			$table->integer('material');
 			$table->timestamps();
 		});
 	}
@@ -22,7 +24,7 @@ class Create_Budget_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('l_budget_table');
+		Schema::drop('l_materials_door_table');
 	}
 
 }

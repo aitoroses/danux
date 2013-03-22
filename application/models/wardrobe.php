@@ -2,7 +2,7 @@
 
 class Wardrobe extends Eloquent 
 {
-	public static $table = 'wardrobe_table';
+	public static $table = 'l_wardrobe_table';
 
     public static $rules = array(
         'name' => 'required|min:3|alpha_num',
