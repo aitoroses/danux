@@ -83,43 +83,41 @@
 	
 	function cargarJson(idbudget){
 	
-		var id = parseInt(idbudget);
 		$.ajax({
-	           type: "POST",
-	                url: "php/json_l.php",
-	                dataType: "json",
-	                async: false,
-		            data: {
-	    				"id"	: id
-	  				},
-	                success: function(data){
+	        type: "GET",
+            url: "API/budget/"+ idbudget + '/wardrobe',
+            dataType: "json",
+            async: false,
+            success: function(response){
 
-	                	wardrobe=data;
+                window.wardrobe = new Object();
+                wardrobe.data=response;
 
-	                    }
-	            });
+                document.frm.name.value = wardrobe.data.name;
+                document.frm.malto.value = wardrobe.data.height;
+                document.frm.mancho.value = wardrobe.data.width;
+                document.frm.mprof.value = wardrobe.data.prof;
+                document.frm.puerta.value = wardrobe.data.typedoor;
+                //cambiaNumDoors();
+                document.frm.npuertas.value = wardrobe.data.doors;
+                //puertas_impares_bat();
+                if (document.frm.npuertas.value%2!=0 && document.frm.puerta.value == 1){
+                document.frm.donde_imp.value = wardrobe.data.paritypos ;
+                }
+                //cargar los perfiles
+                //cargar_perfiles();
+                //carga marco
+                //cambio_marco();
+                //carga tirador
+                //cambio_tirador();
+                //carga acc
+                //AgregarAccInt();
+                //accesorios
+                //loadacc();
+            }
+        });
 
-	     document.frm.name.value = wardrobe.data.name;
-	     document.frm.malto.value = wardrobe.data.height;
-	     document.frm.mancho.value = wardrobe.data.width;
-	     document.frm.mprof.value = wardrobe.data.prof;
-	     document.frm.puerta.value = wardrobe.data.typedoor;
-	     cambiaNumDoors();
-	     document.frm.npuertas.value = wardrobe.data.doors;
-	     puertas_impares_bat();
-	     if (document.frm.npuertas.value%2!=0 && document.frm.puerta.value == 1){
-	     document.frm.donde_imp.value = wardrobe.data.paritypos ;
-	     }
-	     //cargar los perfiles
-	     cargar_perfiles();
-	     //carga marco
-	     cambio_marco();
-	     //carga tirador
-	     cambio_tirador();
-	     //carga acc
-	     AgregarAccInt();
-	     //accesorios
-	     loadacc();
+	     
 
 	};
 	
@@ -135,50 +133,29 @@
 	     wardrobe.data.paritypos = 0;
 	     if (document.frm.npuertas.value%2!=0 && document.frm.puerta.value == 1){
 	     	wardrobe.data.paritypos = document.frm.donde_imp.value;
-	     }		
-
-
-		//var rated_encoded = JSON.stringify(wardrobe);
-		//var req =	$.ajax({
-		$.ajax({
+	     }
+    	$.ajax({
 
 			type: 'POST',
 			url:'API/budget',
             //dataType: "json",
             data:   {wardrobe: wardrobe},
-				//"rated" : rated_encoded,
-				//"id"	: parseInt(wardrobe.data.id)
-				//},
-            // Mostramos un mensaje con la respuesta de PHP
+
             success: function(data) {
-				cargarJson(data)
+            	if(data !== "OK"){
+            		$('#errors').html(data)
+            	}
+            	else {
+            		location.href = '2';
+            	}
             },
             error: function(){
             	alert('Hubo un error');
-            }
+            
 		        
-
+			}
 		});
-		// BORRAR
-		$.ajax({
 
-			type: 'PUT',
-			url:'API/budget/1/wardrobe',
-            //dataType: "json",
-            data:   {wardrobe: wardrobe},
-				//"rated" : rated_encoded,
-				//"id"	: parseInt(wardrobe.data.id)
-				//},
-            // Mostramos un mensaje con la respuesta de PHP
-            success: function(data) {
-				//cargarJson(data)
-            },
-            error: function(){
-            	alert('Hubo un error');
-            }
-		        
-
-		});
 	};
 
 

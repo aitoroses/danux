@@ -4,10 +4,31 @@
 {{ HTML::script('semiems/js/tabs/tab1.js') }}
 <div id="paso-1" class="ui-tabs-panel">
 	<div>
+	<div id="errors"></div>
 	<div class="left">
 	<h2>Crea un presupuesto</h2>
+	@include('home.errors')
 	<p>Introduce las medidas de tu hueco (mm):</p>
-	<form id="frm" name="frm" action="semiems/php/guardadatos.php"> 
+	{{ Form::open('API/budget', 'POST', array('id' => 'frm', 'name' => 'frm')) }}
+	<fieldset>
+ 	<p><label> Nombre del presupuesto: </label>{{ Form::text('name', Input::old('name'), array('size' => 40)) }}</p>
+	<label> Alto: </label>{{ Form::text('malto', Input::old('name'), array('size' => 6)) }}
+	<label> Ancho: </label>{{ Form::text('mancho', Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)", 'size' => 6)) }}
+	<label> Profundidad: </label>{{ Form::text('mprof', Input::old('name'), array('size' => 6)) }}
+	<p></p>
+	<p>Selecciona el tipo y numero de puertas que deseas:</p>
+	<label> Tipo de puertas</label>
+	{{ Form::select('puerta', array('3' => '', '2' => 'Armario sin puertas', '1' => 'Batientes', '0' => 'Correderas' ), Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)")) }}
+
+	<label>Numero de puertas: </label>
+	<select name="npuertas" onChange="puertas_impares_bat()">
+	</select>
+	<p></p>
+	<div id="puertas_imp_bat"></div>
+	</fieldset>
+	</form>
+	{{ Form::close() }}
+	<!-- <form id="frm" name="frm" action="semiems/php/guardadatos.php"> 
 	<fieldset>
  	<p><label> Nombre del presupuesto: </label><input type="text" name="name" size="40"></p>
 	<label> Alto: </label><input type="text" name="malto" size="6">
@@ -29,7 +50,7 @@
 	<p></p>
 	<div id="puertas_imp_bat"></div>
 	</fieldset>
-	</form>
+	</form> -->
  
   	<br/>
  	</div>
@@ -44,6 +65,6 @@
  	</div>
  	<div id="result"></div>
  	</div>
- 	<a href='2' class='next-tab mover'>Siguiente &#187;</a> 
+ 	<a class='next-tab mover'>Siguiente &#187;</a> 
 </div>
 @endsection

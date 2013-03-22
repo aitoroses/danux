@@ -50,53 +50,53 @@
 <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
 		
 	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-
+<!-- Normalmente las vistas no operan sobre datos y delegan esa labor en el controlador -->
 @if ( $id == 1 )
 		<li class='ui-state-default ui-corner-top ui-tabs-selected ui-state-active'><a href="#1" >1. Configuración inicial</a></li>
 @else
-		<li class='ui-state-default'><a href="#1" >1. Configuración inicial</a></li>
+		<li class='ui-state-default'><a href="1" >1. Configuración inicial</a></li>
 @endif
 
 @if ( $id == 2 )
 		<li class='ui-state-default ui-corner-top ui-tabs-selected ui-state-active'><a href="#2" >2. Interior</a></li>
 @else
-		<li class='ui-state-default'><a href="#2" >2. Interior</a></li>
+		<li class='ui-state-default'><a href="2" >2. Interior</a></li>
 @endif
 
 @if ( $id == 3 )
 		<li class='ui-state-default ui-corner-top ui-tabs-selected ui-state-active'><a href="#3" >3. Accesorios Int</a></li>
 @else
-		<li class='ui-state-default'><a href="#3" >3. Accesorios Int</a></li>
+		<li class='ui-state-default'><a href="3" >3. Accesorios Int</a></li>
 @endif
 
 @if ( $id == 4 )
 		<li class='ui-state-default ui-corner-top ui-tabs-selected ui-state-active'><a href="#4" >4. Perfil</a></li>
 @else
-		<li class='ui-state-default'><a href="#4" >4. Perfil</a></li>
+		<li class='ui-state-default'><a href="4" >4. Perfil</a></li>
 @endif
 
 @if ( $id == 5 )
 		<li class='ui-state-default ui-corner-top ui-tabs-selected ui-state-active'><a href="#5" >5. Puertas</a></li>
 @else
-		<li class='ui-state-default'><a href="#5" >5. Puertas</a></li>
+		<li class='ui-state-default'><a href="5" >5. Puertas</a></li>
 @endif
 
 @if ( $id == 6 )
 		<li class='ui-state-default ui-corner-top ui-tabs-selected ui-state-active'><a href="#6" >6. Marco</a></li>
 @else
-		<li class='ui-state-default'><a href="#6" >6. Marco</a></li>
+		<li class='ui-state-default'><a href="6" >6. Marco</a></li>
 @endif
 
 @if ( $id == 7 )
 		<li class='ui-state-default ui-corner-top ui-tabs-selected ui-state-active'><a href="#7" >7. Accesorios Ext</a></li>
 @else
-		<li class='ui-state-default'><a href="#7" >7. Accesorios Ext</a></li>
+		<li class='ui-state-default'><a href="7" >7. Accesorios Ext</a></li>
 @endif
 
 @if ( $id == 8 )
 		<li class='ui-state-default ui-corner-top ui-tabs-selected ui-state-active'><a href="#8" >8. Resumen Final</a></li>
 @else
-		<li class='ui-state-default'><a href="#8" >8. Resumen Final</a></li>
+		<li class='ui-state-default'><a href="8" >8. Resumen Final</a></li>
 @endif
 
 		<li class="shadowtab"></li>

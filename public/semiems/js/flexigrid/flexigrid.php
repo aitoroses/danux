@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$("#flex1").flexigrid
 			(
 			{
-			url: 'semiems/js/flexigrid/post2.php',
+			url: 'API/flexigrid',
 			dataType: 'json',
 			colModel : [
 				{display: 'ID', name : 'id', width : 40, sortable : true, align: 'center'},
@@ -64,29 +64,29 @@ function doCommand(com,grid)
                        
         }     
 	else if (com=='Delete')
-        {
+    {
            if($('.trSelected',grid).length>0){
-		   if(confirm('Delete ' + $('.trSelected',grid).length + ' items?')){
-            var items = $('.trSelected',grid);
-            var itemlist ='';
-        	for(i=0;i<items.length;i++){
-				itemlist+= items[i].id.substr(3)+",";
-			}
-			$.ajax({
-			   type: "POST",
-			   dataType: "json",
-			   url: "js/flexigrid/delete.php",
-			   data: "items="+itemlist,
-			   success: function(data){
-			   	alert("Query: "+data.query+" - Total affected rows: "+data.total);
-			   $("#flex1").flexReload();
-			   }
-			 });
-			}
+			   if(confirm('Borrar ' + $('.trSelected',grid).length + ' items?')){
+		            var items = $('.trSelected',grid);
+		            var itemlist = [];
+		        	for(i=0;i<items.length;i++){
+						itemlist.push(items[i].id.substr(3));
+					}
+					$.ajax({
+					   type: "DELETE",
+					   url: "API/flexigrid",
+					   data: {items: JSON.stringify(itemlist)},
+					   success: function(data){
+					   		alert("Query: "+data.query+" - Total affected rows: "+data.total);
+					   		$("#flex1").flexReload();
+					   }
+
+					 });
+				}
 			} else {
 				return false;
-			} 
-        }         
+		} 
+    }         
 } 
 </script>
 
