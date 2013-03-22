@@ -39,8 +39,8 @@
 	<header class="cf">
 <nav>
 	<ul>
-		<li style="padding: 5px;">Bienvenido $FirstName</li>
-		<li><a href="#" class="logout">Cerrar session</a></li>
+		<li style="padding: 5px;">Bienvenido {{ $username }}</li>
+		<li><a href="logout" class="logout">Cerrar session</a></li>
 	</ul>
 </nav>
 </header>
