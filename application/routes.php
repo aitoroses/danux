@@ -41,6 +41,7 @@ Route::get('API/budget/(:any)', array('uses' => 'api@budget'));
 Route::post('API/budget', array('uses' => 'api@budget'));
 Route::get('API/budget/(:any)/wardrobe', array('uses' => 'api@wardrobe'));
 Route::put('API/budget/(:any)/wardrobe', array('uses' => 'api@wardrobe'));
+Route::get('API/json/(:any)', array('uses' => 'api@json'));
 	// Flexigrid
 Route::post('API/flexigrid', array('uses' => 'api@flexigrid'));
 Route::delete('API/flexigrid', array('uses' => 'api@flexigrid'));

@@ -26,6 +26,7 @@ class Api_Controller extends Base_Controller {
 			$budget = new Budget;
 			$budget->save();
 			$wardrobe = new Wardrobe($object['data']);
+			// Modules Object
 			$budget->wardrobe()->insert($wardrobe);
 			return "OK";
 		}
@@ -40,6 +41,58 @@ class Api_Controller extends Base_Controller {
 	public function put_wardrobe($id){
 		$budget = Budget::find($id);
 		$budget->wardrobe()->update(Input::get('wardrobe')['data']);
+	}
+	
+	public function get_json($id){
+
+		// OBTENER EL MODEL COMPLETO
+
+		$wardrobe = Wardrobe::find($id);
+		$modules = $wardrobe->modules()->get();
+		$doors = $wardrobe->doors()->get();
+		$accint = $wardrobe->accints()->get();
+		$accext = $wardrobe->accexts()->get();
+		// Arrays
+		// modules
+		$modules_array = array_map(function($object){
+			return $object->to_array();
+		}, $modules);
+		
+		$doors_array = array_map(function($object){
+			// Obtenemos los materiales de cada puerta
+			$materials = $object->materials()->get();
+			// Obtenemos los identificadores
+			$materials_ids = array_map(function($material){
+				return $material->id;
+			}, $materials);
+
+			$result = $object->to_array();
+			$result["material"] = $materials_ids;
+			
+			return $result;
+		}, $doors);
+		// Accesorios interiores y exteriores
+		/*
+		if(sizeof($accint) > 0){
+			$accint = $accint->to_array();
+		}
+		if(sizeof($accext) > 0){
+			$accext = $accext->to_array();
+		}*/
+
+		$json = array(
+			'data' => $wardrobe->to_array(),
+			'modules' => $modules_array,
+			'doors' => $doors_array,
+			'accint' => [],
+			'accext' => [],
+
+
+		);
+
+		return Response::json($json);
+
+
 	}
 
 	// FLEXIGRID
