@@ -9,10 +9,10 @@ class Create_Materials_Door_Table {
 	 */
 	public function up()
 	{
-		Schema::create('l_materials_door_table', function($table){
+		Schema::create('l_door_material_relation_table', function($table){
 			$table->increments('id');
 			$table->integer('door_id');
-			$table->integer('material_id');
+			$table->integer('doormaterial_id');
 			$table->timestamps();
 		});
 	}
@@ -24,7 +24,7 @@ class Create_Materials_Door_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('l_materials_door_table');
+		Schema::drop('l_door_material_relation_table');
 	}
 
 }
