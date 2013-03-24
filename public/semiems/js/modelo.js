@@ -1,86 +1,115 @@
-	function createJson(){
-	
-	var npuertas = document.frm.npuertas.value;
-		posicion_impar="0";
-	
-	if(npuertas%2 != 0 & document.frm.puerta.value == 1){	
-		posicion_impar=document.frm.donde_imp.value;
+WardrobeModel = new Object({
+	wardrobe: {},
+	initialize: function(){
+		return this.createJson();
+	},
+	createJson: function(){
+
+		var npuertas = document.frm.npuertas.value;
+			posicion_impar="0";
+		
+		if(npuertas%2 != 0 & document.frm.puerta.value == 1){	
+			posicion_impar=document.frm.donde_imp.value;
+		}
+
+		this.wardrobe ={
+			data:{
+							"name":document.frm.name.value,
+	        				"width":document.frm.mancho.value,
+	        				"height":document.frm.malto.value,
+	        				"prof":document.frm.mprof.value,
+							"nmods":"0",
+	        				"doors":document.frm.npuertas.value,
+	        				"typedoor":document.frm.puerta.value,
+	        				"paritypos":posicion_impar,
+	        				"handle":"0",
+	        				"tperfil":"0",
+	        				"perfil":"0",
+	        				"marco":"0"
+				},
+			modules:[],
+			doors:[],
+			accint:[],
+			accext:[]
+			};
+			
+			//Creamos los modulos
+			
+			if (document.frm.puerta.value==0){
+		    //Correderas
+				var npuertas = document.frm.npuertas.value;
+				var nmod = document.frm.npuertas.value;
+				this.wardrobe.data.nmods=nmod;
+				for(x=0;x<nmod;x++){
+						this.wardrobe.modules.push({ "double":"0",
+												"ddouble":"0",
+												"width":document.frm.mancho.value/nmod,
+												"height":document.frm.malto.value,
+												"ref1":0,
+												"ref2":0 
+											});
+				}
+			}else if (document.frm.puerta.value==1){
+			//Batientes
+				var npuertas=document.frm.npuertas.value;
+				var nmod = Math.round(parseInt(document.frm.npuertas.value)/2);			
+				var ancho_puerta=document.frm.mancho.value/document.frm.npuertas.value;
+				var ancho_puerta_d=(document.frm.mancho.value/document.frm.npuertas.value)*2;
+				this.wardrobe.data.nmods=nmod;			
+				
+				for(x=0;x<nmod;x++){
+				
+				if (npuertas%2==0){	
+					var anchoo_puerta = ancho_puerta_d				
+				}else{
+					var dnd_imp=parseInt(document.frm.donde_imp.value-1)/2;
+					if (x==dnd_imp){
+						var anchoo_puerta = ancho_puerta;
+					}else{
+						var anchoo_puerta = ancho_puerta_d;
+					}
+				}
+					this.wardrobe.modules.push({ "double":"0",
+											"ddouble":"0",
+											"width":anchoo_puerta,
+											"height":document.frm.malto.value,
+											"ref1":0,
+											"ref2":0 });
+				}
+
+			}
+			//Creamos las puertas
+	 		for(x=0;x<npuertas;x++){	
+	 			this.wardrobe.doors.push({ 
+	 									"type":"1",
+	 									"material":{
+	 										0:0
+	 									}
+	 								}); 
+	 		}
+	 		return this.wardrobe;
+	},
+	guardarJson: function(){
+		$.ajax({
+			type: 'POST',
+			url:'API/budget',
+	        data:   {wardrobe: wardrobe},
+	        success: function(data) {
+	        	if(data !== "OK"){
+	        		$('#errors').html(data)
+	        	}
+	        	else {
+	        		location.href = '2';
+	        	}
+	        },
+	        error: function(){
+	        	alert('Hubo un error');    
+			}
+		});
 	}
 
-	wardrobe ={
-		data:{
-						//"id":"0",
-						"name":document.frm.name.value,
-        				"width":document.frm.mancho.value,
-        				"height":document.frm.malto.value,
-        				"prof":document.frm.mprof.value,
-						"nmods":"0",
-        				"doors":document.frm.npuertas.value,
-        				"typedoor":document.frm.puerta.value,
-        				"paritypos":posicion_impar,
-        				"handle":"0",
-        				"tperfil":"0",
-        				"perfil":"0",
-        				"marco":"0"
-			},
-		modules:[],
-		doors:[],
-		accint:[],
-		accext:[]
-		};
-		
-		//Creamos los modulos
-		
-		if (document.frm.puerta.value==0){
-	    //Correderas
-			var npuertas = document.frm.npuertas.value;
-			var nmod = document.frm.npuertas.value;
-			wardrobe.data.nmods=nmod;
-			for(x=0;x<nmod;x++){
-					wardrobe.modules.push({ "double":"0","ddouble":"0","width":document.frm.mancho.value/nmod,"height":document.frm.malto.value,"ref1":0,"ref2":0 });
-			}
-		
-		}else if (document.frm.puerta.value==1){
-		//Batientes
-			var npuertas=document.frm.npuertas.value;
-			var nmod = Math.round(parseInt(document.frm.npuertas.value)/2);			
-			var ancho_puerta=document.frm.mancho.value/document.frm.npuertas.value;
-			var ancho_puerta_d=(document.frm.mancho.value/document.frm.npuertas.value)*2;
-			wardrobe.data.nmods=nmod;			
-			
-			for(x=0;x<nmod;x++){
-			
-			if (npuertas%2==0){	
-				var anchoo_puerta = ancho_puerta_d				
-			}else{
-				var dnd_imp=parseInt(document.frm.donde_imp.value-1)/2;
-				if (x==dnd_imp){
-					var anchoo_puerta = ancho_puerta;
-				}else{
-					var anchoo_puerta = ancho_puerta_d;
-				}
-			}
-				wardrobe.modules.push({ "double":"0","ddouble":"0","width":anchoo_puerta,"height":document.frm.malto.value,"ref1":0,"ref2":0 });
-			}
 
-		}
-		//Creamos las puertas
- 		for(x=0;x<npuertas;x++){	
- 			wardrobe.doors.push({ 
- 									"type":"1",
- 									"material":{
- 										0:0
- 									}
- 								}); 		
- 		
- 		}
- 		
- 		
-
-
-	};
-	
-	
+});
 	function cargarJson(idbudget){
 	
 		$.ajax({
