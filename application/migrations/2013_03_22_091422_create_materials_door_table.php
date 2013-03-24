@@ -12,7 +12,7 @@ class Create_Materials_Door_Table {
 		Schema::create('l_materials_door_table', function($table){
 			$table->increments('id');
 			$table->integer('door_id');
-			$table->integer('material');
+			$table->integer('material_id');
 			$table->timestamps();
 		});
 	}

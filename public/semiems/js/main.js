@@ -19,18 +19,6 @@ function Close_popup()
 
 }
 
-function ini(){
-
-	if(!wardrobe.data){
-		createJson();
-	}
-	guardarJson();
-
-	pintamodulos();
-	pintapuertas();			
-			  
-};
-
 /*************************************/
 function countRepeated(array){
   var r = arguments[1] || [], i = 0;
