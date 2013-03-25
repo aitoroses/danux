@@ -36,7 +36,11 @@
 
 </head>
 <body>
-	<header class="cf">
+<!-- POPUP Interior Division  -->
+<div id="page_screen"></div>
+<div id="popup" style="display: none;"></div>
+<!-- POPUP   -->
+<header class="cf">
 <nav>
 	<ul>
 		<li style="padding: 5px;">Bienvenido {{ $username }}</li>
@@ -103,11 +107,6 @@
 	</ul>
 
 @yield('tab')
-</div>
-
-<!-- POPUP Interior Division  -->
-<div id="page_screen"></div>
-<div id="popup" style="display: none;">
 </div>
 </body>
 </html>
