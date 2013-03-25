@@ -50,7 +50,7 @@ function doCommand(com,grid)
         {
             var idt = $('.trSelected',grid);
             idt = idt[0].id.substr(3);
-            cargarJson(idt);
+            WardrobeModel.cargarJson(idt);
             Close_popup();
                        
         }
