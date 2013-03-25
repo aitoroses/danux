@@ -38,12 +38,12 @@ WardrobeModel = new Object({
 				var nmod = document.frm.npuertas.value;
 				this.wardrobe.data.nmods=nmod;
 				for(x=0;x<nmod;x++){
-						this.wardrobe.modules.push({ "double":"0",
-												"ddouble":"0",
-												"width":document.frm.mancho.value/nmod,
-												"height":document.frm.malto.value,
-												"ref1":0,
-												"ref2":0 
+						this.wardrobe.modules.push({ double:"0",
+												ddouble:"0",
+												width:document.frm.mancho.value/nmod,
+												height:document.frm.malto.value,
+												ref1:0,
+												ref2:0 
 											});
 				}
 			}else if (document.frm.puerta.value==1){
@@ -89,7 +89,7 @@ WardrobeModel = new Object({
 		$.ajax({
 			type: 'POST',
 			url:'API/budget',
-	        data:   {wardrobe: wardrobe},
+	        data:   {wardrobe: WardrobeModel.getWardrobe()},
 	        success: function(data) {
 	        	if(data !== "OK"){
 	        		$('#errors').html(data)
@@ -113,8 +113,7 @@ WardrobeModel = new Object({
             async: false,
             success: function(response){
 
-                window.wardrobe = new Object();
-                wardrobe.data=response;
+                WardrobeModel.wardrobe.data=response;
                 document.frm.name.value = wardrobe.data.name;
                 document.frm.malto.value = wardrobe.data.height;
                 document.frm.mancho.value = wardrobe.data.width;
@@ -138,7 +137,27 @@ WardrobeModel = new Object({
                 //loadacc();
             }
         });
-	}
+	},
+	fetch: function (){
+		id = $('body').data('wardrobe');
+		$.ajax({
+	        type: "GET",
+            url: "API/json/" + id,
+            dataType: "json",
+            success: function(response){
+            	WardrobeModel.wardrobe = response;
+            	$(document).trigger('sync');
+            	console.log(WardrobeModel.getWardrobe());
+            },
+            error: function(){
+            	alert('Error: No se ha sincronizado el armario');
+            	$(document).trigger('error');
+            }
+        });  
+	},
+	getWardrobe: function(){
+		return this.wardrobe;
+	},
 });
 
 
@@ -156,5 +175,4 @@ WardrobeModel = new Object({
 	wardrobe.accext = ii;
 	}
 }
-
 

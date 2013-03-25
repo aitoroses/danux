@@ -61,46 +61,42 @@ for(x=0;x<nmod;x++){ //Bucle por puerta
         	});
  
  			//MATERIAL PUERTA
+      if(wardrobe.doors[j].material.length !== 0){
 
-			if (parseInt(wardrobe.doors[j].material[i])!=0){ //ref1
-				
-				    var iix=xcont;
-		        var iiy=ycont;
-            var heighttemp=alto*doors[i];
-		        var imageObj = new Image();
-		        imageObj.onload = function() {
-		        var mdoor = new Kinetic.Image({
-		            x: iix,
+  			if (parseInt(wardrobe.doors[j].material[i])!=0){ //ref1
+  				
+  		    var iix=xcont;
+          var iiy=ycont;
+          var heighttemp=alto*doors[i];
+          var imageObj = new Image();
+          imageObj.onload = function() {
+  	        var mdoor = new Kinetic.Image({
+  	            x: iix,
             		y: iiy,
                 width: ancho/wardrobe.doors.length,
                 height: heighttemp,
-		            image: imageObj,
+  	            image: imageObj,
             		name:'image'+i
-		          });
+  	        }); 
+    				layerpi.add(mdoor);
+    				layerpi.draw();
+          }
+  		    var id = wardrobe.doors[j].material[i];
+  		       
+  		    var srcc = $.ajax({
+         		type: "POST",
+              url: "php/getMatDoor_pintar.php",
+          	data: {
+  				    "id" : id
+  	        }, 
 
-                 
-				layerpi.add(mdoor);
-				layerpi.draw();
-
-		        }
-		  var id = wardrobe.doors[j].material[i];
-		       
-		  var srcc = $.ajax({
-           		type: "POST",
-                url: "php/getMatDoor_pintar.php",
-            	data: {
-    				"id" : id
-  				}, 
-
-                async: false,
-                success: function(data){
-                      imageObj.src = data;
-                    }
-            	});
-
-			
-
+            async: false,
+            success: function(data){
+                  imageObj.src = data;
+            }
+          });
         }
+      }
 ycont = ycont + alto*doors[i];       	
 							
  	        puerta.on('click', function(evt) {
@@ -213,6 +209,7 @@ layeri=new Kinetic.Layer();
 stage.clear;
 document.getElementById("containeri").innerHTML="";
 
+wardrobe = WardrobeModel.getWardrobe();
 	
 var nmod = wardrobe.modules.length;
 

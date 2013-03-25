@@ -53,6 +53,7 @@ body {
   padding-top: 11px;
   width: 850px;
   margin: auto;
+  margin-bottom: 120px;
   position: relative;
 }
 
@@ -132,11 +133,11 @@ select {
   -ms-user-select: none;
   user-select: none;
 
-  background-image: url(img/ddn.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-  background-image: url(img/ddn.png), -moz-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-  background-image: url(img/ddn.png), -o-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-  background-image: url(img/ddn.png), -ms-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-  background-image: url(img/ddn.png), linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-image: url(../img/ddn.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-image: url(../img/ddn.png), -moz-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-image: url(../img/ddn.png), -o-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-image: url(../img/ddn.png), -ms-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-image: url(../img/ddn.png), linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
   background-position: center right;
   background-repeat: no-repeat;
   border: 1px solid #AAA;

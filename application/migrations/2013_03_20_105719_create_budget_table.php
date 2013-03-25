@@ -11,6 +11,7 @@ class Create_Budget_Table {
 	{
 		Schema::create('l_budget_table', function($table){
 			$table->increments('id');
+			$table->integer('user_id');
 			$table->timestamps();
 		});
 	}
