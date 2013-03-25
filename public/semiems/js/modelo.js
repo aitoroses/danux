@@ -4,14 +4,11 @@ WardrobeModel = new Object({
 		return this.createJson();
 	},
 	createJson: function(){
-
 		var npuertas = document.frm.npuertas.value;
-			posicion_impar="0";
-		
+		posicion_impar="0";
 		if(npuertas%2 != 0 & document.frm.puerta.value == 1){	
 			posicion_impar=document.frm.donde_imp.value;
 		}
-
 		this.wardrobe ={
 			data:{
 							"name":document.frm.name.value,
@@ -76,7 +73,6 @@ WardrobeModel = new Object({
 											"ref1":0,
 											"ref2":0 });
 				}
-
 			}
 			//Creamos las puertas
 	 		for(x=0;x<npuertas;x++){	
@@ -106,11 +102,9 @@ WardrobeModel = new Object({
 	        	alert('Hubo un error');    
 			}
 		});
-	}
+	},
 
-
-});
-	function cargarJson(idbudget){
+	cargarJson: function (idbudget){
 	
 		$.ajax({
 	        type: "GET",
@@ -121,7 +115,6 @@ WardrobeModel = new Object({
 
                 window.wardrobe = new Object();
                 wardrobe.data=response;
-
                 document.frm.name.value = wardrobe.data.name;
                 document.frm.malto.value = wardrobe.data.height;
                 document.frm.mancho.value = wardrobe.data.width;
@@ -131,7 +124,7 @@ WardrobeModel = new Object({
                 document.frm.npuertas.value = wardrobe.data.doors;
                 //puertas_impares_bat();
                 if (document.frm.npuertas.value%2!=0 && document.frm.puerta.value == 1){
-                document.frm.donde_imp.value = wardrobe.data.paritypos ;
+                document.frm.donde_imp.value = wardrobe.data.paritypos;
                 }
                 //cargar los perfiles
                 //cargar_perfiles();
@@ -145,10 +138,9 @@ WardrobeModel = new Object({
                 //loadacc();
             }
         });
+	}
+});
 
-	     
-
-	};
 
 
 	function save_accext(){
