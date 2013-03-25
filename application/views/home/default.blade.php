@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>{{$title}}</title>
-	<meta name="viewport" content="width=device-width">
+	<meta name = "viewport" content = "width=device-width, maximum-scale = 1, minimum-scale=1" />	
 	<!-- STYLES -->
 	{{ HTML::style('semiems/css/example.css') }}
 	{{ HTML::style('semiems/css/stylep.css') }}
@@ -35,7 +35,7 @@
 
 
 </head>
-<body>
+<body data-wardrobe={{ $id_wardrobe }}>
 <!-- POPUP Interior Division  -->
 <div id="page_screen"></div>
 <div id="popup" style="display: none;"></div>

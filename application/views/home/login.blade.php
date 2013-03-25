@@ -6,6 +6,7 @@
 <head>
     <!-- STYLES -->
     {{ HTML::style('semiems/css/login.css') }}
+    {{ HTML::script('semiems/js/jquery-1.9.1.min.js') }}
 
 </head>
 <body>
@@ -35,4 +36,9 @@
 {{ Form::close() }}
 
 </body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#login').addClass('show')
+    })
+</script>
 </html>
