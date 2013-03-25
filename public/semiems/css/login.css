@@ -30,7 +30,33 @@ body {
 
     -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 1px 5px rgba(0,0,0,0.2), 0 0 0 12px rgba(255,255,255,0.4);
     box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 1px 5px rgba(0,0,0,0.2), 0 0 0 12px rgba(255,255,255,0.4);
+
+    opacity: 0;
+
+
+  -webkit-transform: translate3d(200%, 0, 0) scale3d(.2, .2, .2);
+  -moz-transform: translate3d(200%, 0, 0) scale3d(.2, .2, .2);
+  -ms-transform: translate3d(200%, 0, 0) scale3d(.2, .2, .2);
+  -o-transform: translate3d(200%, 0, 0) scale3d(.2, .2, .2);
+  transform: translate3d(200%, 0, 0) scale3d(.2, .2, .2);
+  
+  -webkit-transition: -webkit-transform 500ms ease, opacity 800ms ease;
+  -moz-transition: -moz-transform 500ms ease, opacity 800ms ease;
+  -o-transition: -o-transform 500ms ease, opacity 800ms ease;
+  transition: transform 500ms ease, opacity 800ms ease;
+
 }
+
+#login.show{
+    -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    -o-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+
+    opacity: 1;
+}   
+
 
 #login:before {
     content: '';
