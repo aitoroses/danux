@@ -106,7 +106,12 @@
 		<li class="shadowtab"></li>
 	</ul>
 
-@yield('tab')
+<section id="content" style="opacity: 0;">@yield('tab')</section>
 </div>
 </body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#content').animate({opacity: 1}, 300);
+	});
+</script>
 </html>

@@ -28,6 +28,17 @@
 	float: left;
 	border-bottom-width: 0 !important;
 	margin: 0 2px -5px 0;
+
+	/* Murray's */
+	-webkit-transition: all 200ms ease;
+  	-moz-transition: all 200ms ease;
+ 	 -o-transition: all 200ms ease;
+  	transition: all 200ms ease;
+	
+	top: 5px;
+}
+.ui-tabs .ui-tabs-nav li:hover {
+	top: 0px;
 }
 
 .ui-tabs .ui-tabs-nav li a {
@@ -43,6 +54,9 @@
 	padding-bottom: 1px;
 	border-bottom-width: 0;
 	background: white;
+	/* Murray's */
+	position: relative;
+	top: -2px;
 }
 
 li.ui-state-default {
