@@ -24,8 +24,12 @@ class Api_Controller extends Base_Controller {
 
 		} else {
 			$user = Auth::user();
-			$budget = new Budget();
-			$user->budgets()->insert($budget);
+			$budget = $user->budgets()->first();
+			if($budget == null){
+				$budget = new Budget();
+				$user->budgets()->insert($budget);
+			}
+			
 			$wardrobe = new Wardrobe($object['data']);
 			$budget->wardrobe()->insert($wardrobe);
 

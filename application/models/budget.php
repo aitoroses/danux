@@ -6,7 +6,7 @@ class Budget extends Eloquent
 
 	public function wardrobe()
     {
-          return $this->has_one('wardrobe');
+          return $this->has_many('wardrobe');
     }
 
     

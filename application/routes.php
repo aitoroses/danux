@@ -34,6 +34,7 @@
 
 Route::get('/', array('uses' => 'home@index'));
 Route::get('/(:any)', array('uses' => 'home@tab', 'before' => 'auth'));
+Route::post('/session/(:any)', array('uses' => 'home@session'));
 
 // API Routes
 	// Budget
