@@ -15,6 +15,9 @@ class Home_Controller extends Base_Controller {
 		if($budget){
 			$wardrobes = $budget->wardrobe()->get();
 		}
+		if(!isset($wardrobes)){
+			$wardrobes = null;
+		}
 		if(Session::get('wardrobe_id') == null) {
 			$id_wardrobe = "";
 		} else {

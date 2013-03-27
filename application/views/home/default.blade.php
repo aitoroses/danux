@@ -114,9 +114,15 @@
 <div id="wardrobemenu">
 	<h1>Tus armarios</h1>
 	<ul>
-		@foreach($wardrobes as $ele)
-			<li><a href={{ $ele->id }}>{{ $ele->name }}</a></li>
-		@endforeach
+		<?php
+			if(isset($wardrobes)){
+				foreach($wardrobes as $ele){
+					echo "<li><a href=".$ele->id.".>".$ele->name."</a></li>";
+				}
+			} else {
+				echo "No hay armarios";
+			}
+		?>
 		
 	</ul>
 </div>
