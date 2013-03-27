@@ -64,13 +64,13 @@ $(function() {
 		var auxitem=moduleselect.substring(1,2)
 		
 		if (moduleselect.substring(3,4)==1){
-			wardrobe.modules[auxitem].ref1=ref
+			WardrobeModel.getWardrobe().modules[auxitem].ref1=ref
 		
 		}else if (moduleselect.substring(3,4)==2){
-			wardrobe.modules[auxitem].ref2=ref
+			WardrobeModel.getWardrobe().modules[auxitem].ref2=ref
 			}
 		pintamodulos();
-		Close_popup();	
+		popup.closePopup();	
 		
 	});
 		$(".item2 img").live("click", function() {
@@ -102,7 +102,7 @@ $(function() {
 		}
 		wardrobe.doors[auxitem].material=strout_div;		
 		pintapuertas();
-		Close_popup();	
+		popup.closePopup();	
 	});
 		$(".item3 img").live("click", function() {
 		
@@ -123,7 +123,7 @@ $(function() {
 		
 		pintapuertas();
 		acabado_perfil();
-		Close_popup();	
+		popup.closePopup();	
 	});
 		$(".item4 img").live("click", function() {		
 		var ref = $(this).attr('ref');
@@ -131,7 +131,7 @@ $(function() {
 		$('#mat_marc').html(''); 
 		pintapuertas();
 		cambio_marco();
-		Close_popup();	
+		popup.closePopup();	
 	});
 		$(".item5 img").live("click", function() {		
 		var ref = $(this).attr('ref');
@@ -139,7 +139,7 @@ $(function() {
 		//$('#mat_marc').html(''); 
 		//pintapuertas();
 		cambio_tirador();
-		Close_popup();	
+		popup.closePopup();	
 	});
 		$(".accint img").live("click", function() {		
 		var ref = parseInt($(this).attr('ref'));
@@ -150,7 +150,7 @@ $(function() {
               wardrobe.accint.push(ref);
             }
         AgregarAccInt();
-		Close_popup();	
+		popup.closePopup();	
 	});
 
 });

@@ -1,23 +1,6 @@
 
 
-// this function puts the dark screen over the entire page
-function Open_popup()
-{
-	$('#popup').fadeIn('slow');
-    var page_screen = document.getElementById('page_screen');
-    page_screen.style.height = document.body.parentNode.scrollHeight + 'px';
-    page_screen.style.display = 'block';
-}
 
-function Close_popup()
-{
-
-	$('#popup').fadeOut('fast');
-    var page_screen = document.getElementById('page_screen');
-    page_screen.style.display = 'none';
-
-
-}
 
 /*************************************/
 function countRepeated(array){
@@ -202,7 +185,49 @@ function cambia_puerta(a){
 
 
 //###################################################################### POPUP
-function pop_up(psel,aux) {
+popup = {
+	name: '',
+	response: {},
+	data: {},		// Form data
+	initialize: function(object){
+		this.name = object.name;
+		this.data = object.data;
+		$(this).bind('sync', function(){
+			this.show();
+		});
+	},
+	fetch: function(object){
+		this.initialize(object);
+		$.ajax({
+       		type: 'GET',  
+            url: 'API/popup/' + this.name,
+            data: this.data,
+            success: function(data) {  
+                popup.response = data;
+                $(popup).trigger('sync');
+            }  
+        });
+	},
+	show: function(){
+		this.openPopup();
+		$('#popup').html(this.response);  
+	},
+
+	openPopup: function(){
+		$('#popup').fadeIn('slow');
+    	var page_screen = document.getElementById('page_screen');
+    	page_screen.style.height = document.body.parentNode.scrollHeight + 'px';
+    	page_screen.style.display = 'block';
+	},
+	closePopup: function(){
+		$('#popup').fadeOut('fast');
+    	var page_screen = document.getElementById('page_screen');
+    	page_screen.style.display = 'none';
+	},
+};
+
+
+/*function pop_up(psel,aux) {
 
 if(psel=='psel'){
       $.ajax({
@@ -323,7 +348,7 @@ if(psel=='psel'){
 	Open_popup();
 }
 
-};
+};*/
 //###########################################
 function pdiv_cambio(divs) {
 	wardrobe.doors[pselect].div=divs;

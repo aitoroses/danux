@@ -32,6 +32,8 @@
 
 	<!-- CUSTOM SCRIPTS -->
 	{{ HTML::script('semiems/js/init.js') }}
+	{{ HTML::script('semiems/js/tabs/default.js') }}
+
 
 
 </head>
@@ -107,6 +109,22 @@
 	</ul>
 
 <section id="content" style="opacity: 0;">@yield('tab')</section>
+</div>
+<!-- WARDROBE MENU -->
+<div id="wardrobemenu">
+	<h1>Tus armarios</h1>
+	<ul>
+		<?php
+			if(isset($wardrobes)){
+				foreach($wardrobes as $ele){
+					echo "<li><a href=".$ele->id.".>".$ele->name."</a></li>";
+				}
+			} else {
+				echo "No hay armarios";
+			}
+		?>
+		
+	</ul>
 </div>
 </body>
 <script type="text/javascript">

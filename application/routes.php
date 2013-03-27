@@ -34,6 +34,7 @@
 
 Route::get('/', array('uses' => 'home@index'));
 Route::get('/(:any)', array('uses' => 'home@tab', 'before' => 'auth'));
+Route::post('/session/(:any)', array('uses' => 'home@session'));
 
 // API Routes
 	// Budget
@@ -42,16 +43,23 @@ Route::post('API/budget', array('uses' => 'api@budget'));
 Route::get('API/budget/(:any)/wardrobe', array('uses' => 'api@wardrobe'));
 Route::put('API/budget/(:any)/wardrobe', array('uses' => 'api@wardrobe'));
 Route::get('API/json/(:any)', array('uses' => 'api@json'));
+Route::put('API/json/(:any)', array('uses' => 'api@json'));
+
 	// Flexigrid
 Route::post('API/flexigrid', array('uses' => 'api@flexigrid'));
 Route::delete('API/flexigrid', array('uses' => 'api@flexigrid'));
+	//Popup
+Route::get('API/popup/(:any)', array('uses' => 'api_popup@popup', 'before' => 'auth'));
+
+
 // User login
 Route::get('/register', array('uses' => 'user@register'));
 Route::post('/login', array('as'=>'login', 'uses' => 'user@login','before'=>'csrf'));
 Route::get('/logout', array('uses' => 'user@logout', 'before' => 'auth'));
 Route::get('/check', array('uses' => 'user@check'));
 
-
+// Content routes
+Route::get('/content/module/(:any)', array('uses' => 'content@module'));
 
 
 /*

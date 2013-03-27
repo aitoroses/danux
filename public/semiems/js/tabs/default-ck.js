@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#wardrobemenu a").click(function(e){e.preventDefault();var t=$(this).attr("href");$.ajax({type:"POST",url:"session/"+t,success:function(e){location.href!=="2"?location.href="2":location.href.reload(!0)},error:function(){alert("Hubo un error al cargar el identificador")}})})});

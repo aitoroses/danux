@@ -11,7 +11,11 @@ $(document).ready(function(){
 
 
 	$('a.next-tab').on('click',function(e){
-		
+		e.preventDefault();
+		WardrobeModel.save();
+		$(document).bind('next', function(){
+			location.href = "3";
+		})
 
 
 	});

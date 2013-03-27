@@ -310,7 +310,11 @@ for (z=0;z<dbl;z++){
               var aux=shape.getName();
               moduleselect=aux;
               anchuratemp=shape.attrs.width;
-              pop_up('modules');
+
+              // Popup
+              
+              popup.fetch({name: "modules"});
+
 		          // get the shape that was clicked on
 		          /*		          
 		          if(modulos_aux=='sel'){
@@ -384,7 +388,7 @@ for (z=0;z<dbl;z++){
 		  var id = wardrobe.modules[i].ref1;     
 		  var srcc = $.ajax({
            		type: "GET",
-                url: "php/getRefMod.php?id="+id,
+                url: "content/module/"+id,
 
                 async: false,
                 success: function(data){

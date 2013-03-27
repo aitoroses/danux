@@ -40,5 +40,8 @@
     $(document).ready(function(){
         $('#login').addClass('show')
     })
+    @if (Session::has('log_error'))
+        $('#login').addClass('shake');
+    @endif
 </script>
 </html>
