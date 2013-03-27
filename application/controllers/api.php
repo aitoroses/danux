@@ -69,12 +69,22 @@ class Api_Controller extends Base_Controller {
 		$wardrobe = Wardrobe::find($id);
 		$modules = $wardrobe->modules()->get();
 		$doors = $wardrobe->doors()->get();
-		$accint = $wardrobe->accints()->get();
 		$accext = $wardrobe->accexts()->get();
 		// Arrays
 		// modules
 		$modules_array = array_map(function($object){
-			return $object->to_array();
+			$object_array = $object->to_array();
+			//Accesorios
+
+			$accints = $object->accints()->get();
+			// Obtenemos los identificadores
+			$accints_ids = array_map(function($accint){
+				return $accint->id;
+			}, $accints);
+			// Meterlos en el Arrayyyy
+			$object_array["accint"] = $accints;
+
+			return $object_array;
 		}, $modules);
 		
 		$doors_array = array_map(function($object){
@@ -103,7 +113,6 @@ class Api_Controller extends Base_Controller {
 			'data' => $wardrobe->to_array(),
 			'modules' => $modules_array,
 			'doors' => $doors_array,
-			'accint' => [],
 			'accext' => [],
 
 
