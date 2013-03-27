@@ -86,7 +86,11 @@ class Api_Controller extends Base_Controller {
 			}, $materials);
 
 			$result = $object->to_array();
-			$result["material"] = $materials_ids;
+			if(empty($materials_ids)){
+				$result["material"]=array(0 => "");
+			} else {
+				$result["material"] = $materials_ids;
+			}
 			
 			return $result;
 		}, $doors);
@@ -112,6 +116,30 @@ class Api_Controller extends Base_Controller {
 		return Response::json($json);
 
 
+	}
+	public function put_json($id){
+		$wardrobe = Wardrobe::find($id);
+		// UPDATE DATA
+		Wardrobe::update($id, Input::get('wardrobe')["data"]);
+		// UPDATE MODULES
+		array_map(function($module){
+			Module::update($module["id"], $module);
+		}, Input::get('wardrobe')["modules"]);
+		// UPDATE DOORS
+		array_map(function($door){
+			$materials = $door["material"];
+			unset($door["material"]);
+
+			Door::update($door["id"], $door);
+			// Doors Materials
+			if($materials[0] != "") {		// IF its not Empty
+
+				$door_model = Door::find($door["id"])->first();
+				$door_model->materials()->sync($materials);
+			}
+		}, Input::get('wardrobe')["doors"]);
+		// UPDATE ACCINT
+		// UPDATE ACCEXT
 	}
 
 	// FLEXIGRID

@@ -77,8 +77,8 @@ WardrobeModel = new Object({
 			//Creamos las puertas
 	 		for(x=0;x<npuertas;x++){	
 	 			this.wardrobe.doors.push({ 
-	 									"type":"1",
-	 									"material":{
+	 									type:"1",
+	 									material:{
 	 										0:0
 	 									}
 	 								}); 
@@ -137,6 +137,23 @@ WardrobeModel = new Object({
                 //loadacc();
             }
         });
+	},
+	save: function(){
+		id = $('body').data('wardrobe');
+		
+		$.ajax({
+	        type: "PUT",
+            url: "API/json/" + id,
+            dataType: "json",
+            data:   {wardrobe: WardrobeModel.getWardrobe()},
+            success: function(response){
+            	alert('Se ha actualizado el armario');
+            	$(document).trigger('next');
+            },
+            error: function(){
+            	alert('Error: No se ha sincronizado el armario');
+            }
+        });  
 	},
 	fetch: function (){
 		id = $('body').data('wardrobe');

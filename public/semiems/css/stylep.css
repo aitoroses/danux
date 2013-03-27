@@ -228,7 +228,7 @@ overflow: hidden;
 width: 682px;
 }
 #mods_sel a {
-background: url(img/icono2.png) no-repeat scroll 14px 11px #E55E48;
+background: url(../img/icono2.png) no-repeat scroll 14px 11px #E55E48;
 border-radius: 16px;
 -webkit-border-radius: 16px;
 -moz-border-radius: 16px;
@@ -254,12 +254,12 @@ width: 201px;
 }
 
 #mods_sel a + span + a {
-background: url(img/icono.png) no-repeat scroll 261px 13px #5faae3;
+background: url(../img/icono.png) no-repeat scroll 261px 13px #5faae3;
 padding: 0 94px 0 42px;
 }
 
 #mods_sel a + span {
-background: url(img/o.png) no-repeat 0px 18px;
+background: url(../img/o.png) no-repeat 0px 18px;
 display: block;
 float: left;
 height: 68px;
