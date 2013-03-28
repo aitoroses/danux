@@ -1,6 +1,9 @@
+function pdiv_cambio(divs) {
+	wardrobe.doors[pselect].div=divs;
+	pintapuertas();
+    Close_popup();
 
-
-
+};
 
 /*************************************/
 function countRepeated(array){
@@ -124,12 +127,6 @@ document.getElementById("accext").innerHTML="";
 }  
 
 //#########################Funciones Auxiliares Cambio entre Seleccion material y tipos
-function cambia(sel){
-	modulos_aux=sel;
-};
-function cambiap(sel){
-	puertas_aux=sel;
-};
 
 function cambia_puerta(a){
 
@@ -350,26 +347,6 @@ if(psel=='psel'){
 
 };*/
 //###########################################
-function pdiv_cambio(divs) {
-	wardrobe.doors[pselect].div=divs;
-	pintapuertas();
-    Close_popup();
 
-};
 
-function idiv_cambio(tmod,dist) {
-	moduleselect_temp=moduleselect.substring(1,2);
-	wardrobe.modules[moduleselect_temp].double=tmod;
-	wardrobe.modules[moduleselect_temp].ddouble=dist;
-	pintamodulos();
-    Close_popup();
-
-};
-
-function imat_cambio(ref) {
-	wardrobe.modules[moduleselect]
-	pintamodulos();
-    Close_popup();
-
-};
 

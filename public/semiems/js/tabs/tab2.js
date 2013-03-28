@@ -28,3 +28,13 @@ $(document).ready(function(){
 });
 
 //Funciones AUXILIARES
+
+// Cambio a modulo doble
+function cambia_modulo_doble(tmod,dist) {
+	moduleselect_temp=moduleselect.substring(1,2);
+	wardrobe.modules[moduleselect_temp].double=tmod;
+	wardrobe.modules[moduleselect_temp].ddouble=dist;
+	pintamodulos();
+    popup.closePopup();
+
+};

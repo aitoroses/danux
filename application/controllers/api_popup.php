@@ -11,13 +11,15 @@ Class Api_Popup_Controller extends Base_Controller {
         		return View::make('popup.modulos_opciones');
         		break;
     		case "seleccioninterior":
-
                 // Query de modulos
                 $modules = DB::table('b_modules')->get();
                 $list = array_map(function($module){
                     return "<li><a href='#'><div class='item'><img src=semiems/".$module->image."/".$module->id.".png ref=".$module->id." /> <div class='title'>Ref.".$module->id."</div></div></a></li>";
                 }, $modules);
         		return View::make('popup.seleccion_interior')->with('list', $list);
+            case "divisioninterior":
+                return View::make('popup.divisioninterior');
+                break;
         	default:
         		break;
     	}

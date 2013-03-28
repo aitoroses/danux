@@ -419,7 +419,7 @@ for (z=0;z<dbl;z++){
 		  var id = wardrobe.modules[i].ref2;     
 		  var srcc = $.ajax({
            		type: "GET",
-                url: "php/getRefMod.php?id="+id,
+                url: "content/module/"+id,
 
                 async: false,
                 success: function(data){
