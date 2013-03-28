@@ -27,11 +27,6 @@ class Wardrobe extends Eloquent
         return $this->has_many('door');
     }
 
-    public function accints()
-    {
-        return $this->has_many('accint');
-    }
-
     public function accexts()
     {
         return $this->has_many('accext');

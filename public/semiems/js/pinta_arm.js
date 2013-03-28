@@ -442,78 +442,28 @@ for (z=0;z<dbl;z++){
 };
 
 //###################################################################  PINTA MODULOS NUEVA	  
-//###################################################################  PINTA MARCO NUEVA    
 function pintamarco(){
-  layerm=new Kinetic.Layer();
+layerm=new Kinetic.Layer();
 
-  anchop= wardrobe.data.width*(666.8/4167);
-  altop=wardrobe.data.height*(300/2500);
+ancho= wardrobe.data.width*(666.8/4167);
+alto=wardrobe.data.height*(300/2500);
 
-  var fond = new Kinetic.Rect({
-    x: 5,
-    y: 5,
-    width: anchop-10,
-    height: altop-10,
-    stroke: 'black',
-    fill: 'white',
-    strokeWidth:0
-  });
+(function() { //Intocable
+	        var marc = new Kinetic.Rect({
+              x: 0,
+            	y: 0,
+            	width: ancho,
+            	height: alto,
+            	stroke: 'brown',
+            	fill: 'transparent',
+            	strokeWidth:5,				
+        	});
+	
+	        layerm.add(marc);
+			})();		
 
-  if (wardrobe.data.marco != 0){
-    var imageObj33 = new Image();
-    imageObj33.onload = function() {
-    var marc = new Kinetic.Image({
-        x: 0,
-        y: 0,
-        image: imageObj33,
-        width: anchop,
-        height: altop,
-        name:'image2'
-      });
-
-    layerm.add(marc);
-    layerm.add(fond);
-    stagep.add(layerm);
-    stagep.draw();
-    layerm.draw();
-    layerm.moveToBottom();
-
-    }
-    var id = wardrobe.data.marco;     
-    var srcc = $.ajax({
-      type: "POST",
-      url: "php/getMatDoor_pintar.php",
-      data: {
-        "id" : id
-      }, 
-      async: false,
-      success: function(data){
-        imageObj33.src = data;
-      }
-    });
-  }    
+		stagep.add(layerm);
+		stagep.draw();
+		layerm.draw();
 };
-
-//###################################################################  PINTA MODULOS ACC  
-function pintamodulos_acc(){
-  layer_acc=layer
-  layeri_acc=layeri
-  //Borra el container
-  document.getElementById("container_acc_int").innerHTML="";
-  var nmod = wardrobe.modules.length;
-  ancho= wardrobe.data.width*(666.8/4167);
-  alto=wardrobe.data.height*(300/2500);
-    stage_acc = new Kinetic.Stage({
-            container: 'container_acc_int',
-            width: ancho,
-            height: alto
-          });
-  ancho=ancho-10;
-  alto=alto-10;
-  stage_acc.clear;
-
-  stage_acc.add(layeri_acc);
-  stage_acc.add(layer_acc);
-
-  stage_acc.draw();     
-};
+	
