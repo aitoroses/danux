@@ -1,14 +1,13 @@
 //Documente ready
 $(document).ready(function(){
-	var tab = 3;
 	// Obtener el objeto
 	$(document).bind('sync',function(){
 		pintamodulos();
-		pintamodulos_acc();
 	});
 	$(document).bind('error',function(){
 		$('#containeri').html('No se ha cargado el armario');
 	});
+	
 	WardrobeModel.fetch();
 
 
