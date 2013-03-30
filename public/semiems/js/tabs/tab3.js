@@ -7,7 +7,7 @@ $(document).ready(function(){
 	$(document).bind('error',function(){
 		$('#containeri').html('No se ha cargado el armario');
 	});
-	
+
 	WardrobeModel.fetch();
 
 
@@ -29,7 +29,7 @@ $(document).ready(function(){
 });
 
 //Funciones AUXILIARES
-var delRow = function (indice){
+var delRow = function (indice){ // Borra el accesorio en el Pop Up
 // Funcion que destruye el elemento actual una vez echo el click
 $("#rut" + indice).remove ();
 
