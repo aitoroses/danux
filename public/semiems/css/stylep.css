@@ -105,13 +105,13 @@ nav li {
   padding: 6px 5px;
   margin: 0 0 5px 0;
   width: 238px;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  -moz-box-shadow: 0 1px 1px #cccccc inset;
-  -webkit-box-shadow: 0 1px 1px #cccccc inset;
-  box-shadow: 0 1px 1px #cccccc inset; }
+  -moz-box-shadow: 0 1px 1px #ccc inset;
+  -webkit-box-shadow: 0 1px 1px #ccc inset;
+  box-shadow: 0 1px 1px #ccc inset; }
 
 /* line 120, ../sass/css/_style.scss */
 #inputs input:focus {
@@ -231,7 +231,7 @@ header {
   color: #fff;
   display: inline-block;
   float: left;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   font-weight: 400;
   height: 91px;
@@ -270,7 +270,7 @@ header {
 
 /* line 273, ../sass/css/_style.scss */
 #title_popup {
-  font-family: "Open Sans Semibold", sans-serif;
+  font-family: 'Open Sans Semibold' ,sans-serif;
   font-size: 26px;
   margin: auto;
   text-align: center;
@@ -343,7 +343,7 @@ header {
 
 /* line 342, ../sass/css/_style.scss */
 .text-form {
-  font-family: "Open Sans Semibold", sans-serif;
+  font-family: 'Open Sans Semibold' ,sans-serif;
   font-size: 14px;
   text-align: center;
   padding-top: 20px; }
@@ -353,12 +353,12 @@ header {
   float: left;
   position: absolute;
   background-color: #fff;
-  width: 200px;
+  width: 300px;
   height: 300px;
   top: 100px;
   border-radius: 10px;
   padding: 20px;
-  left: -430px;
+  left: -530px;
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333;
@@ -381,8 +381,42 @@ header {
     border-bottom: none; }
   /* line 34, ../sass/_menu.scss */
   #wardrobemenu li a {
+    display: inline-block;
     text-decoration: none; }
-/* line 38, ../sass/_menu.scss */
+  /* line 41, ../sass/_menu.scss */
+  #wardrobemenu li .delete {
+    position: relative;
+    float: right;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: url("../img/menu-delete.png") no-repeat;
+    background-size: 30px;
+    -webkit-transition: background-size 0.2s ease;
+    -moz-transition: background-size 0.2s ease;
+    -o-transition: background-size 0.2s ease;
+    transition: background-size 0.2s ease; }
+    /* line 50, ../sass/_menu.scss */
+    #wardrobemenu li .delete:hover {
+      background-size: 35px; }
+  /* line 54, ../sass/_menu.scss */
+  #wardrobemenu li .edit {
+    position: relative;
+    float: right;
+    margin: 0 10px;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: url("../img/menu-edit.png") no-repeat;
+    background-size: 30px;
+    -webkit-transition: background-size 0.2s ease;
+    -moz-transition: background-size 0.2s ease;
+    -o-transition: background-size 0.2s ease;
+    transition: background-size 0.2s ease; }
+    /* line 64, ../sass/_menu.scss */
+    #wardrobemenu li .edit:hover {
+      background-size: 35px; }
+/* line 69, ../sass/_menu.scss */
 #wardrobemenu:hover {
   position: absolute;
   left: -213px;
