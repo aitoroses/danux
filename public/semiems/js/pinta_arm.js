@@ -312,8 +312,13 @@ for (z=0;z<dbl;z++){
               anchuratemp=shape.attrs.width;
 
               // Popup
+              if(tab==3){
+                popup.fetch({name: ""});
+              }else{
+                popup.fetch({name: "modules"});
+              }
+
               
-              popup.fetch({name: "modules"});
 
 		          // get the shape that was clicked on
 		          /*		          
@@ -441,29 +446,288 @@ for (z=0;z<dbl;z++){
 }          
 };
 
-//###################################################################  PINTA MODULOS NUEVA	  
+//###################################################################  PINTA MARCO 
 function pintamarco(){
 layerm=new Kinetic.Layer();
 
+anchop= wardrobe.data.width*(666.8/4167);
+altop=wardrobe.data.height*(300/2500);
+
+var fond = new Kinetic.Rect({
+  x: 5,
+  y: 5,
+  width: anchop-10,
+  height: altop-10,
+  stroke: 'black',
+  fill: 'white',
+  strokeWidth:0
+});
+
+if (wardrobe.data.marco != 0){
+  var imageObj33 = new Image();
+  imageObj33.onload = function() {
+  var marc = new Kinetic.Image({
+      x: 0,
+      y: 0,
+      image: imageObj33,
+      width: anchop,
+      height: altop,
+      name:'image2'
+    });
+
+  layerm.add(marc);
+  layerm.add(fond);
+  stagep.add(layerm);
+  stagep.draw();
+  layerm.draw();
+  layerm.moveToBottom();
+
+  }
+  var id = wardrobe.data.marco;     
+  var srcc = $.ajax({
+    type: "POST",
+    url: "php/getMatDoor_pintar.php",
+    data: {
+      "id" : id
+    }, 
+    async: false,
+    success: function(data){
+      imageObj33.src = data;
+    }
+  });
+}
+
+
+
+         
+};
+
+//###################################################################  PINTA MODULOS ACC  
+function pintamodulos_acc(){
+layer_acc=layer
+layeri_acc=layeri
+
+document.getElementById("container_acc_int").innerHTML="";
+  
+var nmod = wardrobe.modules.length;
+
 ancho= wardrobe.data.width*(666.8/4167);
 alto=wardrobe.data.height*(300/2500);
+  stage_acc = new Kinetic.Stage({
+          container: 'container_acc_int',
+          width: ancho,
+          height: alto
+        });
+ancho=ancho-10;
+alto=alto-10;
+stage_acc.clear;
 
-(function() { //Intocable
-	        var marc = new Kinetic.Rect({
-              x: 0,
-            	y: 0,
-            	width: ancho,
-            	height: alto,
-            	stroke: 'brown',
-            	fill: 'transparent',
-            	strokeWidth:5,				
-        	});
-	
-	        layerm.add(marc);
-			})();		
+stage_acc.add(layeri_acc);
+stage_acc.add(layer_acc);
 
-		stagep.add(layerm);
-		stagep.draw();
-		layerm.draw();
-};
-	
+stage_acc.draw();
+ /*   
+
+//Dibujamos el interior   
+for(x=0;x<nmod;x++){
+
+var xcont=5;
+for(zz=0;zz<x;zz++){
+xcont = xcont + wardrobe.modules[zz].width*(ancho/wardrobe.data.width);   
+}
+
+    
+          (function() { //Intocable
+            var i = x;
+            
+          var mod = new Kinetic.Rect({
+              x: xcont,
+              y: 5,
+              width: wardrobe.modules[i].width*(ancho/wardrobe.data.width),
+              height: alto*anchoaltillo,
+              stroke: 'black',
+              fill: 'white',
+              strokeWidth:3,        
+              name: 'm'+i+'d'+0
+          });
+  
+          layer.add(mod);
+      })();
+
+    pintamoduloNormal(x,parseInt(wardrobe.modules[x].double),xcont);
+}   
+    stage_acc.add(layeri);
+    stage_acc.add(layer);
+    stage_acc.draw();
+    layeri.draw();
+    layer.draw();
+
+    var shapes = stage_acc.get('.image');
+        // apply transition to all nodes in the array
+        shapes.apply('moveToBottom', {});
+
+  };
+  
+//
+// x= Modulo; y=Si es doble; z=Distacia a la que empieza el modulo;
+//  
+function pintamoduloNormal_acc(x,y,z){
+
+
+var xcontaux=z;
+
+var ix1=0;
+var ix2=0;
+var iy1=0;
+var iy2=0;
+
+
+if (y==1){ 
+  var yaux = wardrobe.modules[x].ddouble*(ancho/wardrobe.data.width);
+  var dbl=2; 
+}else{
+  var yaux = wardrobe.modules[x].width*(ancho/wardrobe.data.width); 
+  var dbl=1;
+}
+
+for (z=0;z<dbl;z++){  
+
+  (function() {
+            var i = x;
+            var j = z+1;
+            
+          var mod = new Kinetic.Rect({
+                x: xcontaux,
+              y: 5+(alto*anchoaltillo),
+              width: yaux,
+              height: alto-(alto*anchoaltillo),
+              stroke: 'black',
+              fill: 'transparent',
+              strokeWidth:3,        
+              name: 'm'+i+'d'+j
+          });    
+                              
+    
+          mod.on('click', function(evt) {
+
+              var shape = evt.shape;
+              var aux=shape.getName();
+              moduleselect=aux;
+              anchuratemp=shape.attrs.width;
+              if(tab==3){
+                pop_up('acc_int_modulo')
+              }else{
+                pop_up('modules');
+              }
+              
+
+        });
+        mod.on('mouseout', function(evt) {
+          var shape = evt.shape;
+            var stroke = this.getStroke();
+            switch (stroke){
+              case "black":
+              this.setStroke('orange')
+              break;
+              case "orange":
+              this.setStroke('black')
+              break;
+              
+              
+              }
+        this.moveToTop();
+            stage_acc.draw();
+          });
+          mod.on('mouseover', function(evt) {
+          var shape = evt.shape;
+            var stroke = this.getStroke();
+            switch (stroke){
+              case "black":
+              this.setStroke('orange')
+              break;
+              case "orange":
+              this.setStroke('black')
+              break;
+              
+              
+              }
+            this.moveToTop();
+            stage_acc.draw();
+          });
+          layer.add(mod);
+          
+       //################################################ Si referencias   
+    if (z==0 && parseInt(wardrobe.modules[i].ref1)!=0){ //ref1
+            ix1=xcontaux;
+            iy1=yaux;
+            var imageObj = new Image();
+            imageObj.onload = function() {
+            var arm = new Kinetic.Image({
+                x: ix1,
+                y: 5+(alto*anchoaltillo),
+                image: imageObj,
+                width: iy1,
+                height: alto-(alto*anchoaltillo),
+                name:'image'
+              });
+
+                 
+        layeri.add(arm);
+        layeri.draw();
+
+            }
+      var id = wardrobe.modules[i].ref1;     
+      var srcc = $.ajax({
+              type: "GET",
+                url: "php/getRefMod.php?id="+id,
+
+                async: false,
+                success: function(data){
+                      imageObj.src = data;
+                    }
+              });
+
+      
+
+        }else if (z==1 && parseInt(wardrobe.modules[i].ref2)!=0){   //ref2
+            ix2=xcontaux;
+            iy2=yaux;
+            var imageObj2 = new Image();
+            imageObj2.onload = function() {
+            var arm2 = new Kinetic.Image({
+                x: ix2,
+                y: 5+(alto*anchoaltillo),
+                image: imageObj2,
+                width: iy2,
+                height: alto-(alto*anchoaltillo),
+                name:'image2'
+              });
+
+        layeri.add(arm2);
+        layeri.draw();
+
+          }
+      var id = wardrobe.modules[i].ref2;     
+      var srcc = $.ajax({
+              type: "GET",
+                url: "php/getRefMod.php?id="+id,
+
+                async: false,
+                success: function(data){
+                      imageObj2.src = data;
+                    }
+              });
+
+      
+          
+        }
+          
+    if (y==1){ 
+      yaux = (wardrobe.modules[i].width-wardrobe.modules[i].ddouble)*(ancho/wardrobe.data.width);
+      xcontaux= xcontaux + ((wardrobe.modules[i].ddouble)*(ancho/wardrobe.data.width));
+    } 
+          
+        //······ Adios funcion anonima  
+          })();
+}  */        
+};	
