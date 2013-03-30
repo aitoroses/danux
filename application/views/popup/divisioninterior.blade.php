@@ -6,14 +6,19 @@
     <p id="title_popup">Opciones de modulo doble</p>
     <form id="frmDmod" name="frmDmod" class='text-form'> 
     Tipo de Modulo:
-    <select name="inumero_div"> 
+    <select class="select" name="inumero_div"> 
     	<option value=0>Simple</option>
     	<option value=1>Doble</option>
     </select>
     <br/>
     <br/>
-    Si es doble especifica la distancia mas corta:
-    <input name="distancia_doble" class='form-field' type=text></input>
+    <div class="optional" style="display:none;">
+        Especifica la distancia mas corta:
+        <input name="distancia_doble" class='form-field' type=text></input>
+    </div>
     <input value="Guardar" class='submit-button' onClick="cambia_modulo_doble(document.frmDmod.inumero_div.value,document.frmDmod.distancia_doble.value)"/>
-    </form>       
+    </form>
+    <script type="text/javascript">
+        optionalMenu();
+    </script>
 </div>
