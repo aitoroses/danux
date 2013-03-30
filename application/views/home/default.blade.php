@@ -31,6 +31,7 @@
 	{{ HTML::script('semiems/js/pinta_arm.js') }}
 
 	<!-- CUSTOM SCRIPTS -->
+	{{ HTML::script('semiems/js/helper.js') }}
 	{{ HTML::script('semiems/js/init.js') }}
 	{{ HTML::script('semiems/js/tabs/default.js') }}
 
