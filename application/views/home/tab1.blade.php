@@ -20,7 +20,7 @@
 	<label> Tipo de puertas</label>
 	{{ Form::select('puerta', array('3' => '', '2' => 'Armario sin puertas', '1' => 'Batientes', '0' => 'Correderas' ), Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)")) }}
 
-	<label>Numero de puertas: </label>
+	<label>Numero de <span id="type">puertas</span>: </label>
 	<select name="npuertas" onChange="puertas_impares_bat()">
 	</select>
 	<p></p>

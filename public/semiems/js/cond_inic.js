@@ -6,15 +6,18 @@
      eval(oCntrl.options[iPos]=selOpcion); 
    } 
  
-   function calculo_puertas(oCntrl){    
+   function calculo_puertas(oCntrl){ 
+
     while (oCntrl.length) oCntrl.remove(0); 
     switch (document.frm.puerta.selectedIndex){ 
      case 0:
+     	$('#type').text('puertas');
 	 	break;
 	 case 1:
+	 	$('#type').text('modulos');
 	 	break;  
      case 2:
-	 
+	 	$('#type').text('puertas');
 	 if (document.frm.mancho.value < 300)
 	 {
 		 addOpt(oCntrl,  0, "Imposible", 0);
@@ -41,7 +44,8 @@
       puertas_impares_bat()
 	  break; 
      case 3: 
-	 
+	 $('#type').text('puertas');
+
 	  if (document.frm.mancho.value < 600)
 	 {
 		 addOpt(oCntrl,  0, "Imposible", 0);
