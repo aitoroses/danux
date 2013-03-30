@@ -34,22 +34,28 @@ class Api_Controller extends Base_Controller {
 			$budget->wardrobe()->insert($wardrobe);
 
 			// Modules Object
-			$modules_array = $object['modules'];
-			$module_objects = array_map(function($module_array){
-				return $model = new Module($module_array);
-			}, $modules_array);
-			foreach ($module_objects as $ele) {
-				$wardrobe->modules()->insert($ele);
+			if(isset($object["modules"]))
+			{
+				$modules_array = $object['modules'];
+				$module_objects = array_map(function($module_array){
+					return $model = new Module($module_array);
+				}, $modules_array);
+				foreach ($module_objects as $ele) {
+					$wardrobe->modules()->insert($ele);
+				}
 			}
 			// Doors object
-			$doors_array = $object['doors'];
-			$doors_objects = array_map(function($doors_array){
-				// Delete materials
-				unset($doors_array["material"]);
-				return $model = new Door($doors_array);
-			}, $doors_array);
-			foreach ($doors_objects as $ele) {
-				$wardrobe->doors()->insert($ele);
+			if(isset($object["modules"]))
+			{
+				$doors_array = $object['doors'];
+				$doors_objects = array_map(function($doors_array){
+					// Delete materials
+					unset($doors_array["material"]);
+					return $model = new Door($doors_array);
+				}, $doors_array);
+				foreach ($doors_objects as $ele) {
+					$wardrobe->doors()->insert($ele);
+				}
 			}
 			return "OK";
 		}

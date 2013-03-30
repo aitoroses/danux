@@ -38,3 +38,17 @@ function cambia_modulo_doble(tmod,dist) {
     popup.closePopup();
 
 };
+
+var optionalMenu = function(){
+	$('.select').change(function(){
+        if($(this).val() === '0')
+        {
+            $('.content-popup .optional').hide();
+        }
+        else
+        {
+            $('.content-popup .optional').show();
+        }
+    });
+};
+
