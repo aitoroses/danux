@@ -107,7 +107,7 @@
 
 		<li class="shadowtab"></li>
 	</ul>
-
+	
 <section id="content" style="opacity: 0;">@yield('tab')</section>
 </div>
 <!-- WARDROBE MENU -->
@@ -117,7 +117,7 @@
 		<?php
 			if(isset($wardrobes)){
 				foreach($wardrobes as $ele){
-					echo "<li><a href=".$ele->id.">".$ele->name."</a></li>";
+					echo "<li><a href=".$ele->id.">".$ele->name.'</a><div class="delete"></div><div class="edit"></div></li>'; 
 				}
 			} else {
 				echo "No hay armarios";
@@ -131,5 +131,12 @@
 	$(document).ready(function(){
 		$('#content').animate({opacity: 1}, 300);
 	});
+	$('.edit').click(function(){
+		alert('Has hecho click en editar')
+	});
+	$('.delete').click(function(){
+		alert('Has hecho click en borrar')
+	});
+
 </script>
 </html>
