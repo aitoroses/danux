@@ -5,7 +5,6 @@ Class Api_Popup_Controller extends Base_Controller {
 	public $restful = true;
 
 	public function get_popup($name){
-
 		switch ($name) {
     		case "modules":
         		return View::make('popup.modulos_opciones');
@@ -20,10 +19,15 @@ Class Api_Popup_Controller extends Base_Controller {
             case "divisioninterior":
                 return View::make('popup.divisioninterior');
                 break;
+            case "accesorios_modulo":
+                return View::make('popup.accesorios_modulo');
+                break;
+            case "agregar_accesorios_interior":
+                return View::make('popup.agregar_accesorios_interior');
+                break;
         	default:
         		break;
     	}
-
 	}
 }
 
