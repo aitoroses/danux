@@ -32,7 +32,7 @@ WardrobeModel = new Object({
 			
 			//Creamos los modulos
 			
-			if (document.frm.puerta.value==0){
+			if (document.frm.puerta.value==0 || document.frm.puerta.value==2){
 		    //Correderas
 				var npuertas = document.frm.npuertas.value;
 				var nmod = document.frm.npuertas.value;
