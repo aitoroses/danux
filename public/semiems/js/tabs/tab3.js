@@ -20,10 +20,21 @@ $(document).ready(function(){
 
 
 	});
-	$('a.prev-tab').on('click',function(e){
-		
+	$('a.prev-tab').on('click',function(e){	
 		
 
+	});
+
+	$(".accint img").live("click", function() {		
+		var ref = parseInt($(this).attr('ref'));
+		var auxitem=moduleselect.substring(1,2);
+		var idx = wardrobe.modules[auxitem].accint.indexOf(ref); // Find the index
+            if(idx!=-1) {
+            }else{
+              wardrobe.modules[auxitem].accint.push(ref);
+            }
+        Pintar_AccInt();
+		Close_popup();
 	});
 
 });
@@ -38,3 +49,47 @@ $("#rut" + indice).remove ();
               wardrobe.modules[moduleselect].accint.splice(idx, 1);
             }
  }
+
+var Pintar_AccInt = function(){
+
+
+
+}
+
+function AgregarAccInt(modselect){
+$("#accint").innerHTML=""
+$.each(wardrobe.modules[modselect].accint, function(i, accs){
+	$("#rut" + accs).remove ();
+      $.ajax({
+       		type: 'GET',  
+            url: 'php/getAccInt.php',
+			data: {
+    				"id" : parseInt(accs)
+  				},
+            success: function(data) {  
+                $("#accint").append(data)
+            }  
+        })	
+
+})
+}
+
+Tab3Controller = {
+	modselect: null,
+
+	initialize: function(){
+	},
+	pintarAccs: function(){
+		$.ajax({
+       		type: 'GET',  
+            url: '',
+            success: function(data) {  
+                $("#accints").append(data)
+            }  
+        })			
+	},
+	borrarAcc: function(){
+
+	}
+
+}
