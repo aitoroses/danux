@@ -23,7 +23,12 @@ Class Api_Popup_Controller extends Base_Controller {
                 return View::make('popup.accesorios_modulo');
                 break;
             case "agregar_accesorios_interior":
-                return View::make('popup.agregar_accesorios_interior');
+                // Query de accesorios
+                $accs = DB::table('b_acc')->get();
+                $list = array_map(function($acc){
+                    return "<li><a class='selectormat' href='#'><div class='accint mat'><img src=semiems/contenido/Bibliotecas/AccInt/Loija/".$acc->img." desc=".$acc->desc." ref=".$acc->id." /> <div class='title'>Ref.".$acc->ref."(".$acc->desc.")</div></div></a></li>";
+                }, $accs);
+                return View::make('popup.agregar_accesorios_interior')->with('list', $list);
                 break;
         	default:
         		break;
