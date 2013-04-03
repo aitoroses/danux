@@ -7,7 +7,7 @@ Class Api_Popup_Controller extends Base_Controller {
 	public function get_popup($name){
 		switch ($name) {
     		case "modules":
-        		return View::make('popup.modulos_opciones');
+        		return View::make('popup.modulos_opciones')->with('double', Session::get('double'));
         		break;
     		case "seleccioninterior":
                 // Query de modulos

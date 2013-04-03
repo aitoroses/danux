@@ -8,16 +8,14 @@
 	top: 100px;
 	border-radius: 10px;
 	padding: 20px;
-	left: -530px;
+	left: -300px;
 	@include single-box-shadow;
 	@include transition(all, ease-in-out, 0.3s);
 	border: solid 5px rgba(#000, 0.1);
 	text-align: center;
-	overflow: scroll;
+	overflow-y: scroll;
 	opacity:0.3;
-
-	
-	
+	z-index: 1000;
 
 
 }
@@ -68,7 +66,7 @@
 	}
 	&:hover {
 		position: absolute;
-		left: -213px;
+		left: -5px;
 		opacity:1;
 
 	}

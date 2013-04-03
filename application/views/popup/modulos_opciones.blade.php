@@ -10,9 +10,15 @@
 
             <span>ó</span>
    
-            <a href="#"  onclick="popup.fetch({name:'divisioninterior', data: anchuratemp})">
-                <div class='title' >Cambiar a modulo doble </div>
-            </a>
+            @if($double == 0)
+                <a href="#"  onclick="popup.fetch({name:'divisioninterior', data: anchuratemp})">
+                    <div class='title' >Cambiar a modulo doble </div>
+                </a>
+            @else
+                <a href="#"  onclick="cambiar_a_modulo_simple()">
+                    <div class='title'>Cambiar a modulo simple</div>
+                </a>
+            @endif
 
     </div>
 </div>

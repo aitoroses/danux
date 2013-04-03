@@ -31,7 +31,11 @@ class Api_Controller extends Base_Controller {
 			}
 			
 			$wardrobe = new Wardrobe($object['data']);
+
 			$budget->wardrobe()->insert($wardrobe);
+
+			// Save ID in session
+			Session::put('wardrobe_id', $wardrobe->id);
 
 			// Modules Object
 			if(isset($object["modules"]))
@@ -227,18 +231,7 @@ class Api_Controller extends Base_Controller {
 			'total'	=> $total
 		);
 		return Response::json($response);
-		/*
-		header("Expires: Mon, 26 Jul 1997 05:00:00 GMT" );
-		header("Last-Modified: " . gmdate( "D, d M Y H:i:s" ) . "GMT" );
-		header("Cache-Control: no-cache, must-revalidate" );
-		header("Pragma: no-cache" );
-		header("Content-type: text/x-json");
-		$json = "";
-		$json .= "{\n";
-		$json .= "query: '".$sql."',\n";
-		$json .= "total: '".$total."',\n";
-		$json .= "}\n";
-		return $json;*/
+		
 	}
 
 }
