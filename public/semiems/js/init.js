@@ -141,16 +141,5 @@ $(function() {
 		cambio_tirador();
 		popup.closePopup();	
 	});
-		$(".accint img").live("click", function() {		
-		var ref = parseInt($(this).attr('ref'));
-
-		var idx = wardrobe.accint.indexOf(ref); // Find the index
-            if(idx!=-1) {
-            }else{
-              wardrobe.accint.push(ref);
-            }
-        AgregarAccInt();
-		popup.closePopup();	
-	});
 
 });

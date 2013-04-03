@@ -58,26 +58,6 @@ function acabado_perfil(){
 
 }
 /**********************************************/
-function AgregarAccInt(){
-$("#accint").innerHTML=""
-$.each(wardrobe.accint, function(i, accs){
-	$("#rut" + accs).remove ();
-      $.ajax({
-       		type: 'GET',  
-            url: 'php/getAccInt.php',
-			data: {
-    				"id" : parseInt(accs)
-  				},
-            success: function(data) {  
-                $("#accint").append(data)
-            }  
-        })	
-
-})
-
-
-
-}
 
 function cambiaNumDoors(){
 
