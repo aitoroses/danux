@@ -1,12 +1,10 @@
 
 //Globales
-var client = {
-				  				"company":	"danibram",
-								"nif" :	"44614506a"
-			};
+var App = {};
+App.init = {
+	rap: "rapisamazing"
+};
 
-var wardrobe = 0;
-var nuevo=1;
 var puertas_aux="sel";
 var modulos_aux="div";	
 var pselect=0;
@@ -30,26 +28,24 @@ var alto="";
 var ancho="";
 var anchoaltillo=0.13;
 
+// Object Approach
+var App = {};
+
+App.Kinetic = {
+	stage: stage,
+	stagep: stagep,
+	layer: layer,
+	layeri: layeri,
+	layerp: layerp,
+	layerpi: layerpi,
+	layerm: layerm,
+	alto: "",
+	ancho:"",
+	anchialtillo: 0.13
+	
+};
 
 $(function() {
-//var $tabs = $('#tabs').tabs();	
-//$('#tabs').tabs({ event: '' }); //probably better
-  /*$('#tabs').bind('tabsshow', function(event, ui) {
-    window.location.hash = '#' + ui.panel.id;
-  });
-	$('.next-tab, .prev-tab').click(function() { 
-
-		if($(this).attr("rel")==4 && document.frm.puerta.value == 2){
-			$tabs.tabs('select', 5);
-		}else if($(this).attr("rel")==5 && document.frm.puerta.value == 2){
-			$tabs.tabs('select', 2);
-		}else{
-			$tabs.tabs('select', $(this).attr("rel"));
-		}
-		ini();
-		return false;
-	});*/
-
 
 	var lvl = $('#sel_parent');						//selector for the tab menu
 	lvl.find('a').live('click', function() {		

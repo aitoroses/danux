@@ -300,7 +300,7 @@ for (z=0;z<dbl;z++){
             	stroke: 'black',
             	fill: 'transparent',
             	strokeWidth:3,				
-          		name: 'm'+i+'d'+j
+          		name: 'm'+i+'d'+j,
         	});		 
         	                  	
 		
@@ -314,12 +314,19 @@ for (z=0;z<dbl;z++){
               // Popup
               
               var tab = getTab();
-
-              if(tab==3){
-                popup.fetch({name: "accesorios_modulo"});
-              }else{
-                popup.fetch({name: "modules"});
-              }
+              
+              double = WardrobeModel.wardrobe.modules[i].double;
+              $.ajax({
+                type: 'POST',
+                url: "API/session/double/" + double,
+                success: function() {
+                  if(tab==3){
+                  popup.fetch({name: "accesorios_modulo"});
+                  }else{
+                    popup.fetch({name: "modules"});
+                  }
+                }
+              });
 
               
 
