@@ -33,6 +33,7 @@ $(document).ready(function(){
             }else{
               wardrobe.modules[auxitem].accint.push(ref);
             }
+        
         Pintar_AccInt();
 		Close_popup();
 	});

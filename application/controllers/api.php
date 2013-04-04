@@ -96,7 +96,12 @@ class Api_Controller extends Base_Controller {
 				return $accint->id;
 			}, $accints);
 			// Meterlos en el Arrayyyy
-			$object_array["accint"] = $accints;
+			$object_array = $object->to_array();
+			if(empty($accints_ids)){
+				$object_array["accint"]=array(0 => "");
+			} else {
+				$object_array["accint"] = $materials_ids;
+			}
 
 			return $object_array;
 		}, $modules);
@@ -146,7 +151,17 @@ class Api_Controller extends Base_Controller {
 		Wardrobe::update($id, Input::get('wardrobe')["data"]);
 		// UPDATE MODULES
 		array_map(function($module){
+
+			$accs_int = $module["accint"];
+			unset($module["accint"]);
+
 			Module::update($module["id"], $module);
+			// ACC_INT
+			if($accs_int[0] != "") {		// IF its not Empty
+
+				$module_model = Module::find($module["id"])->first();
+				$module_model->accints()->sync($accs_int);
+			}
 		}, Input::get('wardrobe')["modules"]);
 		// UPDATE DOORS
 		array_map(function($door){
