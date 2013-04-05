@@ -26,7 +26,6 @@ WardrobeModel = new Object({
 				},
 			modules:[],
 			doors:[],
-			accint:[],
 			accext:[]
 			};
 			
@@ -38,12 +37,14 @@ WardrobeModel = new Object({
 				var nmod = document.frm.npuertas.value;
 				this.wardrobe.data.nmods=nmod;
 				for(x=0;x<nmod;x++){
-						this.wardrobe.modules.push({ double:"0",
-												ddouble:"0",
+						this.wardrobe.modules.push({ 
+												double:0,
+												ddouble:0,
 												width:document.frm.mancho.value/nmod,
 												height:document.frm.malto.value,
 												ref1:0,
-												ref2:0 
+												ref2:0,
+												accint:[]
 											});
 				}
 			}else if (document.frm.puerta.value==1){
@@ -66,12 +67,15 @@ WardrobeModel = new Object({
 						var anchoo_puerta = ancho_puerta_d;
 					}
 				}
-					this.wardrobe.modules.push({ "double":"0",
-											"ddouble":"0",
-											"width":anchoo_puerta,
-											"height":document.frm.malto.value,
-											"ref1":0,
-											"ref2":0 });
+					this.wardrobe.modules.push({ 
+											double:0,
+											ddouble:0,
+											width:anchoo_puerta,
+											height:document.frm.malto.value,
+											ref1:0,
+											ref2:0,
+											accint:[]
+										});
 				}
 			}
 			//Creamos las puertas
@@ -148,7 +152,7 @@ WardrobeModel = new Object({
             data:   {wardrobe: WardrobeModel.getWardrobe()},
             success: function(response){
             	alert('Se ha actualizado el armario');
-            	$(document).trigger('next');
+            	$(document).trigger('sync_save');
             },
             error: function(){
             	alert('Error: No se ha sincronizado el armario');

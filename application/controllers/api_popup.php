@@ -19,9 +19,9 @@ Class Api_Popup_Controller extends Base_Controller {
             case "divisioninterior":
                 return View::make('popup.divisioninterior');
                 break;
-            case "accesorios_modulo":
+            /*case "accesorios_modulo":
                 return View::make('popup.accesorios_modulo');
-                break;
+                break;*/
             case "agregar_accesorios_interior":
                 // Query de accesorios
                 $accs = DB::table('b_acc')->get();

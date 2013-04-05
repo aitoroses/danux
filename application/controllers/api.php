@@ -96,7 +96,9 @@ class Api_Controller extends Base_Controller {
 				return $accint->id;
 			}, $accints);
 			// Meterlos en el Arrayyyy
-			$object_array["accint"] = $accints;
+			$object_array = $object->to_array();
+			$object_array["accint"] = $accints_ids;
+
 
 			return $object_array;
 		}, $modules);
@@ -110,11 +112,8 @@ class Api_Controller extends Base_Controller {
 			}, $materials);
 
 			$result = $object->to_array();
-			if(empty($materials_ids)){
-				$result["material"]=array(0 => "");
-			} else {
-				$result["material"] = $materials_ids;
-			}
+			$result["material"] = $materials_ids;
+			
 			
 			return $result;
 		}, $doors);
@@ -146,20 +145,53 @@ class Api_Controller extends Base_Controller {
 		Wardrobe::update($id, Input::get('wardrobe')["data"]);
 		// UPDATE MODULES
 		array_map(function($module){
-			Module::update($module["id"], $module);
+			//if (Input::has($module["accint"])){
+			if(isset($module["accint"])){
+				// si existe el array 
+				$accs_int = $module["accint"];
+				//extraigo el array
+				unset($module["accint"]);
+				//actualizo modelo			
+				Module::update($module["id"], $module);
+				//Guardado de materiales
+				$module_model = Module::find($module["id"]); 
+				// Borro lo que hay por seguridad
+				// sino 'sync' hace cosas raras cuando guardas un ID que ya esta en la BD
+				// Asi funciona bien
+				$module_model->accints()->delete();
+				$module_model->accints()->sync($accs_int);
+			}else{
+				Module::update($module["id"], $module);
+				//si no estan definidos los accesorios los borro de la base de datos
+				// esto soluciona el problema de que quites todos los accesorios y guardes
+				// asi todo OK
+				$module_model = Module::find($module["id"]); 
+				$module_model->accints()->delete();
+			}
 		}, Input::get('wardrobe')["modules"]);
 		// UPDATE DOORS
 		array_map(function($door){
-			$materials = $door["material"];
-			unset($door["material"]);
-
-			Door::update($door["id"], $door);
-			// Doors Materials
-			if($materials[0] != "") {		// IF its not Empty
-
-				$door_model = Door::find($door["id"])->first();
+			if(isset($door["material"])){ 
+				//si existen los materiales
+				$materials = $door["material"];
+				//extraemos el array
+				unset($door["material"]); 
+				//Actualizamos el modelo
+				Door::update($door["id"], $door);
+				//guardamos los materiales
+				$door_model = Door::find($door["id"]);
+				//por seguridad borro lo que hay sino hay problemas
+				$door_model->materials()->delete();
 				$door_model->materials()->sync($materials);
+			}else{
+				Door::update($door["id"], $door);
+				//si no estan definidos los materiales los borro de la base de datos
+				// esto soluciona el problema de que quites todos los materiales y guardes
+				// asi todo OK
+				$door_model = Door::find($door["id"]);
+				$door_model->materials()->delete();
 			}
+
 		}, Input::get('wardrobe')["doors"]);
 		// UPDATE ACCINT
 		// UPDATE ACCEXT
