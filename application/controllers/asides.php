@@ -14,12 +14,8 @@ class Asides_Controller extends Base_Controller {
     		$modules = $wardrobe->modules()->get();
 			// Obtenemos los identificadores
 			$accesory_groups = array_map(function($module){
-				//$result = $module->to_array();
-
 				return $accints= $module->accints()->get();
-
 			}, $modules);
-//    		$modules = $wardrobe->modules->accints->get();
 			return View::make('asides.accesorios_interior')->with('accint', $accesory_groups);
 
         	break;

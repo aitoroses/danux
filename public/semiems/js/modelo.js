@@ -152,7 +152,7 @@ WardrobeModel = new Object({
             data:   {wardrobe: WardrobeModel.getWardrobe()},
             success: function(response){
             	alert('Se ha actualizado el armario');
-            	$(document).trigger('next');
+            	$(document).trigger('sync_save');
             },
             error: function(){
             	alert('Error: No se ha sincronizado el armario');
