@@ -321,7 +321,7 @@ for (z=0;z<dbl;z++){
                 url: "API/session/double/" + double,
                 success: function() {
                   if(tab==3){
-                  popup.fetch({name: "accesorios_modulo"});
+                  popup.fetch({name: "agregar_accesorios_interior"});
                   }else{
                     popup.fetch({name: "modules"});
                   }

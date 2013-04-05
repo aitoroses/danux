@@ -44,6 +44,8 @@ Route::post('/session/(:any)', array('uses' => 'home@session'));
 	Route::put('API/budget/(:any)/wardrobe', array('uses' => 'api@wardrobe'));
 	Route::get('API/json/(:any)', array('uses' => 'api@json'));
 	Route::put('API/json/(:any)', array('uses' => 'api@json'));
+	// ASIDES
+	Route::get('API/asides/(:any)', array('uses' => 'asides@aside'));
 
 	// Session Control Routes
 	Route::post('/API/session/(:any)/(:any)', array('uses' => 'session@set'));

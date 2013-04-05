@@ -1,7 +1,6 @@
 <div class="content-popup">
   <div class="close">
     <a href="#" id="close2" onClick="popup.closePopup();"><img src="semiems/img/close.png"/></a>
-    <a href="#" onClick="popup.fetch({name: 'accesorios_modulo'})"><img src="semiems/img/back.png"/></a>
   </div>
   
   <p id="title_popup">Seleccione el material del modulo/os seleccionado/os</p>
