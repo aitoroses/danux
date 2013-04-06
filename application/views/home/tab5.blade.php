@@ -1,8 +1,7 @@
 @layout('home.default')
 
 @section('tab')
-
-
+{{ HTML::script('semiems/js/tabs/tab5.js') }}
 
 <div id="paso-5" class="ui-tabs-panel">
 <h2>Configura las puertas</h2>
@@ -10,7 +9,7 @@
 <div id="sel2">
 
 <a class="submit-button" href="#" onClick="pop_up('psel');">Tipo de puertas</a>
-<a class="submit-button" href="#" onClick="pop_up('pdiv');">Materiales</a> 
+<a class="submit-button" href="#" onClick="popup.fetch({name: 'materialesPuerta'});">Materiales</a> 
 
 
 </div>

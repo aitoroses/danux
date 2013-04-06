@@ -100,27 +100,7 @@ $(function() {
 		pintapuertas();
 		popup.closePopup();	
 	});
-		$(".item3 img").live("click", function() {
-		
-		var ref = $(this).attr('ref');
-		$.each(materialselect, function(i, selection){
 
-			var auxitem=selection.substring(1,2);
-			var auxitem2=selection.substring(3,4);
-			wardrobe.doors[auxitem].material[auxitem2]=ref;
-
-		})
-		materialselect=[];
-		
-		/*var ref = $(this).attr('ref');
-		var auxitem=puertaselect.substring(1,2);
-		var auxitem2=puertaselect.substring(3,4);
-		wardrobe.doors[auxitem].material[auxitem2]=ref;*/
-		
-		pintapuertas();
-		acabado_perfil();
-		popup.closePopup();	
-	});
 		$(".item4 img").live("click", function() {		
 		var ref = $(this).attr('ref');
 		wardrobe.data.marco=parseInt(ref);

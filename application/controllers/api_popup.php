@@ -33,10 +33,7 @@ Class Api_Popup_Controller extends Base_Controller {
             case "handle":
                 // Query de accesorios
                 $handles = DB::table('b_handles')->get();
-                $list = array_map(function($handle){
-                    return "<li><a class='selectormat' href='#'><div class='item5 mat'><img src=semiems/contenido/Bibliotecas/tiradores/".$handle->img." ref=".$handle->id." /> <div class='title'>".$handle->tiradores." / Ref.".$handle->codigo."(".$handle->desc.") Tamaño: ".$handle->largura."mm </div></div></a></li>";
-                }, $handles);
-                return View::make('popup.cambiar_tirador')->with('list', $list);
+                return View::make('popup.cambiar_tirador')->with('handles', $handles);
                 break;
             case "perfil":
                 // Query de accesorios
@@ -45,10 +42,49 @@ Class Api_Popup_Controller extends Base_Controller {
                 $result = $wardrobe->typedoor;
                 return View::make('popup.cambiar_perfil')->with('perfil', $result);
                 break;
+            case "materialesPuerta":
+                // Query de accesorios
+                $id_wardrobe = Session::get('wardrobe_id');
+                $wardrobe = Wardrobe::find($id_wardrobe);
+                if($wardrobe->typedoor=="1"&&$wardrobe->tperfil==3){
+                    $result["all"] = 1;
+                }else{
+                    $result["all"] = 0;
+                }
+                return View::make('popup.materiales_puerta')->with('material', $result);
+                break;
             default:
+
         		break;
     	}
 	}
+    public function get_materialsView(){
+        $type = Input::get('type');
+        // @param $type: integer = {1, 2, 3, 4, 5}
+        $data = DB::table('b_mat_puertas')->where_type($type)->get();
+        switch ($type) {
+            case 1:
+                $folder="Cristales_porcelanicos";
+                break;
+            case 2:
+                $folder="Gama_Imaprint";
+                break;
+            case 3:
+                $folder="Gama_Duo";
+                break;
+            case 4:
+                $folder="Gama_Luxe";
+                break;
+            case 5:
+                $folder="Maderas_Lacas";
+                break;
+        }
+
+
+        return View::make('popup.views.materials')
+            ->with('folder', $folder)
+            ->with('data', $data);
+    }
 }
 
 /*

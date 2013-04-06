@@ -6,6 +6,16 @@ $(document).ready(function(){
 		Tab4Controller.pintarTirador();
 
 	});
+	$(document).bind('sync_popup',function(){
+		if(document.getElementById('handles')){
+			$('#handles .element').click(function(){
+				// Comportamiento del click
+				var id = $(this).data('id')
+				Tab4Controller.añadirTirador(id);
+				popup.closePopup();
+			});
+		}
+	});
 	$(document).bind('sync_save',function(){
 		Tab4Controller.pintarPerfil();
 		Tab4Controller.pintarTirador();
@@ -29,14 +39,6 @@ $(document).ready(function(){
 		
 
 	});
-	//onClick Tirador
-	$(".item5 img").live("click", function() {		
-		var ref = $(this).attr('ref');
-		Tab4Controller.añadirTirador(ref);
-		popup.closePopup();	
-	});
-
-
 });
 
 Tab4Controller = {

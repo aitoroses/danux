@@ -44,18 +44,20 @@ Route::post('/session/(:any)', array('uses' => 'home@session'));
 	Route::put('API/budget/(:any)/wardrobe', array('uses' => 'api@wardrobe'));
 	Route::get('API/json/(:any)', array('uses' => 'api@json'));
 	Route::put('API/json/(:any)', array('uses' => 'api@json'));
+	//Popup
+	Route::get('API/popup/(:any)', array('uses' => 'api_popup@popup', 'before' => 'auth'));
+	Route::get('API/popup/view', array('uses' => 'api_popup@materialsView'));
+
 	// ASIDES
 	Route::get('API/asides/(:any)', array('uses' => 'asides@aside'));
-
+	
 	// Session Control Routes
 	Route::post('/API/session/(:any)/(:any)', array('uses' => 'session@set'));
 
 	// Flexigrid
 Route::post('API/flexigrid', array('uses' => 'api@flexigrid'));
 Route::delete('API/flexigrid', array('uses' => 'api@flexigrid'));
-	//Popup
-Route::get('API/popup/(:any)', array('uses' => 'api_popup@popup', 'before' => 'auth'));
-
+	
 
 // User login
 Route::get('/register', array('uses' => 'user@register'));
@@ -65,6 +67,9 @@ Route::get('/check', array('uses' => 'user@check'));
 
 // Content routes
 Route::get('/content/module/(:any)', array('uses' => 'content@module'));
+Route::get('/content/door/(:any)', array('uses' => 'content@door'));
+Route::get('/content/materialsource/(:any)', array('uses' => 'content@materialsource'));
+Route::get('/content/materials/(:any)', array('uses' => 'content@materials'));
 
 
 
