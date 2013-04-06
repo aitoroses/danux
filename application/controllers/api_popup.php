@@ -30,7 +30,22 @@ Class Api_Popup_Controller extends Base_Controller {
                 }, $accs);
                 return View::make('popup.agregar_accesorios_interior')->with('list', $list);
                 break;
-        	default:
+            case "handle":
+                // Query de accesorios
+                $handles = DB::table('b_handles')->get();
+                $list = array_map(function($handle){
+                    return "<li><a class='selectormat' href='#'><div class='item5 mat'><img src=semiems/contenido/Bibliotecas/tiradores/".$handle->img." ref=".$handle->id." /> <div class='title'>".$handle->tiradores." / Ref.".$handle->codigo."(".$handle->desc.") Tamaño: ".$handle->largura."mm </div></div></a></li>";
+                }, $handles);
+                return View::make('popup.cambiar_tirador')->with('list', $list);
+                break;
+            case "perfil":
+                // Query de accesorios
+                $id_wardrobe = Session::get('wardrobe_id');
+                $wardrobe = Wardrobe::find($id_wardrobe);
+                $result = $wardrobe->typedoor;
+                return View::make('popup.cambiar_perfil')->with('perfil', $result);
+                break;
+            default:
         		break;
     	}
 	}

@@ -129,13 +129,6 @@ $(function() {
 		cambio_marco();
 		popup.closePopup();	
 	});
-		$(".item5 img").live("click", function() {		
-		var ref = $(this).attr('ref');
-		wardrobe.data.handle=parseInt(ref);
-		//$('#mat_marc').html(''); 
-		//pintapuertas();
-		cambio_tirador();
-		popup.closePopup();	
-	});
+
 
 });
