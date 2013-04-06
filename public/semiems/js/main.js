@@ -182,6 +182,7 @@ popup = {
             success: function(data) {  
                 popup.response = data;
                 $(popup).trigger('sync');
+                $(document).trigger('sync_popup');
             }  
         });
 	},
