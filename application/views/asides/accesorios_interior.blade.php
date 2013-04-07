@@ -1,7 +1,7 @@
 <?php $i = 1; // Contador de modulos ?>
 <ul>
     @foreach($accint as $accesorios)
-        <li>
+        <li class="module">
             <h2>Modulo {{ $i }}</h2>
             <ul>
                 @foreach($accesorios as $ele)

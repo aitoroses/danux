@@ -7,22 +7,19 @@
   <div id="sel_material">
   <div id="sel_parent">
   </div>
-  </br>
-  <div id="aux">   
-    <div id="mat_puerta">        
-      @foreach($accs as $acc)
-        <li>
-          <a class='selectormat' href='#'>
-            <div class='accint mat'>
-              <img src="{{ 'semiems/contenido/Bibliotecas/AccInt/Loija/'.$acc->img }}" desc="{{ $acc->desc }}" ref="{{ $acc->id }}"/> 
-              <div class='title'>
-                Ref."{{ $acc->ref }}" ("{{ $acc->desc }}")
-              </div>
-            </div>
-          </a>
-        </li>
-      @endforeach
+  </br>  
+  <div id="mat_puerta">
+    <div class="content">    
+    @foreach($accs as $acc)
+        <div class='element selectormat' data-ref="{{ $acc->ref }}">
+          <div class='picture'><img src="{{ 'semiems/contenido/Bibliotecas/AccInt/Loija/'.$acc->img }}" desc="{{ $acc->desc }}" ref="{{ $acc->id }}"/></div> 
+          <div class='title'>
+          Ref. {{ $acc->ref }} ({{ $acc->desc }})
+          </div>
+        </div>
+    @endforeach
     </div>
+  </div>
   </div>
   
  </div>          
