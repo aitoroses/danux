@@ -69,37 +69,6 @@ $(function() {
 		popup.closePopup();	
 		
 	});
-		$(".item2 img").live("click", function() {
-		
-
-		var ref = $(this).attr('ref');
-		var div = $(this).attr('div');
-		$.each(materialselect, function(i, selection){
-
-			var auxitem=selection.substring(1,2);
-			wardrobe.doors[auxitem].type=ref;
-			var strout_div=[];
-			for (var iiii=0;iiii<div;iiii++)
-			{ 
-				strout_div.push(0);
-			}
-			wardrobe.doors[auxitem].material=strout_div;
-
-		})
-		materialselect=[];
-		var ref = $(this).attr('ref');
-		var auxitem=puertaselect.substring(1,2);
-		wardrobe.doors[auxitem].type=ref;
-		var div = $(this).attr('div');
-		var strout_div=[];
-		for (var iiii=0;iiii<div;iiii++)
-		{ 
-			strout_div.push(0);
-		}
-		wardrobe.doors[auxitem].material=strout_div;		
-		pintapuertas();
-		popup.closePopup();	
-	});
 
 		$(".item4 img").live("click", function() {		
 		var ref = $(this).attr('ref');

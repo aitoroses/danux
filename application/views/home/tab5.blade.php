@@ -8,7 +8,7 @@
 <span>Seleccione las puertas o paneles y clicke a la derecha una de las dos opciones</span>
 <div id="sel2">
 
-<a class="submit-button" href="#" onClick="pop_up('psel');">Tipo de puertas</a>
+<a class="submit-button" href="#" onClick="popup.fetch({name: 'distribucionPuerta'});">Tipo de puertas</a>
 <a class="submit-button" href="#" onClick="popup.fetch({name: 'materialesPuerta'});">Materiales</a> 
 
 
@@ -17,9 +17,9 @@
 
 <div id="containerp"></div>
 
-<a href='#' onClick="cambia_puerta('all')">Todas iguales</a>
-<a href='#' onClick="cambia_puerta('par')">Pares iguales</a>
-<a href='#' onClick="cambia_puerta('impar')">impares iguales</a>
+<a href='#' onClick="Tab5Controller.cambia_puerta('all')">Todas iguales</a>
+<a href='#' onClick="Tab5Controller.cambia_puerta('par')">Pares iguales</a>
+<a href='#' onClick="Tab5Controller.cambia_puerta('impar')">impares iguales</a>
 
 <div id="acabado_perfil">No hay datos para saberlo. (Añada mas materiales)</div>
 

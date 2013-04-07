@@ -45,6 +45,38 @@ class Asides_Controller extends Base_Controller {
                 }
                 return View::make('asides.tirador')->with('tirador',$result);
                 break;
+            case "getMarco":
+                $id_wardrobe = Session::get('wardrobe_id');
+                $wardrobe = Wardrobe::find($id_wardrobe);
+                $wardrobe_array=$wardrobe->to_array();
+
+                if ($wardrobe_array["marco"]!="0"){
+                    $data = DB::table('b_mat_puertas')->find($wardrobe_array["marco"]);
+                    switch ($data->type) {
+                        case 1:
+                            $folder="Cristales_porcelanicos";
+                            break;
+                        case 2:
+                            $folder="Gama_Imaprint";
+                            break;
+                        case 3:
+                            $folder="Gama_Duo";
+                            break;
+                        case 4:
+                            $folder="Gama_Luxe";
+                            break;
+                        case 5:
+                            $folder="Maderas_Lacas";
+                            break;
+                    }
+                    $result["marco"]=$wardrobe_array["marco"];
+                    $result["data"]=$data;
+                    $result["folder"]=$folder;
+                }else{
+                    $result["marco"]=0;
+                }
+                return View::make('asides.marco')->with('marco',$result);
+                break;
         	default:
                 return "No hay ruta aside";
         	   break;
