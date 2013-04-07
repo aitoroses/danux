@@ -53,6 +53,11 @@ Class Api_Popup_Controller extends Base_Controller {
                 }
                 return View::make('popup.materiales_puerta')->with('material', $result);
                 break;
+            case "distribucionPuerta":
+                // Query de accesorios
+                $doors = DB::table('b_doors')->get();
+                return View::make('popup.distribucion_puerta')->with('doors', $doors);;
+                break;
             default:
 
         		break;

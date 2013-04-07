@@ -105,62 +105,6 @@ document.getElementById("accext").innerHTML="";
 	})
 }
 }  
-
-//#########################Funciones Auxiliares Cambio entre Seleccion material y tipos
-
-function cambia_puerta(a){
-
-	if(a=='all'){	
-		for(var i in wardrobe.doors)
-			{
-				temp2=wardrobe.doors[0].type;
-			    wardrobe.doors[i].type=temp2;
-			   	var temp3=[];
-			    for(var j in wardrobe.doors[0].material){
-			    	temp=wardrobe.doors[0].material[j];
-			    	temp3.push(temp);
-
-			    }
-				wardrobe.doors[i].material=temp3;
-			}
-	}else if(a=='impar'){
-		for(var i in wardrobe.doors)
-			{
-				if(i%2==0){
-					temp2=wardrobe.doors[0].type;
-				    wardrobe.doors[i].type=temp2;
-				   	var temp3=[];
-				    for(var j in wardrobe.doors[0].material){
-				    	temp=wardrobe.doors[0].material[j];
-				    	temp3.push(temp);
-
-				    }
-					wardrobe.doors[i].material=temp3;
-				}
-					
-			}      
-	}else if(a=='par'){
-		for(var i in wardrobe.doors)
-			{
-				if(i%2!=0){
-					temp2=wardrobe.doors[1].type;
-				    wardrobe.doors[i].type=temp2;
-				   	var temp3=[];
-				    for(var j in wardrobe.doors[1].material){
-				    	temp=wardrobe.doors[1].material[j];
-				    	temp3.push(temp);
-
-				    }
-					wardrobe.doors[i].material=temp3;
-
-				}
-					
-			}       
-	}
-	pintapuertas();
-};
-
-
 //###################################################################### POPUP
 popup = {
 	name: '',
