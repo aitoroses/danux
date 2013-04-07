@@ -30,11 +30,8 @@ $(document).ready(function(){
 		$(document).bind('next', function(){
 			location.href = "4";
 		})
-
-
 	});
 	$('a.prev-tab').on('click',function(e){	
-		
 
 	});
 });
