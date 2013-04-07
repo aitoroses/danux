@@ -6,6 +6,14 @@ $(document).ready(function(){
 		Tab3Controller.pintarAccs();
 
 	});
+	$(document).bind('sync_popup',function(){
+		$('#mat_puerta .element').click(function(){
+			var ref = parseInt($(this).data('ref'));
+			var auxitem=moduleselect.substring(1,2);
+			Tab3Controller.añadirAccesorioInterior(ref,auxitem);
+			popup.closePopup();
+		});
+	});
 	$(document).bind('sync_save',function(){
 		Tab3Controller.pintarAccs();
 
@@ -29,14 +37,6 @@ $(document).ready(function(){
 		
 
 	});
-
-	$("#mat_puerta .element").live("click", function() {		
-		var ref = parseInt($(this).data('ref'));
-		var auxitem=moduleselect.substring(1,2);
-		Tab3Controller.añadirAccesorioInterior(ref,auxitem);
-		popup.closePopup();
-	});
-
 });
 
 Tab3Controller = {
