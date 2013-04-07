@@ -21,7 +21,7 @@ $(document).ready(function(){
 		Tab4Controller.pintarTirador();
 	});
 	$(document).bind('error',function(){
-		$('#containeri').html('No se ha cargado el armario');
+	
 	});
 
 	WardrobeModel.fetch();
