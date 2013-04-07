@@ -11,7 +11,7 @@
   <div id="mat_puerta">
     <div class="content">    
     @foreach($accs as $acc)
-        <div class='element selectormat' data-ref="{{ $acc->ref }}">
+        <div class='element selectormat' data-ref="{{ $acc->id }}">
           <div class='picture'><img src="{{ 'semiems/contenido/Bibliotecas/AccInt/Loija/'.$acc->img }}" desc="{{ $acc->desc }}" ref="{{ $acc->id }}"/></div> 
           <div class='title'>
           Ref. {{ $acc->ref }} ({{ $acc->desc }})
