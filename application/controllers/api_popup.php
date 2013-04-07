@@ -12,20 +12,14 @@ Class Api_Popup_Controller extends Base_Controller {
     		case "seleccioninterior":
                 // Query de modulos
                 $modules = DB::table('b_modules')->get();
-                $list = array_map(function($module){
-                    return "<li><a href='#'><div class='item'><img src=semiems/".$module->image."/".$module->id.".png ref=".$module->id." /> <div class='title'>Ref.".$module->id."</div></div></a></li>";
-                }, $modules);
-        		return View::make('popup.seleccion_interior')->with('list', $list);
+        		return View::make('popup.seleccion_interior')->with('modules', $modules);
             case "divisioninterior":
                 return View::make('popup.divisioninterior');
                 break;
             case "agregar_accesorios_interior":
                 // Query de accesorios
                 $accs = DB::table('b_acc')->get();
-                $list = array_map(function($acc){
-                    return "<li><a class='selectormat' href='#'><div class='accint mat'><img src=semiems/contenido/Bibliotecas/AccInt/Loija/".$acc->img." desc=".$acc->desc." ref=".$acc->id." /> <div class='title'>Ref.".$acc->ref."(".$acc->desc.")</div></div></a></li>";
-                }, $accs);
-                return View::make('popup.agregar_accesorios_interior')->with('list', $list);
+                return View::make('popup.agregar_accesorios_interior')->with('accs', $accs);
                 break;
             case "handle":
                 // Query del tirador
