@@ -1,10 +1,3 @@
-function pdiv_cambio(divs) {
-	wardrobe.doors[pselect].div=divs;
-	pintapuertas();
-    Close_popup();
-
-};
-
 /*************************************/
 function countRepeated(array){
   var r = arguments[1] || [], i = 0;
@@ -105,6 +98,7 @@ document.getElementById("accext").innerHTML="";
 	})
 }
 }  
+
 //###################################################################### POPUP
 popup = {
 	name: '',
@@ -147,131 +141,4 @@ popup = {
     	page_screen.style.display = 'none';
 	},
 };
-
-
-/*function pop_up(psel,aux) {
-
-if(psel=='psel'){
-      $.ajax({
-       		type: 'POST',  
-            url: 'contenido/psel.php',
-            data: {
-
-  				}, 
-            success: function(data) {  
-                $('#popup').html(data);  
-            }  
-        })	
-	
-	Open_popup();	
-}else if(psel=='pdiv'){
-		lisabat=0;
-		if(wardrobe.data.typedoor==1&&wardrobe.data.tperfil==3){
-			lisabat=1;
-		}
-
-     $.ajax({
-       		type: 'POST',  
-            url: 'contenido/pmat.php',
-            data: {
-            		'lisabat': lisabat 
-  				}, 
-            success: function(data) {  
-                $('#popup').html(data);  
-            }  
-        })	
-	Open_popup();	
-}else if(psel=='isel'){
-      $.ajax({
-       		type: 'POST',  
-            url: 'contenido/isel.php',
-            data: {
-    				"anchura_sel" : aux
-  				}, 
-            success: function(data) {  
-                $('#popup').html(data);  
-            }  
-        })	
-	
-	Open_popup();
-}else if(psel=='idiv'){
-	
-      $.ajax({
-       		type: 'POST',  
-            url: 'contenido/idiv.php',
-            success: function(data) {  
-                $('#popup').html(data);  
-            }  
-        })	
-	
-	Open_popup();
-}else if(psel=='flexigrid'){
-	
-      $.ajax({
-       		type: 'POST',  
-            url: 'semiems/js/flexigrid/flexigrid.php',
-            success: function(data) {  
-                $('#popup').html(data);  
-            }  
-        })	
-	Open_popup();
-}else if(psel=='handle'){
-	
-      $.ajax({
-       		type: 'POST',  
-            url: 'contenido/handles.php',
-            success: function(data) {  
-                $('#popup').html(data);  
-            }  
-        })	
-	Open_popup();
-}else if(psel=='modules'){
-	
-      $.ajax({
-       		type: 'POST',  
-            url: 'contenido/mods.php',
-            success: function(data) {  
-                $('#popup').html(data);  
-            }  
-        })	
-	Open_popup();
-}else if(psel=='perfil'){
-	
-      $.ajax({
-       		type: 'POST',  
-            url: 'contenido/perfiles.php',
-            data: {
-    				"type" : wardrobe.data.typedoor
-  				},
-            success: function(data) {  
-                $('#popup').html(data);  
-            }  
-        })	
-	Open_popup();
-}else if(psel=='marco'){
-	
-      $.ajax({
-       		type: 'POST',  
-            url: 'contenido/marco.php',
-            success: function(data) {  
-                $('#popup').html(data);  
-            }  
-        })	
-	Open_popup();
-}else if(psel=='accint'){
-	
-      $.ajax({
-       		type: 'POST',  
-            url: 'contenido/accints.php',
-            success: function(data) {  
-                $('#popup').html(data);  
-            }  
-        })	
-	Open_popup();
-}
-
-};*/
-//###########################################
-
-
 

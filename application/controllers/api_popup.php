@@ -19,9 +19,6 @@ Class Api_Popup_Controller extends Base_Controller {
             case "divisioninterior":
                 return View::make('popup.divisioninterior');
                 break;
-            /*case "accesorios_modulo":
-                return View::make('popup.accesorios_modulo');
-                break;*/
             case "agregar_accesorios_interior":
                 // Query de accesorios
                 $accs = DB::table('b_acc')->get();
@@ -31,19 +28,19 @@ Class Api_Popup_Controller extends Base_Controller {
                 return View::make('popup.agregar_accesorios_interior')->with('list', $list);
                 break;
             case "handle":
-                // Query de accesorios
+                // Query del tirador
                 $handles = DB::table('b_handles')->get();
                 return View::make('popup.cambiar_tirador')->with('handles', $handles);
                 break;
             case "perfil":
-                // Query de accesorios
+                // Query del perfil
                 $id_wardrobe = Session::get('wardrobe_id');
                 $wardrobe = Wardrobe::find($id_wardrobe);
                 $result = $wardrobe->typedoor;
                 return View::make('popup.cambiar_perfil')->with('perfil', $result);
                 break;
             case "materialesPuerta":
-                // Query de accesorios
+                // Query de materiales de la puerta
                 $id_wardrobe = Session::get('wardrobe_id');
                 $wardrobe = Wardrobe::find($id_wardrobe);
                 if($wardrobe->typedoor=="1"&&$wardrobe->tperfil==3){
@@ -54,9 +51,13 @@ Class Api_Popup_Controller extends Base_Controller {
                 return View::make('popup.materiales_puerta')->with('material', $result);
                 break;
             case "distribucionPuerta":
-                // Query de accesorios
+                // Query de distribucion de la puerta
                 $doors = DB::table('b_doors')->get();
                 return View::make('popup.distribucion_puerta')->with('doors', $doors);;
+                break;
+            case "marco":
+                // Vista de la seleccion de los materiales del marco
+                return View::make('popup.materiales_marco');
                 break;
             default:
 
