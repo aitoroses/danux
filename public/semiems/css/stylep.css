@@ -460,8 +460,7 @@ header {
   #acc_ints a {
     clear: both;
     display: inline-block;
-    vertical-align: top;
-    float: right; }
+    vertical-align: top; }
     /* line 34, ../sass/_newstyle.scss */
     #acc_ints a img {
       width: 20px; }

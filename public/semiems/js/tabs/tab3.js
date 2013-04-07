@@ -30,8 +30,8 @@ $(document).ready(function(){
 
 	});
 
-	$(".accint img").live("click", function() {		
-		var ref = parseInt($(this).attr('ref'));
+	$("#mat_puerta .element").live("click", function() {		
+		var ref = parseInt($(this).data('ref'));
 		var auxitem=moduleselect.substring(1,2);
 		Tab3Controller.añadirAccesorioInterior(ref,auxitem);
 		popup.closePopup();
