@@ -139,6 +139,7 @@ Tab5Controller = {
 				}
 				break;
 		}
+		WardrobeModel.save();
 		pintapuertas();
 	}
 }

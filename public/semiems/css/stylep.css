@@ -467,17 +467,17 @@ header {
 
 /* Popup content CLASS */
 /* line 45, ../sass/_newstyle.scss */
-#materiales, #mat_puerta {
+#materiales, #mat_puerta, #sel_interiores, #handles {
   overflow-y: scroll;
   height: 400px;
   clear: both;
   padding-top: 10px; }
   /* line 52, ../sass/_newstyle.scss */
-  #materiales .content, #mat_puerta .content {
+  #materiales .content, #mat_puerta .content, #sel_interiores .content, #handles .content {
     width: 90%;
     margin: 0 5%; }
     /* line 55, ../sass/_newstyle.scss */
-    #materiales .content .element, #mat_puerta .content .element {
+    #materiales .content .element, #mat_puerta .content .element, #sel_interiores .content .element, #handles .content .element {
       border-radius: 5px;
       margin: 3px 0;
       border: 3px solid rgba(0, 0, 0, 0.1);
@@ -489,7 +489,7 @@ header {
       -o-transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -o-transform 0.1s ease-in-out;
       transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.1s ease-in-out; }
       /* line 64, ../sass/_newstyle.scss */
-      #materiales .content .element:hover, #mat_puerta .content .element:hover {
+      #materiales .content .element:hover, #mat_puerta .content .element:hover, #sel_interiores .content .element:hover, #handles .content .element:hover {
         background-color: #dfb178;
         -webkit-transform: scale3d(1.05, 1.05, 1.05);
         -moz-transform: scale3d(1.05, 1.05, 1.05);
@@ -500,18 +500,17 @@ header {
         -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); }
       /* line 71, ../sass/_newstyle.scss */
-      #materiales .content .element .picture img, #mat_puerta .content .element .picture img {
+      #materiales .content .element .picture img, #mat_puerta .content .element .picture img, #sel_interiores .content .element .picture img, #handles .content .element .picture img {
         margin: 5%;
         width: 90%;
         height: 10em; }
       /* line 77, ../sass/_newstyle.scss */
-      #materiales .content .element .title, #mat_puerta .content .element .title {
+      #materiales .content .element .title, #mat_puerta .content .element .title, #sel_interiores .content .element .title, #handles .content .element .title {
         text-align: center;
         line-height: 20px;
         font-size: 1em;
         font-weight: bold;
-        height: 5em;
-        overflow: scroll; }
+        height: 5em; }
 
 /* Popup de materiales */
 /* line 90, ../sass/_newstyle.scss */
@@ -525,3 +524,15 @@ header {
 /* line 104, ../sass/_newstyle.scss */
 #mat_puerta .content .element .title {
   line-height: 12px; }
+
+/* line 117, ../sass/_newstyle.scss */
+#handles .content .element .picture img {
+  margin: 5% 5% 5% 28%;
+  width: 41%;
+  height: 10em; }
+
+/* line 132, ../sass/_newstyle.scss */
+#sel_interiores .content .element .picture img {
+  margin: 5% 5% 5% 28%;
+  width: 41%;
+  height: 10em; }
