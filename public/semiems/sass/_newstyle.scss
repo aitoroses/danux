@@ -41,15 +41,8 @@
 	}
 }
 
-/* Popup de materiales */
-#sel_parent {
-	font-size:18px;
-	height: 40px;
-	position: relative;
-	left: 10px;
-	top: 10px;
-}
-#materiales {
+/* Popup content CLASS */
+%popup_content {
 	overflow-y: scroll;
 	height: 400px;
 	$gutter: 10%;
@@ -87,7 +80,29 @@
 				font-size: 1em;
 				font-weight: bold;
 				height: $height/3;
-				overflow: hidden;
+				overflow: scroll;
+			}
+		}
+	}
+}
+
+/* Popup de materiales */
+#sel_parent {
+	font-size:18px;
+	height: 40px;
+	position: relative;
+	left: 10px;
+	top: 10px;
+}
+#materiales, #mat_puerta {
+	@extend %popup_content;
+}
+
+#mat_puerta{
+	.content{
+		.element {
+			.title {
+				line-height: 12px;
 			}
 		}
 	}

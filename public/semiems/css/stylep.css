@@ -466,27 +466,19 @@ header {
     #acc_ints a img {
       width: 20px; }
 
-/* Popup de materiales */
+/* Popup content CLASS */
 /* line 45, ../sass/_newstyle.scss */
-#sel_parent {
-  font-size: 18px;
-  height: 40px;
-  position: relative;
-  left: 10px;
-  top: 10px; }
-
-/* line 52, ../sass/_newstyle.scss */
-#materiales {
+#materiales, #mat_puerta {
   overflow-y: scroll;
   height: 400px;
   clear: both;
   padding-top: 10px; }
-  /* line 59, ../sass/_newstyle.scss */
-  #materiales .content {
+  /* line 52, ../sass/_newstyle.scss */
+  #materiales .content, #mat_puerta .content {
     width: 90%;
     margin: 0 5%; }
-    /* line 62, ../sass/_newstyle.scss */
-    #materiales .content .element {
+    /* line 55, ../sass/_newstyle.scss */
+    #materiales .content .element, #mat_puerta .content .element {
       border-radius: 5px;
       margin: 3px 0;
       border: 3px solid rgba(0, 0, 0, 0.1);
@@ -497,8 +489,8 @@ header {
       -moz-transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -moz-transform 0.1s ease-in-out;
       -o-transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -o-transform 0.1s ease-in-out;
       transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.1s ease-in-out; }
-      /* line 71, ../sass/_newstyle.scss */
-      #materiales .content .element:hover {
+      /* line 64, ../sass/_newstyle.scss */
+      #materiales .content .element:hover, #mat_puerta .content .element:hover {
         background-color: #dfb178;
         -webkit-transform: scale3d(1.05, 1.05, 1.05);
         -moz-transform: scale3d(1.05, 1.05, 1.05);
@@ -508,16 +500,29 @@ header {
         -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
         -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); }
-      /* line 78, ../sass/_newstyle.scss */
-      #materiales .content .element .picture img {
+      /* line 71, ../sass/_newstyle.scss */
+      #materiales .content .element .picture img, #mat_puerta .content .element .picture img {
         margin: 5%;
         width: 90%;
         height: 10em; }
-      /* line 84, ../sass/_newstyle.scss */
-      #materiales .content .element .title {
+      /* line 77, ../sass/_newstyle.scss */
+      #materiales .content .element .title, #mat_puerta .content .element .title {
         text-align: center;
         line-height: 20px;
         font-size: 1em;
         font-weight: bold;
         height: 5em;
-        overflow: hidden; }
+        overflow: scroll; }
+
+/* Popup de materiales */
+/* line 90, ../sass/_newstyle.scss */
+#sel_parent {
+  font-size: 18px;
+  height: 40px;
+  position: relative;
+  left: 10px;
+  top: 10px; }
+
+/* line 104, ../sass/_newstyle.scss */
+#mat_puerta .content .element .title {
+  line-height: 12px; }
