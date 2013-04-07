@@ -15,7 +15,7 @@
                     <div class='title' >Cambiar a modulo doble </div>
                 </a>
             @else
-                <a href="#"  onclick="cambiar_a_modulo_simple()">
+                <a href="#"  onclick="Tab2Controller.cambiar_a_modulo_simple()">
                     <div class='title'>Cambiar a modulo simple</div>
                 </a>
             @endif

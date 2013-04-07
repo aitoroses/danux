@@ -10,8 +10,17 @@
   </br>
   <div id="aux">   
     <div id="mat_puerta">        
-      @foreach($list as $li)
-                {{$li}}
+      @foreach($accs as $acc)
+        <li>
+          <a class='selectormat' href='#'>
+            <div class='accint mat'>
+              <img src="{{ 'semiems/contenido/Bibliotecas/AccInt/Loija/'.$acc->img }}" desc="{{ $acc->desc }}" ref="{{ $acc->id }}"/> 
+              <div class='title'>
+                Ref."{{ $acc->ref }}" ("{{ $acc->desc }}")
+              </div>
+            </div>
+          </a>
+        </li>
       @endforeach
     </div>
   </div>
