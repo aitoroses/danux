@@ -4,6 +4,20 @@ $(document).ready(function(){
 	$(document).bind('sync',function(){
 		pintamodulos();
 	});
+	$(document).bind('sync_popup',function(){
+		$('#sel_interiores .element').click(function(){
+			var ref = parseInt($(this).data('ref'));
+			var auxitem=moduleselect.substring(1,2)
+			if (moduleselect.substring(3,4)==1){
+				WardrobeModel.getWardrobe().modules[auxitem].ref1=ref
+			
+			}else if (moduleselect.substring(3,4)==2){
+				WardrobeModel.getWardrobe().modules[auxitem].ref2=ref
+				}
+			pintamodulos();
+			popup.closePopup();	
+		});
+	});
 	$(document).bind('error',function(){
 		$('#containeri').html('No se ha cargado el armario');
 	});

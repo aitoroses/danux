@@ -80,7 +80,7 @@
 				font-size: 1em;
 				font-weight: bold;
 				height: $height/3;
-				overflow: scroll;
+				//overflow: scroll;
 			}
 		}
 	}
@@ -94,7 +94,7 @@
 	left: 10px;
 	top: 10px;
 }
-#materiales, #mat_puerta {
+#materiales, #mat_puerta, #sel_interiores, #handles, #distribucionPuerta {
 	@extend %popup_content;
 }
 
@@ -103,6 +103,52 @@
 		.element {
 			.title {
 				line-height: 12px;
+			}
+		}
+	}
+}
+
+#handles {
+	.content{
+		.element {
+			$height: 15em;
+			.picture {
+				$gutter: 10%;
+				img {
+					margin: $gutter/2 $gutter/2 $gutter/2 28%;
+					width: 51% - $gutter;
+					height: $height/3*2;
+				}				
+			}
+		}
+	}
+}
+#sel_interiores {
+	.content{
+		.element {
+			$height: 15em;
+			.picture {
+				$gutter: 10%;
+				img {
+					margin: $gutter/2 $gutter/2 $gutter/2 28%;
+					width: 51% - $gutter;
+					height: $height/3*2;
+				}				
+			}
+		}
+	}
+}
+#distribucionPuerta {
+	.content{
+		.element {
+			$height: 15em;
+			.picture {
+				$gutter: 10%;
+				img {
+					margin: $gutter/2 $gutter/2 $gutter/2 28%;
+					width: 51% - $gutter;
+					height: $height/3*2;
+				}				
 			}
 		}
 	}

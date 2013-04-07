@@ -54,30 +54,4 @@ $(function() {
 		return false;
 	});	
 
-	$(".item img").live("click", function() {
-	
-		var ref = $(this).attr('ref');
-		var auxitem=moduleselect.substring(1,2)
-		
-		if (moduleselect.substring(3,4)==1){
-			WardrobeModel.getWardrobe().modules[auxitem].ref1=ref
-		
-		}else if (moduleselect.substring(3,4)==2){
-			WardrobeModel.getWardrobe().modules[auxitem].ref2=ref
-			}
-		pintamodulos();
-		popup.closePopup();	
-		
-	});
-
-		$(".item4 img").live("click", function() {		
-		var ref = $(this).attr('ref');
-		wardrobe.data.marco=parseInt(ref);
-		$('#mat_marc').html(''); 
-		pintapuertas();
-		cambio_marco();
-		popup.closePopup();	
-	});
-
-
 });
