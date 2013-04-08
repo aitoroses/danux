@@ -58,34 +58,47 @@ Class Api_Popup_Controller extends Base_Controller {
         		break;
     	}
 	}
-    public function get_materialsView(){
-        $type = Input::get('type');
-        // @param $type: integer = {1, 2, 3, 4, 5}
-        $data = DB::table('b_mat_puertas')->where_type($type)->get();
-        switch ($type) {
-            case 1:
-                $folder="Cristales_porcelanicos";
+    public function get_view($name){
+        switch ($name) {
+            case "materialsView":
+                $type = Input::get('type');
+                // @param $type: integer = {1, 2, 3, 4, 5}
+                $data = DB::table('b_mat_puertas')->where_type($type)->get();
+                switch ($type) {
+                    case 1:
+                        $folder="Cristales_porcelanicos";
+                        break;
+                    case 2:
+                        $folder="Gama_Imaprint";
+                        break;
+                    case 3:
+                        $folder="Gama_Duo";
+                        break;
+                    case 4:
+                        $folder="Gama_Luxe";
+                        break;
+                    case 5:
+                        $folder="Maderas_Lacas";
+                        break;
+                }
+
+
+                return View::make('popup.views.materials')
+                    ->with('folder', $folder)
+                    ->with('data', $data);
                 break;
-            case 2:
-                $folder="Gama_Imaprint";
-                break;
-            case 3:
-                $folder="Gama_Duo";
-                break;
-            case 4:
-                $folder="Gama_Luxe";
-                break;
-            case 5:
-                $folder="Maderas_Lacas";
+            case "perfilesView":
+                $type = Input::get('type');
+                // @param $type: integer = {1, 2, 3, 4, 5}
+                $data = DB::table('b_perfiles_acabados')->where_tipo_perfil($type)->get();
+                return View::make('popup.views.perfiles')
+                    ->with('data', $data);
                 break;
         }
-
-
-        return View::make('popup.views.materials')
-            ->with('folder', $folder)
-            ->with('data', $data);
     }
 }
+
+
 
 /*
 $SQL = "SELECT * FROM b_modules WHERE width_max >= '$anchura'";

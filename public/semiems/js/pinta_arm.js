@@ -67,7 +67,7 @@ function pintapuertas(){
         });
 
         //MATERIAL PUERTA
-        if(wardrobe.doors[j].material.length !== 0){
+        if(wardrobe.doors[j].material.length != 0){
           if (parseInt(wardrobe.doors[j].material[i])!=0){ //ref1
             var iix=xcont;
             var iiy=ycont;

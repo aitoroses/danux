@@ -24,10 +24,17 @@ class Asides_Controller extends Base_Controller {
 
             	if ($wardrobe_array["tperfil"]!="0"){
             		$perfil_bd = DB::table('b_perfiles')->find($wardrobe_array["tperfil"]);
+                    $acabado_perfil =DB::table('b_perfiles_acabados')->find($wardrobe_array["perfil"]);
             		$result["tperfil"]=$wardrobe_array["tperfil"];
             		$result["name"]=$perfil_bd->name;
+                    if ($acabado_perfil!=NULL){
+                        $result["acabado"] = $acabado_perfil->name;
+                    }else{
+                        $result["acabado"] = NULL;
+                    }
             	}else{
             		$result["tperfil"]=0;
+                    $result["acabado"] = 0;
             	}
             	return View::make('asides.perfil')->with('perfil',$result);
             	break;

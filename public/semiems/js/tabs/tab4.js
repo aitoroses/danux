@@ -75,10 +75,31 @@ Tab4Controller = {
 		WardrobeModel.wardrobe.data.handle=id;
 		WardrobeModel.save();
 	},
-	añadirPerfil: function (type_perfil){
+	añadirPerfil: function (type_perfil,perfil){
 		WardrobeModel.wardrobe.data.tperfil=type_perfil;
+		WardrobeModel.wardrobe.data.perfil=perfil;
 		WardrobeModel.save();
   		popup.closePopup();	
+	},
+	// Funcion que solo actua si las puertas son correderas
+	// Asi selecciona las acabados posibles
+	// Si el perfil es Minimalistas: Aluminio, Chapa Madera, Lacado y Melamina
+	// Si el perfil es Clasico: Aluminio, Chapa Madera y Lacado
+	getPerfilAcabados: function(type){
+		$.ajax({
+			type: 'GET',
+			url: 'API/popup/view/perfilesView',
+			data: {type: type},
+			success: function(response){
+				$('#materiales').html(response);
+				$('#materiales .element').click(function(){
+					// Comportamiento del click
+					var tipoperfil = $(this).data('tipoperfil')
+					var id = $(this).data('id')
+					Tab4Controller.añadirPerfil(tipoperfil,id)
+				});
+			}
+		});
 	}
 }
 
