@@ -109,15 +109,13 @@ class Api_Controller extends Base_Controller {
 			$materials = $object->materials()->get();
 			// Obtenemos los identificadores de las puertas
 			$materialdoor = DB::table('l_door_material_relation_table')->where_door_id($object->id)->get();
-
+			//componemos el array de salida
 			$materials_ids = array_map(function($material){
-
 				return intval($material->doormaterial_id);
 			}, $materialdoor);
 
 			$result = $object->to_array();
 			$result["material"] = $materials_ids;
-			
 			
 			return $result;
 		}, $doors);

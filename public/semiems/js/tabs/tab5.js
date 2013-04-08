@@ -70,8 +70,10 @@ Tab5Controller = {
 	getDoorMaterials: function(type){
 		$.ajax({
 			type: 'GET',
-			url: 'API/popup/view',
-			data: {type: type},
+			url: 'API/popup/view/materialsView',
+			data: {
+				type: type
+			},
 			success: function(response){
 				$('#materiales').html(response);
 				$('#materiales .element').click(function(){

@@ -153,3 +153,89 @@
 		}
 	}
 }
+#sel_marco {
+	height: 350px;
+	vertical-align: top;
+	display: inline-block;
+	width: 25% !important;
+	margin-top: -5px;
+	#marco_sel{
+		margin: 5px 0px 15px 0px;
+		clear:both;
+		display: block;
+		h2{
+			font-size: 1em;
+			line-height: 1.5em;
+			margin-top: -10px;
+			
+		}
+		img {
+			display: block;
+			margin:5px 0px;
+			width:75%;
+		}
+
+	}
+
+}
+//Buttons
+$background-default: #6aa436;
+$background-shader: linear-gradient(left top, #8dc059, #6aa436);
+$background-shader-i: linear-gradient(top,  #6aa436, #8dc059);
+$background-shader-f: url(semiems/img/site/button-shader.png) left center repeat-x;
+
+.submit-button {
+	@include background(
+		$background-shader,
+		$background-default
+		);
+	@include border-radius(
+		4px
+		);
+	@include box-shadow(
+		rgba(255,255,255,0.4) 0 1px 0, 
+		inset rgba(255,255,255,0.4) 0 1px 0
+		);
+	@include text-shadow(
+		#addc7e 0 1px 0
+		);
+	color: #31540c;
+	font-family: helvetica, serif;
+	padding: 8.5px 18px;
+	font-size: 14px;
+	text-decoration: none;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #447314;
+	.no-cssgradients & {
+		@include background(
+			$background-shader-f,
+			$background-default
+			);
+	}
+	.no-multiplebgs & {
+		background-color: $background-default;
+	}
+	&:hover,
+	&:focus  {
+		@include text-shadow(rgb(83, 122, 74) 0 1px 0);
+		color: #FFF;
+	}
+	&:active {
+		@include background(
+			$background-shader-i,
+			$background-default
+			);
+		@include single-box-shadow(none);
+			.no-cssgradients & {
+				@include background(
+					$background-shader-f,
+					darken($background-default, 5%)
+				);
+		}
+		.no-multiplebgs & {
+			background-color: darken($background-default, 5%);
+			border-color: #FFF;
+		}
+	}
+}

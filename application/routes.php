@@ -46,7 +46,7 @@ Route::post('/session/(:any)', array('uses' => 'home@session'));
 	Route::put('API/json/(:any)', array('uses' => 'api@json'));
 	//Popup
 	Route::get('API/popup/(:any)', array('uses' => 'api_popup@popup', 'before' => 'auth'));
-	Route::get('API/popup/view', array('uses' => 'api_popup@materialsView'));
+	Route::get('API/popup/view/(:any)', array('uses' => 'api_popup@view'));
 
 	// ASIDES
 	Route::get('API/asides/(:any)', array('uses' => 'asides@aside'));
