@@ -6,18 +6,18 @@
         </div>  
         <p id="title_popup">Tipos de interior</p>
   <div id="sel_interiores">
-		<ul>
+    <div class="content"> 
         @foreach($modules as $module)
-            <li>
-            <a href='#'>
-            <div class='item'>
-            <img src="{{ 'semiems/'.$module->image.'/'.$module->id.'.png' }}" ref="{{$module->id}}" />
-            <div class='title'>Ref."{{$module->id}}"
+            <div class='element selectormat' data-ref="{{ $module->id }}">
+              <div class='picture'>
+                <img src="{{ 'semiems/'.$module->image.'/'.$module->id.'.png' }}" ref="{{$module->id}}"/>
+              </div> 
+              <div class='title'>
+                Ref."{{$module->id}}"
+              </div>
             </div>
-            </div>
-            </a>
-            </li>
         @endforeach
-		</ul>
+
+    </div>
  </div>          
 </div> 

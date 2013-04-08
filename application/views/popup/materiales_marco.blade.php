@@ -2,7 +2,7 @@
 	<div class="close">
 		<a href="#" id="close2" onClick="popup.closePopup();"><img src="semiems/img/close.png"/></a>
 	</div>
-	<p id="title_popup">Seleccione el material del modulo/os seleccionado/os</p>
+	<p id="title_popup">Seleccione el material del marco</p>
   	<div id="sel_material">
 		<div id="sel_parent">
 			<ul>
