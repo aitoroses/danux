@@ -29,7 +29,7 @@ class Wardrobe extends Eloquent
 
     public function accexts()
     {
-        return $this->has_many('accext');
+        return $this->has_many_and_belongs_to('accext', 'l_accext_wardrobe_relation_table');
     }
 
 }
