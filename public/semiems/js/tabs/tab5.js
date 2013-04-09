@@ -145,3 +145,60 @@ Tab5Controller = {
 		pintapuertas();
 	}
 }
+
+
+
+
+/*************************************/
+function countRepeated(array){
+  var r = arguments[1] || [], i = 0;
+  for(; i < array.length; i++){
+    if(Object.prototype.hasOwnProperty.call(array, i)){
+      if(array[i] instanceof Array){
+        r = countRepeated(array[i], r);
+      } else {
+        if(r[array[i]])
+          r[array[i]]++;
+        else
+          r[array[i]] = 1;
+      }
+    }
+  }
+  return r;
+}
+/* Funciones del acabado del perfil Sin Usar
+
+function acabado_perfil(){
+
+	if(wardrobe.data.typedoor == 1){
+
+		if(wardrobe.data.tperfil == 3){ //Lisa
+			$('#acabado_perfil').html("No lleva Perfil.");  
+		}else{ //Con perfil
+			$('#acabado_perfil').html("Se ha seleccionado acabado 'Anonizado Plata'");
+		}
+
+	}else{
+
+		$.each(wardrobe.doors, function(i, door){
+
+			$.each(door.material, function(i, mat_door){
+
+				var repetidos = countRepeated(a);
+
+			})
+
+		})
+		$.ajax({
+       		type: 'POST',  
+            url: 'php/acabado_perf.php',
+            data: {
+            		"reps" : repetidos
+  				}, 
+            success: function(data) {  
+                $('#acabado_perfil').html(data);  
+            }  
+        })
+	}
+
+}*/

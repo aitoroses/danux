@@ -84,6 +84,12 @@ class Asides_Controller extends Base_Controller {
                 }
                 return View::make('asides.marco')->with('marco',$result);
                 break;
+            case "getAccExt":
+                $id_wardrobe = Session::get('wardrobe_id');
+                $wardrobe = Wardrobe::find($id_wardrobe);
+                $accexts= $wardrobe->accexts()->get();
+                return View::make('asides.accesorios_exterior')->with('accext', $accexts);
+                break;
         	default:
                 return "No hay ruta aside";
         	   break;

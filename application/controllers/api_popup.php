@@ -38,9 +38,9 @@ Class Api_Popup_Controller extends Base_Controller {
                 $id_wardrobe = Session::get('wardrobe_id');
                 $wardrobe = Wardrobe::find($id_wardrobe);
                 if($wardrobe->typedoor=="1"&&$wardrobe->tperfil==3){
-                    $result["all"] = 1;
-                }else{
                     $result["all"] = 0;
+                }else{
+                    $result["all"] = 1;
                 }
                 return View::make('popup.materiales_puerta')->with('material', $result);
                 break;
@@ -53,6 +53,9 @@ Class Api_Popup_Controller extends Base_Controller {
                 // Vista de la seleccion de los materiales del marco
                 return View::make('popup.materiales_marco');
                 break;
+            case "accesoriosExterior":
+                $accs_ext = DB::table('b_acc_ext')->get();
+                return View::make('popup.agregar_accesorios_exterior')->with('accs', $accs_ext);
             default:
 
         		break;

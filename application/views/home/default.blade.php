@@ -24,14 +24,14 @@
 	{{ HTML::style('semiems/js/flexigrid/flexigrid.css') }}
 	{{ HTML::script('semiems/js/flexigrid/flexigrid.js') }}
 
-	{{ HTML::script('semiems/js/cond_inic.js') }}
 	{{ HTML::script('semiems/js/modelo.js') }}
-	{{ HTML::script('semiems/js/main.js') }}
+	{{ HTML::script('semiems/js/popup.js') }}
+
 	{{ HTML::script('semiems/js/pinta_arm.js') }}
+	{{ HTML::script('semiems/js/init.js') }}
 
 	<!-- CUSTOM SCRIPTS -->
 	{{ HTML::script('semiems/js/helper.js') }}
-	{{ HTML::script('semiems/js/init.js') }}
 	{{ HTML::script('semiems/js/tabs/default.js') }}
 	{{ HTML::script('semiems/js/history.js') }}
 
