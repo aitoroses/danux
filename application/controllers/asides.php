@@ -90,9 +90,48 @@ class Asides_Controller extends Base_Controller {
                 $accexts= $wardrobe->accexts()->get();
                 return View::make('asides.accesorios_exterior')->with('accext', $accexts);
                 break;
-        	default:
-                return "No hay ruta aside";
-        	   break;
+            case "getPresupuesto":
+                $id_wardrobe = Session::get('wardrobe_id');
+                $wardrobe = Wardrobe::find($id_wardrobe);
+                $modules = $wardrobe->modules()->get();
+                //Costados del armario
+                $data["costadoInterior"] = DB::table('b_piezas_int')->where_tipo(5)->first();
+                $data["costadoExterior"] = DB::table('b_piezas_int')->where_tipo(6)->first();
+                //traseras,techo,base
+                
+                $data["module"] = array();
+
+                foreach ($modules as $mod) {
+                    $modulo_array["trasera"] = array();
+                    $modulo_array["base"] = array();
+                    $modulo_array["techo"] = array();
+
+                    $trasera = DB::table('b_piezas_int')->where_tipo(1)
+                                                                    ->where('ancho', '>=', $mod->width)
+                                                                    ->order_by('ancho','asc')
+                                                                    ->first();
+                    $base = DB::table('b_piezas_int')->where_tipo(2)
+                                                                ->where('ancho', '>=', $mod->width)
+                                                                ->order_by('ancho','asc')
+                                                                ->first();
+                    $techo = DB::table('b_piezas_int')->where_tipo(3)
+                                                                ->where('ancho', '>=', $mod->width)
+                                                                ->order_by('ancho','asc')
+                                                                ->first();
+ 
+                    $modulo_array["trasera"] = (array) $trasera;
+                    $modulo_array["base"] = (array) $base;
+                    $modulo_array["techo"] = (array) $techo;
+
+                    array_push($data["module"], $modulo_array);
+
+                }
+
+                //return var_dump($data["module"]);
+
+                return View::make('asides.presupuesto')->with('wardrobe',$data);
+                //return View::make('asides.presupuesto');
+                break;
     	}
 	}
 }
