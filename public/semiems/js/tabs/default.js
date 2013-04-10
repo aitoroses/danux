@@ -18,4 +18,28 @@ $(document).ready(function(){
 			}
 		});
 	});
+	$('.edit').click(function(){
+		alert('Has hecho click en editar')
+	});
+	$('.delete').click(function(){
+		alert('Has hecho click en borrar')
+	});
+	$('#link').click(function(){
+		if(document.getElementById('link').className == "close") {
+			$("#wardrobemenu").removeClass("show")
+			$("#link").removeClass("close")
+		}else{
+			$("#wardrobemenu").addClass("show")
+			$("#link").addClass("close")
+		}
+	});
 });
+
+WardrobeMenuController = {
+	show: function(){
+		$("#wardrobemenu").addClass("show")
+	},
+	close: function(){
+		$("#wardrobemenu").removeClass("show")
+	},
+}
