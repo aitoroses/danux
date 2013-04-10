@@ -9,10 +9,10 @@ class Create_Accext_Table {
 	 */
 	public function up()
 	{
-		Schema::create('l_accext_table', function($table){
+		Schema::create('l_accext_wardrobe_relation_table', function($table){
 			$table->increments('id');
 			$table->integer('wardrobe_id');
-			$table->integer('acc_id'); //Una sola tabla de accesorios
+			$table->integer('accext_id'); //Una sola tabla de accesorios
 			$table->timestamps();
 		});
 	}
@@ -24,7 +24,7 @@ class Create_Accext_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('l_accext_table');
+		Schema::drop('l_accext_wardrobe_relation_table');
 	}
 
 }

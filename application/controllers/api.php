@@ -132,7 +132,7 @@ class Api_Controller extends Base_Controller {
 			'data' => $wardrobe->to_array(),
 			'modules' => $modules_array,
 			'doors' => $doors_array,
-			'accext' => [],
+			'accext' => $accext,
 
 
 		);
@@ -195,8 +195,17 @@ class Api_Controller extends Base_Controller {
 			}
 
 		}, Input::get('wardrobe')["doors"]);
-		// UPDATE ACCINT
 		// UPDATE ACCEXT
+		if(isset(Input::get('wardrobe')["accext"])){ 
+			//si existen los materiales
+			$accs_ext = Input::get('wardrobe')["accext"];
+			$wardrobe_model = Wardrobe::find($id);
+			$wardrobe_model->accexts()->delete();
+			$wardrobe_model->accexts()->sync($accs_ext);
+		}else{
+			$wardrobe_model = Wardrobe::find($id);
+			$wardrobe_model->accexts()->delete();
+		}
 	}
 
 	// FLEXIGRID

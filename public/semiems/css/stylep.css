@@ -303,12 +303,12 @@ header {
   float: left;
   position: absolute;
   background-color: #fff;
-  width: 300px;
+  width: 320px;
   height: 300px;
   top: 100px;
   border-radius: 10px;
   padding: 20px;
-  left: -300px;
+  left: -330px;
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333;
@@ -318,23 +318,23 @@ header {
   transition: all, ease-in-out, 0.3s;
   border: solid 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-  overflow-y: scroll;
-  opacity: 0.3;
+  opacity: 0.8;
   z-index: 1000; }
 
-/* line 24, ../sass/_menu.scss */
+/* line 25, ../sass/_menu.scss */
 #wardrobemenu li {
+  width: 85%;
   padding: 10px;
   font-size: 1.5em;
   border-bottom: solid 1px rgba(0, 0, 0, 0.3); }
-  /* line 29, ../sass/_menu.scss */
+  /* line 31, ../sass/_menu.scss */
   #wardrobemenu li:last-child {
     border-bottom: none; }
-  /* line 32, ../sass/_menu.scss */
+  /* line 34, ../sass/_menu.scss */
   #wardrobemenu li a {
     display: inline-block;
     text-decoration: none; }
-  /* line 39, ../sass/_menu.scss */
+  /* line 41, ../sass/_menu.scss */
   #wardrobemenu li .delete {
     position: relative;
     float: right;
@@ -347,10 +347,10 @@ header {
     -moz-transition: background-size 0.2s ease;
     -o-transition: background-size 0.2s ease;
     transition: background-size 0.2s ease; }
-    /* line 48, ../sass/_menu.scss */
+    /* line 50, ../sass/_menu.scss */
     #wardrobemenu li .delete:hover {
       background-size: 35px; }
-  /* line 52, ../sass/_menu.scss */
+  /* line 54, ../sass/_menu.scss */
   #wardrobemenu li .edit {
     position: relative;
     float: right;
@@ -364,11 +364,29 @@ header {
     -moz-transition: background-size 0.2s ease;
     -o-transition: background-size 0.2s ease;
     transition: background-size 0.2s ease; }
-    /* line 62, ../sass/_menu.scss */
+    /* line 64, ../sass/_menu.scss */
     #wardrobemenu li .edit:hover {
       background-size: 35px; }
-/* line 67, ../sass/_menu.scss */
+/* line 69, ../sass/_menu.scss */
+#wardrobemenu #link {
+  position: absolute;
+  right: 8px;
+  top: -3px;
+  overflow: none;
+  background: url("../img/menuOpen.png") no-repeat;
+  width: 30px;
+  height: 350px;
+  z-index: 99999;
+  cursor: pointer; }
+  /* line 80, ../sass/_menu.scss */
+  #wardrobemenu #link.close {
+    background: url("../img/menuClose.png") no-repeat; }
+/* line 85, ../sass/_menu.scss */
 #wardrobemenu:hover {
+  opacity: 1;
+  left: -319px; }
+/* line 89, ../sass/_menu.scss */
+#wardrobemenu.show {
   position: absolute;
   left: -5px;
   opacity: 1; }
@@ -481,42 +499,48 @@ header {
   width: 41%;
   height: 10em; }
 
-/* line 132, ../sass/_newstyle.scss */
+/* line 133, ../sass/_newstyle.scss */
+#acc_ext .content .element .picture img {
+  margin: 5% 5% 5% 28%;
+  width: 41%;
+  height: 10em; }
+
+/* line 149, ../sass/_newstyle.scss */
 #sel_interiores .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 147, ../sass/_newstyle.scss */
+/* line 165, ../sass/_newstyle.scss */
 #distribucionPuerta .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 156, ../sass/_newstyle.scss */
+/* line 175, ../sass/_newstyle.scss */
 #sel_marco {
   height: 350px;
   vertical-align: top;
   display: inline-block;
   width: 25% !important;
   margin-top: -5px; }
-  /* line 162, ../sass/_newstyle.scss */
+  /* line 181, ../sass/_newstyle.scss */
   #sel_marco #marco_sel {
     margin: 5px 0px 15px 0px;
     clear: both;
     display: block; }
-    /* line 166, ../sass/_newstyle.scss */
+    /* line 185, ../sass/_newstyle.scss */
     #sel_marco #marco_sel h2 {
       font-size: 1em;
       line-height: 1.5em;
       margin-top: -10px; }
-    /* line 172, ../sass/_newstyle.scss */
+    /* line 191, ../sass/_newstyle.scss */
     #sel_marco #marco_sel img {
       display: block;
       margin: 5px 0px;
       width: 75%; }
 
-/* line 187, ../sass/_newstyle.scss */
+/* line 206, ../sass/_newstyle.scss */
 .submit-button {
   background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #8dc059), color-stop(100%, #6aa436)), #6aa436;
   background: -webkit-linear-gradient(left top, #8dc059, #6aa436), #6aa436;
@@ -540,17 +564,17 @@ header {
   vertical-align: middle;
   text-align: center;
   border: 1px solid #447314; }
-  /* line 210, ../sass/_newstyle.scss */
+  /* line 229, ../sass/_newstyle.scss */
   .no-cssgradients .submit-button {
     background: url(semiems/img/site/button-shader.png) left center repeat-x, #6aa436; }
-  /* line 216, ../sass/_newstyle.scss */
+  /* line 235, ../sass/_newstyle.scss */
   .no-multiplebgs .submit-button {
     background-color: #6aa436; }
-  /* line 220, ../sass/_newstyle.scss */
+  /* line 239, ../sass/_newstyle.scss */
   .submit-button:hover, .submit-button:focus {
     text-shadow: #537a4a 0 1px 0;
     color: #FFF; }
-  /* line 224, ../sass/_newstyle.scss */
+  /* line 243, ../sass/_newstyle.scss */
   .submit-button:active {
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6aa436), color-stop(100%, #8dc059)), #6aa436;
     background: -webkit-linear-gradient(top, #6aa436, #8dc059), #6aa436;
@@ -560,15 +584,15 @@ header {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none; }
-    /* line 230, ../sass/_newstyle.scss */
+    /* line 249, ../sass/_newstyle.scss */
     .no-cssgradients .submit-button:active {
       background: url(semiems/img/site/button-shader.png) left center repeat-x, #5e9130; }
-    /* line 236, ../sass/_newstyle.scss */
+    /* line 255, ../sass/_newstyle.scss */
     .no-multiplebgs .submit-button:active {
       background-color: #5e9130;
       border-color: #FFF; }
 
-/* line 242, ../sass/_newstyle.scss */
+/* line 261, ../sass/_newstyle.scss */
 .kineticjs-content1 {
   position: relative;
   left: 200px;
