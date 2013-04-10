@@ -13,7 +13,6 @@ class User_Controller extends Base_Controller {
             'username' => $user,
             'password' => Hash::make($pass)
         ));
-
         return "Registrado correctamente";
     }    
 
@@ -39,6 +38,7 @@ class User_Controller extends Base_Controller {
 	public function get_logout()
     {
         Auth::logout();
+        Session::flush();
         return Redirect::to('/')
                     ->with('log_out', true);
     }    
@@ -49,5 +49,4 @@ class User_Controller extends Base_Controller {
             return Response::eloquent(Auth::user());
         } else return "No has iniciado sesion";
     }
-
 }

@@ -7,8 +7,8 @@ $(document).ready(function(){
 			url: 'session/' + id,
 			success: function(response) {
 				//alert('Se ha cargado el armario con ID '+ response)
-				if (location.href !== "2"){
-					location.href = "2";
+				if (location.href !== "1"){
+					location.href = "1";
 				} else {
 					location.href.reload(true);
 				}
