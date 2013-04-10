@@ -52,7 +52,7 @@ Tab6Controller = {
   getMarcoMaterials: function(type){
     $.ajax({
       type: 'GET',
-      url: 'API/popup/view',
+      url: 'API/popup/view/materialsView',
       data: {type: type},
       success: function(response){
         $('#materiales').html(response);

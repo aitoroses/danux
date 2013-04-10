@@ -481,42 +481,48 @@ header {
   width: 41%;
   height: 10em; }
 
-/* line 132, ../sass/_newstyle.scss */
+/* line 133, ../sass/_newstyle.scss */
+#acc_ext .content .element .picture img {
+  margin: 5% 5% 5% 28%;
+  width: 41%;
+  height: 10em; }
+
+/* line 149, ../sass/_newstyle.scss */
 #sel_interiores .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 147, ../sass/_newstyle.scss */
+/* line 165, ../sass/_newstyle.scss */
 #distribucionPuerta .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 156, ../sass/_newstyle.scss */
+/* line 175, ../sass/_newstyle.scss */
 #sel_marco {
   height: 350px;
   vertical-align: top;
   display: inline-block;
   width: 25% !important;
   margin-top: -5px; }
-  /* line 162, ../sass/_newstyle.scss */
+  /* line 181, ../sass/_newstyle.scss */
   #sel_marco #marco_sel {
     margin: 5px 0px 15px 0px;
     clear: both;
     display: block; }
-    /* line 166, ../sass/_newstyle.scss */
+    /* line 185, ../sass/_newstyle.scss */
     #sel_marco #marco_sel h2 {
       font-size: 1em;
       line-height: 1.5em;
       margin-top: -10px; }
-    /* line 172, ../sass/_newstyle.scss */
+    /* line 191, ../sass/_newstyle.scss */
     #sel_marco #marco_sel img {
       display: block;
       margin: 5px 0px;
       width: 75%; }
 
-/* line 187, ../sass/_newstyle.scss */
+/* line 206, ../sass/_newstyle.scss */
 .submit-button {
   background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #8dc059), color-stop(100%, #6aa436)), #6aa436;
   background: -webkit-linear-gradient(left top, #8dc059, #6aa436), #6aa436;
@@ -540,17 +546,17 @@ header {
   vertical-align: middle;
   text-align: center;
   border: 1px solid #447314; }
-  /* line 210, ../sass/_newstyle.scss */
+  /* line 229, ../sass/_newstyle.scss */
   .no-cssgradients .submit-button {
     background: url(semiems/img/site/button-shader.png) left center repeat-x, #6aa436; }
-  /* line 216, ../sass/_newstyle.scss */
+  /* line 235, ../sass/_newstyle.scss */
   .no-multiplebgs .submit-button {
     background-color: #6aa436; }
-  /* line 220, ../sass/_newstyle.scss */
+  /* line 239, ../sass/_newstyle.scss */
   .submit-button:hover, .submit-button:focus {
     text-shadow: #537a4a 0 1px 0;
     color: #FFF; }
-  /* line 224, ../sass/_newstyle.scss */
+  /* line 243, ../sass/_newstyle.scss */
   .submit-button:active {
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6aa436), color-stop(100%, #8dc059)), #6aa436;
     background: -webkit-linear-gradient(top, #6aa436, #8dc059), #6aa436;
@@ -560,10 +566,10 @@ header {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none; }
-    /* line 230, ../sass/_newstyle.scss */
+    /* line 249, ../sass/_newstyle.scss */
     .no-cssgradients .submit-button:active {
       background: url(semiems/img/site/button-shader.png) left center repeat-x, #5e9130; }
-    /* line 236, ../sass/_newstyle.scss */
+    /* line 255, ../sass/_newstyle.scss */
     .no-multiplebgs .submit-button:active {
       background-color: #5e9130;
       border-color: #FFF; }

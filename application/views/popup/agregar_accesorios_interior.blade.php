@@ -6,17 +6,23 @@
   <p id="title_popup">Seleccione un accesorio para añadirlo al modulo</p>
   <div id="sel_material">
   <div id="sel_parent">
-  </div>
-  </br>  
+  </div> 
   <div id="mat_puerta">
-    <div class="content">    
-    @foreach($accs as $acc)
-        <div class='element selectormat' data-ref="{{ $acc->id }}">
-          <div class='picture'><img src="{{ 'semiems/contenido/Bibliotecas/AccInt/Loija/'.$acc->img }}" desc="{{ $acc->desc }}" ref="{{ $acc->id }}"/></div> 
-          <div class='title'>
+    <div class="content">  
+    @foreach($accs as $acc) 
+      <div class='element selectormat' data-ref="{{ $acc->id }}">
+        <div class='picture'>
+          @if($acc->img==NULL)
+            <img src="semiems/contenido/Bibliotecas/AccInt/dummie.jpg" desc="{{ $acc->desc }}" ref="{{ $acc->id }}"/>        
+          @else
+            <img src="{{ 'semiems/contenido/Bibliotecas/AccInt/Loija/'.$acc->img }}" desc="{{ $acc->desc }}" ref="{{ $acc->id }}"/>        
+          @endif 
+          
+        </div> 
+        <div class='title'>
           Ref. {{ $acc->ref }} ({{ $acc->desc }})
-          </div>
         </div>
+      </div>
     @endforeach
     </div>
   </div>
