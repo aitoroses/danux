@@ -24,16 +24,21 @@
 	{{ HTML::style('semiems/js/flexigrid/flexigrid.css') }}
 	{{ HTML::script('semiems/js/flexigrid/flexigrid.js') }}
 
+	<!-- OBJECT SCRIPTS -->
 	{{ HTML::script('semiems/js/modelo.js') }}
 	{{ HTML::script('semiems/js/popup.js') }}
-
-	{{ HTML::script('semiems/js/pinta_arm.js') }}
-	{{ HTML::script('semiems/js/init.js') }}
+	{{ HTML::script('semiems/js/history.js') }}
 
 	<!-- CUSTOM SCRIPTS -->
 	{{ HTML::script('semiems/js/helper.js') }}
+	{{ HTML::script('semiems/js/pinta_arm.js') }}
+
+	<!-- Init Variables -->
+	{{ HTML::script('semiems/js/init.js') }}
+	<!-- CUSTOM SCRIPTS -->
 	{{ HTML::script('semiems/js/tabs/default.js') }}
-	{{ HTML::script('semiems/js/history.js') }}
+
+
 
 
 
@@ -128,18 +133,12 @@
 		?>
 		
 	</ul>
+	<span id="link"></span>
 </div>
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#content').animate({opacity: 1}, 300);
 	});
-	$('.edit').click(function(){
-		alert('Has hecho click en editar')
-	});
-	$('.delete').click(function(){
-		alert('Has hecho click en borrar')
-	});
-
 </script>
 </html>

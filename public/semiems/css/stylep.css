@@ -303,12 +303,12 @@ header {
   float: left;
   position: absolute;
   background-color: #fff;
-  width: 300px;
+  width: 320px;
   height: 300px;
   top: 100px;
   border-radius: 10px;
   padding: 20px;
-  left: -300px;
+  left: -330px;
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333;
@@ -318,23 +318,23 @@ header {
   transition: all, ease-in-out, 0.3s;
   border: solid 5px rgba(0, 0, 0, 0.1);
   text-align: center;
-  overflow-y: scroll;
-  opacity: 0.3;
+  opacity: 0.8;
   z-index: 1000; }
 
-/* line 24, ../sass/_menu.scss */
+/* line 25, ../sass/_menu.scss */
 #wardrobemenu li {
+  width: 85%;
   padding: 10px;
   font-size: 1.5em;
   border-bottom: solid 1px rgba(0, 0, 0, 0.3); }
-  /* line 29, ../sass/_menu.scss */
+  /* line 31, ../sass/_menu.scss */
   #wardrobemenu li:last-child {
     border-bottom: none; }
-  /* line 32, ../sass/_menu.scss */
+  /* line 34, ../sass/_menu.scss */
   #wardrobemenu li a {
     display: inline-block;
     text-decoration: none; }
-  /* line 39, ../sass/_menu.scss */
+  /* line 41, ../sass/_menu.scss */
   #wardrobemenu li .delete {
     position: relative;
     float: right;
@@ -347,10 +347,10 @@ header {
     -moz-transition: background-size 0.2s ease;
     -o-transition: background-size 0.2s ease;
     transition: background-size 0.2s ease; }
-    /* line 48, ../sass/_menu.scss */
+    /* line 50, ../sass/_menu.scss */
     #wardrobemenu li .delete:hover {
       background-size: 35px; }
-  /* line 52, ../sass/_menu.scss */
+  /* line 54, ../sass/_menu.scss */
   #wardrobemenu li .edit {
     position: relative;
     float: right;
@@ -364,11 +364,29 @@ header {
     -moz-transition: background-size 0.2s ease;
     -o-transition: background-size 0.2s ease;
     transition: background-size 0.2s ease; }
-    /* line 62, ../sass/_menu.scss */
+    /* line 64, ../sass/_menu.scss */
     #wardrobemenu li .edit:hover {
       background-size: 35px; }
-/* line 67, ../sass/_menu.scss */
+/* line 69, ../sass/_menu.scss */
+#wardrobemenu #link {
+  position: absolute;
+  right: 8px;
+  top: -3px;
+  overflow: none;
+  background: url("../img/menuOpen.png") no-repeat;
+  width: 30px;
+  height: 350px;
+  z-index: 99999;
+  cursor: pointer; }
+  /* line 80, ../sass/_menu.scss */
+  #wardrobemenu #link.close {
+    background: url("../img/menuClose.png") no-repeat; }
+/* line 85, ../sass/_menu.scss */
 #wardrobemenu:hover {
+  opacity: 1;
+  left: -319px; }
+/* line 89, ../sass/_menu.scss */
+#wardrobemenu.show {
   position: absolute;
   left: -5px;
   opacity: 1; }
