@@ -87,7 +87,6 @@ WardrobeModel = new Object({
 	 									}
 	 								}); 
 	 		}
-	 		return this.wardrobe;
 	},
 	guardarJson: function(){
 		$.ajax({
@@ -107,44 +106,8 @@ WardrobeModel = new Object({
 			}
 		});
 	},
-
-	cargarJson: function (idbudget){
-	
-		$.ajax({
-	        type: "GET",
-            url: "API/budget/"+ idbudget + '/wardrobe',
-            dataType: "json",
-            async: false,
-            success: function(response){
-
-                WardrobeModel.wardrobe.data=response;
-                document.frm.name.value = wardrobe.data.name;
-                document.frm.malto.value = wardrobe.data.height;
-                document.frm.mancho.value = wardrobe.data.width;
-                document.frm.mprof.value = wardrobe.data.prof;
-                document.frm.puerta.value = wardrobe.data.typedoor;
-                //cambiaNumDoors();
-                document.frm.npuertas.value = wardrobe.data.doors;
-                //puertas_impares_bat();
-                if (document.frm.npuertas.value%2!=0 && document.frm.puerta.value == 1){
-                document.frm.donde_imp.value = wardrobe.data.paritypos;
-                }
-                //cargar los perfiles
-                //cargar_perfiles();
-                //carga marco
-                //cambio_marco();
-                //carga tirador
-                //cambio_tirador();
-                //carga acc
-                //AgregarAccInt();
-                //accesorios
-                //loadacc();
-            }
-        });
-	},
 	save: function(){
 		id = $('body').data('wardrobe');
-		
 		$.ajax({
 	        type: "PUT",
             url: "API/json/" + id,
@@ -171,7 +134,7 @@ WardrobeModel = new Object({
             	console.log(WardrobeModel.getWardrobe());
             },
             error: function(){
-            	alert('Error: No se ha sincronizado el armario');
+            	alert('Error: No se ha cargado el armario');
             	$(document).trigger('error');
             }
         });  
