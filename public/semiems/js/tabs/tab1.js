@@ -2,10 +2,34 @@
 $(document).ready(function(){
 	$('a.next-tab').on('click',function(e){
 		//e.preventDefault();
-        WardrobeModel.initialize();
-        WardrobeModel.guardarJson();
+        
+        if($("body").data('wardrobe')==""){
+        	WardrobeModel.initialize();
+        	WardrobeModel.guardarJson();
+        }else{
+        	WardrobeModel.initialize();
+        	WardrobeModel.save();
+        }
+        
 	});
 
+	if($("body").data('wardrobe')!=""){
+		$(document).bind('sync',function(){
+			wardrobe=WardrobeModel.getWardrobe();
+	        document.frm.name.value = wardrobe.data.name;
+	        document.frm.malto.value = wardrobe.data.height;
+	        document.frm.mancho.value = wardrobe.data.width;
+	        document.frm.mprof.value = wardrobe.data.prof;
+	        document.frm.puerta.value = wardrobe.data.typedoor;
+	        calculo_puertas(document.frm.npuertas);
+	        document.frm.npuertas.value = wardrobe.data.doors;
+	        puertas_impares_bat();
+	        if (document.frm.npuertas.value%2!=0 && document.frm.puerta.value == 1){
+	        document.frm.donde_imp.value = wardrobe.data.paritypos;
+	        }
+		});
+		WardrobeModel.fetch();
+	}
 
 });
 

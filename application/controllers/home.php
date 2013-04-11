@@ -11,6 +11,7 @@ class Home_Controller extends Base_Controller {
 	}
 	public function get_tab($id)
 	{
+		var_dump(Session::get('wardrobe_id'));
 		$budget = Auth::user()->budgets()->first();
 		if($budget){
 			$wardrobes = $budget->wardrobe()->get();
@@ -18,6 +19,7 @@ class Home_Controller extends Base_Controller {
 		if(!isset($wardrobes)){
 			$wardrobes = null;
 		}
+		
 		if(Session::get('wardrobe_id') == null) {
 			$id_wardrobe = "";
 		} else {
@@ -30,6 +32,7 @@ class Home_Controller extends Base_Controller {
 			->with('id_wardrobe', $id_wardrobe)
 			->with('wardrobes', $wardrobes);
 	}
+
 	public function post_session($id){
 		Session::put('wardrobe_id', $id);
 		return $id;
