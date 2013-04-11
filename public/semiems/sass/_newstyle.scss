@@ -258,3 +258,7 @@ $background-shader-f: url(semiems/img/site/button-shader.png) left center repeat
 		}
 	}
 }
+.kineticjs-content1{
+		position: relative;
+		left: 200px;
+		@include transform(perspective(800) scale3d(0.8,0.8,0.8) rotateY(40deg) translate3d(-200px,0,0));}

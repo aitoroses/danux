@@ -142,10 +142,16 @@ WardrobeModel = new Object({
 	getWardrobe: function(){
 		return this.wardrobe;
 	},
+	rebuildData: function(){
+		_data = this.wardrobe.data;
+		_frm = document.frm;
+		
+		_data.name = _frm.name.value;
+	}
 });
 
 
-
+	// Funcion fuera del modelo?
 	function save_accext(){
 	ii=[];
 	if ($(document).find('#accext li select')){
