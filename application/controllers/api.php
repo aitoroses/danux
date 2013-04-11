@@ -195,6 +195,7 @@ class Api_Controller extends Base_Controller {
 			}
 
 		}, Input::get('wardrobe')["doors"]);
+
 		// UPDATE ACCEXT
 		if(isset(Input::get('wardrobe')["accext"])){ 
 			//si existen los materiales

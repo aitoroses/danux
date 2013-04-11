@@ -7,7 +7,8 @@ $(document).ready(function(){
         	WardrobeModel.initialize();
         	WardrobeModel.guardarJson();
         }else{
-        	WardrobeModel.initialize();
+        	//WardrobeModel.initialize();
+        	WardrobeModel.rebuildData();
         	WardrobeModel.save();
         }
         

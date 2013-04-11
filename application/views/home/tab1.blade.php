@@ -11,7 +11,7 @@
 	<p>Introduce las medidas de tu hueco (mm):</p>
 	{{ Form::open('API/budget', 'POST', array('id' => 'frm', 'name' => 'frm')) }}
 	<fieldset>
- 	<p><label> Nombre del presupuesto: </label>{{ Form::text('name', Input::old('name'), array('size' => 40)) }}</p>
+ 	<p class="editable"><label> Nombre del presupuesto: </label>{{ Form::text('name', Input::old('name'), array('size' => 40, 'id' => 'name')) }}</p>
 	<label> Alto: </label>{{ Form::text('malto', Input::old('name'), array('size' => 6)) }}
 	<label> Ancho: </label>{{ Form::text('mancho', Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)", 'size' => 6)) }}
 	<label> Profundidad: </label>{{ Form::text('mprof', Input::old('name'), array('size' => 6)) }}
@@ -31,4 +31,14 @@
 
  	<a class='next-tab mover'>Siguiente &#187;</a> 
 </div>
+<script type="text/javascript">
+	id = $('body').data('wardrobe');
+	if (id > 0) {
+		$('input').attr('readonly', true);
+		$('select').attr('disabled', true);
+		$('input#name').attr('readonly', false);
+		$('.editable').append('<span> (Campo editable)</span>');
+		$('.editable span').css({'color': '#b62718', 'font-weight': 'bold'});
+	}
+</script>
 @endsection
