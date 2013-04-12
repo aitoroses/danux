@@ -11,7 +11,7 @@ Class Content_Controller extends Base_Controller{
 	// este campo contiene las medidas de cada tipo de puerta en 
 	// forma fraccionaria 
 	public function get_door($id){
-		$door = DB::table('b_doors')->find($id);
+		$door = DB::table('l_biblioteca_puertas')->find($id);
 		// sacamos el campo desc y lo convertimos a array
 		$array_desc=explode(",",$door->desc);
 		// ahora convertimos las fracciones en sus valores

@@ -149,20 +149,3 @@ WardrobeModel = new Object({
 		_data.name = _frm.name.value;
 	}
 });
-
-
-	// Funcion fuera del modelo?
-	function save_accext(){
-	ii=[];
-	if ($(document).find('#accext li select')){
-
-	$(document).find('#accext li select').each(function(i) {
-	ind=$(this.options.selectedIndex)[0]
-	if (($(this.options)[ind])){
-	ii.push(($(this.options)[ind]).value)}
-	})
-
-	wardrobe.accext = ii;
-	}
-}
-

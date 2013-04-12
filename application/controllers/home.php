@@ -11,7 +11,6 @@ class Home_Controller extends Base_Controller {
 	}
 	public function get_tab($id)
 	{
-		var_dump(Session::get('wardrobe_id'));
 		$budget = Auth::user()->budgets()->first();
 		if($budget){
 			$wardrobes = $budget->wardrobe()->get();

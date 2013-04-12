@@ -119,14 +119,6 @@ class Api_Controller extends Base_Controller {
 			
 			return $result;
 		}, $doors);
-		// Accesorios interiores y exteriores
-		/*
-		if(sizeof($accint) > 0){
-			$accint = $accint->to_array();
-		}
-		if(sizeof($accext) > 0){
-			$accext = $accext->to_array();
-		}*/
 
 		$json = array(
 			'data' => $wardrobe->to_array(),

@@ -18,12 +18,12 @@ Class Api_Popup_Controller extends Base_Controller {
                 break;
             case "agregar_accesorios_interior":
                 // Query de accesorios
-                $accs = DB::table('b_acc')->get();
+                $accs = DB::table('l_biblioteca_accesorios_interior')->get();
                 return View::make('popup.agregar_accesorios_interior')->with('accs', $accs);
                 break;
             case "handle":
                 // Query del tirador
-                $handles = DB::table('b_handles')->get();
+                $handles = DB::table('l_biblioteca_tiradores')->get();
                 return View::make('popup.cambiar_tirador')->with('handles', $handles);
                 break;
             case "perfil":
@@ -46,7 +46,7 @@ Class Api_Popup_Controller extends Base_Controller {
                 break;
             case "distribucionPuerta":
                 // Query de distribucion de la puerta
-                $doors = DB::table('b_doors')->get();
+                $doors = DB::table('l_biblioteca_puertas')->get();
                 return View::make('popup.distribucion_puerta')->with('doors', $doors);;
                 break;
             case "marco":
@@ -54,7 +54,7 @@ Class Api_Popup_Controller extends Base_Controller {
                 return View::make('popup.materiales_marco');
                 break;
             case "accesoriosExterior":
-                $accs_ext = DB::table('b_acc_ext')->get();
+                $accs_ext = DB::table('l_biblioteca_accesorios_exterior')->get();
                 return View::make('popup.agregar_accesorios_exterior')->with('accs', $accs_ext);
             default:
 
@@ -100,24 +100,3 @@ Class Api_Popup_Controller extends Base_Controller {
         }
     }
 }
-
-
-
-/*
-$SQL = "SELECT * FROM b_modules WHERE width_max >= '$anchura'";
-$result = mysql_query($SQL,$link2) or die("ERROR :".mysql_error());
-if(mysql_num_rows($result)) {
-    while($e = mysql_fetch_assoc($result)) {
-        $modules[] = array(
-                        'ref' => $e['id'],
-                        'points' => $e['points'],
-                        'image' => $e['image']
-                        ); 
-        }
-};
-
-
-foreach($modules as $v){  
-    echo "<li><a href='#'><div class='item'><img src=".$v['image']."/".$v['ref'].".png ref=".$v['ref']." /> <div class='title'>Ref.".$v['ref']."</div></div></a></li>";
- }
- */
