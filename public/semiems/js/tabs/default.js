@@ -43,3 +43,24 @@ WardrobeMenuController = {
 		$("#wardrobemenu").removeClass("show")
 	},
 }
+
+App.Help = {
+	open: function(){
+		// Close WardrobeMenu
+		$("#wardrobemenu").removeClass("show");
+		// Show the help
+		$('#help').show();
+		setTimeout(function(){
+			$('#help .content, #help .page-screen').addClass('show');
+			$('#main, #wardrobemenu').addClass('blur');
+
+		},200);
+	},
+	close: function() {
+		$('#help .content, #help .page-screen').removeClass('show');
+		setTimeout(function(){$('#help').hide();}, 300);
+		$('#main, #wardrobemenu').removeClass('blur');
+
+
+	}
+}
