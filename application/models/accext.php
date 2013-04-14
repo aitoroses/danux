@@ -2,5 +2,5 @@
 
 class Accext extends Eloquent 
 {
-	public static $table = 'b_acc_ext';
+	public static $table = 'l_biblioteca_accesorios_exterior';
 }

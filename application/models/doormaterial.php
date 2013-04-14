@@ -2,6 +2,6 @@
 
 class DoorMaterial extends Eloquent 
 {
-	public static $table = 'b_mat_puertas';
+	public static $table = 'l_biblioteca_materiales';
 
 }

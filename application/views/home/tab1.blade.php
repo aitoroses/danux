@@ -42,3 +42,11 @@
 	}
 </script>
 @endsection
+
+@section('help')
+<div id="close-help"><a href="#" onClick="App.Help.close();"><img src="semiems/img/close.png"/></a></div>
+<h1>Ayuda Tab 1</h1>
+
+
+
+@endsection

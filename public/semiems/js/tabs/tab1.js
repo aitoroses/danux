@@ -52,7 +52,10 @@ function calculo_puertas(oCntrl){
 // 
 	case 1:
 		$('#type').text('modulos');
-		if (document.frm.mancho.value < 300)
+		var anchura_min_puerta = 600;
+		var anchura_max_puerta = 1200;
+		
+		if (document.frm.mancho.value < anchura_min_puerta)
 		{
 			addOpt(oCntrl,  0, "Imposible", 0);
 			break;
@@ -65,9 +68,9 @@ function calculo_puertas(oCntrl){
 		while(x!=0)
 		{
 			var mpuerta = document.frm.mancho.value/i;
-			if (mpuerta >650){ npuertasmin = npuertasmin +1; }
-			else if (mpuerta <= 650 && mpuerta >= 300 ) { npuertasmax = i; }
-			else if (mpuerta < 300) {x=0;}
+			if (mpuerta >anchura_max_puerta){ npuertasmin = npuertasmin +1; }
+			else if (mpuerta <= anchura_max_puerta && mpuerta >= anchura_min_puerta ) { npuertasmax = i; }
+			else if (mpuerta < anchura_min_puerta) {x=0;}
 			i++;
 		}
 		var np = npuertasmax-npuertasmin+1;	
