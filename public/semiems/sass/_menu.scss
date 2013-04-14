@@ -15,7 +15,7 @@
 	text-align: center;
 	//overflow-y: scroll;
 	opacity:0.8;
-	z-index: 1000;
+	z-index: 0;
 
 
 }
@@ -67,15 +67,14 @@
 		}
 	}
 	#link{
-		position:absolute;
+		position: absolute;
 		right:8px;
 		top:-3px;
 		overflow:none;
 		background: url('../img/menuOpen.png') no-repeat;
-
 		width: 30px;
 		height: 350px;
-		z-index: 99999;
+		z-index: 10;
 		cursor:pointer;
 		&.close{
 				background: url('../img/menuClose.png') no-repeat;
