@@ -44,7 +44,7 @@ class Asides_Controller extends Base_Controller {
                 $wardrobe_array=$wardrobe->to_array();
 
                 if ($wardrobe_array["handle"]!="0"){
-                    $tirador_bd = DB::table('b_handles')->find($wardrobe_array["handle"]);
+                    $tirador_bd = DB::table('l_biblioteca_tiradores')->find($wardrobe_array["handle"]);
                     $result["handle"]=$wardrobe_array["handle"];
                     $result["name"]=$tirador_bd->codigo." en ".$tirador_bd->material;
                 }else{
@@ -58,7 +58,7 @@ class Asides_Controller extends Base_Controller {
                 $wardrobe_array=$wardrobe->to_array();
 
                 if ($wardrobe_array["marco"]!="0"){
-                    $data = DB::table('b_mat_puertas')->find($wardrobe_array["marco"]);
+                    $data = DB::table('l_biblioteca_materiales')->find($wardrobe_array["marco"]);
                     switch ($data->type) {
                         case 1:
                             $folder="Cristales_porcelanicos";

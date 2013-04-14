@@ -22,13 +22,60 @@
 		float: none;
 	}
 }
+/* HELP BUTTON */
+#help-btn{
+	@include transition(width 0.3s ease-in-out);
+	background-color: rgba(200,200,200,0.5);
+	@include border-radius(
+		4px
+		);
+	@include box-shadow(
+		rgba(255,255,255,0.4) 0 1px 0, 
+		inset rgba(255,255,255,0.4) 0 1px 0
+		);
+	@include text-shadow(
+		rgb(82, 85, 79) 0 1px 0
+		);
+	position:relative;
+	top:0px;
+	left:30px;
+	float:left;
+	display:inline-block;
+	width: 32px;
+	height: 32px;
+	overflow:hidden;
+	text-align:left;
+	cursor:pointer;
+	.background{
+		background: url('../img/help-blue-btn.png') no-repeat top left;
+		background-size:32px;
+		width:32px;
+		height:32px;
+		display:inline-block;
+		float:right;
+	}
+	.desc{
+		text-align:right;
+		display:none;
+		color: #fff;
+		line-height:32px;
+		vertical-align:top;
+	}
+	&:hover,
+	&:focus{
+		width: 111px;
+		padding-left:10px;
+		.desc{
+		display:inline-block;
+		}
+
+	}
+}
 
 %opacity-transition {
 	@include transition(opacity 0.3s ease-in-out);
 	opacity: 0;
 }
-
-
 
 #help {
 	@include filter(blur(0px) !important) ;
@@ -38,7 +85,7 @@
 		$gutter: 40%;
 		display: inline-block;
 		margin: 0 $gutter/2;
-		margin-top: 100px;
+		margin-top: 90px;
 		position: absolute;
 		z-index: 10001;
 		top: 0;
@@ -47,7 +94,19 @@
 		border-radius: 20px;
 		background-color: #fff;
 		opacity: 0;
+		padding:10px;
 		@include box-shadow(1px 0px 5px #333);
+		h1{
+			font-family: "Open Sans Semibold", sans-serif;
+			font-size: 26px;
+			margin: auto;
+			text-align: center;
+			margin: 10px 0px;
+		}
+		#close-help{
+			position: relative;
+			float: right;
+		}
 	}
 	.page-screen {
 		background-color: rgba(#bbb, 0.3);
@@ -71,6 +130,8 @@
 	}
 	
 }
+
+
 
 body .blur {
 	@include filter(blur(8px));
@@ -339,4 +400,6 @@ $background-shader-f: url(semiems/img/site/button-shader.png) left center repeat
 .kineticjs-content1{
 		position: relative;
 		left: 200px;
-		@include transform(perspective(800) scale3d(0.8,0.8,0.8) rotateY(40deg) translate3d(-200px,0,0));}
+		@include transform(perspective(800) scale3d(0.8,0.8,0.8) rotateY(40deg) translate3d(-200px,0,0));
+	}
+

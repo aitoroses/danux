@@ -2,5 +2,5 @@
 
 class Accint extends Eloquent 
 {
-	public static $table = 'b_acc';
+	public static $table = 'l_biblioteca_accesorios_interior';
 }
