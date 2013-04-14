@@ -46,8 +46,10 @@
 	<!-- POPUP   -->
 	<header id="header" class="cf">
 	<nav id="nav">
+	<div id="help-btn"><div class="background"></div><div class="desc">Instrucciones</div></div>
+
 		<h1 style="padding: 5px;">Bienvenido {{ $username }}</h1>
-		<a id="close-btn" href="logout" class="logout">Cerrar session</a>
+				<a id="close-btn" href="logout" class="logout">Cerrar session</a>
 	</nav>
 	</header>
 	<div id="main">

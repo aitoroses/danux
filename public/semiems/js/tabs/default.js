@@ -33,6 +33,9 @@ $(document).ready(function(){
 			$("#link").addClass("close")
 		}
 	});
+	$('#help-btn').click(function(){
+		App.Help.open();
+	});
 });
 
 WardrobeMenuController = {
@@ -52,14 +55,14 @@ App.Help = {
 		$('#help').show();
 		setTimeout(function(){
 			$('#help .content, #help .page-screen').addClass('show');
-			$('#main, #wardrobemenu').addClass('blur');
+			$('#wardrobemenu').addClass('blur');
 
 		},200);
 	},
 	close: function() {
 		$('#help .content, #help .page-screen').removeClass('show');
 		setTimeout(function(){$('#help').hide();}, 300);
-		$('#main, #wardrobemenu').removeClass('blur');
+		$('#wardrobemenu').removeClass('blur');
 
 
 	}

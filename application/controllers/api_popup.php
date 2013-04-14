@@ -11,7 +11,7 @@ Class Api_Popup_Controller extends Base_Controller {
         		break;
     		case "seleccioninterior":
                 // Query de modulos
-                $modules = DB::table('b_modules')->get();
+                $modules = DB::table('l_biblioteca_modulos')->get();
         		return View::make('popup.seleccion_interior')->with('modules', $modules);
             case "divisioninterior":
                 return View::make('popup.divisioninterior');
@@ -66,7 +66,7 @@ Class Api_Popup_Controller extends Base_Controller {
             case "materialsView":
                 $type = Input::get('type');
                 // @param $type: integer = {1, 2, 3, 4, 5}
-                $data = DB::table('b_mat_puertas')->where_type($type)->get();
+                $data = DB::table('l_biblioteca_materiales')->where_type($type)->get();
                 switch ($type) {
                     case 1:
                         $folder="Cristales_porcelanicos";

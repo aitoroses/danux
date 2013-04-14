@@ -29,7 +29,7 @@ Class Content_Controller extends Base_Controller{
 		return $z_json;
 	}
 	public function get_materialsource($id){
-		$material = DB::table('b_mat_puertas')->find($id);
+		$material = DB::table('l_biblioteca_materiales')->find($id);
 
 		switch ($material->type) {
 		    case 1:
