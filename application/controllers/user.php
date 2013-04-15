@@ -11,7 +11,8 @@ class User_Controller extends Base_Controller {
 
         User::insert(array(
             'username' => $user,
-            'password' => Hash::make($pass)
+            'password' => Hash::make($pass),
+            'type_user' => 1
         ));
         return "Registrado correctamente";
     }    
@@ -25,7 +26,7 @@ class User_Controller extends Base_Controller {
 
         if ( Auth::attempt($credentials) ){
                 // we are now logged in, go to home
-                return Redirect::to('/1');
+                return Redirect::to('/welcome');
         }else{
                 // auth failure! lets go back to the login
                 return Redirect::to('/')

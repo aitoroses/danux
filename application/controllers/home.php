@@ -11,6 +11,13 @@ class Home_Controller extends Base_Controller {
 	}
 	public function get_tab($id)
 	{
+		if ($id == 'welcome'){
+			return View::make('home.welcome')
+			->with('title','Paso '.$id.' Creacion de armario. Semiems')
+			->with('username',Auth::user()->username)
+			->with('role',Auth::user()->type_user);
+		}
+
 		$budget = Auth::user()->budgets()->first();
 		if($budget){
 			$wardrobes = $budget->wardrobe()->get();
