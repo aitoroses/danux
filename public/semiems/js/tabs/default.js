@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+	App.Navigator.initialize();
+
 	$('#wardrobemenu a').click(function(e){
 		e.preventDefault();
 		var id = $(this).attr('href');
@@ -60,10 +63,31 @@ App.Help = {
 		},200);
 	},
 	close: function() {
-		$('#help .content, #help .page-screen').removeClass('show');
-		setTimeout(function(){$('#help').hide();}, 300);
-		$('#wardrobemenu').removeClass('blur');
 
+		
+		$('#help .page-screen, #help .content').removeClass('show');
+		setTimeout(function(){
+		$('#help').hide();
+		$('#wardrobemenu').removeClass('blur');
+		}, 500);
 
 	}
+}
+App.Navigator = {
+	tab:0,
+	// Get the tab present
+	initialize: function(){
+		myUrl = location.href;
+		this.tab=parseInt(myUrl.substring(myUrl.length-1));
+	},
+	goNext: function(){
+		location.href = this.tab + 1; 
+	},
+	goBack: function(){
+		location.href = this.tab - 1;
+	}
+
+}
+App.AlertSystem ={
+	
 }
