@@ -54,11 +54,6 @@ Route::post('/session/(:any)', array('uses' => 'home@session'));
 	// Session Control Routes
 	Route::post('/API/session/(:any)/(:any)', array('uses' => 'session@set'));
 
-	// Flexigrid
-Route::post('API/flexigrid', array('uses' => 'api@flexigrid'));
-Route::delete('API/flexigrid', array('uses' => 'api@flexigrid'));
-	
-
 // User login
 Route::get('/register', array('uses' => 'user@register'));
 Route::post('/login', array('as'=>'login', 'uses' => 'user@login','before'=>'csrf'));

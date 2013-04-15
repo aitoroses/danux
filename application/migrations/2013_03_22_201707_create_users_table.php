@@ -10,7 +10,7 @@ class Create_Users_Table {
 	public function up()
 	{
 	
-		Schema::create('user_table', function($table){
+		Schema::create('l_user_table', function($table){
 			$table->increments('id');
 			$table->string('username');
 			$table->string('password');
@@ -18,7 +18,7 @@ class Create_Users_Table {
 			$table->timestamps();
 		});
 
-		DB::table('user_table')->insert(array(
+		DB::table('l_user_table')->insert(array(
 			'username' => 'admin',
 			'password' => Hash::make('admin'),
 			'type_user' => 1,
@@ -33,7 +33,7 @@ class Create_Users_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('user_table');
+		Schema::drop('l_user_table');
 	}
 
 }

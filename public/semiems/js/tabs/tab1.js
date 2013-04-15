@@ -1,8 +1,7 @@
 //Document ready
 $(document).ready(function(){
 	$('a.next-tab').on('click',function(e){
-		//e.preventDefault();
-        
+		//e.preventDefault();     
         if($("body").data('wardrobe')==""){
         	WardrobeModel.initialize();
         	WardrobeModel.guardarJson();

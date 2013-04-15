@@ -199,75 +199,7 @@ class Api_Controller extends Base_Controller {
 			$wardrobe_model = Wardrobe::find($id);
 			$wardrobe_model->accexts()->delete();
 		}
-	}
-
-	// FLEXIGRID
-	public function post_flexigrid(){
-
-		// Defaults
-		$page = 1; // The current page
-		$sortname = 'id'; // Sort column
-		$sortorder = 'asc'; // Sort order
-		$qtype = ''; // Search column
-		$query = ''; // Search string
-		
-		// Get posted data
-		$page = Input::get('page');
-		$sortname = Input::get('sortname');
-		$sortorder = Input::get('sortorder');
-		$qtype = Input::get('qtype');
-		$query = Input::get('query');
-		$rp = Input::get('rp');
-
-		// Securing page is not null
-		if (!$page) $page = 1;
-		if (!$rp) $rp = 10;
-
-		// Wardrobes models
-
-		$wardrobes = Wardrobe::order_by($sortname, $sortorder)->take($rp)->skip(($page-1)*$rp)->get();
-		$wardrobes_array = array_map(function($object){
-			return $object->to_array();
-		}, $wardrobes);
-
-		$data['page'] = $page;
-		$data['total'] = Wardrobe::count();
-		foreach ($wardrobes as $object) {
-		
-			$data['rows'][] = array(
-				'id' => $object->id,
-				'cell' => array(
-			        $object->id, 
-					$object->name,
-					$object->width."x".$object->height."x".$object->prof,
-					$object->doors,
-					$object->nmods, 
-					$object->updated_at
-		        )
-	        );
-		}
-		
-		return json_encode($data);
-	}
-	public function delete_flexigrid(){
-		$items = json_decode(Input::get('items'));
-		$total = count($items);
-
-		// Delete those ID's
-		$budgets = Budget::where_in('id', $items)->get();
-		foreach ($budgets as $budget) {
-			$budget->wardrobe()->delete();
-			$budget->delete();
-		}
-
-		// Return
-
-		$response = array(
-			'items' => $items,
-			'total'	=> $total
-		);
-		return Response::json($response);
-		
+		return "OK";
 	}
 
 }
