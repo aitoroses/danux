@@ -11,12 +11,6 @@ class Home_Controller extends Base_Controller {
 	}
 	public function get_tab($id)
 	{
-		if ($id == 'welcome'){
-			return View::make('home.welcome')
-			->with('title','Paso '.$id.' Creacion de armario. Semiems')
-			->with('username',Auth::user()->username)
-			->with('role',Auth::user()->type_user);
-		}
 
 		$budget = Auth::user()->budgets()->first();
 		if($budget){
@@ -36,7 +30,9 @@ class Home_Controller extends Base_Controller {
 			->with('username',Auth::user()->username)
 			->with('id',$id)
 			->with('id_wardrobe', $id_wardrobe)
-			->with('wardrobes', $wardrobes);
+			->with('wardrobes', $wardrobes)
+			->with('role',Auth::user()->type_user);
+
 	}
 
 	public function post_session($id){

@@ -88,6 +88,6 @@ App.Navigator = {
 	}
 
 }
-App.AlertSystem ={
+App.Notice ={
 	
 }
