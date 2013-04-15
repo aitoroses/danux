@@ -105,13 +105,13 @@ nav li {
   padding: 6px 5px;
   margin: 0 0 5px 0;
   width: 238px;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  -moz-box-shadow: 0 1px 1px #cccccc inset;
-  -webkit-box-shadow: 0 1px 1px #cccccc inset;
-  box-shadow: 0 1px 1px #cccccc inset; }
+  -moz-box-shadow: 0 1px 1px #ccc inset;
+  -webkit-box-shadow: 0 1px 1px #ccc inset;
+  box-shadow: 0 1px 1px #ccc inset; }
 
 /* line 120, ../sass/css/_style.scss */
 #inputs input:focus {
@@ -231,7 +231,7 @@ header {
   color: #fff;
   display: inline-block;
   float: left;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   font-weight: 400;
   height: 91px;
@@ -270,7 +270,7 @@ header {
 
 /* line 273, ../sass/css/_style.scss */
 #title_popup {
-  font-family: "Open Sans Semibold", sans-serif;
+  font-family: 'Open Sans Semibold' ,sans-serif;
   font-size: 26px;
   margin: auto;
   text-align: center;
@@ -293,7 +293,7 @@ header {
 
 /* line 295, ../sass/css/_style.scss */
 .text-form {
-  font-family: "Open Sans Semibold", sans-serif;
+  font-family: 'Open Sans Semibold' ,sans-serif;
   font-size: 14px;
   text-align: center;
   padding-top: 20px; }
@@ -547,7 +547,7 @@ body .blur {
   width: 25% !important; }
   /* line 155, ../sass/_newstyle.scss */
   #acc_ints h2 {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000;
     font-size: 1.5em;
     line-height: 2em;
     margin-bottom: 10px; }
@@ -555,7 +555,7 @@ body .blur {
   #acc_ints li {
     padding: 5px 0 5px 5px;
     font-size: 1.1em;
-    border-top: 1px dashed black; }
+    border-top: 1px dashed #000; }
     /* line 165, ../sass/_newstyle.scss */
     #acc_ints li:first-child {
       border-top: none; }
@@ -739,3 +739,25 @@ body .blur {
   -ms-transform: perspective(800) scale3d(0.8, 0.8, 0.8) rotateY(40deg) translate3d(-200px, 0, 0);
   -o-transform: perspective(800) scale3d(0.8, 0.8, 0.8) rotateY(40deg) translate3d(-200px, 0, 0);
   transform: perspective(800) scale3d(0.8, 0.8, 0.8) rotateY(40deg) translate3d(-200px, 0, 0); }
+
+/* line 1, ../sass/_sections.scss */
+#wardrobe-create:target, #config:target {
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+  -moz-transform: scale3d(1, 1, 1);
+  -ms-transform: scale3d(1, 1, 1);
+  -o-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1); }
+
+/* line 6, ../sass/_sections.scss */
+#wardrobe-create, #config {
+  opacity: 0;
+  -webkit-transform: scale3d(5, 5, 5);
+  -moz-transform: scale3d(5, 5, 5);
+  -ms-transform: scale3d(5, 5, 5);
+  -o-transform: scale3d(5, 5, 5);
+  transform: scale3d(5, 5, 5);
+  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
+  -moz-transition: opacity 0.2s ease, -moz-transform 0.5s ease;
+  -o-transition: opacity 0.2s ease, -o-transform 0.5s ease;
+  transition: opacity 0.2s ease, transform 0.5s ease; }
