@@ -60,10 +60,13 @@ App.Help = {
 		},200);
 	},
 	close: function() {
-		$('#help .content, #help .page-screen').removeClass('show');
-		setTimeout(function(){$('#help').hide();}, 300);
-		$('#wardrobemenu').removeClass('blur');
 
+		
+		$('#help .page-screen, #help .content').removeClass('show');
+		setTimeout(function(){
+		$('#help').hide();
+		$('#wardrobemenu').removeClass('blur');
+		}, 500);
 
 	}
 }
