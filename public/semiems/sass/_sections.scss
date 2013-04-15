@@ -1,0 +1,29 @@
+
+#wardrobe-create:target, #config:target {
+  opacity: 1;
+  @include transform(scale3d(1,1,1));
+}
+#wardrobe-create, #config {
+  opacity: 0;
+  @include transform(scale3d(5,5,5));
+  @include transition(opacity .2s ease, scale3d .5s ease);
+}
+
+#config{
+	height: 400px;
+	$gutter: 10%;
+	$between: $gutter/4;
+	clear: both;
+	padding-top: 10px;
+
+	#admin_functions{
+		width: 50% - $gutter;
+		margin: 0 $gutter/2;
+		display:inline-block;
+	}
+	#normal_functions{
+		width: 50% - $gutter;
+		margin: 0 $gutter/2;
+		display:inline-block;
+	}
+}

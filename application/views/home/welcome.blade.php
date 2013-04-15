@@ -8,6 +8,6 @@
 	<div id="normal_functions" class="full_wide">
 @endif
 	<h1> Diseña tu armario</h1>
-	<a href="1">Ir al configurador</a>
+	<a href="1#wardrobe-create">Ir al configurador</a>
 	</div>
 </div>
