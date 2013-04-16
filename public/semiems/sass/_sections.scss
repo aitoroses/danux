@@ -1,29 +1,88 @@
 
-#wardrobe-create:target, #config:target {
+#wardrobe-create:target{
   opacity: 1;
   @include transform(scale3d(1,1,1));
 }
-#wardrobe-create, #config {
+#config:target {
+  opacity: 1;
+  @include transform(scale3d(1,1,1));
+}
+#wardrobe-create{
   opacity: 0;
   @include transform(scale3d(5,5,5));
-  @include transition(opacity .2s ease, scale3d .5s ease);
+  @include transition(opacity .2 ease, scale3d .5 ease);
 }
+#config {
+  opacity: 0;
+  @include transform(scale3d(5,5,5));
+
+  @include transition(opacity .2 ease, scale3d .5 ease);
+}
+
+$background-default: #fff;
+$background-shader: linear-gradient(left top, #fff, #eee);
 
 #config{
 	height: 400px;
-	$gutter: 10%;
+	$gutter: 9%;
 	$between: $gutter/4;
 	clear: both;
 	padding-top: 10px;
 
 	#admin_functions{
-		width: 50% - $gutter;
+		width: 40% - $gutter;
 		margin: 0 $gutter/2;
-		display:inline-block;
+		float:left;
+		//display:inline-block;
+		background-color: #fff;
+		border: 1px solid #c9b7a2;
+    	padding: $gutter/2;
+    	@include background(
+		$background-shader,
+		$background-default
+		);
+		@include border-radius(
+			4px
+			);
+		@include box-shadow(
+			0 2px 2px rgba(255,255,255,0.2),
+			0 1px 5px rgba(255,255,255,0.2),
+			0 0 0 12px rgba(0,0,0,0.4)
+			);
+		@include text-shadow(
+			rgb(82, 85, 79) 0 1px 0
+			);	
 	}
 	#normal_functions{
-		width: 50% - $gutter;
+		width: 40% - $gutter;
 		margin: 0 $gutter/2;
-		display:inline-block;
+		float:left;
+		//display:inline-block;
+		background-color: #fff;
+		border: 1px solid #c9b7a2;
+    	padding: $gutter/2;
+    	@include background(
+		$background-shader,
+		$background-default
+		);
+		@include border-radius(
+			4px
+			);
+		@include box-shadow(
+			0 2px 2px rgba(255,255,255,0.2),
+			0 1px 5px rgba(255,255,255,0.2),
+			0 0 0 12px rgba(0,0,0,0.4)
+			);
+		@include text-shadow(
+			rgb(82, 85, 79) 0 1px 0
+			);
 	}
 }
+/*    height: 240px;
+    width: 400px;
+    margin: -150px 0 0 -230px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+*/

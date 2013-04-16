@@ -18,24 +18,23 @@ $(document).ready(function(){
 			popup.closePopup();	
 		});
 	});
+	$(document).bind('sync_save', function(){
+			App.Navigator.goNext();
+	})
+
 	$(document).bind('error',function(){
 		$('#containeri').html('No se ha cargado el armario');
 	});
+
 	WardrobeModel.fetch();
 
 
 	$('a.next-tab').on('click',function(e){
 		e.preventDefault();
 		WardrobeModel.save();
-		$(document).bind('sync_save', function(){
-			location.href = "3";
-		})
-
-
 	});
 	$('a.prev-tab').on('click',function(e){
-		
-		
+		App.Navigator.goBack();
 
 	});
 

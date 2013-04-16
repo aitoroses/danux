@@ -395,29 +395,32 @@ header {
 .floater {
   float: left; }
 
-/* line 5, ../sass/_newstyle.scss */
+/* line 4, ../sass/_newstyle.scss */
+a {
+  cursor: pointer; }
+
+/* line 8, ../sass/_newstyle.scss */
 #header {
-  width: 100%;
   margin-bottom: 40px;
   height: 3em;
   background-color: rgba(51, 51, 51, 0.7);
   text-align: right; }
-  /* line 13, ../sass/_newstyle.scss */
+  /* line 16, ../sass/_newstyle.scss */
   #header #nav {
     position: relative;
     right: 20px; }
-  /* line 18, ../sass/_newstyle.scss */
+  /* line 21, ../sass/_newstyle.scss */
   #header h1 {
     font-size: 20px;
     font-variant: small-caps;
     color: #ddd;
     display: inline-block; }
-  /* line 24, ../sass/_newstyle.scss */
+  /* line 27, ../sass/_newstyle.scss */
   #header #close-btn {
     float: none; }
 
-/* HELP BUTTON */
-/* line 29, ../sass/_newstyle.scss */
+/* MIXIN BUTTON MOVEMENT*/
+/* line 81, ../sass/_newstyle.scss */
 #help-btn {
   -webkit-transition: width 0.3s ease-in-out;
   -moz-transition: width 0.3s ease-in-out;
@@ -443,7 +446,7 @@ header {
   overflow: hidden;
   text-align: left;
   cursor: pointer; }
-  /* line 52, ../sass/_newstyle.scss */
+  /* line 55, ../sass/_newstyle.scss */
   #help-btn .background {
     background: url("../img/help-blue-btn.png") no-repeat top left;
     background-size: 32px;
@@ -451,22 +454,121 @@ header {
     height: 32px;
     display: inline-block;
     float: right; }
-  /* line 60, ../sass/_newstyle.scss */
+  /* line 63, ../sass/_newstyle.scss */
   #help-btn .desc {
     text-align: right;
     display: none;
-    color: #fff;
+    color: white;
     line-height: 32px;
     vertical-align: top; }
-  /* line 68, ../sass/_newstyle.scss */
+  /* line 71, ../sass/_newstyle.scss */
   #help-btn:hover, #help-btn:focus {
     width: 111px;
     padding-left: 10px; }
-    /* line 71, ../sass/_newstyle.scss */
+    /* line 74, ../sass/_newstyle.scss */
     #help-btn:hover .desc, #help-btn:focus .desc {
       display: inline-block; }
 
-/* line 78, ../sass/_newstyle.scss */
+/* Config BUTTON */
+/* line 86, ../sass/_newstyle.scss */
+#config-btn {
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz-transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  background-color: rgba(200, 200, 200, 0.5);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+  -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+  box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+  text-shadow: #52554f 0 1px 0;
+  position: relative;
+  top: 0px;
+  left: 30px;
+  float: left;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer; }
+  /* line 55, ../sass/_newstyle.scss */
+  #config-btn .background {
+    background: url("../img/Gear.png") no-repeat top left;
+    background-size: 32px;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    float: right; }
+  /* line 63, ../sass/_newstyle.scss */
+  #config-btn .desc {
+    text-align: right;
+    display: none;
+    color: white;
+    line-height: 32px;
+    vertical-align: top; }
+  /* line 71, ../sass/_newstyle.scss */
+  #config-btn:hover, #config-btn:focus {
+    width: 111px;
+    padding-left: 10px; }
+    /* line 74, ../sass/_newstyle.scss */
+    #config-btn:hover .desc, #config-btn:focus .desc {
+      display: inline-block; }
+
+/* line 89, ../sass/_newstyle.scss */
+#start-btn {
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz-transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  background-color: rgba(60, 60, 60, 0.2);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+  -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+  box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+  text-shadow: #52554f 0 1px 0;
+  position: relative;
+  top: 0px;
+  left: 30px;
+  float: left;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer; }
+  /* line 55, ../sass/_newstyle.scss */
+  #start-btn .background {
+    background: url("../img/play-green-btn.png") no-repeat top left;
+    background-size: 32px;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    float: right; }
+  /* line 63, ../sass/_newstyle.scss */
+  #start-btn .desc {
+    text-align: right;
+    display: none;
+    color: black;
+    line-height: 32px;
+    vertical-align: top; }
+  /* line 71, ../sass/_newstyle.scss */
+  #start-btn:hover, #start-btn:focus {
+    width: 111px;
+    padding-left: 10px; }
+    /* line 74, ../sass/_newstyle.scss */
+    #start-btn:hover .desc, #start-btn:focus .desc {
+      display: inline-block; }
+
+/* line 93, ../sass/_newstyle.scss */
 #help .content, #help .page-screen {
   -webkit-transition: opacity 0.3s ease-in-out;
   -moz-transition: opacity 0.3s ease-in-out;
@@ -474,14 +576,14 @@ header {
   transition: opacity 0.3s ease-in-out;
   opacity: 0; }
 
-/* line 83, ../sass/_newstyle.scss */
+/* line 98, ../sass/_newstyle.scss */
 #help {
   -webkit-filter: blur(0px) !important;
   -moz-filter: blur(0px) !important;
   filter: blur(0px) !important;
   height: 0px;
   display: none; }
-  /* line 87, ../sass/_newstyle.scss */
+  /* line 102, ../sass/_newstyle.scss */
   #help .content {
     display: inline-block;
     margin: 0 20%;
@@ -498,18 +600,18 @@ header {
     -webkit-box-shadow: 1px 0px 5px #333333;
     -moz-box-shadow: 1px 0px 5px #333333;
     box-shadow: 1px 0px 5px #333333; }
-    /* line 102, ../sass/_newstyle.scss */
+    /* line 117, ../sass/_newstyle.scss */
     #help .content h1 {
       font-family: "Open Sans Semibold", sans-serif;
       font-size: 26px;
       margin: auto;
       text-align: center;
       margin: 10px 0px; }
-    /* line 109, ../sass/_newstyle.scss */
+    /* line 124, ../sass/_newstyle.scss */
     #help .content #close-help {
       position: relative;
       float: right; }
-  /* line 114, ../sass/_newstyle.scss */
+  /* line 129, ../sass/_newstyle.scss */
   #help .page-screen {
     background-color: rgba(187, 187, 187, 0.3);
     position: absolute;
@@ -519,71 +621,71 @@ header {
     height: 100%;
     opacity: 0;
     z-index: 20; }
-  /* line 128, ../sass/_newstyle.scss */
+  /* line 143, ../sass/_newstyle.scss */
   #help .content.show, #help .page-screen.show {
     display: inline-block;
     opacity: 1; }
 
-/* line 139, ../sass/_newstyle.scss */
+/* line 154, ../sass/_newstyle.scss */
 body .blur {
   -webkit-filter: blur(8px);
   -moz-filter: blur(8px);
   filter: blur(8px); }
 
-/* line 143, ../sass/_newstyle.scss */
+/* line 158, ../sass/_newstyle.scss */
 #containeri, #containerp {
   width: 70%;
   display: inline-block; }
-  /* line 146, ../sass/_newstyle.scss */
+  /* line 161, ../sass/_newstyle.scss */
   #containeri canvas, #containerp canvas {
     width: 100% !important;
     display: inline-block; }
 
-/* line 152, ../sass/_newstyle.scss */
+/* line 167, ../sass/_newstyle.scss */
 #acc_ints {
   height: 350px;
   overflow-y: scroll;
   vertical-align: top;
   display: inline-block;
   width: 25% !important; }
-  /* line 158, ../sass/_newstyle.scss */
+  /* line 173, ../sass/_newstyle.scss */
   #acc_ints h2 {
     border-bottom: 1px solid black;
     font-size: 1.5em;
     line-height: 2em;
     margin-bottom: 10px; }
-  /* line 164, ../sass/_newstyle.scss */
+  /* line 179, ../sass/_newstyle.scss */
   #acc_ints li {
     padding: 5px 0 5px 5px;
     font-size: 1.1em;
     border-top: 1px dashed black; }
-    /* line 168, ../sass/_newstyle.scss */
+    /* line 183, ../sass/_newstyle.scss */
     #acc_ints li:first-child {
       border-top: none; }
-    /* line 171, ../sass/_newstyle.scss */
+    /* line 186, ../sass/_newstyle.scss */
     #acc_ints li.module {
       border: none; }
-  /* line 175, ../sass/_newstyle.scss */
+  /* line 190, ../sass/_newstyle.scss */
   #acc_ints a {
     clear: both;
     display: inline-block;
     vertical-align: top; }
-    /* line 176, ../sass/_newstyle.scss */
+    /* line 191, ../sass/_newstyle.scss */
     #acc_ints a img {
       width: 20px; }
 
 /* Popup content CLASS */
-/* line 187, ../sass/_newstyle.scss */
+/* line 202, ../sass/_newstyle.scss */
 #materiales, #mat_puerta, #sel_interiores, #handles, #distribucionPuerta {
   overflow-y: scroll;
   height: 400px;
   clear: both;
   padding-top: 10px; }
-  /* line 194, ../sass/_newstyle.scss */
+  /* line 209, ../sass/_newstyle.scss */
   #materiales .content, #mat_puerta .content, #sel_interiores .content, #handles .content, #distribucionPuerta .content {
     width: 90%;
     margin: 0 5%; }
-    /* line 197, ../sass/_newstyle.scss */
+    /* line 212, ../sass/_newstyle.scss */
     #materiales .content .element, #mat_puerta .content .element, #sel_interiores .content .element, #handles .content .element, #distribucionPuerta .content .element {
       border-radius: 5px;
       margin: 3px 0;
@@ -595,7 +697,7 @@ body .blur {
       -moz-transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -moz-transform 0.1s ease-in-out;
       -o-transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -o-transform 0.1s ease-in-out;
       transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.1s ease-in-out; }
-      /* line 206, ../sass/_newstyle.scss */
+      /* line 221, ../sass/_newstyle.scss */
       #materiales .content .element:hover, #mat_puerta .content .element:hover, #sel_interiores .content .element:hover, #handles .content .element:hover, #distribucionPuerta .content .element:hover {
         background-color: #dfb178;
         -webkit-transform: scale3d(1.05, 1.05, 1.05);
@@ -606,12 +708,12 @@ body .blur {
         -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
         -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); }
-      /* line 213, ../sass/_newstyle.scss */
+      /* line 228, ../sass/_newstyle.scss */
       #materiales .content .element .picture img, #mat_puerta .content .element .picture img, #sel_interiores .content .element .picture img, #handles .content .element .picture img, #distribucionPuerta .content .element .picture img {
         margin: 5%;
         width: 90%;
         height: 10em; }
-      /* line 219, ../sass/_newstyle.scss */
+      /* line 234, ../sass/_newstyle.scss */
       #materiales .content .element .title, #mat_puerta .content .element .title, #sel_interiores .content .element .title, #handles .content .element .title, #distribucionPuerta .content .element .title {
         text-align: center;
         line-height: 20px;
@@ -620,7 +722,7 @@ body .blur {
         height: 5em; }
 
 /* Popup de materiales */
-/* line 232, ../sass/_newstyle.scss */
+/* line 247, ../sass/_newstyle.scss */
 #sel_parent {
   font-size: 18px;
   height: 40px;
@@ -628,58 +730,58 @@ body .blur {
   left: 10px;
   top: 10px; }
 
-/* line 246, ../sass/_newstyle.scss */
+/* line 261, ../sass/_newstyle.scss */
 #mat_puerta .content .element .title {
   line-height: 12px; }
 
-/* line 259, ../sass/_newstyle.scss */
+/* line 274, ../sass/_newstyle.scss */
 #handles .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 275, ../sass/_newstyle.scss */
+/* line 290, ../sass/_newstyle.scss */
 #acc_ext .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 291, ../sass/_newstyle.scss */
+/* line 306, ../sass/_newstyle.scss */
 #sel_interiores .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 307, ../sass/_newstyle.scss */
+/* line 322, ../sass/_newstyle.scss */
 #distribucionPuerta .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 317, ../sass/_newstyle.scss */
+/* line 332, ../sass/_newstyle.scss */
 #sel_marco {
   height: 350px;
   vertical-align: top;
   display: inline-block;
   width: 25% !important;
   margin-top: -5px; }
-  /* line 323, ../sass/_newstyle.scss */
+  /* line 338, ../sass/_newstyle.scss */
   #sel_marco #marco_sel {
     margin: 5px 0px 15px 0px;
     clear: both;
     display: block; }
-    /* line 327, ../sass/_newstyle.scss */
+    /* line 342, ../sass/_newstyle.scss */
     #sel_marco #marco_sel h2 {
       font-size: 1em;
       line-height: 1.5em;
       margin-top: -10px; }
-    /* line 333, ../sass/_newstyle.scss */
+    /* line 348, ../sass/_newstyle.scss */
     #sel_marco #marco_sel img {
       display: block;
       margin: 5px 0px;
       width: 75%; }
 
-/* line 348, ../sass/_newstyle.scss */
+/* line 363, ../sass/_newstyle.scss */
 .submit-button {
   background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #8dc059), color-stop(100%, #6aa436)), #6aa436;
   background: -webkit-linear-gradient(left top, #8dc059, #6aa436), #6aa436;
@@ -703,17 +805,17 @@ body .blur {
   vertical-align: middle;
   text-align: center;
   border: 1px solid #447314; }
-  /* line 371, ../sass/_newstyle.scss */
+  /* line 386, ../sass/_newstyle.scss */
   .no-cssgradients .submit-button {
     background: url(semiems/img/site/button-shader.png) left center repeat-x, #6aa436; }
-  /* line 377, ../sass/_newstyle.scss */
+  /* line 392, ../sass/_newstyle.scss */
   .no-multiplebgs .submit-button {
     background-color: #6aa436; }
-  /* line 381, ../sass/_newstyle.scss */
+  /* line 396, ../sass/_newstyle.scss */
   .submit-button:hover, .submit-button:focus {
     text-shadow: #537a4a 0 1px 0;
     color: #FFF; }
-  /* line 385, ../sass/_newstyle.scss */
+  /* line 400, ../sass/_newstyle.scss */
   .submit-button:active {
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6aa436), color-stop(100%, #8dc059)), #6aa436;
     background: -webkit-linear-gradient(top, #6aa436, #8dc059), #6aa436;
@@ -723,15 +825,15 @@ body .blur {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none; }
-    /* line 391, ../sass/_newstyle.scss */
+    /* line 406, ../sass/_newstyle.scss */
     .no-cssgradients .submit-button:active {
       background: url(semiems/img/site/button-shader.png) left center repeat-x, #5e9130; }
-    /* line 397, ../sass/_newstyle.scss */
+    /* line 412, ../sass/_newstyle.scss */
     .no-multiplebgs .submit-button:active {
       background-color: #5e9130;
       border-color: #FFF; }
 
-/* line 403, ../sass/_newstyle.scss */
+/* line 418, ../sass/_newstyle.scss */
 .kineticjs-content1 {
   position: relative;
   left: 200px;
@@ -742,7 +844,7 @@ body .blur {
   transform: perspective(800) scale3d(0.8, 0.8, 0.8) rotateY(40deg) translate3d(-200px, 0, 0); }
 
 /* line 2, ../sass/_sections.scss */
-#wardrobe-create:target, #config:target {
+#wardrobe-create:target {
   opacity: 1;
   -webkit-transform: scale3d(1, 1, 1);
   -moz-transform: scale3d(1, 1, 1);
@@ -751,30 +853,95 @@ body .blur {
   transform: scale3d(1, 1, 1); }
 
 /* line 6, ../sass/_sections.scss */
-#wardrobe-create, #config {
+#config:target {
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+  -moz-transform: scale3d(1, 1, 1);
+  -ms-transform: scale3d(1, 1, 1);
+  -o-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1); }
+
+/* line 10, ../sass/_sections.scss */
+#wardrobe-create {
   opacity: 0;
   -webkit-transform: scale3d(5, 5, 5);
   -moz-transform: scale3d(5, 5, 5);
   -ms-transform: scale3d(5, 5, 5);
   -o-transform: scale3d(5, 5, 5);
   transform: scale3d(5, 5, 5);
-  -webkit-transition: opacity 0.2s ease, scale3d 0.5s ease;
-  -moz-transition: opacity 0.2s ease, scale3d 0.5s ease;
-  -o-transition: opacity 0.2s ease, scale3d 0.5s ease;
-  transition: opacity 0.2s ease, scale3d 0.5s ease; }
+  -webkit-transition: opacity 0.2 ease, scale3d 0.5 ease;
+  -moz-transition: opacity 0.2 ease, scale3d 0.5 ease;
+  -o-transition: opacity 0.2 ease, scale3d 0.5 ease;
+  transition: opacity 0.2 ease, scale3d 0.5 ease; }
 
-/* line 12, ../sass/_sections.scss */
+/* line 15, ../sass/_sections.scss */
+#config {
+  opacity: 0;
+  -webkit-transform: scale3d(5, 5, 5);
+  -moz-transform: scale3d(5, 5, 5);
+  -ms-transform: scale3d(5, 5, 5);
+  -o-transform: scale3d(5, 5, 5);
+  transform: scale3d(5, 5, 5);
+  -webkit-transition: opacity 0.2 ease, scale3d 0.5 ease;
+  -moz-transition: opacity 0.2 ease, scale3d 0.5 ease;
+  -o-transition: opacity 0.2 ease, scale3d 0.5 ease;
+  transition: opacity 0.2 ease, scale3d 0.5 ease; }
+
+/* line 25, ../sass/_sections.scss */
 #config {
   height: 400px;
   clear: both;
   padding-top: 10px; }
-  /* line 19, ../sass/_sections.scss */
+  /* line 32, ../sass/_sections.scss */
   #config #admin_functions {
-    width: 40%;
-    margin: 0 5%;
-    display: inline-block; }
-  /* line 24, ../sass/_sections.scss */
+    width: 31%;
+    margin: 0 4.5%;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #c9b7a2;
+    padding: 4.5%;
+    background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee)), white;
+    background: -webkit-linear-gradient(left top, #ffffff, #eeeeee), white;
+    background: -moz-linear-gradient(left top, #ffffff, #eeeeee), white;
+    background: -o-linear-gradient(left top, #ffffff, #eeeeee), white;
+    background: linear-gradient(left top, #ffffff, #eeeeee), white;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 2px rgba(255, 255, 255, 0.2), 0 1px 5px rgba(255, 255, 255, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 2px 2px rgba(255, 255, 255, 0.2), 0 1px 5px rgba(255, 255, 255, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 2px rgba(255, 255, 255, 0.2), 0 1px 5px rgba(255, 255, 255, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.4);
+    text-shadow: #52554f 0 1px 0; }
+  /* line 56, ../sass/_sections.scss */
   #config #normal_functions {
-    width: 40%;
-    margin: 0 5%;
-    display: inline-block; }
+    width: 31%;
+    margin: 0 4.5%;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #c9b7a2;
+    padding: 4.5%;
+    background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee)), white;
+    background: -webkit-linear-gradient(left top, #ffffff, #eeeeee), white;
+    background: -moz-linear-gradient(left top, #ffffff, #eeeeee), white;
+    background: -o-linear-gradient(left top, #ffffff, #eeeeee), white;
+    background: linear-gradient(left top, #ffffff, #eeeeee), white;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 2px rgba(255, 255, 255, 0.2), 0 1px 5px rgba(255, 255, 255, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 2px 2px rgba(255, 255, 255, 0.2), 0 1px 5px rgba(255, 255, 255, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 2px rgba(255, 255, 255, 0.2), 0 1px 5px rgba(255, 255, 255, 0.2), 0 0 0 12px rgba(0, 0, 0, 0.4);
+    text-shadow: #52554f 0 1px 0; }
+
+/*    height: 240px;
+    width: 400px;
+    margin: -150px 0 0 -230px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+*/
