@@ -1,0 +1,10 @@
+#wardrobe-create:target, #config:target {
+	opacity: 1;
+	@include transform(scale3d(1,1,1));
+} 	
+
+#wardrobe-create, #config {
+	opacity: 0;
+	@include transform(scale3d(5,5,5), translate(0,0,200px));
+	@include transition(opacity .2s ease, transform .5s ease);
+}
