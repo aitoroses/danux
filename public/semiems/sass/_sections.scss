@@ -1,24 +1,24 @@
+.section {
+	opacity: 0;
+	@include transform(scale3d(5,5,5), translate(0,0,200px));
+	@include transition(opacity .1s ease, transform .3s ease);
+	&.show {
+		opacity: 1;
+		@include transform(scale3d(1,1,1));
+	}
+}
+/*
+#wardrobe-create:target, #config:target {
+	opacity: 1;
+	@include transform(scale3d(1,1,1));
+} 	
 
-#wardrobe-create:target{
-  opacity: 1;
-  @include transform(scale3d(1,1,1));
+#wardrobe-create, #config {
+	opacity: 0;
+	@include transform(scale3d(5,5,5), translate(0,0,200px));
+	@include transition(opacity .2s ease, transform .5s ease);
 }
-#config:target {
-  opacity: 1;
-  @include transform(scale3d(1,1,1));
-}
-#wardrobe-create{
-  opacity: 0;
-  @include transform(scale3d(5,5,5));
-  @include transition(opacity .2 ease, scale3d .5 ease);
-}
-#config {
-  opacity: 0;
-  @include transform(scale3d(5,5,5));
-
-  @include transition(opacity .2 ease, scale3d .5 ease);
-}
-
+*/
 $background-default: #fff;
 $background-shader: linear-gradient(left top, #fff, #eee);
 
@@ -32,8 +32,8 @@ $background-shader: linear-gradient(left top, #fff, #eee);
 	#admin_functions{
 		width: 40% - $gutter;
 		margin: 0 $gutter/2;
-		float:left;
-		//display:inline-block;
+		//float:left;
+		display:inline-block;
 		background-color: #fff;
 		border: 1px solid #c9b7a2;
     	padding: $gutter/2;
@@ -56,8 +56,8 @@ $background-shader: linear-gradient(left top, #fff, #eee);
 	#normal_functions{
 		width: 40% - $gutter;
 		margin: 0 $gutter/2;
-		float:left;
-		//display:inline-block;
+		display:inline-block;
+		vertical-align: top;
 		background-color: #fff;
 		border: 1px solid #c9b7a2;
     	padding: $gutter/2;

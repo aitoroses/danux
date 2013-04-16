@@ -53,7 +53,7 @@
 				<a id="close-btn" href="logout" class="logout">Cerrar session</a>
 	</nav>
 	</header>
-	<div id="wardrobe-create">
+	<div id="wardrobe-create" class="section">
 		<div id="main">
 			<h1>Configura tu armario:</h1>
 
@@ -136,7 +136,7 @@
 		</div>
 	</div>
 	<!-- WELCOME -->
-	@include('home.welcome')
+	@include('home.config')
 	<!-- HELP NOTICE -->
 	<div id="help">
 		<div class="content">
