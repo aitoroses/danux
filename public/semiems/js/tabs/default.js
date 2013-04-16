@@ -79,6 +79,7 @@ App.Navigator = {
 			myUrl = location.href;
 			var aux = myUrl.split('#');
 			this.tab=parseInt(aux[0].substring(aux[0].length-1));
+			$('#config').show();
 			setTimeout(function(){
 				$('#wardrobe-create').hide();
 			}, 500);
@@ -86,6 +87,7 @@ App.Navigator = {
 			myUrl = location.href;
 			var aux = myUrl.split('#');
 			this.tab=parseInt(aux[0].substring(aux[0].length-1));
+			$('#wardrobe-create').show();
 			setTimeout(function(){
 				$('#config').hide();
 			}, 500);
