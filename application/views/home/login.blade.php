@@ -27,7 +27,7 @@
     {{ Form::text('username',null,array('id'=>'username','placeholder'=>'Usuario')) }}
 
     <!-- password field -->
-    {{ Form::text('password',null, array('id'=>'password','placeholder'=>'Contraseña')) }}
+    {{ Form::password('password', array('id'=>'password','placeholder'=>'Contraseña')) }}
 </fieldset>
 <fieldset id="actions">
     <!-- submit button -->

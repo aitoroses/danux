@@ -29,7 +29,7 @@ a{
 	}
 }
 /* MIXIN BUTTON MOVEMENT*/
-@mixin btn ($imageURL,$colorBackground,$colorText,$width-f){
+@mixin btn ($imageURL,$colorBackground,$colorText,$width-f, $float: none){
 	@include transition(width 0.3s ease-in-out);
 	background-color: $colorBackground;
 	@include border-radius(
@@ -45,8 +45,10 @@ a{
 	position:relative;
 	top:0px;
 	left:30px;
-	float:left;
-	display:inline-block;
+	@if $float != none {
+		float: $float; }
+	@else {
+		display:inline-block;}
 	width: 32px;
 	height: 32px;
 	overflow:hidden;
@@ -79,12 +81,12 @@ a{
 }
 
 #help-btn{
-	@include btn ('../img/help-blue-btn.png',rgba(200,200,200,0.5),#fff,111px);
+	@include btn ('../img/help-blue-btn.png',rgba(200,200,200,0.5),#fff,111px, left);
 }
 
 /* Config BUTTON */
 #config-btn{
-	@include btn ('../img/Gear.png',rgba(200,200,200,0.5),#fff,111px);
+	@include btn ('../img/Gear.png',rgba(200,200,200,0.5),#fff,111px, left);
 }
 #start-btn{
 	@include btn ('../img/play-green-btn.png',rgba(60,60,60,0.2),#000,111px);
