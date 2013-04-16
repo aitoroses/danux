@@ -29,15 +29,11 @@ $(document).ready(function(){
 
 	$('a.next-tab').on('click',function(e){
 		e.preventDefault();
-		$(document).bind('next', function(){
-			location.href = "4";
-		})
-
-
+		App.Navigator.goNext();
 	});
 	$('a.prev-tab').on('click',function(e){	
 		
-
+		App.Navigator.goBack();
 	});
 });
 

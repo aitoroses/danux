@@ -10,8 +10,8 @@ $(document).ready(function(){
 			url: 'session/' + id,
 			success: function(response) {
 				//alert('Se ha cargado el armario con ID '+ response)
-				if (location.href !== "1"){
-					location.href = "1";
+				if (location.href !== "1#wardrobe-create"){
+					location.href = "1#wardrobe-create";
 				} else {
 					location.href.reload(true);
 				}
@@ -59,12 +59,9 @@ App.Help = {
 		setTimeout(function(){
 			$('#help .content, #help .page-screen').addClass('show');
 			$('#wardrobemenu').addClass('blur');
-
 		},200);
 	},
 	close: function() {
-
-		
 		$('#help .page-screen, #help .content').removeClass('show');
 		setTimeout(function(){
 		$('#help').hide();
@@ -77,14 +74,57 @@ App.Navigator = {
 	tab:0,
 	// Get the tab present
 	initialize: function(){
-		myUrl = location.href;
-		this.tab=parseInt(myUrl.substring(myUrl.length-1));
+		myHash = location.hash;
+		if (myHash== '#config'){
+			myUrl = location.href;
+			var aux = myUrl.split('#');
+			this.tab=parseInt(aux[0].substring(aux[0].length-1));
+			setTimeout(function(){
+				$('#wardrobe-create').hide();
+			}, 500);
+		}else if (myHash == '#wardrobe-create'){
+			myUrl = location.href;
+			var aux = myUrl.split('#');
+			this.tab=parseInt(aux[0].substring(aux[0].length-1));
+			setTimeout(function(){
+				$('#config').hide();
+			}, 500);
+		}else{
+			location.hash = "wardrobe-create";
+			setTimeout(function(){
+				$('#config').hide();
+			}, 500);
+		}
 	},
 	goNext: function(){
-		location.href = this.tab + 1; 
+		location.href = this.tab + 1 + '#wardrobe-create'; 
 	},
 	goBack: function(){
-		location.href = this.tab - 1;
+		location.href = this.tab - 1 + '#wardrobe-create';
+	},
+	openApp: function(){
+		//location.href = 1 + '#wardrobe-create';
+		$('#wardrobe-create').show();
+		location.hash = "wardrobe-create";
+		setTimeout(function(){
+			$('#config').hide();
+		}, 500);
+	},
+	closeApp: function(){
+		$('#config').show();
+		location.hash = "config";
+		setTimeout(function(){
+			$('#wardrobe-create').hide();
+		}, 500);
+	},
+	buttonConfig: function(){
+		myHash = location.hash;
+		if (myHash== '#config'){
+			this.openApp();
+		}else if (myHash == '#wardrobe-create'){
+			this.closeApp();
+		}
+
 	}
 
 }

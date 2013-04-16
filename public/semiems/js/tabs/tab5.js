@@ -20,7 +20,7 @@ $(document).ready(function(){
 						WardrobeModel.wardrobe.doors[auxitem].type=id;
 						//hacemos un array con el numero de divisiones
 						// para guardar un material por cada division 
-						// de la puerta, lo iniciamos con 0
+						// de la puerta, lo iniciamos con 0App.Navigator.goNext();
 						var strout_div=[];
 						for (var iiii=0;iiii<div;iiii++)
 						{ 
@@ -50,14 +50,10 @@ $(document).ready(function(){
 
 	$('a.next-tab').on('click',function(e){
 		e.preventDefault();
-		$(document).bind('next', function(){
-			location.href = "4";
-		})
-
-
+		App.Navigator.goNext();App.Navigator.goNext();
 	});
 	$('a.prev-tab').on('click',function(e){	
-		
+		App.Navigator.goBack();
 
 	});
 
