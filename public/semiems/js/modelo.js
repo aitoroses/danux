@@ -98,7 +98,7 @@ WardrobeModel = new Object({
 	        		$('#errors').html(data)
 	        	}
 	        	else {
-	        		location.href = '2';
+	        		App.Navigator.goNext();
 	        	}
 	        },
 	        error: function(){

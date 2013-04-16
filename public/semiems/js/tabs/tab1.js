@@ -30,6 +30,10 @@ $(document).ready(function(){
 		});
 		WardrobeModel.fetch();
 	}
+	//Evento para el guardado
+	$(document).bind('sync_save', function(){
+			App.Navigator.goNext();
+	})
 
 });
 

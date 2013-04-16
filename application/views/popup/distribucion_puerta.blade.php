@@ -1,6 +1,6 @@
 <div class="content-popup">  
 	<div class="close">
-		<a href="#" id="close2" onClick="popup.closePopup();"><img src="semiems/img/close.png"/></a>
+		<a id="close2" onClick="popup.closePopup();"><img src="semiems/img/close.png"/></a>
 	</div>
 	<p id="title_popup">Seleccione tipo de puerta</p>
 	<div id="distribucionPuerta">

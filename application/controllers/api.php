@@ -199,7 +199,6 @@ class Api_Controller extends Base_Controller {
 			$wardrobe_model = Wardrobe::find($id);
 			$wardrobe_model->accexts()->delete();
 		}
-		return "OK";
 	}
 
 }
