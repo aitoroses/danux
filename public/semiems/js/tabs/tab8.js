@@ -16,10 +16,10 @@ $(document).ready(function(){
 
 	$('a.next-tab').on('click',function(e){
 		e.preventDefault();
-
+		App.Navigator.goNext();
 	});
 	$('a.prev-tab').on('click',function(e){	
-		
+		App.Navigator.goBack();
 	});
 });
 

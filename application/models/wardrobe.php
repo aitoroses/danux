@@ -5,9 +5,9 @@ class Wardrobe extends Eloquent
 	public static $table = 'l_wardrobe_table';
 
     public static $rules = array(
-        'name' => 'required|min:3|alpha_num',
+        'name' => 'required|min:3',
         'width' => 'required|numeric|min:500|max:5000',
-        'height' => 'required|numeric|min:500|max:2500',
+        'height' => 'required|numeric|min:500|max:3000',
         'prof' => 'required|numeric|min:500|max:1500',
         'typedoor' => 'required|in:0,1,2'
     );
