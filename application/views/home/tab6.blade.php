@@ -1,7 +1,7 @@
 @layout('home.default')
 
 @section('tab')
-{{ HTML::script('semiems/js/tabs/tab6.js') }}
+{{ HTML::script('semiems/js/src/tabs/tab6.js') }}
 
 
 

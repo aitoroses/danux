@@ -12,31 +12,27 @@
 	{{ HTML::style('semiems/css/tabs.css') }}
 	
 	<!-- SCRIPTS -->
-	{{ HTML::script('semiems/js/jquery-1.9.1.min.js') }}
-	{{ HTML::script('semiems/js/jquery-migrate-1.1.1.min.js') }}
+	{{ HTML::script('semiems/js/lib/jquery-1.9.1.min.js') }}
+	{{ HTML::script('semiems/js/lib/jquery-migrate-1.1.1.min.js') }}
 
-	{{ HTML::script('semiems/js/kinetic-v4.3.2.min.js') }}
+	{{ HTML::script('semiems/js/lib/kinetic-v4.3.2.min.js') }}
 
-	{{ HTML::script('semiems/js/underscore-min.js') }}
-	{{ HTML::script('semiems/js/backbone-min.js') }}
-	{{ HTML::script('semiems/js/application.js') }}
-
-	{{ HTML::style('semiems/js/flexigrid/flexigrid.css') }}
-	{{ HTML::script('semiems/js/flexigrid/flexigrid.js') }}
+	{{ HTML::script('semiems/js/lib/underscore-min.js') }}
+	{{ HTML::script('semiems/js/lib/backbone-min.js') }}
 
 	<!-- OBJECT SCRIPTS -->
-	{{ HTML::script('semiems/js/modelo.js') }}
-	{{ HTML::script('semiems/js/popup.js') }}
-	{{ HTML::script('semiems/js/history.js') }}
+	{{ HTML::script('semiems/js/src/modelo.js') }}
+	{{ HTML::script('semiems/js/src/popup.js') }}
+	{{ HTML::script('semiems/js/src/history.js') }}
 
 	<!-- CUSTOM SCRIPTS -->
-	{{ HTML::script('semiems/js/helper.js') }}
-	{{ HTML::script('semiems/js/pinta_arm.js') }}
+	{{ HTML::script('semiems/js/src/helper.js') }}
+	{{ HTML::script('semiems/js/src/pinta_arm.js') }}
 
 	<!-- Init Variables -->
-	{{ HTML::script('semiems/js/init.js') }}
+	{{ HTML::script('semiems/js/src/init.js') }}
 	<!-- CUSTOM SCRIPTS -->
-	{{ HTML::script('semiems/js/tabs/default.js') }}
+	{{ HTML::script('semiems/js/src/tabs/default.js') }}
 
 </head>
 <body data-wardrobe={{ $id_wardrobe }}>
@@ -49,7 +45,7 @@
 	<div id="config-btn" onClick="App.Navigator.buttonConfig();"><div class="background"></div><div class="desc">Configuración</div></div>
 	<div id="help-btn"><div class="background"></div><div class="desc">Instrucciones</div></div>
 
-		<h1 style="padding: 5px;">Bienvenido {{ $username }}</h1>
+		<h1 style="padding: 5px;">Bienvenido, {{ $username }}</h1>
 				<a id="close-btn" href="logout" class="logout">Cerrar session</a>
 	</nav>
 	</header>

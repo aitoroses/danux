@@ -1,7 +1,7 @@
 @layout('home.default')
 
 @section('tab')
-{{ HTML::script('semiems/js/tabs/tab3.js') }}
+{{ HTML::script('semiems/js/src/tabs/tab3.js') }}
 <div id="paso-3" class="ui-tabs-panel">
 <h2>Añade Accesorios de interior</h2>
 

@@ -1,7 +1,7 @@
 @layout('home.default')
 
 @section('tab')
-{{ HTML::script('semiems/js/tabs/tab4.js') }}
+{{ HTML::script('semiems/js/src/tabs/tab4.js') }}
 
 <div id="paso-4" class="ui-tabs-panel">
 <h2>Seleccione el tipo de Perfil:</h2>
