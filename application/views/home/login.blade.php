@@ -6,7 +6,7 @@
 <head>
     <!-- STYLES -->
     {{ HTML::style('semiems/css/login.css') }}
-    {{ HTML::script('semiems/js/jquery-1.9.1.min.js') }}
+    {{ HTML::script('semiems/js/lib/jquery-1.9.1.min.js') }}
 
 </head>
 <body>
