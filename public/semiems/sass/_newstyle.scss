@@ -53,6 +53,7 @@ a{
 	height: 32px;
 	overflow:hidden;
 	text-align:left;
+	margin-left:5px;
 	cursor:pointer;
 	.background{
 		background: url($imageURL) no-repeat top left;
@@ -79,14 +80,69 @@ a{
 
 	}
 }
-
-#help-btn{
-	@include btn ('../img/help-blue-btn.png',rgba(200,200,200,0.5),#fff,111px, left);
+@mixin btn-no-anim ($imageURL,$colorBackground,$colorText,$width-f, $float: none, $align: right){
+	//@include transition(width 0.3s ease-in-out);
+	background-color: $colorBackground;
+	@include border-radius(
+		4px
+		);
+	@include box-shadow(
+		rgba(255,255,255,0.4) 0 1px 0, 
+		inset rgba(255,255,255,0.4) 0 1px 0
+		);
+	@include text-shadow(
+		rgb(82, 85, 79) 0 1px 0
+		);
+	position:relative;
+	top:0px;
+	left:30px;
+	@if $float != none {
+		float: $float; }
+	@else {
+		display:inline-block;}
+	width: $width-f;
+	padding-left:5px;
+	margin-left:5px;
+	height: 32px;
+	overflow:hidden;
+	text-align:left;
+	cursor:pointer;
+	.background{
+		background: url($imageURL) no-repeat top left;
+		background-size:32px;
+		width:32px;
+		height:32px;
+		display:inline-block;
+		float:$align;
+	}
+	.desc{
+		text-align:$align;
+		display:inline-block;
+		color: $colorText;
+		line-height:32px;
+		vertical-align:top;
+	}
+	&:hover,
+	&:focus{
+	}
 }
 
-/* Config BUTTON */
-#config-btn{
-	@include btn ('../img/Gear.png',rgba(200,200,200,0.5),#fff,111px, left);
+#menu_right{
+	float:left;
+	#help-btn{
+		@include btn ('../img/help-blue-btn.png',rgba(200,200,200,0.5),#fff,111px, left);
+	}
+
+	/* Config BUTTON */
+	#config-btn{
+		@include btn ('../img/Gear.png',rgba(200,200,200,0.5),#fff,111px, left);
+	}
+	#back-btn{
+		@include btn-no-anim ('../img/back-button.png',rgba(200,200,200,0.5),#fff,80px, left ,left);
+	}
+	#for-btn{
+		@include btn-no-anim ('../img/forward-button.png',rgba(200,200,200,0.5),#fff,90px, left);
+	}
 }
 #start-btn{
 	@include btn ('../img/play-green-btn.png',rgba(60,60,60,0.2),#000,111px);
