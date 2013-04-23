@@ -420,104 +420,184 @@ a {
     float: none; }
 
 /* MIXIN BUTTON MOVEMENT*/
-/* line 83, ../sass/_newstyle.scss */
-#help-btn {
-  -webkit-transition: width 0.3s ease-in-out;
-  -moz-transition: width 0.3s ease-in-out;
-  -o-transition: width 0.3s ease-in-out;
-  transition: width 0.3s ease-in-out;
-  background-color: rgba(200, 200, 200, 0.5);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
-  -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
-  box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
-  text-shadow: #52554f 0 1px 0;
-  position: relative;
-  top: 0px;
-  left: 30px;
+/* line 130, ../sass/_newstyle.scss */
+#menu_right {
   float: left;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  text-align: left;
-  cursor: pointer; }
-  /* line 57, ../sass/_newstyle.scss */
-  #help-btn .background {
-    background: url("../img/help-blue-btn.png") no-repeat top left;
-    background-size: 32px;
+  /* Config BUTTON */ }
+  /* line 132, ../sass/_newstyle.scss */
+  #menu_right #help-btn {
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+    background-color: rgba(200, 200, 200, 0.5);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    text-shadow: #52554f 0 1px 0;
+    position: relative;
+    top: 0px;
+    left: 30px;
+    float: left;
     width: 32px;
     height: 32px;
-    display: inline-block;
-    float: right; }
-  /* line 65, ../sass/_newstyle.scss */
-  #help-btn .desc {
-    text-align: right;
-    display: none;
-    color: white;
-    line-height: 32px;
-    vertical-align: top; }
-  /* line 73, ../sass/_newstyle.scss */
-  #help-btn:hover, #help-btn:focus {
-    width: 111px;
-    padding-left: 10px; }
-    /* line 76, ../sass/_newstyle.scss */
-    #help-btn:hover .desc, #help-btn:focus .desc {
-      display: inline-block; }
-
-/* Config BUTTON */
-/* line 88, ../sass/_newstyle.scss */
-#config-btn {
-  -webkit-transition: width 0.3s ease-in-out;
-  -moz-transition: width 0.3s ease-in-out;
-  -o-transition: width 0.3s ease-in-out;
-  transition: width 0.3s ease-in-out;
-  background-color: rgba(200, 200, 200, 0.5);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
-  -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
-  box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
-  text-shadow: #52554f 0 1px 0;
-  position: relative;
-  top: 0px;
-  left: 30px;
-  float: left;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  text-align: left;
-  cursor: pointer; }
-  /* line 57, ../sass/_newstyle.scss */
-  #config-btn .background {
-    background: url("../img/Gear.png") no-repeat top left;
-    background-size: 32px;
+    overflow: hidden;
+    text-align: left;
+    margin-left: 5px;
+    cursor: pointer; }
+    /* line 58, ../sass/_newstyle.scss */
+    #menu_right #help-btn .background {
+      background: url("../img/help-blue-btn.png") no-repeat top left;
+      background-size: 32px;
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+      float: right; }
+    /* line 66, ../sass/_newstyle.scss */
+    #menu_right #help-btn .desc {
+      text-align: right;
+      display: none;
+      color: white;
+      line-height: 32px;
+      vertical-align: top; }
+    /* line 74, ../sass/_newstyle.scss */
+    #menu_right #help-btn:hover, #menu_right #help-btn:focus {
+      width: 111px;
+      padding-left: 10px; }
+      /* line 77, ../sass/_newstyle.scss */
+      #menu_right #help-btn:hover .desc, #menu_right #help-btn:focus .desc {
+        display: inline-block; }
+  /* line 137, ../sass/_newstyle.scss */
+  #menu_right #config-btn {
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+    background-color: rgba(200, 200, 200, 0.5);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    text-shadow: #52554f 0 1px 0;
+    position: relative;
+    top: 0px;
+    left: 30px;
+    float: left;
     width: 32px;
     height: 32px;
-    display: inline-block;
-    float: right; }
-  /* line 65, ../sass/_newstyle.scss */
-  #config-btn .desc {
-    text-align: right;
-    display: none;
-    color: white;
-    line-height: 32px;
-    vertical-align: top; }
-  /* line 73, ../sass/_newstyle.scss */
-  #config-btn:hover, #config-btn:focus {
-    width: 111px;
-    padding-left: 10px; }
-    /* line 76, ../sass/_newstyle.scss */
-    #config-btn:hover .desc, #config-btn:focus .desc {
-      display: inline-block; }
+    overflow: hidden;
+    text-align: left;
+    margin-left: 5px;
+    cursor: pointer; }
+    /* line 58, ../sass/_newstyle.scss */
+    #menu_right #config-btn .background {
+      background: url("../img/Gear.png") no-repeat top left;
+      background-size: 32px;
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+      float: right; }
+    /* line 66, ../sass/_newstyle.scss */
+    #menu_right #config-btn .desc {
+      text-align: right;
+      display: none;
+      color: white;
+      line-height: 32px;
+      vertical-align: top; }
+    /* line 74, ../sass/_newstyle.scss */
+    #menu_right #config-btn:hover, #menu_right #config-btn:focus {
+      width: 111px;
+      padding-left: 10px; }
+      /* line 77, ../sass/_newstyle.scss */
+      #menu_right #config-btn:hover .desc, #menu_right #config-btn:focus .desc {
+        display: inline-block; }
+  /* line 140, ../sass/_newstyle.scss */
+  #menu_right #back-btn {
+    background-color: rgba(200, 200, 200, 0.5);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    text-shadow: #52554f 0 1px 0;
+    position: relative;
+    top: 0px;
+    left: 30px;
+    float: left;
+    width: 80px;
+    padding-left: 5px;
+    margin-left: 5px;
+    height: 32px;
+    overflow: hidden;
+    text-align: left;
+    cursor: pointer; }
+    /* line 110, ../sass/_newstyle.scss */
+    #menu_right #back-btn .background {
+      background: url("../img/back-button.png") no-repeat top left;
+      background-size: 32px;
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+      float: left; }
+    /* line 118, ../sass/_newstyle.scss */
+    #menu_right #back-btn .desc {
+      text-align: left;
+      display: inline-block;
+      color: white;
+      line-height: 32px;
+      vertical-align: top; }
+  /* line 143, ../sass/_newstyle.scss */
+  #menu_right #for-btn {
+    background-color: rgba(200, 200, 200, 0.5);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    text-shadow: #52554f 0 1px 0;
+    position: relative;
+    top: 0px;
+    left: 30px;
+    float: left;
+    width: 90px;
+    padding-left: 5px;
+    margin-left: 5px;
+    height: 32px;
+    overflow: hidden;
+    text-align: left;
+    cursor: pointer; }
+    /* line 110, ../sass/_newstyle.scss */
+    #menu_right #for-btn .background {
+      background: url("../img/forward-button.png") no-repeat top left;
+      background-size: 32px;
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+      float: right; }
+    /* line 118, ../sass/_newstyle.scss */
+    #menu_right #for-btn .desc {
+      text-align: right;
+      display: inline-block;
+      color: white;
+      line-height: 32px;
+      vertical-align: top; }
 
-/* line 91, ../sass/_newstyle.scss */
+/* line 147, ../sass/_newstyle.scss */
 #start-btn {
   -webkit-transition: width 0.3s ease-in-out;
   -moz-transition: width 0.3s ease-in-out;
@@ -541,8 +621,9 @@ a {
   height: 32px;
   overflow: hidden;
   text-align: left;
+  margin-left: 5px;
   cursor: pointer; }
-  /* line 57, ../sass/_newstyle.scss */
+  /* line 58, ../sass/_newstyle.scss */
   #start-btn .background {
     background: url("../img/play-green-btn.png") no-repeat top left;
     background-size: 32px;
@@ -550,22 +631,22 @@ a {
     height: 32px;
     display: inline-block;
     float: right; }
-  /* line 65, ../sass/_newstyle.scss */
+  /* line 66, ../sass/_newstyle.scss */
   #start-btn .desc {
     text-align: right;
     display: none;
     color: black;
     line-height: 32px;
     vertical-align: top; }
-  /* line 73, ../sass/_newstyle.scss */
+  /* line 74, ../sass/_newstyle.scss */
   #start-btn:hover, #start-btn:focus {
     width: 111px;
     padding-left: 10px; }
-    /* line 76, ../sass/_newstyle.scss */
+    /* line 77, ../sass/_newstyle.scss */
     #start-btn:hover .desc, #start-btn:focus .desc {
       display: inline-block; }
 
-/* line 95, ../sass/_newstyle.scss */
+/* line 151, ../sass/_newstyle.scss */
 #help .content, #help .page-screen {
   -webkit-transition: opacity 0.3s ease-in-out;
   -moz-transition: opacity 0.3s ease-in-out;
@@ -573,14 +654,14 @@ a {
   transition: opacity 0.3s ease-in-out;
   opacity: 0; }
 
-/* line 100, ../sass/_newstyle.scss */
+/* line 156, ../sass/_newstyle.scss */
 #help {
   -webkit-filter: blur(0px) !important;
   -moz-filter: blur(0px) !important;
   filter: blur(0px) !important;
   height: 0px;
   display: none; }
-  /* line 104, ../sass/_newstyle.scss */
+  /* line 160, ../sass/_newstyle.scss */
   #help .content {
     display: inline-block;
     margin: 0 20%;
@@ -597,18 +678,18 @@ a {
     -webkit-box-shadow: 1px 0px 5px #333333;
     -moz-box-shadow: 1px 0px 5px #333333;
     box-shadow: 1px 0px 5px #333333; }
-    /* line 119, ../sass/_newstyle.scss */
+    /* line 175, ../sass/_newstyle.scss */
     #help .content h1 {
       font-family: "Open Sans Semibold", sans-serif;
       font-size: 26px;
       margin: auto;
       text-align: center;
       margin: 10px 0px; }
-    /* line 126, ../sass/_newstyle.scss */
+    /* line 182, ../sass/_newstyle.scss */
     #help .content #close-help {
       position: relative;
       float: right; }
-  /* line 131, ../sass/_newstyle.scss */
+  /* line 187, ../sass/_newstyle.scss */
   #help .page-screen {
     background-color: rgba(187, 187, 187, 0.3);
     position: absolute;
@@ -618,71 +699,71 @@ a {
     height: 100%;
     opacity: 0;
     z-index: 20; }
-  /* line 145, ../sass/_newstyle.scss */
+  /* line 201, ../sass/_newstyle.scss */
   #help .content.show, #help .page-screen.show {
     display: inline-block;
     opacity: 1; }
 
-/* line 156, ../sass/_newstyle.scss */
+/* line 212, ../sass/_newstyle.scss */
 body .blur {
   -webkit-filter: blur(8px);
   -moz-filter: blur(8px);
   filter: blur(8px); }
 
-/* line 160, ../sass/_newstyle.scss */
+/* line 216, ../sass/_newstyle.scss */
 #containeri, #containerp {
   width: 70%;
   display: inline-block; }
-  /* line 163, ../sass/_newstyle.scss */
+  /* line 219, ../sass/_newstyle.scss */
   #containeri canvas, #containerp canvas {
     width: 100% !important;
     display: inline-block; }
 
-/* line 169, ../sass/_newstyle.scss */
+/* line 225, ../sass/_newstyle.scss */
 #acc_ints {
   height: 350px;
   overflow-y: scroll;
   vertical-align: top;
   display: inline-block;
   width: 25% !important; }
-  /* line 175, ../sass/_newstyle.scss */
+  /* line 231, ../sass/_newstyle.scss */
   #acc_ints h2 {
     border-bottom: 1px solid black;
     font-size: 1.5em;
     line-height: 2em;
     margin-bottom: 10px; }
-  /* line 181, ../sass/_newstyle.scss */
+  /* line 237, ../sass/_newstyle.scss */
   #acc_ints li {
     padding: 5px 0 5px 5px;
     font-size: 1.1em;
     border-top: 1px dashed black; }
-    /* line 185, ../sass/_newstyle.scss */
+    /* line 241, ../sass/_newstyle.scss */
     #acc_ints li:first-child {
       border-top: none; }
-    /* line 188, ../sass/_newstyle.scss */
+    /* line 244, ../sass/_newstyle.scss */
     #acc_ints li.module {
       border: none; }
-  /* line 192, ../sass/_newstyle.scss */
+  /* line 248, ../sass/_newstyle.scss */
   #acc_ints a {
     clear: both;
     display: inline-block;
     vertical-align: top; }
-    /* line 193, ../sass/_newstyle.scss */
+    /* line 249, ../sass/_newstyle.scss */
     #acc_ints a img {
       width: 20px; }
 
 /* Popup content CLASS */
-/* line 204, ../sass/_newstyle.scss */
+/* line 260, ../sass/_newstyle.scss */
 #materiales, #mat_puerta, #sel_interiores, #handles, #distribucionPuerta {
   overflow-y: scroll;
   height: 400px;
   clear: both;
   padding-top: 10px; }
-  /* line 211, ../sass/_newstyle.scss */
+  /* line 267, ../sass/_newstyle.scss */
   #materiales .content, #mat_puerta .content, #sel_interiores .content, #handles .content, #distribucionPuerta .content {
     width: 90%;
     margin: 0 5%; }
-    /* line 214, ../sass/_newstyle.scss */
+    /* line 270, ../sass/_newstyle.scss */
     #materiales .content .element, #mat_puerta .content .element, #sel_interiores .content .element, #handles .content .element, #distribucionPuerta .content .element {
       border-radius: 5px;
       margin: 3px 0;
@@ -694,7 +775,7 @@ body .blur {
       -moz-transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -moz-transform 0.1s ease-in-out;
       -o-transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -o-transform 0.1s ease-in-out;
       transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.1s ease-in-out; }
-      /* line 223, ../sass/_newstyle.scss */
+      /* line 279, ../sass/_newstyle.scss */
       #materiales .content .element:hover, #mat_puerta .content .element:hover, #sel_interiores .content .element:hover, #handles .content .element:hover, #distribucionPuerta .content .element:hover {
         background-color: #dfb178;
         -webkit-transform: scale3d(1.05, 1.05, 1.05);
@@ -705,12 +786,12 @@ body .blur {
         -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
         -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); }
-      /* line 230, ../sass/_newstyle.scss */
+      /* line 286, ../sass/_newstyle.scss */
       #materiales .content .element .picture img, #mat_puerta .content .element .picture img, #sel_interiores .content .element .picture img, #handles .content .element .picture img, #distribucionPuerta .content .element .picture img {
         margin: 5%;
         width: 90%;
         height: 10em; }
-      /* line 236, ../sass/_newstyle.scss */
+      /* line 292, ../sass/_newstyle.scss */
       #materiales .content .element .title, #mat_puerta .content .element .title, #sel_interiores .content .element .title, #handles .content .element .title, #distribucionPuerta .content .element .title {
         text-align: center;
         line-height: 20px;
@@ -719,7 +800,7 @@ body .blur {
         height: 5em; }
 
 /* Popup de materiales */
-/* line 249, ../sass/_newstyle.scss */
+/* line 305, ../sass/_newstyle.scss */
 #sel_parent {
   font-size: 18px;
   height: 40px;
@@ -727,58 +808,58 @@ body .blur {
   left: 10px;
   top: 10px; }
 
-/* line 263, ../sass/_newstyle.scss */
+/* line 319, ../sass/_newstyle.scss */
 #mat_puerta .content .element .title {
   line-height: 12px; }
 
-/* line 276, ../sass/_newstyle.scss */
+/* line 332, ../sass/_newstyle.scss */
 #handles .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 292, ../sass/_newstyle.scss */
+/* line 348, ../sass/_newstyle.scss */
 #acc_ext .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 308, ../sass/_newstyle.scss */
+/* line 364, ../sass/_newstyle.scss */
 #sel_interiores .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 324, ../sass/_newstyle.scss */
+/* line 380, ../sass/_newstyle.scss */
 #distribucionPuerta .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 334, ../sass/_newstyle.scss */
+/* line 390, ../sass/_newstyle.scss */
 #sel_marco {
   height: 350px;
   vertical-align: top;
   display: inline-block;
   width: 25% !important;
   margin-top: -5px; }
-  /* line 340, ../sass/_newstyle.scss */
+  /* line 396, ../sass/_newstyle.scss */
   #sel_marco #marco_sel {
     margin: 5px 0px 15px 0px;
     clear: both;
     display: block; }
-    /* line 344, ../sass/_newstyle.scss */
+    /* line 400, ../sass/_newstyle.scss */
     #sel_marco #marco_sel h2 {
       font-size: 1em;
       line-height: 1.5em;
       margin-top: -10px; }
-    /* line 350, ../sass/_newstyle.scss */
+    /* line 406, ../sass/_newstyle.scss */
     #sel_marco #marco_sel img {
       display: block;
       margin: 5px 0px;
       width: 75%; }
 
-/* line 365, ../sass/_newstyle.scss */
+/* line 421, ../sass/_newstyle.scss */
 .submit-button {
   background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #8dc059), color-stop(100%, #6aa436)), #6aa436;
   background: -webkit-linear-gradient(left top, #8dc059, #6aa436), #6aa436;
@@ -802,17 +883,17 @@ body .blur {
   vertical-align: middle;
   text-align: center;
   border: 1px solid #447314; }
-  /* line 388, ../sass/_newstyle.scss */
+  /* line 444, ../sass/_newstyle.scss */
   .no-cssgradients .submit-button {
     background: url(semiems/img/site/button-shader.png) left center repeat-x, #6aa436; }
-  /* line 394, ../sass/_newstyle.scss */
+  /* line 450, ../sass/_newstyle.scss */
   .no-multiplebgs .submit-button {
     background-color: #6aa436; }
-  /* line 398, ../sass/_newstyle.scss */
+  /* line 454, ../sass/_newstyle.scss */
   .submit-button:hover, .submit-button:focus {
     text-shadow: #537a4a 0 1px 0;
     color: #FFF; }
-  /* line 402, ../sass/_newstyle.scss */
+  /* line 458, ../sass/_newstyle.scss */
   .submit-button:active {
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6aa436), color-stop(100%, #8dc059)), #6aa436;
     background: -webkit-linear-gradient(top, #6aa436, #8dc059), #6aa436;
@@ -822,15 +903,15 @@ body .blur {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none; }
-    /* line 408, ../sass/_newstyle.scss */
+    /* line 464, ../sass/_newstyle.scss */
     .no-cssgradients .submit-button:active {
       background: url(semiems/img/site/button-shader.png) left center repeat-x, #5e9130; }
-    /* line 414, ../sass/_newstyle.scss */
+    /* line 470, ../sass/_newstyle.scss */
     .no-multiplebgs .submit-button:active {
       background-color: #5e9130;
       border-color: #FFF; }
 
-/* line 420, ../sass/_newstyle.scss */
+/* line 476, ../sass/_newstyle.scss */
 .kineticjs-content1 {
   position: relative;
   left: 200px;
