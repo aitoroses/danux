@@ -105,13 +105,13 @@ nav li {
   padding: 6px 5px;
   margin: 0 0 5px 0;
   width: 238px;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  -moz-box-shadow: 0 1px 1px #cccccc inset;
-  -webkit-box-shadow: 0 1px 1px #cccccc inset;
-  box-shadow: 0 1px 1px #cccccc inset; }
+  -moz-box-shadow: 0 1px 1px #ccc inset;
+  -webkit-box-shadow: 0 1px 1px #ccc inset;
+  box-shadow: 0 1px 1px #ccc inset; }
 
 /* line 120, ../sass/css/_style.scss */
 #inputs input:focus {
@@ -231,7 +231,7 @@ header {
   color: #fff;
   display: inline-block;
   float: left;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   font-weight: 400;
   height: 91px;
@@ -270,7 +270,7 @@ header {
 
 /* line 273, ../sass/css/_style.scss */
 #title_popup {
-  font-family: "Open Sans Semibold", sans-serif;
+  font-family: 'Open Sans Semibold' ,sans-serif;
   font-size: 26px;
   margin: auto;
   text-align: center;
@@ -293,7 +293,7 @@ header {
 
 /* line 295, ../sass/css/_style.scss */
 .text-form {
-  font-family: "Open Sans Semibold", sans-serif;
+  font-family: 'Open Sans Semibold' ,sans-serif;
   font-size: 14px;
   text-align: center;
   padding-top: 20px; }
@@ -420,11 +420,71 @@ a {
     float: none; }
 
 /* MIXIN BUTTON MOVEMENT*/
-/* line 131, ../sass/_newstyle.scss */
+@-moz-keyframes click-animation {
+  /* line 131, ../sass/_newstyle.scss */
+  0%, 100% {
+    -moz-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+
+  /* line 134, ../sass/_newstyle.scss */
+  50% {
+    -moz-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9); } }
+
+@-webkit-keyframes click-animation {
+  /* line 131, ../sass/_newstyle.scss */
+  0%, 100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+
+  /* line 134, ../sass/_newstyle.scss */
+  50% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9); } }
+
+@-o-keyframes click-animation {
+  /* line 131, ../sass/_newstyle.scss */
+  0%, 100% {
+    -o-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+
+  /* line 134, ../sass/_newstyle.scss */
+  50% {
+    -o-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9); } }
+
+@-ms-keyframes click-animation {
+  /* line 131, ../sass/_newstyle.scss */
+  0%, 100% {
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+
+  /* line 134, ../sass/_newstyle.scss */
+  50% {
+    -ms-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9); } }
+
+@keyframes click-animation {
+  /* line 131, ../sass/_newstyle.scss */
+  0%, 100% {
+    transform: scale3d(1, 1, 1); }
+
+  /* line 134, ../sass/_newstyle.scss */
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9); } }
+
+/* line 140, ../sass/_newstyle.scss */
 #menu_right {
   float: left;
   /* Config BUTTON */ }
-  /* line 133, ../sass/_newstyle.scss */
+  /* line 142, ../sass/_newstyle.scss */
+  #menu_right .clicked#back-btn {
+    -webkit-animation: click-animation 0.3s 1;
+    -moz-animation: click-animation 0.3s 1;
+    -ms-animation: click-animation 0.3s 1;
+    -o-animation: click-animation 0.3s 1;
+    animation: click-animation 0.3s 1; }
+  /* line 147, ../sass/_newstyle.scss */
   #menu_right #help-btn {
     -webkit-transition: width 0.3s ease-in-out;
     -moz-transition: width 0.3s ease-in-out;
@@ -472,7 +532,7 @@ a {
       /* line 77, ../sass/_newstyle.scss */
       #menu_right #help-btn:hover .desc, #menu_right #help-btn:focus .desc {
         display: inline-block; }
-  /* line 138, ../sass/_newstyle.scss */
+  /* line 151, ../sass/_newstyle.scss */
   #menu_right #config-btn {
     -webkit-transition: width 0.3s ease-in-out;
     -moz-transition: width 0.3s ease-in-out;
@@ -520,8 +580,9 @@ a {
       /* line 77, ../sass/_newstyle.scss */
       #menu_right #config-btn:hover .desc, #menu_right #config-btn:focus .desc {
         display: inline-block; }
-  /* line 141, ../sass/_newstyle.scss */
+  /* line 154, ../sass/_newstyle.scss */
   #menu_right #back-btn {
+    opacity: 0.3;
     background-color: rgba(200, 200, 200, 0.5);
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -558,7 +619,7 @@ a {
       color: white;
       line-height: 32px;
       vertical-align: top; }
-  /* line 144, ../sass/_newstyle.scss */
+  /* line 159, ../sass/_newstyle.scss */
   #menu_right #for-btn {
     background-color: rgba(200, 200, 200, 0.5);
     -webkit-border-radius: 4px;
@@ -597,7 +658,7 @@ a {
       line-height: 32px;
       vertical-align: top; }
 
-/* line 148, ../sass/_newstyle.scss */
+/* line 165, ../sass/_newstyle.scss */
 #start-btn {
   -webkit-transition: width 0.3s ease-in-out;
   -moz-transition: width 0.3s ease-in-out;
@@ -646,7 +707,7 @@ a {
     #start-btn:hover .desc, #start-btn:focus .desc {
       display: inline-block; }
 
-/* line 152, ../sass/_newstyle.scss */
+/* line 169, ../sass/_newstyle.scss */
 #help .content, #help .page-screen {
   -webkit-transition: opacity 0.3s ease-in-out;
   -moz-transition: opacity 0.3s ease-in-out;
@@ -654,14 +715,14 @@ a {
   transition: opacity 0.3s ease-in-out;
   opacity: 0; }
 
-/* line 157, ../sass/_newstyle.scss */
+/* line 174, ../sass/_newstyle.scss */
 #help {
   -webkit-filter: blur(0px) !important;
   -moz-filter: blur(0px) !important;
   filter: blur(0px) !important;
   height: 0px;
   display: none; }
-  /* line 161, ../sass/_newstyle.scss */
+  /* line 178, ../sass/_newstyle.scss */
   #help .content {
     display: inline-block;
     margin: 0 20%;
@@ -678,18 +739,18 @@ a {
     -webkit-box-shadow: 1px 0px 5px #333333;
     -moz-box-shadow: 1px 0px 5px #333333;
     box-shadow: 1px 0px 5px #333333; }
-    /* line 176, ../sass/_newstyle.scss */
+    /* line 193, ../sass/_newstyle.scss */
     #help .content h1 {
       font-family: "Open Sans Semibold", sans-serif;
       font-size: 26px;
       margin: auto;
       text-align: center;
       margin: 10px 0px; }
-    /* line 183, ../sass/_newstyle.scss */
+    /* line 200, ../sass/_newstyle.scss */
     #help .content #close-help {
       position: relative;
       float: right; }
-  /* line 188, ../sass/_newstyle.scss */
+  /* line 205, ../sass/_newstyle.scss */
   #help .page-screen {
     background-color: rgba(187, 187, 187, 0.3);
     position: absolute;
@@ -699,71 +760,71 @@ a {
     height: 100%;
     opacity: 0;
     z-index: 20; }
-  /* line 202, ../sass/_newstyle.scss */
+  /* line 219, ../sass/_newstyle.scss */
   #help .content.show, #help .page-screen.show {
     display: inline-block;
     opacity: 1; }
 
-/* line 213, ../sass/_newstyle.scss */
+/* line 230, ../sass/_newstyle.scss */
 body .blur {
   -webkit-filter: blur(8px);
   -moz-filter: blur(8px);
   filter: blur(8px); }
 
-/* line 217, ../sass/_newstyle.scss */
+/* line 234, ../sass/_newstyle.scss */
 #containeri, #containerp {
   width: 70%;
   display: inline-block; }
-  /* line 220, ../sass/_newstyle.scss */
+  /* line 237, ../sass/_newstyle.scss */
   #containeri canvas, #containerp canvas {
     width: 100% !important;
     display: inline-block; }
 
-/* line 226, ../sass/_newstyle.scss */
+/* line 243, ../sass/_newstyle.scss */
 #acc_ints {
   height: 350px;
   overflow-y: scroll;
   vertical-align: top;
   display: inline-block;
   width: 25% !important; }
-  /* line 232, ../sass/_newstyle.scss */
+  /* line 249, ../sass/_newstyle.scss */
   #acc_ints h2 {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000;
     font-size: 1.5em;
     line-height: 2em;
     margin-bottom: 10px; }
-  /* line 238, ../sass/_newstyle.scss */
+  /* line 255, ../sass/_newstyle.scss */
   #acc_ints li {
     padding: 5px 0 5px 5px;
     font-size: 1.1em;
-    border-top: 1px dashed black; }
-    /* line 242, ../sass/_newstyle.scss */
+    border-top: 1px dashed #000; }
+    /* line 259, ../sass/_newstyle.scss */
     #acc_ints li:first-child {
       border-top: none; }
-    /* line 245, ../sass/_newstyle.scss */
+    /* line 262, ../sass/_newstyle.scss */
     #acc_ints li.module {
       border: none; }
-  /* line 249, ../sass/_newstyle.scss */
+  /* line 266, ../sass/_newstyle.scss */
   #acc_ints a {
     clear: both;
     display: inline-block;
     vertical-align: top; }
-    /* line 250, ../sass/_newstyle.scss */
+    /* line 267, ../sass/_newstyle.scss */
     #acc_ints a img {
       width: 20px; }
 
 /* Popup content CLASS */
-/* line 261, ../sass/_newstyle.scss */
+/* line 278, ../sass/_newstyle.scss */
 #materiales, #mat_puerta, #sel_interiores, #handles, #distribucionPuerta {
   overflow-y: scroll;
   height: 400px;
   clear: both;
   padding-top: 10px; }
-  /* line 268, ../sass/_newstyle.scss */
+  /* line 285, ../sass/_newstyle.scss */
   #materiales .content, #mat_puerta .content, #sel_interiores .content, #handles .content, #distribucionPuerta .content {
     width: 90%;
     margin: 0 5%; }
-    /* line 271, ../sass/_newstyle.scss */
+    /* line 288, ../sass/_newstyle.scss */
     #materiales .content .element, #mat_puerta .content .element, #sel_interiores .content .element, #handles .content .element, #distribucionPuerta .content .element {
       border-radius: 5px;
       margin: 3px 0;
@@ -775,7 +836,7 @@ body .blur {
       -moz-transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -moz-transform 0.1s ease-in-out;
       -o-transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -o-transform 0.1s ease-in-out;
       transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.1s ease-in-out; }
-      /* line 280, ../sass/_newstyle.scss */
+      /* line 297, ../sass/_newstyle.scss */
       #materiales .content .element:hover, #mat_puerta .content .element:hover, #sel_interiores .content .element:hover, #handles .content .element:hover, #distribucionPuerta .content .element:hover {
         background-color: #dfb178;
         -webkit-transform: scale3d(1.05, 1.05, 1.05);
@@ -786,12 +847,12 @@ body .blur {
         -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
         -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); }
-      /* line 287, ../sass/_newstyle.scss */
+      /* line 304, ../sass/_newstyle.scss */
       #materiales .content .element .picture img, #mat_puerta .content .element .picture img, #sel_interiores .content .element .picture img, #handles .content .element .picture img, #distribucionPuerta .content .element .picture img {
         margin: 5%;
         width: 90%;
         height: 10em; }
-      /* line 293, ../sass/_newstyle.scss */
+      /* line 310, ../sass/_newstyle.scss */
       #materiales .content .element .title, #mat_puerta .content .element .title, #sel_interiores .content .element .title, #handles .content .element .title, #distribucionPuerta .content .element .title {
         text-align: center;
         line-height: 20px;
@@ -800,7 +861,7 @@ body .blur {
         height: 5em; }
 
 /* Popup de materiales */
-/* line 306, ../sass/_newstyle.scss */
+/* line 323, ../sass/_newstyle.scss */
 #sel_parent {
   font-size: 18px;
   height: 40px;
@@ -808,58 +869,58 @@ body .blur {
   left: 10px;
   top: 10px; }
 
-/* line 320, ../sass/_newstyle.scss */
+/* line 337, ../sass/_newstyle.scss */
 #mat_puerta .content .element .title {
   line-height: 12px; }
 
-/* line 333, ../sass/_newstyle.scss */
+/* line 350, ../sass/_newstyle.scss */
 #handles .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 349, ../sass/_newstyle.scss */
+/* line 366, ../sass/_newstyle.scss */
 #acc_ext .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 365, ../sass/_newstyle.scss */
+/* line 382, ../sass/_newstyle.scss */
 #sel_interiores .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 381, ../sass/_newstyle.scss */
+/* line 398, ../sass/_newstyle.scss */
 #distribucionPuerta .content .element .picture img {
   margin: 5% 5% 5% 28%;
   width: 41%;
   height: 10em; }
 
-/* line 391, ../sass/_newstyle.scss */
+/* line 408, ../sass/_newstyle.scss */
 #sel_marco {
   height: 350px;
   vertical-align: top;
   display: inline-block;
   width: 25% !important;
   margin-top: -5px; }
-  /* line 397, ../sass/_newstyle.scss */
+  /* line 414, ../sass/_newstyle.scss */
   #sel_marco #marco_sel {
     margin: 5px 0px 15px 0px;
     clear: both;
     display: block; }
-    /* line 401, ../sass/_newstyle.scss */
+    /* line 418, ../sass/_newstyle.scss */
     #sel_marco #marco_sel h2 {
       font-size: 1em;
       line-height: 1.5em;
       margin-top: -10px; }
-    /* line 407, ../sass/_newstyle.scss */
+    /* line 424, ../sass/_newstyle.scss */
     #sel_marco #marco_sel img {
       display: block;
       margin: 5px 0px;
       width: 75%; }
 
-/* line 422, ../sass/_newstyle.scss */
+/* line 439, ../sass/_newstyle.scss */
 .submit-button {
   background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #8dc059), color-stop(100%, #6aa436)), #6aa436;
   background: -webkit-linear-gradient(left top, #8dc059, #6aa436), #6aa436;
@@ -883,17 +944,17 @@ body .blur {
   vertical-align: middle;
   text-align: center;
   border: 1px solid #447314; }
-  /* line 445, ../sass/_newstyle.scss */
+  /* line 462, ../sass/_newstyle.scss */
   .no-cssgradients .submit-button {
     background: url(semiems/img/site/button-shader.png) left center repeat-x, #6aa436; }
-  /* line 451, ../sass/_newstyle.scss */
+  /* line 468, ../sass/_newstyle.scss */
   .no-multiplebgs .submit-button {
     background-color: #6aa436; }
-  /* line 455, ../sass/_newstyle.scss */
+  /* line 472, ../sass/_newstyle.scss */
   .submit-button:hover, .submit-button:focus {
     text-shadow: #537a4a 0 1px 0;
     color: #FFF; }
-  /* line 459, ../sass/_newstyle.scss */
+  /* line 476, ../sass/_newstyle.scss */
   .submit-button:active {
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6aa436), color-stop(100%, #8dc059)), #6aa436;
     background: -webkit-linear-gradient(top, #6aa436, #8dc059), #6aa436;
@@ -903,15 +964,15 @@ body .blur {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none; }
-    /* line 465, ../sass/_newstyle.scss */
+    /* line 482, ../sass/_newstyle.scss */
     .no-cssgradients .submit-button:active {
       background: url(semiems/img/site/button-shader.png) left center repeat-x, #5e9130; }
-    /* line 471, ../sass/_newstyle.scss */
+    /* line 488, ../sass/_newstyle.scss */
     .no-multiplebgs .submit-button:active {
       background-color: #5e9130;
       border-color: #FFF; }
 
-/* line 477, ../sass/_newstyle.scss */
+/* line 494, ../sass/_newstyle.scss */
 .kineticjs-content1 {
   position: relative;
   left: 200px;

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	
 	App.Navigator.initialize();
 
 	$('#wardrobemenu a').click(function(e){
@@ -12,9 +12,9 @@ $(document).ready(function(){
 				//alert('Se ha cargado el armario con ID '+ response)
 				if (location.href !== "1#wardrobe-create"){
 					location.href = "1#wardrobe-create";
-				} else {
-					location.href.reload(true);
 				}
+				location.reload();
+
 			},
 			error: function(){
 				alert('Hubo un error al cargar el identificador');
@@ -157,13 +157,43 @@ App.Notice ={
 	
 }
 
+// La app responde a los eventos 'stack' y 'undo'
+
 App.History = $.extend({
 	saveWardrobe: function(){
 		this.save(WardrobeModel.wardrobe);
+		this.evaluateController();
 	},
 	undoWardrobe: function() {
 		WardrobeModel.wardrobe = this.undo();
 		if(this.get_size() == 0) {this.saveWardrobe();}
+	},
+	evaluateController: function() {
+		$count = $('#back-count');
+		// Show Actual stack size on #back-count
+		$count.text(this.get_size() - 1);
+		$btn = $('#back-btn');
+		// if there is no history, opacity should decrease to 0.3
+		if(this.get_size() - 1 == 0) {	
+			$btn.animate({opacity: 0.3});
+		} else {
+			$btn.animate({opacity: 1});
+		}
+	},
+	back_button_action: function() {
+		$btn = $('#back-btn');
+		// Set the event trigger on click
+		$(document).trigger('undo');
+		// Animate click
+
+		$btn.removeClass('clicked')
+		_.delay(function(){$btn.addClass('clicked'), 0});
+		
+		// Evaluate the count
+		this.evaluateController();
+
+
+		
 	}
 }, new History());
 
