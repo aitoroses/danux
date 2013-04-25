@@ -1,415 +1,433 @@
 .floater {
-	float: left;
+  float: left;
 }
 a{
-	cursor:pointer;
+  cursor:pointer;
 }
 
 #header {
 
-	//position: absolute;
-	//width: 100%;
-	margin-bottom: 40px;
-	height: 3em;
-	background-color: rgba(51, 51, 51, 0.7);
-	text-align: right;
-	#nav {
-		position: relative;
-		right: 20px;
+  //position: absolute;
+  //width: 100%;
+  margin-bottom: 40px;
+  height: 3em;
+  background-color: rgba(51, 51, 51, 0.7);
+  text-align: right;
+  #nav {
+    position: relative;
+    right: 20px;
 
-	}
-	h1 {
-		font-size: 20px;
-		font-variant: small-caps;
-		color: #ddd;
-		display:inline-block;
-	}
-	#close-btn {
-		float: none;
-	}
+  }
+  h1 {
+    font-size: 20px;
+    font-variant: small-caps;
+    color: #ddd;
+    display:inline-block;
+  }
+  #close-btn {
+    float: none;
+  }
 }
 /* MIXIN BUTTON MOVEMENT*/
 @mixin btn ($imageURL,$colorBackground,$colorText,$width-f, $float: none){
-	@include transition(width 0.3s ease-in-out);
-	background-color: $colorBackground;
-	@include border-radius(
-		4px
-		);
-	@include box-shadow(
-		rgba(255,255,255,0.4) 0 1px 0, 
-		inset rgba(255,255,255,0.4) 0 1px 0
-		);
-	@include text-shadow(
-		rgb(82, 85, 79) 0 1px 0
-		);
-	position:relative;
-	top:0px;
-	left:30px;
-	@if $float != none {
-		float: $float; }
-	@else {
-		display:inline-block;}
-	width: 32px;
-	height: 32px;
-	overflow:hidden;
-	text-align:left;
-	margin-left:5px;
-	cursor:pointer;
-	.background{
-		background: url($imageURL) no-repeat top left;
-		background-size:32px;
-		width:32px;
-		height:32px;
-		display:inline-block;
-		float:right;
-	}
-	.desc{
-		text-align:right;
-		display:none;
-		color: $colorText;
-		line-height:32px;
-		vertical-align:top;
-	}
-	&:hover,
-	&:focus{
-		width: $width-f;
-		padding-left:10px;
-		.desc{
-		display:inline-block;
-		}
+  @include transition(width 0.3s ease-in-out);
+  background-color: $colorBackground;
+  @include border-radius(
+    4px
+    );
+  @include box-shadow(
+    rgba(255,255,255,0.4) 0 1px 0, 
+    inset rgba(255,255,255,0.4) 0 1px 0
+    );
+  @include text-shadow(
+    rgb(82, 85, 79) 0 1px 0
+    );
+  position:relative;
+  top:0px;
+  left:30px;
+  @if $float != none {
+    float: $float; }
+  @else {
+    display:inline-block;}
+  width: 32px;
+  height: 32px;
+  overflow:hidden;
+  text-align:left;
+  margin-left:5px;
+  cursor:pointer;
+  .background{
+    background: url($imageURL) no-repeat top left;
+    background-size:32px;
+    width:32px;
+    height:32px;
+    display:inline-block;
+    float:right;
+  }
+  .desc{
+    text-align: right;
+    display:none;
+    color: $colorText;
+    line-height:32px;
+    vertical-align: top;
+  }
+  &:hover,
+  &:focus{
+    width: $width-f;
+    padding-left:10px;
+    .desc{
+    display:inline-block;
+    }
 
-	}
+  }
 }
 @mixin btn-no-anim ($imageURL,$colorBackground,$colorText,$width-f, $float: none, $align: right){
-	//@include transition(width 0.3s ease-in-out);
-	background-color: $colorBackground;
-	@include border-radius(
-		4px
-		);
-	@include box-shadow(
-		rgba(255,255,255,0.4) 0 1px 0, 
-		inset rgba(255,255,255,0.4) 0 1px 0
-		);
-	@include text-shadow(
-		rgb(82, 85, 79) 0 1px 0
-		);
-	position:relative;
-	top:0px;
-	left:30px;
-	@if $float != none {
-		float: $float; }
-	@else {
-		display:inline-block;}
-	width: $width-f;
-	padding-left:5px;
-	margin-left:5px;
-	height: 32px;
-	overflow:hidden;
-	text-align:left;
-	cursor:pointer;
-	.background{
-		background: url($imageURL) no-repeat top left;
-		background-size:32px;
-		width:32px;
-		height:32px;
-		display:inline-block;
-		float:$align;
-	}
-	.desc{
-		text-align:$align;
-		display:inline-block;
-		color: $colorText;
-		line-height:32px;
-		vertical-align:top;
-	}
-	&:hover,
-	&:focus{
-	}
+  //@include transition(width 0.3s ease-in-out);
+  background-color: $colorBackground;
+  @include border-radius(
+    4px
+    );
+  @include box-shadow(
+    rgba(255,255,255,0.4) 0 1px 0, 
+    inset rgba(255,255,255,0.4) 0 1px 0
+    );
+  @include text-shadow(
+    rgb(82, 85, 79) 0 1px 0
+    );
+  position:relative;
+  top:0px;
+  left:30px;
+  @if $float != none {
+    float: $float; }
+  @else {
+    display:inline-block;}
+  width: $width-f;
+  padding-left:5px;
+  margin-left:5px;
+  height: 32px;
+  overflow:hidden;
+  text-align:left;
+  cursor:pointer;
+  .background{
+    background: url($imageURL) no-repeat top left;
+    background-size:32px;
+    width:32px;
+    height:32px;
+    display:inline-block;
+    float:$align;
+  }
+  .desc{
+    text-align:$align;
+    display:inline-block;
+    color: $colorText;
+    line-height:32px;
+    vertical-align:top;
+  }
+  &:hover,
+  &:focus{
+  }
 }
-
+// Animations for dashboard
+@include keyframes(click-animation) {
+  0%, 100% {
+    @include transform(scale3d(1,1,1))
+  }
+  50% {
+    @include transform(scale3d(0.9,0.9,0.9))
+  }
+ 
+}
+// Dashboard menu
 #menu_right{
-	float:left;
-	#help-btn{
-		@include btn ('../img/help-blue-btn.png',rgba(200,200,200,0.5),#fff,111px, left);
-	}
-
-	/* Config BUTTON */
-	#config-btn{
-		@include btn ('../img/Gear.png',rgba(200,200,200,0.5),#fff,111px, left);
-	}
-	#back-btn{
-		@include btn-no-anim ('../img/back-button.png',rgba(200,200,200,0.5),#fff,80px, left ,left);
-	}
-	#for-btn{
-		@include btn-no-anim ('../img/forward-button.png',rgba(200,200,200,0.5),#fff,90px, left);
-	}
+  %btn {
+    &.clicked {
+      @include animation(click-animation 0.3s 1);
+    }
+  }
+  float:left;
+  #help-btn{
+    @include btn ('../img/help-blue-btn.png',rgba(200,200,200,0.5),#fff,111px, left);
+  }
+  /* Config BUTTON */
+  #config-btn{
+    @include btn ('../img/Gear.png',rgba(200,200,200,0.5),#fff,111px, left);
+  }
+  #back-btn{
+    @extend %btn;
+    opacity: 0.3;
+    @include btn-no-anim ('../img/back-button.png',rgba(200,200,200,0.5),#fff,80px, left ,left);
+  }
+  #for-btn{
+    @include btn-no-anim ('../img/forward-button.png',rgba(200,200,200,0.5),#fff,90px, left);
+  }
 }
+
+// Config buttons
 #start-btn{
-	@include btn ('../img/play-green-btn.png',rgba(60,60,60,0.2),#000,111px);
+  @include btn ('../img/play-green-btn.png',rgba(60,60,60,0.2),#000,111px);
 }
 
 %opacity-transition {
-	@include transition(opacity 0.3s ease-in-out);
-	opacity: 0;
+  @include transition(opacity 0.3s ease-in-out);
+  opacity: 0;
 }
 
 #help {
-	@include filter(blur(0px) !important) ;
-	height: 0px;
-	display: none;
-	.content{
-		$gutter: 40%;
-		display: inline-block;
-		margin: 0 $gutter/2;
-		margin-top: 90px;
-		position: absolute;
-		z-index: 10001;
-		top: 0;
-		width: 100% - $gutter;
-		height: 80%;
-		border-radius: 20px;
-		background-color: #fff;
-		opacity: 0;
-		padding:10px;
-		@include box-shadow(1px 0px 5px #333);
-		h1{
-			font-family: "Open Sans Semibold", sans-serif;
-			font-size: 26px;
-			margin: auto;
-			text-align: center;
-			margin: 10px 0px;
-		}
-		#close-help{
-			position: relative;
-			float: right;
-		}
-	}
-	.page-screen {
-		background-color: rgba(#bbb, 0.3);
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		width: 100%;
-		height: 100%;
-		opacity: 0;
-		z-index: 20;
-		
+  @include filter(blur(0px) !important) ;
+  height: 0px;
+  display: none;
+  .content{
+    $gutter: 40%;
+    display: inline-block;
+    margin: 0 $gutter/2;
+    margin-top: 90px;
+    position: absolute;
+    z-index: 10001;
+    top: 0;
+    width: 100% - $gutter;
+    height: 80%;
+    border-radius: 20px;
+    background-color: #fff;
+    opacity: 0;
+    padding:10px;
+    @include box-shadow(1px 0px 5px #333);
+    h1{
+      font-family: "Open Sans Semibold", sans-serif;
+      font-size: 26px;
+      margin: auto;
+      text-align: center;
+      margin: 10px 0px;
+    }
+    #close-help{
+      position: relative;
+      float: right;
+    }
+  }
+  .page-screen {
+    background-color: rgba(#bbb, 0.3);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 20;
+    
 
-	}
-	.content, .page-screen {
-		@extend %opacity-transition;
-		&.show {
-			display: inline-block;
-			opacity: 1;
+  }
+  .content, .page-screen {
+    @extend %opacity-transition;
+    &.show {
+      display: inline-block;
+      opacity: 1;
 
-		}
-	}
-	
+    }
+  }
+  
 }
 
 
 
 body .blur {
-	@include filter(blur(8px));
+  @include filter(blur(8px));
 }
 
 #containeri, #containerp {
-	width: 70%;
-	display: inline-block;
- 	canvas{
-		width: 100% !important;
-		display: inline-block;
-	}
+  width: 70%;
+  display: inline-block;
+  canvas{
+    width: 100% !important;
+    display: inline-block;
+  }
 }
 
 #acc_ints {
-	height: 350px;
-	overflow-y: scroll;
-	vertical-align: top;
-	display: inline-block;
-	width: 25% !important;
-	h2{
-		border-bottom: 1px solid #000;
-		font-size: 1.5em;
-		line-height: 2em;
-		margin-bottom: 10px;
-	}
-	li{
-		padding: 5px 0 5px 5px;
-		font-size: 1.1em;
-		border-top: 1px dashed #000;
-		&:first-child { 
-			border-top:none;
-		}
-		&.module{
-			border:none;
-		}
-	}
-	a {
-		img {
-			width: 20px;
-		}
-		clear: both;
-		display: inline-block;
-		vertical-align: top;
-		//float: right;
-	}
+  height: 350px;
+  overflow-y: scroll;
+  vertical-align: top;
+  display: inline-block;
+  width: 25% !important;
+  h2{
+    border-bottom: 1px solid #000;
+    font-size: 1.5em;
+    line-height: 2em;
+    margin-bottom: 10px;
+  }
+  li{
+    padding: 5px 0 5px 5px;
+    font-size: 1.1em;
+    border-top: 1px dashed #000;
+    &:first-child { 
+      border-top:none;
+    }
+    &.module{
+      border:none;
+    }
+  }
+  a {
+    img {
+      width: 20px;
+    }
+    clear: both;
+    display: inline-block;
+    vertical-align: top;
+    //float: right;
+  }
 }
 
 /* Popup content CLASS */
 %popup_content {
-	overflow-y: scroll;
-	height: 400px;
-	$gutter: 10%;
-	$between: $gutter/4;
-	clear: both;
-	padding-top: 10px;
-	.content {
-		width: 100% - $gutter;
-		margin: 0 $gutter/2;
-		.element{
-			border-radius: 5px;
-			margin: 3px 0;
-			border: 3px solid rgba(black, 0.1);
-			$height: 15em;
-			height: $height;
-			width: 32%;
-			display: inline-block;
-			@include transition(box-shadow .3s ease-in-out, background-color .3s ease-in-out, transform .1s ease-in-out);
-			&:hover{
-				background-color: #dfb178;
-				@include transform(scale3d(1.05,1.05,1.05));
-				@include box-shadow(0px 0px 15px rgba(#000, 0.4));
-			}
-			.picture{
-				$gutter: 10%;
-				img {
-					margin: $gutter/2;
-					width: 100% - $gutter;
-					height: $height/3*2;
-				}
-			}
-			.title{
-				text-align: center;
-				line-height: 20px;
-				font-size: 1em;
-				font-weight: bold;
-				height: $height/3;
-				//overflow: scroll;
-			}
-		}
-	}
+  overflow-y: scroll;
+  height: 400px;
+  $gutter: 10%;
+  $between: $gutter/4;
+  clear: both;
+  padding-top: 10px;
+  .content {
+    width: 100% - $gutter;
+    margin: 0 $gutter/2;
+    .element{
+      border-radius: 5px;
+      margin: 3px 0;
+      border: 3px solid rgba(black, 0.1);
+      $height: 15em;
+      height: $height;
+      width: 32%;
+      display: inline-block;
+      @include transition(box-shadow .3s ease-in-out, background-color .3s ease-in-out, transform .1s ease-in-out);
+      &:hover{
+        background-color: #dfb178;
+        @include transform(scale3d(1.05,1.05,1.05));
+        @include box-shadow(0px 0px 15px rgba(#000, 0.4));
+      }
+      .picture{
+        $gutter: 10%;
+        img {
+          margin: $gutter/2;
+          width: 100% - $gutter;
+          height: $height/3*2;
+        }
+      }
+      .title{
+        text-align: center;
+        line-height: 20px;
+        font-size: 1em;
+        font-weight: bold;
+        height: $height/3;
+        //overflow: scroll;
+      }
+    }
+  }
 }
 
 /* Popup de materiales */
 #sel_parent {
-	font-size:18px;
-	height: 40px;
-	position: relative;
-	left: 10px;
-	top: 10px;
+  font-size:18px;
+  height: 40px;
+  position: relative;
+  left: 10px;
+  top: 10px;
 }
 #materiales, #mat_puerta, #sel_interiores, #handles, #distribucionPuerta {
-	@extend %popup_content;
+  @extend %popup_content;
 }
 
 #mat_puerta{
-	.content{
-		.element {
-			.title {
-				line-height: 12px;
-			}
-		}
-	}
+  .content{
+    .element {
+      .title {
+        line-height: 12px;
+      }
+    }
+  }
 }
 
 #handles {
-	.content{
-		.element {
-			$height: 15em;
-			.picture {
-				$gutter: 10%;
-				img {
-					margin: $gutter/2 $gutter/2 $gutter/2 28%;
-					width: 51% - $gutter;
-					height: $height/3*2;
-				}				
-			}
-		}
-	}
+  .content{
+    .element {
+      $height: 15em;
+      .picture {
+        $gutter: 10%;
+        img {
+          margin: $gutter/2 $gutter/2 $gutter/2 28%;
+          width: 51% - $gutter;
+          height: $height/3*2;
+        }       
+      }
+    }
+  }
 }
 
 #acc_ext {
-	.content{
-		.element {
-			$height: 15em;
-			.picture {
-				$gutter: 10%;
-				img {
-					margin: $gutter/2 $gutter/2 $gutter/2 28%;
-					width: 51% - $gutter;
-					height: $height/3*2;
-				}				
-			}
-		}
-	}
+  .content{
+    .element {
+      $height: 15em;
+      .picture {
+        $gutter: 10%;
+        img {
+          margin: $gutter/2 $gutter/2 $gutter/2 28%;
+          width: 51% - $gutter;
+          height: $height/3*2;
+        }       
+      }
+    }
+  }
 }
 
 #sel_interiores {
-	.content{
-		.element {
-			$height: 15em;
-			.picture {
-				$gutter: 10%;
-				img {
-					margin: $gutter/2 $gutter/2 $gutter/2 28%;
-					width: 51% - $gutter;
-					height: $height/3*2;
-				}				
-			}
-		}
-	}
+  .content{
+    .element {
+      $height: 15em;
+      .picture {
+        $gutter: 10%;
+        img {
+          margin: $gutter/2 $gutter/2 $gutter/2 28%;
+          width: 51% - $gutter;
+          height: $height/3*2;
+        }       
+      }
+    }
+  }
 }
 
 #distribucionPuerta {
-	.content{
-		.element {
-			$height: 15em;
-			.picture {
-				$gutter: 10%;
-				img {
-					margin: $gutter/2 $gutter/2 $gutter/2 28%;
-					width: 51% - $gutter;
-					height: $height/3*2;
-				}				
-			}
-		}
-	}
+  .content{
+    .element {
+      $height: 15em;
+      .picture {
+        $gutter: 10%;
+        img {
+          margin: $gutter/2 $gutter/2 $gutter/2 28%;
+          width: 51% - $gutter;
+          height: $height/3*2;
+        }       
+      }
+    }
+  }
 }
 
 #sel_marco {
-	height: 350px;
-	vertical-align: top;
-	display: inline-block;
-	width: 25% !important;
-	margin-top: -5px;
-	#marco_sel{
-		margin: 5px 0px 15px 0px;
-		clear:both;
-		display: block;
-		h2{
-			font-size: 1em;
-			line-height: 1.5em;
-			margin-top: -10px;
-			
-		}
-		img {
-			display: block;
-			margin:5px 0px;
-			width:75%;
-		}
+  height: 350px;
+  vertical-align: top;
+  display: inline-block;
+  width: 25% !important;
+  margin-top: -5px;
+  #marco_sel{
+    margin: 5px 0px 15px 0px;
+    clear:both;
+    display: block;
+    h2{
+      font-size: 1em;
+      line-height: 1.5em;
+      margin-top: -10px;
+      
+    }
+    img {
+      display: block;
+      margin:5px 0px;
+      width:75%;
+    }
 
-	}
+  }
 
 }
 //Buttons
@@ -419,63 +437,63 @@ $background-shader-i: linear-gradient(top,  #6aa436, #8dc059);
 $background-shader-f: url(semiems/img/site/button-shader.png) left center repeat-x;
 
 .submit-button {
-	@include background(
-		$background-shader,
-		$background-default
-		);
-	@include border-radius(
-		4px
-		);
-	@include box-shadow(
-		rgba(255,255,255,0.4) 0 1px 0, 
-		inset rgba(255,255,255,0.4) 0 1px 0
-		);
-	@include text-shadow(
-		#addc7e 0 1px 0
-		);
-	color: #31540c;
-	font-family: helvetica, serif;
-	padding: 8.5px 18px;
-	font-size: 14px;
-	text-decoration: none;
-	vertical-align: middle;
-	text-align: center;
-	border: 1px solid #447314;
-	.no-cssgradients & {
-		@include background(
-			$background-shader-f,
-			$background-default
-			);
-	}
-	.no-multiplebgs & {
-		background-color: $background-default;
-	}
-	&:hover,
-	&:focus  {
-		@include text-shadow(rgb(83, 122, 74) 0 1px 0);
-		color: #FFF;
-	}
-	&:active {
-		@include background(
-			$background-shader-i,
-			$background-default
-			);
-		@include single-box-shadow(none);
-			.no-cssgradients & {
-				@include background(
-					$background-shader-f,
-					darken($background-default, 5%)
-				);
-		}
-		.no-multiplebgs & {
-			background-color: darken($background-default, 5%);
-			border-color: #FFF;
-		}
-	}
+  @include background(
+    $background-shader,
+    $background-default
+    );
+  @include border-radius(
+    4px
+    );
+  @include box-shadow(
+    rgba(255,255,255,0.4) 0 1px 0, 
+    inset rgba(255,255,255,0.4) 0 1px 0
+    );
+  @include text-shadow(
+    #addc7e 0 1px 0
+    );
+  color: #31540c;
+  font-family: helvetica, serif;
+  padding: 8.5px 18px;
+  font-size: 14px;
+  text-decoration: none;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid #447314;
+  .no-cssgradients & {
+    @include background(
+      $background-shader-f,
+      $background-default
+      );
+  }
+  .no-multiplebgs & {
+    background-color: $background-default;
+  }
+  &:hover,
+  &:focus  {
+    @include text-shadow(rgb(83, 122, 74) 0 1px 0);
+    color: #FFF;
+  }
+  &:active {
+    @include background(
+      $background-shader-i,
+      $background-default
+      );
+    @include single-box-shadow(none);
+      .no-cssgradients & {
+        @include background(
+          $background-shader-f,
+          darken($background-default, 5%)
+        );
+    }
+    .no-multiplebgs & {
+      background-color: darken($background-default, 5%);
+      border-color: #FFF;
+    }
+  }
 }
 .kineticjs-content1{
-		position: relative;
-		left: 200px;
-		@include transform(perspective(800) scale3d(0.8,0.8,0.8) rotateY(40deg) translate3d(-200px,0,0));
-	}
+    position: relative;
+    left: 200px;
+    @include transform(perspective(800) scale3d(0.8,0.8,0.8) rotateY(40deg) translate3d(-200px,0,0));
+  }
 

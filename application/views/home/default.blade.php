@@ -43,7 +43,7 @@
 	<header id="header" class="cf">
 	<nav id="nav">
 		<div id="menu_right">
-			<div id="back-btn" onClick="$(document).trigger('undo');"><div class="background"></div><div class="desc">Atras</div></div>
+			<div id="back-btn" onclick="App.History.back_button_action();"><div class="background"></div><div class="desc">Atras <span id="back-count">0</span></div></div>
 			<div id="config-btn" onClick="App.Navigator.buttonConfig();"><div class="background"></div><div class="desc">Configuración</div></div>
 			<div id="help-btn"><div class="background"></div><div class="desc">Instrucciones</div></div>
 			
