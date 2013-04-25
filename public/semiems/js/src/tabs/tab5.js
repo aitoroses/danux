@@ -1,12 +1,24 @@
 //Documente ready
 $(document).ready(function(){
+	//History
+	$(document).on('undo', function(){
+		App.History.undoWardrobe();
+		pintapuertas();		
+		WardrobeModel.save();
+	})
+	// Evento para guardar en stack
+	$(document).on('stack', function(){
+		App.History.saveWardrobe();
+	})
 	// Obtener el objeto
 	$(document).bind('sync',function(){
 		pintapuertas();
+		$(document).trigger('stack');
 	});
 	$(document).bind('sync_popup',function(){
 		if(document.getElementById('distribucionPuerta')){
 			$('#distribucionPuerta .element').click(function(){
+				$(document).trigger('stack');
 				// Comportamiento del click
 					//distribucion de puerta elegida
 					var id = $(this).data('id')
@@ -48,6 +60,7 @@ $(document).ready(function(){
 	WardrobeModel.fetch();
 
 
+
 	$('a.next-tab').on('click',function(e){
 		e.preventDefault();
 		App.Navigator.goNext();App.Navigator.goNext();
@@ -73,6 +86,7 @@ Tab5Controller = {
 			success: function(response){
 				$('#materiales').html(response);
 				$('#materiales .element').click(function(){
+					$(document).trigger('stack');
 					// Comportamiento del click
 					var id = $(this).data('id')
 					$.each(materialselect, function(i, selection){

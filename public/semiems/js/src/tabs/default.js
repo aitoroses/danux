@@ -11,10 +11,10 @@ $(document).ready(function(){
 			success: function(response) {
 				//alert('Se ha cargado el armario con ID '+ response)
 				if (location.href !== "1#wardrobe-create"){
-					location.href = "1#wardrobe-create";
+					location.href = "1";
+				}else{
+					location.reload();
 				}
-				location.reload();
-
 			},
 			error: function(){
 				alert('Hubo un error al cargar el identificador');
@@ -190,10 +190,7 @@ App.History = $.extend({
 		_.delay(function(){$btn.addClass('clicked'), 0});
 		
 		// Evaluate the count
-		this.evaluateController();
-
-
-		
+		this.evaluateController();		
 	}
 }, new History());
 
