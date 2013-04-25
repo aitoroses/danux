@@ -1,11 +1,23 @@
 //Documente ready
 $(document).ready(function(){
+	$(document).on('undo', function(){
+		App.History.undoWardrobe();
+		Tab7Controller.pintarAccesorioExterior();
+		WardrobeModel.save();
+	})
+	// Evento para guardar en stack
+	$(document).on('stack', function(){
+		App.History.saveWardrobe();
+	})
+
 	// Obtener el objeto
 	$(document).bind('sync',function(){
 		Tab7Controller.pintarAccesorioExterior();
+		 $(document).trigger('stack');
 	});
 	$(document).bind('sync_popup',function(){
 		$('#mat_puerta .element').click(function(){
+			$(document).trigger('stack');
 			// Comportamiento del click
 			var id = $(this).data('id')
 			Tab7Controller.añadirAccesorioExterior(id);

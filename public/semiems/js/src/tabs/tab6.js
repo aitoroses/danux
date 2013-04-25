@@ -1,9 +1,21 @@
 //Documente ready 
 $(document).ready(function(){
+    //History
+  $(document).on('undo', function(){
+    App.History.undoWardrobe();
+    Tab6Controller.pintarMarco();
+    Tab6Controller.KineticPintaPuertaMarco();
+    WardrobeModel.save();
+  })
+  // Evento para guardar en stack
+  $(document).on('stack', function(){
+    App.History.saveWardrobe();
+  })
   // Eventos
   $(document).bind('sync',function(){
     Tab6Controller.pintarMarco();
     Tab6Controller.KineticPintaPuertaMarco();
+    $(document).trigger('stack');
   });
   $(document).bind('sync_popup',function(){
     
@@ -57,6 +69,7 @@ Tab6Controller = {
       success: function(response){
         $('#materiales').html(response);
         $('#materiales .element').click(function(){
+          $(document).trigger('stack');
           // Comportamiento del click
           var id = $(this).data('id')
           Tab6Controller.añadirMarco(id);
