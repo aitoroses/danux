@@ -1,13 +1,26 @@
 //Documente ready
 $(document).ready(function(){
+	//History
+	$(document).on('undo', function(){
+		App.History.undoWardrobe();
+		pintamodulos();
+		Tab3Controller.pintarAccs();
+		WardrobeModel.save();
+	})
+	// Evento para guardar en stack
+	$(document).on('stack', function(){
+		App.History.saveWardrobe();
+	})
 	// Obtener el objeto
 	$(document).bind('sync',function(){
 		pintamodulos();
 		Tab3Controller.pintarAccs();
+		App.History.saveWardrobe();
 
 	});
 	$(document).bind('sync_popup',function(){
 		$('#mat_puerta .element').click(function(){
+			$(document).trigger('stack');
 			var ref = parseInt($(this).data('ref'));
 			var auxitem=moduleselect.substring(1,2);
 			Tab3Controller.añadirAccesorioInterior(ref,auxitem);
@@ -16,7 +29,6 @@ $(document).ready(function(){
 	});
 	$(document).bind('sync_save',function(){
 		Tab3Controller.pintarAccs();
-
 	});
 	$(document).bind('error',function(){
 		$('#containeri').html('No se ha cargado el armario');
