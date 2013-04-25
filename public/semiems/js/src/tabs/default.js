@@ -12,9 +12,9 @@ $(document).ready(function(){
 				//alert('Se ha cargado el armario con ID '+ response)
 				if (location.href !== "1#wardrobe-create"){
 					location.href = "1#wardrobe-create";
-				} else {
-					location.href.reload(true);
 				}
+				location.reload();
+
 			},
 			error: function(){
 				alert('Hubo un error al cargar el identificador');
