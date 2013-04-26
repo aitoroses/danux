@@ -66,6 +66,7 @@ Tab7Controller = {
   		popup.closePopup();	
 	},
 	borrarAccesorioExterior: function (id){
+		$(document).trigger('stack');
 	// Funcion que destruye el elemento actual una vez echo el click
 		var idx = WardrobeModel.wardrobe.accext.indexOf(id); // Find the index
 	    if(idx!=-1) {

@@ -62,6 +62,7 @@ Tab3Controller = {
         })			
 	},
 	borrarAccesorioInterior: function (id,modulo){
+		$(document).trigger('stack');
 	// Funcion que destruye el elemento actual una vez echo el click
 		var idx = WardrobeModel.wardrobe.modules[modulo].accint.indexOf(id.toString()); // Find the index
 	    if(idx!=-1) {
