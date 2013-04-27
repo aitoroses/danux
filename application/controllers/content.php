@@ -2,11 +2,6 @@
 Class Content_Controller extends Base_Controller{
 	
 	public $restful = true;
-
-	public function get_module($id){
-		//$module = DB::table('b_modules')->find($id);
-		return 'semiems/contenido/Bibliotecas/modulos/'.$id.'.png';
-	}
 	//Retorna el Campo desc de la puerta seleccionada de la BD,
 	// este campo contiene las medidas de cada tipo de puerta en 
 	// forma fraccionaria 

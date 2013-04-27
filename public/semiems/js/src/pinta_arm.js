@@ -337,18 +337,8 @@ function pintamoduloNormal(x,y,z){
       layeri.draw();
 
       }
-      var id = wardrobe.modules[i].ref1;     
-      var srcc = $.ajax({
-      type: "GET",
-      url: "content/module/"+id,
-
-      async: false,
-      success: function(data){
-      imageObj.src = data;
-      }
-      });
-
-
+      var id = wardrobe.modules[i].ref1;
+      imageObj.src = "semiems/contenido/Bibliotecas/modulos/"+ id +".png";     
 
       }else if (z==1 && parseInt(wardrobe.modules[i].ref2)!=0){   //ref2
         ix2=xcontaux;
@@ -366,16 +356,9 @@ function pintamoduloNormal(x,y,z){
           layeri.add(arm2);
           layeri.draw();
         }
-        var id = wardrobe.modules[i].ref2;     
-        var srcc = $.ajax({
-          type: "GET",
-          url: "content/module/"+id,
+        var id = wardrobe.modules[i].ref2;
+        imageObj.src = "semiems/contenido/Bibliotecas/modulos/"+ id +".png";     
 
-          async: false,
-          success: function(data){
-            imageObj2.src = data;
-          }
-        });
       }
       if (y==1){ 
         yaux = (wardrobe.modules[i].width-wardrobe.modules[i].ddouble)*(ancho/wardrobe.data.width);
