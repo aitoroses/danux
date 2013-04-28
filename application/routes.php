@@ -62,7 +62,7 @@ Route::get('/check', array('uses' => 'user@check'));
 
 // Content routes
 Route::get('/content/module/(:any)', array('uses' => 'content@module'));
-Route::get('/content/door/(:any)', array('uses' => 'content@door'));
+Route::get('/content/door', array('uses' => 'content@door'));
 Route::get('/content/materialsource/(:any)', array('uses' => 'content@materialsource'));
 Route::get('/content/materials/(:any)', array('uses' => 'content@materials'));
 

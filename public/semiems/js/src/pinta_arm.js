@@ -27,10 +27,21 @@ function pintapuertas(){
   // desde donde empezamos a pintar en eje X
   var xcont =5;
   nmod = wardrobe.doors.length;
+  //Obtencion previa de la infomacion de las puertas del armario =)
+  $.ajax({
+    type: "GET",
+    url: "content/door/",
+    dataType: "json",
+    async: false,
+    success: function(req){
+      data = req
+    }
+  });
+  
   for(x=0;x<nmod;x++){ //Bucle por puerta
 
     var ycont =5;
-
+/* Optimizado de llamadas
     var id = wardrobe.doors[x].type;
     var doors = 0;     
     $.ajax({
@@ -39,10 +50,9 @@ function pintapuertas(){
       dataType: "json",
       async: false,
       success: function(data){
-        doors = data;
-      }
-    });
-
+        */
+    var doors = data.types[x];
+    xx=0; //Bucle para pintar los materiales tiene que inicializarse a 0
     for(y=0;y<doors.length;y++){ //Bucle para el diseño de la puerta
       (function() {
         var i=y;
@@ -85,16 +95,17 @@ function pintapuertas(){
               layerpi.add(mdoor);
               layerpi.draw();
             }
-            var id = wardrobe.doors[j].material[i];
-
-            var srcc = $.ajax({
+            //var id = wardrobe.doors[j].material[i];
+            imageObj.src = data.materials[j][0][xx];
+            xx=xx+1;
+            /*var srcc = $.ajax({
               type: "GET",
               url: "content/materialsource/"+id,
               async:false,
               success: function(data){
                 imageObj.src = data;
               }
-            });
+            });*/
           }
         }
         ycont = ycont + alto*doors[i];       	
@@ -337,18 +348,8 @@ function pintamoduloNormal(x,y,z){
       layeri.draw();
 
       }
-      var id = wardrobe.modules[i].ref1;     
-      var srcc = $.ajax({
-      type: "GET",
-      url: "content/module/"+id,
-
-      async: false,
-      success: function(data){
-      imageObj.src = data;
-      }
-      });
-
-
+      var id = wardrobe.modules[i].ref1;
+      imageObj.src = "semiems/contenido/Bibliotecas/modulos/"+ id +".png";     
 
       }else if (z==1 && parseInt(wardrobe.modules[i].ref2)!=0){   //ref2
         ix2=xcontaux;
@@ -366,16 +367,9 @@ function pintamoduloNormal(x,y,z){
           layeri.add(arm2);
           layeri.draw();
         }
-        var id = wardrobe.modules[i].ref2;     
-        var srcc = $.ajax({
-          type: "GET",
-          url: "content/module/"+id,
+        var id = wardrobe.modules[i].ref2;
+        imageObj.src = "semiems/contenido/Bibliotecas/modulos/"+ id +".png";     
 
-          async: false,
-          success: function(data){
-            imageObj2.src = data;
-          }
-        });
       }
       if (y==1){ 
         yaux = (wardrobe.modules[i].width-wardrobe.modules[i].ddouble)*(ancho/wardrobe.data.width);
@@ -430,8 +424,4 @@ type: "GET",
     }
   });
 }
-
-
-
-         
 };
