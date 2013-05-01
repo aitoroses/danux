@@ -34,7 +34,7 @@ body {
 }
 
 /*--------------------*/
-#login {
+#login, #register {
     background-color: #fff;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
     background-image: -webkit-linear-gradient(top, #fff, #eee);
@@ -42,7 +42,7 @@ body {
     background-image: -o-linear-gradient(top, #fff, #eee);
     background-image: -ms-linear-gradient(top, #fff, #eee);
     background-image: linear-gradient(top, #fff, #eee);
-    height: 240px;
+    /*height: 240px;*/
     width: 400px;
     margin: -150px 0 0 -230px;
     padding: 30px;
@@ -71,7 +71,7 @@ body {
 
 }
 
-#login.show{
+#login.show,#register.show{
     -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
     -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
     -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
@@ -80,7 +80,7 @@ body {
 
     opacity: 1;
 } 
-#login.shake{
+#login.shake,#register.shake{
     animation: shake .1s ease-in-out .1s 5 alternate;
     -moz-animation: shake .1s ease-in-out .1s 5 alternate; /* Firefox */
     -webkit-animation: shake .1s ease-in-out .1s 5 alternate; /* Safari and Chrome */
@@ -219,5 +219,14 @@ border: 1px solid #ccc;
     position: relative;
     top: 60px;
     color: #000;
+}
+
+.create-account,.login-account {
+    color: #4988b6;
+    text-align: center;
+    padding: 20px 0 0 0;
+    font-variant: small-caps;
+    font-size: 1.3em;
+    cursor: pointer;
 }
 
