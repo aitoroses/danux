@@ -11,20 +11,24 @@
 	<p>Introduce las medidas de tu hueco (mm):</p>
 	{{ Form::open('API/budget', 'POST', array('id' => 'frm', 'name' => 'frm')) }}
 	<fieldset>
- 	<p class="editable"><label> Nombre del presupuesto: </label>{{ Form::text('name', Input::old('name'), array('size' => 40, 'id' => 'name')) }}</p>
-	<label> Alto: </label>{{ Form::text('malto', Input::old('name'), array('size' => 6)) }}
-	<label> Ancho: </label>{{ Form::text('mancho', Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)", 'size' => 6)) }}
-	<label> Profundidad: </label>{{ Form::text('mprof', Input::old('name'), array('size' => 6)) }}
-	<p></p>
-	<p>Selecciona el tipo y numero de puertas que deseas:</p>
-	<label> Tipo de puertas</label>
-	{{ Form::select('puerta', array('3' => '', '2' => 'Armario sin puertas', '1' => 'Batientes', '0' => 'Correderas' ), Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)")) }}
+ 	<p class="editable"><label> Nombre del presupuesto: </label>{{ Form::text('name', Input::old('name'), array('size' => 40, 'id' => 'name', 'data-intro' => "Introduce el nombre del presupuesto", 'data-position' => "top")) }}</p>
+ 	</fieldset>
+ 	<fieldset>
+		<label> Alto: </label>{{ Form::text('malto', Input::old('name'), array('size' => 6)) }}
+		<label> Ancho: </label>{{ Form::text('mancho', Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)", 'size' => 6)) }}
+		<label> Profundidad: </label>{{ Form::text('mprof', Input::old('name'), array('size' => 6)) }}
+		<p></p>
+	</fieldset>
+	<fieldset>
+		<p>Selecciona el tipo y numero de puertas que deseas:</p>
+		<label> Tipo de puertas</label>
+		{{ Form::select('puerta', array('3' => '', '2' => 'Armario sin puertas', '1' => 'Batientes', '0' => 'Correderas' ), Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)")) }}
 
-	<label>Numero de <span id="type">puertas</span>: </label>
-	<select name="npuertas" onChange="puertas_impares_bat()">
-	</select>
-	<p></p>
-	<div id="puertas_imp_bat"></div>
+		<label>Numero de <span id="type">puertas</span>: </label>
+		<select name="npuertas" onChange="puertas_impares_bat()">
+		</select>
+		<p></p>
+		<div id="puertas_imp_bat"></div>
 	</fieldset>
 	</form>
 	{{ Form::close() }}

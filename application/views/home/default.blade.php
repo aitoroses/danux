@@ -10,6 +10,8 @@
 	{{ HTML::style('semiems/css/stylep.css') }}
 	{{ HTML::style('semiems/css/tables.css') }}
 	{{ HTML::style('semiems/css/tabs.css') }}
+	{{ HTML::style('semiems/css/chardinjs.css') }}
+
 	
 	<!-- SCRIPTS -->
 	{{ HTML::script('semiems/js/lib/jquery-1.9.1.min.js') }}
@@ -19,6 +21,9 @@
 
 	{{ HTML::script('semiems/js/lib/underscore-min.js') }}
 	{{ HTML::script('semiems/js/lib/backbone-min.js') }}
+	
+	{{ HTML::script('semiems/js/lib/chardinjs.min.js') }}
+
 
 	<!-- OBJECT SCRIPTS -->
 	{{ HTML::script('semiems/js/src/modelo.js') }}
@@ -117,7 +122,7 @@
 			</div>
 		</div>
 		<!-- WARDROBE MENU -->
-		<div id="wardrobemenu">
+		<div id="wardrobemenu" data-intro="Este es el menu para seleccionar el armario" data-position="right">
 			<h1>Tus armarios</h1>
 			<ul>
 				<?php

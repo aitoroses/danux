@@ -55,7 +55,7 @@ Route::post('/session/(:any)', array('uses' => 'home@session'));
 	Route::post('/API/session/(:any)/(:any)', array('uses' => 'session@set'));
 
 // User login
-Route::get('/register', array('uses' => 'user@register'));
+Route::post('/register', array('as'=>'register', 'uses' => 'user@register'));
 Route::post('/login', array('as'=>'login', 'uses' => 'user@login','before'=>'csrf'));
 Route::get('/logout', array('uses' => 'user@logout', 'before' => 'auth'));
 Route::get('/check', array('uses' => 'user@check'));
