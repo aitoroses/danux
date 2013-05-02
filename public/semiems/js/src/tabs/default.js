@@ -49,7 +49,7 @@ WardrobeMenuController = {
 		$("#wardrobemenu").removeClass("show")
 	},
 }
-
+/*
 App.Help = {
 	open: function(){
 		// Close WardrobeMenu
@@ -68,6 +68,17 @@ App.Help = {
 		$('#wardrobemenu').removeClass('blur');
 		}, 500);
 
+	}
+}*/
+App.Help = {
+	open: function(){
+		// Close WardrobeMenu
+		$("#wardrobemenu").removeClass("show");
+		// Show the help
+		$('body').chardinJs('start')
+	},
+	close: function() {
+		$('body').chardinJs('stop')
 	}
 }
 App.Navigator = {

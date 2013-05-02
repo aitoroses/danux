@@ -4,7 +4,7 @@ class User_Controller extends Base_Controller {
 
 	public $restful = true;    
 
-	public function get_register()
+	public function post_register()
     {
         $user = Input::get('username');
         $pass = Input::get('password');
@@ -14,7 +14,7 @@ class User_Controller extends Base_Controller {
             'password' => Hash::make($pass),
             'type_user' => 1
         ));
-        return "Registrado correctamente";
+        return Redirect::to('/');
     }    
 
 	public function post_login()
