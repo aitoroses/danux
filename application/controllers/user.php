@@ -19,6 +19,7 @@ class User_Controller extends Base_Controller {
 
 	public function post_login()
     {
+
         $user = Input::get('username');
         $pass = Input::get('password');
 
@@ -27,6 +28,7 @@ class User_Controller extends Base_Controller {
         if ( Auth::attempt($credentials) ){
                 // we are now logged in, go to home
                 return Redirect::to('/1#config');
+
         }else{
                 // auth failure! lets go back to the login
                 return Redirect::to('/')
