@@ -127,7 +127,7 @@
 				<?php
 					if(isset($wardrobes)){
 						foreach($wardrobes as $ele){
-							echo "<li><a href=".$ele->id.">".$ele->name.'</a><div class="delete"></div><div class="edit"></div></li>'; 
+							echo "<li><a href=".$ele->id.">".$ele->name.'</a><div class="delete"></div></li>'; 
 						}
 					} else {
 						echo "No hay armarios";
