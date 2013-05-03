@@ -1,10 +1,10 @@
 .section {
 	opacity: 0;
-	@include transform(scale3d(5,5,5), translate(0,0,200px));
-	@include transition(opacity .1s ease, transform .3s ease);
+	//@include transform(scale3d(5,5,5), translate(0,0,200px));
+	@include transition(opacity .1s ease/*, transform .3s ease*/);
 	&.show {
 		opacity: 1;
-		@include transform(scale3d(1,1,1));
+		/*@include transform(scale3d(1,1,1));*/
 	}
 }
 /*
