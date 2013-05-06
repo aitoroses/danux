@@ -13,6 +13,8 @@ $(document).ready(function(){
         
 	});
 
+	App.History.saveWardrobe();
+
 	if($("body").data('wardrobe')!=""){
 		$(document).bind('sync',function(){
 			wardrobe=WardrobeModel.getWardrobe();

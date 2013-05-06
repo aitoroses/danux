@@ -9,16 +9,24 @@ class User_Controller extends Base_Controller {
         $user = Input::get('username');
         $pass = Input::get('password');
 
-        User::insert(array(
+        /*User::insert(array(
             'username' => $user,
             'password' => Hash::make($pass),
-            'type_user' => 1
-        ));
-        return Redirect::to('/');
+        ));*/
+        $usr = new User;
+        $usr->username = $user;
+        $usr->password = $pass;
+        $usr->save();
+        $usr->roles()->delete();
+        $usr->roles()->attach(3);
+
+        return Redirect::to('/')
+                ->with('log_createUser', true);
     }    
 
 	public function post_login()
     {
+
         $user = Input::get('username');
         $pass = Input::get('password');
 
@@ -27,6 +35,7 @@ class User_Controller extends Base_Controller {
         if ( Auth::attempt($credentials) ){
                 // we are now logged in, go to home
                 return Redirect::to('/1#config');
+
         }else{
                 // auth failure! lets go back to the login
                 return Redirect::to('/')

@@ -1,10 +1,10 @@
 .section {
 	opacity: 0;
-	@include transform(scale3d(5,5,5), translate(0,0,200px));
-	@include transition(opacity .1s ease, transform .3s ease);
+	//@include transform(scale3d(5,5,5), translate(0,0,200px));
+	@include transition(opacity .1s ease/*, transform .3s ease*/);
 	&.show {
 		opacity: 1;
-		@include transform(scale3d(1,1,1));
+		/*@include transform(scale3d(1,1,1));*/
 	}
 }
 /*
@@ -48,9 +48,6 @@ $background-shader: linear-gradient(left top, #fff, #eee);
 			0 2px 2px rgba(255,255,255,0.2),
 			0 1px 5px rgba(255,255,255,0.2),
 			0 0 0 12px rgba(0,0,0,0.4)
-			);
-		@include text-shadow(
-			rgb(82, 85, 79) 0 1px 0
 			);	
 	}
 	#normal_functions{
@@ -73,9 +70,19 @@ $background-shader: linear-gradient(left top, #fff, #eee);
 			0 1px 5px rgba(255,255,255,0.2),
 			0 0 0 12px rgba(0,0,0,0.4)
 			);
-		@include text-shadow(
-			rgb(82, 85, 79) 0 1px 0
-			);
+	}
+	.delete{
+		position: relative;
+		float: right;
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		background: url('../img/close.png') no-repeat;
+		background-size: 10px;
+		@include transition(background-size .2s ease);
+		&:hover{
+			background-size: 15px;
+		}
 	}
 }
 /*    height: 240px;

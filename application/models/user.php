@@ -10,6 +10,11 @@ class User extends Eloquent
     }
     public function roles()
 	{
-		return $this->has_many_and_belongs_to('Role');
+		return $this->has_many_and_belongs_to('Role','l_user_roles_relation_table');
 	}
+	public function set_password($password)
+	{
+		$this->set_attribute('password', Hash::make($password));
+	}
+
 }
