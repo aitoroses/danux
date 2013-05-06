@@ -17,6 +17,9 @@
     @if (Session::has('log_out'))
      <div style="background:#DCFDC8; border:solid 1px #A0EB70; color:#030; text-align:center; font-weight:bold; padding:4px;">Has salido, hasta pronto!!</div>
     @endif
+    @if (Session::has('log_createUser'))
+     <div style="background:#DCFDC8; border:solid 1px #A0EB70; color:#030; text-align:center; font-weight:bold; padding:4px;">Usuario creado, inicia sesion.</div>
+    @endif
 
 <!-- LOGIN -->
 {{ Form::open('login', 'POST', array('id' => 'login')) }}
@@ -41,7 +44,7 @@
 {{ Form::open('register', 'POST', array('id' => 'register')) }}
 {{ Form::token() }}
     <!-- username field -->
-    <h1>Acceso al distribuidor</h1>
+    <h1>Registra un usuario</h1>
 <fieldset id="inputs">
     {{ Form::text('username',null,array('id'=>'username','placeholder'=>'Usuario')) }}
 
