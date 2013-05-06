@@ -29,8 +29,10 @@ a{
   }
 }
 /* MIXIN BUTTON MOVEMENT*/
-@mixin btn ($imageURL,$colorBackground,$colorText,$width-f, $float: none){
-  @include transition(width 0.3s ease-in-out);
+@mixin btn ($imageURL,$colorBackground,$colorText,$width-f, $float: none, $align-desc: left, $align-background: right, $type: animation){
+  @if $type == animation {
+    @include transition(width 0.3s ease-in-out);
+  }
   background-color: $colorBackground;
   @include border-radius(
     4px
@@ -48,8 +50,10 @@ a{
   @if $float != none {
     float: $float; }
   @else {
-    display:inline-block;}
-  width: 32px;
+    display:inline-block; }
+  @if $type == animation {
+    width: 32px; }
+  @else{ padding:0 5px 0 5px; }
   height: 32px;
   overflow:hidden;
   text-align:left;
@@ -61,71 +65,35 @@ a{
     width:32px;
     height:32px;
     display:inline-block;
-    float:right;
+    float:$align-background;
   }
   .desc{
-    text-align: right;
-    display:none;
+    text-align: $align-desc;
     color: $colorText;
     line-height:32px;
     vertical-align: top;
+    @if $type == animation {
+      display:none; }
+    @else{
+      display:inline-block; }
   }
-  &:hover,
-  &:focus{
-    width: $width-f;
-    padding-left:10px;
-    .desc{
-    display:inline-block;
-    }
+  @if $type == animation {
+    &:hover,
+    &:focus{
+      width: $width-f;
+      padding-left:10px;
+      .desc{
+      display:inline-block;
+      }
 
+    }
+  }
+  @else{
+    &:hover,
+    &:focus{}
   }
 }
-@mixin btn-no-anim ($imageURL,$colorBackground,$colorText,$width-f, $float: none, $align: right){
-  //@include transition(width 0.3s ease-in-out);
-  background-color: $colorBackground;
-  @include border-radius(
-    4px
-    );
-  @include box-shadow(
-    rgba(255,255,255,0.4) 0 1px 0, 
-    inset rgba(255,255,255,0.4) 0 1px 0
-    );
-  @include text-shadow(
-    rgb(82, 85, 79) 0 1px 0
-    );
-  position:relative;
-  top:0px;
-  left:30px;
-  @if $float != none {
-    float: $float; }
-  @else {
-    display:inline-block;}
-  width: $width-f;
-  padding-left:5px;
-  margin-left:5px;
-  height: 32px;
-  overflow:hidden;
-  text-align:left;
-  cursor:pointer;
-  .background{
-    background: url($imageURL) no-repeat top left;
-    background-size:32px;
-    width:32px;
-    height:32px;
-    display:inline-block;
-    float:$align;
-  }
-  .desc{
-    text-align:$align;
-    display:inline-block;
-    color: $colorText;
-    line-height:32px;
-    vertical-align:top;
-  }
-  &:hover,
-  &:focus{
-  }
-}
+
 // Animations for dashboard
 @include keyframes(click-animation) {
   0%, 100% {
@@ -145,21 +113,20 @@ a{
   }
   float:left;
   #help-btn{
-    @include btn ('../img/help-blue-btn.png',rgba(200,200,200,0.5),#fff,111px, left);
+    @include btn ('../img/help-blue-btn.png',rgba(200,200,200,0.5),#fff,111px,left,left,right, animation);
   }
   /* Config BUTTON */
   #config-btn{
-    @include btn ('../img/Gear.png',rgba(200,200,200,0.5),#fff,111px, left);
+    @include btn ('../img/Gear.png',rgba(200,200,200,0.5),#fff,111px,left,left,right, animation);
   }
   #back-btn{
     @extend %btn;
     opacity: 0.3;
-    @include btn-no-anim ('../img/back-button.png',rgba(200,200,200,0.5),#fff,80px, left ,left);
-  }
-  #for-btn{
-    @include btn-no-anim ('../img/forward-button.png',rgba(200,200,200,0.5),#fff,90px, left);
+    @include btn ('../img/back-button.png',rgba(200,200,200,0.5),#fff,80px,left,left,left, no-anim);
   }
 }
+
+//btn ($imageURL,$colorBackground,$colorText,$width-f, $float: none, $align: right, $type: animation)
 
 // Config buttons
 #start-btn{
