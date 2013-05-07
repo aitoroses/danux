@@ -7,25 +7,25 @@
 	<div id="errors"></div>
 	<div class="left">
 	<h2>Crea un presupuesto</h2>
+	<p>Rellena el formulario, si tienes alguna duda pulsa arriba en el boton de ayuda:</p>
 	@include('home.errors')
-	<p>Introduce las medidas de tu hueco (mm):</p>
 	{{ Form::open('API/budget', 'POST', array('id' => 'frm', 'name' => 'frm')) }}
 	<fieldset>
  	<p class="editable"><label> Nombre del presupuesto: </label>{{ Form::text('name', Input::old('name'), array('size' => 40, 'id' => 'name', 'data-intro' => "Introduce el nombre del presupuesto", 'data-position' => "top")) }}</p>
  	</fieldset>
  	<fieldset>
-		<label> Alto: </label>{{ Form::text('malto', Input::old('name'), array('size' => 6)) }}
-		<label> Ancho: </label>{{ Form::text('mancho', Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)", 'size' => 6)) }}
-		<label> Profundidad: </label>{{ Form::text('mprof', Input::old('name'), array('size' => 6)) }}
-		<p></p>
+
+		<label > Alto: </label>{{ Form::text('malto', Input::old('name'), array('size' => 6)) }}
+		<label > Ancho: </label>{{ Form::text('mancho', Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)", 'size' => 6)) }}
+		<label > Profundidad: </label>{{ Form::text('mprof', Input::old('name'), array('size' => 6, 'data-intro' => "Medidas del hueco en milimetros", 'data-position' => "right")) }}
 	</fieldset>
 	<fieldset>
 		<p>Selecciona el tipo y numero de puertas que deseas:</p>
 		<label> Tipo de puertas</label>
-		{{ Form::select('puerta', array('3' => '', '2' => 'Armario sin puertas', '1' => 'Batientes', '0' => 'Correderas' ), Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)")) }}
+		{{ Form::select('puerta', array('3' => '', '2' => 'Armario sin puertas', '1' => 'Batientes', '0' => 'Correderas' ), Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)" , 'data-intro' => "Selecciona el tipo de armario.", 'data-position' => "bottom")) }}
 
 		<label>Numero de <span id="type">puertas</span>: </label>
-		<select name="npuertas" onChange="puertas_impares_bat()">
+		<select name="npuertas" onChange="puertas_impares_bat()" data-intro ="Seleccione el numero de puertas deseado." data-position="bottom">
 		</select>
 		<p></p>
 		<div id="puertas_imp_bat"></div>
