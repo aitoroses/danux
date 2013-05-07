@@ -17,6 +17,21 @@
   src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
 }
 
+#content, #config {
+  h2, h1{
+    font-size: 2em;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    &:before{
+      content:"# ";
+    }
+  }
+ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+ font-weight: 300;
+ font-size: 1.5em;
+ line-height: 1.4em;
+}
+
 #popup {
 left: 0;
 position: absolute;
