@@ -1,0 +1,347 @@
+[0.000][INFO]:      ChromeDriver 26.0.1383.0 /usr/local/bin/chromedriver
+[0.224][FINE]:      Initializing session with capabilities {
+   "browserName": "chrome",
+   "chrome.detach": true,
+   "chromeOptions": {
+      "detach": true
+   },
+   "cssSelectorsEnabled": true,
+   "javascriptEnabled": true,
+   "nativeEvents": false,
+   "platform": "ANY",
+   "rotatable": false,
+   "takesScreenshot": false,
+   "version": ""
+}
+
+[0.225][INFO]:      Using named testing interface
+[0.732][INFO]:      Connected to Chrome successfully. Version: 26.0.1410.65
+[0.741][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779)
+[0.741][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+      "acceptSslCerts": false,
+      "applicationCacheEnabled": false,
+      "browserConnectionEnabled": false,
+      "browserName": "chrome",
+      "chrome.chromedriverVersion": "26.0.1383.0",
+      "cssSelectorsEnabled": true,
+      "databaseEnabled": false,
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "locationContextEnabled": false,
+      "nativeEvents": true,
+      "platform": "mac",
+      "rotatable": false,
+      "takesScreenshot": true,
+      "version": "26.0.1410.65",
+      "webStorageEnabled": true
+   }
+}
+
+[0.747][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/url) with params {
+   "url": "http://dinner.aitormurray.com/"
+}
+
+[0.747][FINER]:     Waiting for all views to stop loading...
+[0.749][FINER]:     Done waiting for all views to stop loading
+[2.209][FINER]:     Waiting for all views to stop loading...
+[2.210][FINER]:     Done waiting for all views to stop loading
+[2.210][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/url) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[2.212][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with params {
+   "cookie": {
+      "name": "__cfduid",
+      "path": "/",
+      "secure": false,
+      "value": "d451147018e57384e0b9140acd81e7e651344316083"
+   }
+}
+
+[2.212][FINER]:     Waiting for all views to stop loading...
+[2.213][FINER]:     Done waiting for all views to stop loading
+[2.216][FINER]:     Waiting for all views to stop loading...
+[2.217][FINER]:     Done waiting for all views to stop loading
+[2.217][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[2.218][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with params {
+   "cookie": {
+      "name": "__utma",
+      "path": "/",
+      "secure": false,
+      "value": "173654326.679005727.1344316084.1364896914.1364907827.314"
+   }
+}
+
+[2.218][FINER]:     Waiting for all views to stop loading...
+[2.218][FINER]:     Done waiting for all views to stop loading
+[2.220][FINER]:     Waiting for all views to stop loading...
+[2.220][FINER]:     Done waiting for all views to stop loading
+[2.220][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[2.222][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with params {
+   "cookie": {
+      "name": "__utmb",
+      "path": "/",
+      "secure": false,
+      "value": "173654326.6.9.1364908479334"
+   }
+}
+
+[2.222][FINER]:     Waiting for all views to stop loading...
+[2.228][FINER]:     Done waiting for all views to stop loading
+[2.229][FINER]:     Waiting for all views to stop loading...
+[2.229][FINER]:     Done waiting for all views to stop loading
+[2.229][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[2.231][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with params {
+   "cookie": {
+      "name": "__utmc",
+      "path": "/",
+      "secure": false,
+      "value": "173654326"
+   }
+}
+
+[2.231][FINER]:     Waiting for all views to stop loading...
+[2.232][FINER]:     Done waiting for all views to stop loading
+[2.233][FINER]:     Waiting for all views to stop loading...
+[2.233][FINER]:     Done waiting for all views to stop loading
+[2.233][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[2.235][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with params {
+   "cookie": {
+      "name": "__utmz",
+      "path": "/",
+      "secure": false,
+      "value": "173654326.1364523542.301.35.utmcsr=t.co|utmccn=(referral)|utmcmd=referral|utmcct=/zIqI8VD5U9"
+   }
+}
+
+[2.235][FINER]:     Waiting for all views to stop loading...
+[2.235][FINER]:     Done waiting for all views to stop loading
+[2.236][FINER]:     Waiting for all views to stop loading...
+[2.236][FINER]:     Done waiting for all views to stop loading
+[2.237][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[2.238][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with params {
+   "cookie": {
+      "name": "_desktoppr_session",
+      "path": "/",
+      "secure": false,
+      "value": "3219d6873f518346124e45aed28b3145"
+   }
+}
+
+[2.238][FINER]:     Waiting for all views to stop loading...
+[2.238][FINER]:     Done waiting for all views to stop loading
+[2.240][FINER]:     Waiting for all views to stop loading...
+[2.240][FINER]:     Done waiting for all views to stop loading
+[2.240][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[2.241][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with params {
+   "cookie": {
+      "name": "filter_preferences",
+      "path": "/",
+      "secure": false,
+      "value": ""
+   }
+}
+
+[2.241][FINER]:     Waiting for all views to stop loading...
+[2.242][FINER]:     Done waiting for all views to stop loading
+[2.243][FINER]:     Waiting for all views to stop loading...
+[2.243][FINER]:     Done waiting for all views to stop loading
+[2.243][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[2.245][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with params {
+   "cookie": {
+      "name": "gs_u",
+      "path": "/",
+      "secure": false,
+      "value": "1918212640:35447:133481:1352193418568"
+   }
+}
+
+[2.245][FINER]:     Waiting for all views to stop loading...
+[2.245][FINER]:     Done waiting for all views to stop loading
+[2.247][FINER]:     Waiting for all views to stop loading...
+[2.247][FINER]:     Done waiting for all views to stop loading
+[2.247][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[2.249][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with params {
+   "cookie": {
+      "name": "remember_user_token",
+      "path": "/",
+      "secure": false,
+      "value": "BAhbB1sGaQdJIiIkMmEkMTAkR1ZLaDBxUk5oY0Q2YmxUWEpjTVJTdQY6BkVU--49ef55778ab2fc2f84b314289b7ea26d102..."
+   }
+}
+
+[2.249][FINER]:     Waiting for all views to stop loading...
+[2.249][FINER]:     Done waiting for all views to stop loading
+[2.250][FINER]:     Waiting for all views to stop loading...
+[2.251][FINER]:     Done waiting for all views to stop loading
+[2.251][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/cookie) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[2.252][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/url) with params {
+   "url": "http://dinner.aitormurray.com/"
+}
+
+[2.252][FINER]:     Waiting for all views to stop loading...
+[2.252][FINER]:     Done waiting for all views to stop loading
+[2.431][FINER]:     Waiting for all views to stop loading...
+[2.432][FINER]:     Done waiting for all views to stop loading
+[2.432][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/url) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[2.434][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/execute) with params {
+   "args": [  ],
+   "script": "return window.performance.timing.loadEventEnd"
+}
+
+[2.434][FINER]:     Waiting for all views to stop loading...
+[2.434][FINER]:     Done waiting for all views to stop loading
+[2.440][FINER]:     Waiting for all views to stop loading...
+[2.446][FINER]:     Done waiting for all views to stop loading
+[2.446][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/execute) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": 1367883603893.0
+}
+
+[2.448][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/execute) with params {
+   "args": [  ],
+   "script": "window.WBench = {\n  resourceURLs: function() {\n    urls = this.backgroundURLs().concat(this.image..."
+}
+
+[2.448][FINER]:     Waiting for all views to stop loading...
+[2.449][FINER]:     Done waiting for all views to stop loading
+[2.452][FINER]:     Waiting for all views to stop loading...
+[2.452][FINER]:     Done waiting for all views to stop loading
+[2.452][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/execute) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": null
+}
+
+[2.729][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/execute) with params {
+   "args": [  ],
+   "script": "return window.performance.timing"
+}
+
+[2.729][FINER]:     Waiting for all views to stop loading...
+[2.730][FINER]:     Done waiting for all views to stop loading
+[2.733][FINER]:     Waiting for all views to stop loading...
+[2.733][FINER]:     Done waiting for all views to stop loading
+[2.733][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/execute) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": {
+      "connectEnd": 1367883603724.0,
+      "connectStart": 1367883603724.0,
+      "domComplete": 1367883603893.0,
+      "domContentLoadedEventEnd": 1367883603893.0,
+      "domContentLoadedEventStart": 1367883603882.0,
+      "domInteractive": 1367883603882.0,
+      "domLoading": 1367883603874.0,
+      "domainLookupEnd": 1367883603724.0,
+      "domainLookupStart": 1367883603724.0,
+      "fetchStart": 1367883603724.0,
+      "loadEventEnd": 1367883603893.0,
+      "loadEventStart": 1367883603893.0,
+      "navigationStart": 1367883603724.0,
+      "redirectEnd": 0,
+      "redirectStart": 0,
+      "requestStart": 1367883603726.0,
+      "responseEnd": 1367883603868.0,
+      "responseStart": 1367883603868.0,
+      "secureConnectionStart": 0,
+      "unloadEventEnd": 1367883603869.0,
+      "unloadEventStart": 1367883603869.0
+   }
+}
+
+[2.736][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779/execute) with params {
+   "args": [  ],
+   "script": "return WBench.resourceURLs()"
+}
+
+[2.736][FINER]:     Waiting for all views to stop loading...
+[2.736][FINER]:     Done waiting for all views to stop loading
+[2.740][FINER]:     Waiting for all views to stop loading...
+[2.740][FINER]:     Done waiting for all views to stop loading
+[2.740][FINE]:      Command finished (/session/4af3c51d12dca3a1c1da522a142cf779/execute) with response {
+   "sessionId": "4af3c51d12dca3a1c1da522a142cf779",
+   "status": 0,
+   "value": "[\"http://dinner.aitormurray.com/img/bg.png\",\"http://dinner.aitormurray.com/lib/angular/angular.js..."
+}
+
+[2.869][FINE]:      Command received (/session/4af3c51d12dca3a1c1da522a142cf779)
+[2.925][INFO]:      Chrome shutdown
