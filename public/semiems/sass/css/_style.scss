@@ -313,3 +313,57 @@ margin: 10px 0px;
     text-align: center;
     padding-top: 20px;
    }
+#frm {
+  .medidas {
+    position: relative;
+    bottom: 30px;
+    left: 30px;
+    height: 0px;
+    .closet {
+      position: relative;
+      display: inline-block;
+      left: 500px;
+      top: 25px;
+      height: 250px;
+      overflow: hidden;
+    }
+    .ancho {
+      position: relative;
+      display:inline-block;
+      bottom: 70px;
+      left: 365px;
+    }
+    .alto {
+      position: relative;
+      display:inline-block;
+      bottom: 195px;
+      left: 705px;
+
+    }
+    .profundidad {
+      position: relative;
+      display:inline-block;
+      bottom: 295px;
+      left: 230px;
+    }
+    .heights-text{
+      position: relative;
+      bottom: 300px;
+      left: 456px;
+      font-weight: bold;
+    }
+  }
+  .type-of-doors{
+    position: relative;
+    top: 30px;
+    left: 30px;
+    width: 30%;
+    padding: 20px;
+    line-height: 2em;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    @include box-shadow(inset 1px 1px 5px rgba(#000, 0.6));
+
+  }
+
+}

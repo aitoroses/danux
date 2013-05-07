@@ -313,6 +313,58 @@ header {
   text-align: center;
   padding-top: 20px; }
 
+/* line 317, ../sass/css/_style.scss */
+#frm .medidas {
+  position: relative;
+  bottom: 30px;
+  left: 30px;
+  height: 0px; }
+  /* line 322, ../sass/css/_style.scss */
+  #frm .medidas .closet {
+    position: relative;
+    display: inline-block;
+    left: 500px;
+    top: 25px;
+    height: 250px;
+    overflow: hidden; }
+  /* line 330, ../sass/css/_style.scss */
+  #frm .medidas .ancho {
+    position: relative;
+    display: inline-block;
+    bottom: 70px;
+    left: 365px; }
+  /* line 336, ../sass/css/_style.scss */
+  #frm .medidas .alto {
+    position: relative;
+    display: inline-block;
+    bottom: 195px;
+    left: 705px; }
+  /* line 343, ../sass/css/_style.scss */
+  #frm .medidas .profundidad {
+    position: relative;
+    display: inline-block;
+    bottom: 295px;
+    left: 230px; }
+  /* line 349, ../sass/css/_style.scss */
+  #frm .medidas .heights-text {
+    position: relative;
+    bottom: 300px;
+    left: 456px;
+    font-weight: bold; }
+/* line 356, ../sass/css/_style.scss */
+#frm .type-of-doors {
+  position: relative;
+  top: 30px;
+  left: 30px;
+  width: 30%;
+  padding: 20px;
+  line-height: 2em;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.6); }
+
 /* line 1, ../sass/_menu.scss */
 #wardrobemenu {
   float: left;
