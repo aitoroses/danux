@@ -6,7 +6,7 @@
 <div id="paso-7" class="ui-tabs-panel">
 <h2>Añade Accesorios de exterior</h2>
 
- <a class='submit-button' onclick="popup.fetch({name: 'accesoriosExterior'});">Agregar Accesorio</a>
+ <a class='submit-button' onclick="popup.fetch({name: 'accesoriosExterior'});" data-intro="Click para añadir los accesorios de exterior" data-position="bottom">Agregar Accesorio</a>
 
  <div id="acc_sel"></div>
 
