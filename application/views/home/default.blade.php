@@ -6,9 +6,9 @@
 	<title>{{$title}}</title>
 	<meta name = "viewport" content = "height=device-height, width=device-width, maximum-scale = 1, minimum-scale=1" />	
 	<!-- STYLES -->
-	{{ HTML::style('semiems/css/example.css') }}
+	<!-- {{ HTML::style('semiems/css/example.css') }} -->
 	{{ HTML::style('semiems/css/stylep.css') }}
-	{{ HTML::style('semiems/css/tables.css') }}
+	<!-- {{ HTML::style('semiems/css/tables.css') }} -->
 	{{ HTML::style('semiems/css/chardinjs.css') }}
 
 	
@@ -42,19 +42,38 @@
 <body data-wardrobe={{ $id_wardrobe }}>
 	<nav class="top-bar">
 		<ul class="title-area">
-    <!-- Title Area -->
-    <li class="name">
-      <h1><a href="#">Top Bar Title </a></h1>
-    </li>
-    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
+		    <!-- Title Area -->
+		    <li class="name">
+		      	<h1><a href="#">Semiems</a></h1>
+		    </li>
+		    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  		</ul>
+  		<section class="top-bar-section">
+		    <!-- Left Nav Section -->
+		    <ul class="left">
+		      <li class="divider"></li>
+		      <li class="active"><a href="#">Main Item 1</a></li>
+		      <li class="divider"></li>
+		      <li><a href="#">Main Item 2</a></li>
+		      <li class="divider"></li>
+		    </ul>
+
+		    <!-- Right Nav Section -->
+		    <ul class="right">
+		      <li class="divider hide-for-small"></li>
+		      <li class="has-form">
+		        <a class="alert button" href="#">Cerrar Sesión!</a>
+		      </li>
+		    </ul>
+		</section>
 	</nav>
+	<!-- </nav> -->
 	<!-- POPUP Interior Division  -->
-	<div id="page_screen"></div>
-	<div id="popup" style="display: none;"></div>
+	<!-- <div id="page_screen"></div>
+	<div id="popup" style="display: none;"></div> -->
 	<!-- POPUP   -->
-	<header id="header" class="cf">
+	<!-- <header id="header" class="cf">
 	<nav id="nav">
 		<div id="menu_right" data-intro ="Menu de Acciones." data-position="bottom">
 			<div id="back-btn" onclick="App.History.back_button_action();"><div class="background"></div><div class="desc">Atras <span id="back-count">0</span></div></div>
@@ -64,8 +83,8 @@
 		</div>
 		<h1 style="padding: 5px;">Bienvenido, {{ $username }}</h1>
 		<a id="close-btn" href="logout" class="logout" data-intro ="Cerrar Session." data-position="bottom">Cerrar session</a>
-	</nav>
-	</header>
+	</nav> -->
+	<!-- </header> -->
 	<div id="wardrobe-create" class="section">
 		<div id="main">
 			<h1>Configura tu armario:</h1>
@@ -157,10 +176,27 @@
 		</div>
 		<div class="page-screen"></div>
 	</div>-->
+	<script src="semiems/js/foundation/foundation.js"></script>
+	<script src="semiems/js/foundation/foundation.alerts.js"></script>
+	<script src="semiems/js/foundation/foundation.clearing.js"></script>
+	<script src="semiems/js/foundation/foundation.cookie.js"></script>
+	<script src="semiems/js/foundation/foundation.dropdown.js"></script>
+	<script src="semiems/js/foundation/foundation.forms.js"></script>
+	<script src="semiems/js/foundation/foundation.joyride.js"></script>
+	<script src="semiems/js/foundation/foundation.magellan.js"></script>
+	<script src="semiems/js/foundation/foundation.orbit.js"></script>
+	<script src="semiems/js/foundation/foundation.placeholder.js"></script>
+	<script src="semiems/js/foundation/foundation.reveal.js"></script>
+	<script src="semiems/js/foundation/foundation.section.js"></script>
+	<script src="semiems/js/foundation/foundation.tooltips.js"></script>
+	<script src="semiems/js/foundation/foundation.topbar.js"></script>
+	<script>
+	$(document).foundation();
+	</script>
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#content').animate({opacity: 1}, 300);
 	});
-</script>
+
 </html>
