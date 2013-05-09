@@ -1,8 +1,10 @@
 @import "compass/css3";
 
+@import "app";	// Zurb-foundation
+
 @import "animation";
 
-@import "css/style";
+//@import "css/style";
 
 @import "menu";
 
@@ -10,4 +12,4 @@
 
 @import "sections";
 
-@import "tabs";
+//@import "tabs";
