@@ -5,8 +5,8 @@
 <div id="paso-3" class="ui-tabs-panel">
 <h2>Añade Accesorios de interior</h2>
 
-<div id="containeri"></div>
-<div id="acc_ints"></div>
+<div id="containeri" data-intro="Seleccione los modulos para añadirles accesorios" data-position="top"></div>
+<div id="acc_ints" data-intro="Aqui ira la lista de accesorios que seleccione" data-position="top"></div>
 
 <a class='next-tab mover' rel='4'>Siguiente &#187;</a>
 <a class='prev-tab mover' rel='2'>&#171; Atras</a>
