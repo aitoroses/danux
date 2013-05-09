@@ -8,9 +8,9 @@
 <div id="paso-6" class="ui-tabs-panel">
 	<h2>Seleccione acabado del marco/jamba</h2>
     <div id="containerp"></div>
-    <div id="sel_marco">
-    <div id="marco_sel">No se ha cargado el marco.</div>
-    <a class='submit-button' onClick="popup.fetch({name: 'marco'});">Cambiar Marco</a>
+    <div id="sel_marco" data-intro="Click aqui para selecccionar el marco" data-position="left">
+	    <div id="marco_sel">No se ha cargado el marco.</div>
+	    <a class='submit-button' onClick="popup.fetch({name: 'marco'});">Cambiar Marco</a>
 	</div>	
 	
 <a class='next-tab mover' rel='7'>Siguiente &#187;</a>

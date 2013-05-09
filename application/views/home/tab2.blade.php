@@ -5,7 +5,7 @@
 <div id="paso-2" class="ui-tabs-panel">
 <h2>Configura los interiores</h2>
 
-<div id="containeri"></div>
+<div id="containeri" data-intro="Seleccione los modulos para configurarlos" data-position="right"></div>
 
 <a class='next-tab mover' >Siguiente &#187;</a>
 <a class='prev-tab mover' >&#171; Atras</a>
