@@ -18,11 +18,10 @@
 }
 
 #content, #config {
-  text-shadow: 1px 1px 1px #bbb;
   h2, h1{
     font-size: 2em;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin-bottom:19px;
+    margin-top: 8px;
     &:before{
       content:"# ";
     }
@@ -287,7 +286,7 @@ z-index: 1;
 }
 #mods_sel a:hover { background-color: #454242 }
 #title_popup{
-    font-family: 'Open Sans Semibold' ,sans-serif;
+font-family: 'Open Sans Semibold' ,sans-serif;
 font-size: 26px;
 margin: auto;
 text-align: center;
@@ -352,6 +351,7 @@ margin: 10px 0px;
       bottom: 300px;
       left: 456px;
       font-weight: bold;
+      width: 400px;
     }
   }
   .type-of-doors{
@@ -367,4 +367,18 @@ margin: 10px 0px;
 
   }
 
+}
+#errors{
+
+  ul{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 9999;
+    background: rgba(255, 181, 181,0.9);
+    padding: 10px;
+    border-radius: 12px;
+    @include box-shadow(inset 1px 1px 5px rgba(#000, 0.6));
+    width:300px;
+  }
 }

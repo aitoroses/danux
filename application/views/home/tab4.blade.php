@@ -7,12 +7,11 @@
 <h2>Seleccione el tipo de Perfil:</h2>
 <div id="perfiles">
 <div id="perfil_sel">No ha cargado el Perfil.</div>
-
-<a class='submit-button' onclick="popup.fetch({name: 'perfil'});">Selecciona tipo de perfil</a>
+<a class='submit-button' onclick="popup.fetch({name: 'perfil'});" data-intro="Click aqui para elegir el tipo de perfil" data-position="right">Selecciona tipo de perfil</a>
 </div>
 <div id="perfiles2">
 <div id="handles_sel">No ha cargado el tirador.</div>
-<a class='submit-button' onclick="popup.fetch({name: 'handle'})">Selecciona tipo de tirador</a>
+<a class='submit-button' onclick="popup.fetch({name: 'handle'})" data-intro="Click aqui para elegir el tipo de tirador" data-position="right">Selecciona tipo de tirador</a>
 </div>
 <a class='next-tab mover' rel='5'>Siguiente &#187;</a>
 <a class='prev-tab mover' rel='3'>&#171; Atras</a>

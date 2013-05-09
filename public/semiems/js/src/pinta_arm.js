@@ -368,7 +368,7 @@ function pintamoduloNormal(x,y,z){
           layeri.draw();
         }
         var id = wardrobe.modules[i].ref2;
-        imageObj.src = "semiems/contenido/Bibliotecas/modulos/"+ id +".png";     
+        imageObj2.src = "semiems/contenido/Bibliotecas/modulos/"+ id +".png";     
 
       }
       if (y==1){ 

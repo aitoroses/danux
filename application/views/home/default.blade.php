@@ -46,14 +46,14 @@
 	<!-- POPUP   -->
 	<header id="header" class="cf">
 	<nav id="nav">
-		<div id="menu_right">
+		<div id="menu_right" data-intro ="Menu de Acciones." data-position="bottom">
 			<div id="back-btn" onclick="App.History.back_button_action();"><div class="background"></div><div class="desc">Atras <span id="back-count">0</span></div></div>
 			<div id="config-btn" onClick="App.Navigator.buttonConfig();"><div class="background"></div><div class="desc">Configuración</div></div>
 			<div id="help-btn"><div class="background"></div><div class="desc">Instrucciones</div></div>
 			
 		</div>
 		<h1 style="padding: 5px;">Bienvenido, {{ $username }}</h1>
-				<a id="close-btn" href="logout" class="logout">Cerrar session</a>
+		<a id="close-btn" href="logout" class="logout" data-intro ="Cerrar Session." data-position="bottom">Cerrar session</a>
 	</nav>
 	</header>
 	<div id="wardrobe-create" class="section">

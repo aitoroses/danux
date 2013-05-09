@@ -154,7 +154,7 @@ function puertas_impares_bat(){
 	document.getElementById("puertas_imp_bat").innerHTML=""; //limpia el div
     if (document.frm.npuertas.value%2!=0 && document.frm.puerta.value == 1){
 			var parent = document.getElementById('puertas_imp_bat');
-		parent.innerHTML="Posicion puerta impar:<select name='donde_imp'></select>";  // <div>texto<button onclick=\"adddiv('d_" + a + "')\">Agregar division</button><div id='d_" + a + "'></div></div>
+		parent.innerHTML="Posicion puerta impar:<select name='donde_imp' data-intro ='Posicion de la puerta individual.' data-position='right'></select>";  // <div>texto<button onclick=\"adddiv('d_" + a + "')\">Agregar division</button><div id='d_" + a + "'></div></div>
 		var ind=0;
 		var limite = parseInt(document.frm.npuertas.value)+1;
 		for (var zz=0;zz< limite;zz++){
