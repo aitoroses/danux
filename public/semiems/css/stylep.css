@@ -18,20 +18,21 @@
 
 /* line 20, ../sass/css/_style.scss */
 #content, #config {
+  text-shadow: 1px 1px 1px #bbb;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   font-size: 1.5em;
   line-height: 1.4em; }
-  /* line 21, ../sass/css/_style.scss */
+  /* line 22, ../sass/css/_style.scss */
   #content h2, #content h1, #config h2, #config h1 {
     font-size: 2em;
     margin-bottom: 30px;
     margin-top: 30px; }
-    /* line 25, ../sass/css/_style.scss */
+    /* line 26, ../sass/css/_style.scss */
     #content h2:before, #content h1:before, #config h2:before, #config h1:before {
       content: "# "; }
 
-/* line 35, ../sass/css/_style.scss */
+/* line 36, ../sass/css/_style.scss */
 #popup {
   left: 0;
   position: absolute;
@@ -39,7 +40,7 @@
   width: 100%;
   z-index: 1001; }
 
-/* line 43, ../sass/css/_style.scss */
+/* line 44, ../sass/css/_style.scss */
 #popup2 {
   left: 0;
   position: absolute;
@@ -47,7 +48,7 @@
   width: 100%;
   z-index: 1001; }
 
-/* line 50, ../sass/css/_style.scss */
+/* line 51, ../sass/css/_style.scss */
 .content-popup {
   margin: 0px auto;
   margin-top: 20px;
@@ -75,12 +76,12 @@
   vertical-align: middle;
   padding: 10px; }
 
-/* line 78, ../sass/css/_style.scss */
+/* line 79, ../sass/css/_style.scss */
 .close {
   position: relative;
   float: right; }
 
-/* line 83, ../sass/css/_style.scss */
+/* line 84, ../sass/css/_style.scss */
 footer ul li img {
   width: 170px;
   height: 170px;
@@ -101,7 +102,7 @@ li a {-moz-border-radius:5px;-webkit-border-radius:5px;}
 a:hover {color:#000;} #links a {color:#fff;}
 */
 /*Menu Arriba*/
-/* line 107, ../sass/css/_style.scss */
+/* line 108, ../sass/css/_style.scss */
 nav ul {
   margin: 0;
   padding: 0;
@@ -109,12 +110,12 @@ nav ul {
   position: relative;
   float: right; }
 
-/* line 115, ../sass/css/_style.scss */
+/* line 116, ../sass/css/_style.scss */
 nav li {
   float: left; }
 
 /*--------------------*/
-/* line 121, ../sass/css/_style.scss */
+/* line 122, ../sass/css/_style.scss */
 #inputs input {
   background: #f1f1f1;
   padding: 6px 5px;
@@ -128,7 +129,7 @@ nav li {
   -webkit-box-shadow: 0 1px 1px #ccc inset;
   box-shadow: 0 1px 1px #ccc inset; }
 
-/* line 135, ../sass/css/_style.scss */
+/* line 136, ../sass/css/_style.scss */
 #inputs input:focus {
   background-color: #fff;
   border-color: #e8c291;
@@ -138,7 +139,7 @@ nav li {
   box-shadow: 0 0 0 1px #e8c291 inset; }
 
 /*--------------------*/
-/* line 146, ../sass/css/_style.scss */
+/* line 147, ../sass/css/_style.scss */
 nav a {
   background-color: #d14545;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#e97171), to(#d14545));
@@ -163,7 +164,7 @@ nav a {
   color: #fff;
   text-decoration: none; }
 
-/* line 172, ../sass/css/_style.scss */
+/* line 173, ../sass/css/_style.scss */
 nav a:hover,
 nav a:focus {
   background-color: #e97171;
@@ -174,45 +175,45 @@ nav a:focus {
   background-image: -o-linear-gradient(top, #d14545, #e97171);
   background-image: linear-gradient(to bottom, #d14545, #e97171); }
 
-/* line 182, ../sass/css/_style.scss */
+/* line 183, ../sass/css/_style.scss */
 nav a:active {
   outline: none;
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset; }
 
-/* line 189, ../sass/css/_style.scss */
+/* line 190, ../sass/css/_style.scss */
 nav a::-moz-focus-inner {
   border: none; }
 
-/* line 193, ../sass/css/_style.scss */
+/* line 194, ../sass/css/_style.scss */
 #login label {
   float: right;
   line-height: 30px; }
 
-/* line 198, ../sass/css/_style.scss */
+/* line 199, ../sass/css/_style.scss */
 #login label input {
   position: relative;
   top: 2px;
   right: 2px; }
 
 /*----------------------*/
-/* line 207, ../sass/css/_style.scss */
+/* line 208, ../sass/css/_style.scss */
 .cf:before,
 .cf:after {
   content: "";
   display: table; }
 
-/* line 212, ../sass/css/_style.scss */
+/* line 213, ../sass/css/_style.scss */
 .cf:after {
   clear: both; }
 
-/* line 216, ../sass/css/_style.scss */
+/* line 217, ../sass/css/_style.scss */
 .cf {
   zoom: 1; }
 
 /*----------------------*/
-/* line 222, ../sass/css/_style.scss */
+/* line 223, ../sass/css/_style.scss */
 header {
   padding: 5px;
   -moz-box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.5) inset;
@@ -220,7 +221,7 @@ header {
   box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.5) inset; }
 
 /*Tab 2 Popup*/
-/* line 230, ../sass/css/_style.scss */
+/* line 231, ../sass/css/_style.scss */
 #mods_sel {
   position: relative;
   z-index: 2;
@@ -236,7 +237,7 @@ header {
   overflow: hidden;
   width: 682px; }
 
-/* line 245, ../sass/css/_style.scss */
+/* line 246, ../sass/css/_style.scss */
 #mods_sel a {
   background: url(../img/icono2.png) no-repeat scroll 14px 11px #e55e48;
   border-radius: 16px;
@@ -262,12 +263,12 @@ header {
   -o-moz-transition: background-color 0.2s ease-out 0s;
   -ms-moz-transition: background-color 0.2s ease-out 0s; }
 
-/* line 271, ../sass/css/_style.scss */
+/* line 272, ../sass/css/_style.scss */
 #mods_sel a + span + a {
   background: url(../img/icono.png) no-repeat scroll 261px 13px #5faae3;
   padding: 0 94px 0 42px; }
 
-/* line 276, ../sass/css/_style.scss */
+/* line 277, ../sass/css/_style.scss */
 #mods_sel a + span {
   background: url(../img/o.png) no-repeat 0px 18px;
   display: block;
@@ -279,11 +280,11 @@ header {
   width: 51px;
   z-index: 1; }
 
-/* line 287, ../sass/css/_style.scss */
+/* line 288, ../sass/css/_style.scss */
 #mods_sel a:hover {
   background-color: #454242; }
 
-/* line 288, ../sass/css/_style.scss */
+/* line 289, ../sass/css/_style.scss */
 #title_popup {
   font-family: 'Open Sans Semibold' ,sans-serif;
   font-size: 26px;
@@ -291,7 +292,7 @@ header {
   text-align: center;
   margin: 10px 0px; }
 
-/* line 295, ../sass/css/_style.scss */
+/* line 296, ../sass/css/_style.scss */
 .form-field {
   border: 1px solid #c9b7a2;
   background: #e4d5c3;
@@ -306,20 +307,20 @@ header {
   margin-bottom: 20px;
   width: 280px; }
 
-/* line 310, ../sass/css/_style.scss */
+/* line 311, ../sass/css/_style.scss */
 .text-form {
   font-family: 'Open Sans Semibold' ,sans-serif;
   font-size: 14px;
   text-align: center;
   padding-top: 20px; }
 
-/* line 317, ../sass/css/_style.scss */
+/* line 318, ../sass/css/_style.scss */
 #frm .medidas {
   position: relative;
   bottom: 30px;
   left: 30px;
   height: 0px; }
-  /* line 322, ../sass/css/_style.scss */
+  /* line 323, ../sass/css/_style.scss */
   #frm .medidas .closet {
     position: relative;
     display: inline-block;
@@ -327,31 +328,31 @@ header {
     top: 25px;
     height: 250px;
     overflow: hidden; }
-  /* line 330, ../sass/css/_style.scss */
+  /* line 331, ../sass/css/_style.scss */
   #frm .medidas .ancho {
     position: relative;
     display: inline-block;
     bottom: 70px;
     left: 365px; }
-  /* line 336, ../sass/css/_style.scss */
+  /* line 337, ../sass/css/_style.scss */
   #frm .medidas .alto {
     position: relative;
     display: inline-block;
     bottom: 195px;
     left: 705px; }
-  /* line 343, ../sass/css/_style.scss */
+  /* line 344, ../sass/css/_style.scss */
   #frm .medidas .profundidad {
     position: relative;
     display: inline-block;
     bottom: 295px;
     left: 230px; }
-  /* line 349, ../sass/css/_style.scss */
+  /* line 350, ../sass/css/_style.scss */
   #frm .medidas .heights-text {
     position: relative;
     bottom: 300px;
     left: 456px;
     font-weight: bold; }
-/* line 356, ../sass/css/_style.scss */
+/* line 357, ../sass/css/_style.scss */
 #frm .type-of-doors {
   position: relative;
   top: 30px;
