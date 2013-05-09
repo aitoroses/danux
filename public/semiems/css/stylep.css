@@ -25,23 +25,9 @@
   /* line 21, ../sass/css/_style.scss */
   #content h2, #content h1, #config h2, #config h1 {
     font-size: 2em;
-<<<<<<< HEAD
-    margin-bottom: 30px;
-    margin-top: 30px; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /* line 26, ../sass/css/_style.scss */
-=======
     margin-bottom: 19px;
     margin-top: 8px; }
     /* line 25, ../sass/css/_style.scss */
->>>>>>> d95b4d73444ea3d8a40ed610f2bda967d0626aa3
-=======
-    /* line 25, ../sass/css/_style.scss */
->>>>>>> parent of 253e132... Some CSS fixes
-=======
-    /* line 25, ../sass/css/_style.scss */
->>>>>>> parent of 253e132... Some CSS fixes
     #content h2:before, #content h1:before, #config h2:before, #config h1:before {
       content: "# "; }
 
@@ -364,21 +350,9 @@ header {
     position: relative;
     bottom: 300px;
     left: 456px;
-<<<<<<< HEAD
-    font-weight: bold; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     font-weight: bold;
     width: 400px; }
->>>>>>> d95b4d73444ea3d8a40ed610f2bda967d0626aa3
 /* line 357, ../sass/css/_style.scss */
-=======
-/* line 356, ../sass/css/_style.scss */
->>>>>>> parent of 253e132... Some CSS fixes
-=======
-/* line 356, ../sass/css/_style.scss */
->>>>>>> parent of 253e132... Some CSS fixes
 #frm .type-of-doors {
   position: relative;
   top: 30px;
