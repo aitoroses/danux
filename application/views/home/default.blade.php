@@ -72,7 +72,7 @@
 			      <li><a class='next-tab mover'>Siguiente &#187;</a></li>
 			      <li class="divider hide-for-small"></li>
 			      <li class="has-form">
-			        <a class="alert button">Cerrar Sesión!</a>
+			        <a href="logout" class="alert button">Cerrar Sesión!</a>
 			      </li>
 			      <li class="divider"></li>
 			      <li><a>{{ $username }}</a></li>
