@@ -15,7 +15,7 @@ popup = {
 		$.ajax({
        		type: 'GET',  
             url: 'API/popup/' + this.name,
-            data: this.data,
+            data: {data: this.data},
             success: function(data) {  
                 popup.response = data;
                 $(popup).trigger('sync');
@@ -38,6 +38,6 @@ popup = {
 		$('#popup').fadeOut('fast');
     	var page_screen = document.getElementById('page_screen');
     	page_screen.style.display = 'none';
-	},
+	}
 };
 

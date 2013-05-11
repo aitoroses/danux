@@ -62,6 +62,15 @@ Tab2Controller = {
 	    popup.closePopup();
 
 	},
+	cambia_modulo_doble_simetrico: function(){
+		$(document).trigger('stack');
+		moduleselect_temp=moduleselect.substring(1,2);
+		wardrobe.modules[moduleselect_temp].double=1;
+		dist=wardrobe.modules[moduleselect_temp].width;
+		wardrobe.modules[moduleselect_temp].ddouble=dist/2;
+		pintamodulos();
+	    popup.closePopup();
+	},
 	cambiar_a_modulo_simple: function(){
 		$(document).trigger('stack');
 		moduleselect_temp=moduleselect.substring(1,2);
@@ -70,6 +79,10 @@ Tab2Controller = {
 		pintamodulos();
 	    popup.closePopup();
 
+	},
+	anchuratemporal: function(){
+		moduleselect_temp=moduleselect.substring(1,2);
+		return wardrobe.modules[moduleselect_temp].width;
 	}
 }
 
