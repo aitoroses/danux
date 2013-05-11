@@ -6,16 +6,16 @@
 <div id="paso-2">
 	<div class="row">
 		<div class="columns small-12 large-8">
-			<h2>Configura el interior</h2>
+			<h1>Configurando el interior</h1>
+			<p>Haga click en cada uno de los modulos para agregar accesorios.</p>
 			<div id="containeri"></div>
 			
 		</div>
 	</div>
 	<div class="row">
 		<div class="columns small-12 large-8">
-			<ul>
-				<li>Haz click en cada uno de los modulos para agregar accesorios</li>
-			</ul>
+			<br>
+			<p>Para continuar, haga click en <span style="font-weight: bold">siguiente</span> (menu superior derecha).</p>
 		</div>
 	</div>
 </div>

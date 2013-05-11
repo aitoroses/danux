@@ -8,6 +8,8 @@
 	<div id="containeri"></div>
 	<br>
 	<div id="acc_ints"></div>
+	<br>
+	<p>Para continuar, haga click en <span style="font-weight: bold">siguiente</span> (menu superior derecha).</p>
 </div>
 
 
