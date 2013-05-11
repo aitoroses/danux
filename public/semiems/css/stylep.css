@@ -5499,3 +5499,7 @@ a.th {
   /* line 147, ../../../../../../../Users/aitoroses/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/zurb-foundation-4.1.6/scss/foundation/components/_dropdown.scss */
   .f-dropdown.large {
     max-width: 800px; }
+
+/* line 1, ../sass/_custom_zurb.scss */
+a {
+  cursor: pointer; }

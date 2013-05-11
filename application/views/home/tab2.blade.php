@@ -2,14 +2,22 @@
 
 @section('tab')
 {{ HTML::script('semiems/js/src/tabs/tab2.js') }}
-<div id="paso-2" class="ui-tabs-panel">
-<h2>Configura los interiores</h2>
 
-<div id="containeri" data-intro="Seleccione los modulos para configurarlos" data-position="right"></div>
-
-<a class='next-tab mover' >Siguiente &#187;</a>
-<a class='prev-tab mover' >&#171; Atras</a>
-
+<div id="paso-2">
+	<div class="row">
+		<div class="columns small-12 large-8">
+			<h2>Configura el interior</h2>
+			<div id="containeri"></div>
+			
+		</div>
+	</div>
+	<div class="row">
+		<div class="columns small-12 large-8">
+			<ul>
+				<li>Haz click en cada uno de los modulos para agregar accesorios</li>
+			</ul>
+		</div>
+	</div>
 </div>
 
 @endsection

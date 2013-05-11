@@ -8,7 +8,7 @@ class Wardrobe extends Eloquent
         'name' => 'required|min:3',
         'width' => 'required|numeric|min:500|max:5000',
         'height' => 'required|numeric|min:500|max:3000',
-        'prof' => 'required|numeric|min:500|max:1500',
+        'prof' => 'required|numeric|min:300|max:680',
         'typedoor' => 'required|in:0,1,2'
     );
 
