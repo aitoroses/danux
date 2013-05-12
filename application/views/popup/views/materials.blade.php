@@ -1,5 +1,5 @@
 <div class="content">
-	<ul class="small-block-grid-2 large-block-grid-5">
+	<ul class="small-block-grid-2 large-block-grid-4">
 		@foreach($data as $ele)
 			<li>
 				<div class="element" data-id="{{ $ele->id }}">

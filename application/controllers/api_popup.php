@@ -13,8 +13,13 @@ Class Api_Popup_Controller extends Base_Controller {
                 // Query de modulos
                 $modules = DB::table('l_biblioteca_modulos')->get();
         		return View::make('popup.seleccion_interior')->with('modules', $modules);
+            case "menuasimetricosimetrico":
+                return View::make('popup.divisioninterioramenu');
+                break;
             case "divisioninterior":
-                return View::make('popup.divisioninterior');
+                $anchura=Input::get('data');
+                return View::make('popup.divisioninterior')
+                                        ->with('anchuratemp', $anchura);
                 break;
             case "agregar_accesorios_interior":
                 // Query de accesorios

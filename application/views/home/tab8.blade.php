@@ -4,9 +4,7 @@
 {{ HTML::script('semiems/js/src/tabs/tab8.js') }}
 
 <div id="paso-8" class="ui-tabs-panel">
-<div id="presupuesto"></div>
-
-<a class='prev-tab mover' rel='7'>&#171; Atras</a>
+	<div id="presupuesto"></div>
 </div>
 
 
