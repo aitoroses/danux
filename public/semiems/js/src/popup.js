@@ -7,7 +7,7 @@ popup = {
 		this.name = object.name;
 		this.data = object.data;
 		$(this).bind('sync', function(){
-			this.show();
+			this.refresh();
 		});
 	},
 	fetch: function(object){
@@ -23,21 +23,17 @@ popup = {
             }  
         });
 	},
-	show: function(){
-		this.openPopup();
-		$('#popup').html(this.response);  
+	refresh: function(){
+		$('#popup .content').html(this.response);  
 	},
 
 	openPopup: function(){
-		$('#popup').fadeIn('slow');
-    	var page_screen = document.getElementById('page_screen');
-    	page_screen.style.height = document.body.parentNode.scrollHeight + 'px';
-    	page_screen.style.display = 'block';
+		$('#popup').foundation('reveal', 'open');
+		this.refresh();
 	},
 	closePopup: function(){
-		$('#popup').fadeOut('fast');
-    	var page_screen = document.getElementById('page_screen');
-    	page_screen.style.display = 'none';
+		$('#popup').foundation('reveal', 'close');
+		//$('.reveal-modal-bg').remove();
 	}
 };
 

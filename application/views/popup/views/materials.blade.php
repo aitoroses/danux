@@ -1,8 +1,12 @@
 <div class="content">
-	@foreach($data as $ele)	
-	<div class="element" data-id="{{ $ele->id }}">
-		<div class="picture"><img src="{{ 'semiems/contenido/Bibliotecas/mat_puertas/'.$folder.'/'.$ele->image }}"></div>
-		<h1 class="title">{{ $ele->ref.' '.$ele->desc }}</h1>
-	</div>
-	@endforeach
+	<ul class="small-block-grid-2 large-block-grid-4">
+		@foreach($data as $ele)
+			<li>
+				<div class="element" data-id="{{ $ele->id }}">
+					<div class="picture"><img src="{{ 'semiems/contenido/Bibliotecas/mat_puertas/'.$folder.'/'.$ele->image }}"></div>
+					<h5 class="title">{{ $ele->ref.' '.$ele->desc }}</h5>
+				</div>
+			</li>
+		@endforeach
+	</ul>
 </div>

@@ -1,28 +1,25 @@
 <div class="content-popup">
-    <div class="close">
-        <a id="close2" onClick="popup.closePopup();">
-            <img src="semiems/img/close.png"/>
-        </a>
-    </div>
-
-    <p id="title_popup">Configuracion del modulo</p>
-    <div id="mods_sel">
-
+    <h1 id="title_popup">Configura el modulo seleccionado</p>
+    <h3>Tienes 2 opciones:</h3>
+    <ul>
+        <li>
+            Elegir la <span style="font-weight: bold">distribucion interior</span> del modulo: 
             <a onclick="popup.fetch({name:'seleccioninterior'})">
-                <div class='title'>Distribución interior </div>
+                <div>Haz click aqui</div>
             </a>
-
-            <span>ó</span>
-   
+        </li>
+        <li>
             @if($double == 0)
+                Dividir el módulo y convertirlo en <span style="font-weight: bold">modulo doble</span> o si ya es doble convertirlo en <span style="font-weight: bold">modulo simple (Por defecto)</span>:
                 <a onclick="popup.fetch({name:'menuasimetricosimetrico'})">
-                    <div class='title' >Cambiar a modulo doble </div>
+                    <div>Haz click aqui para cambiar a modulo doble </div>
                 </a>
             @else
+                Volver a convertir a <span style="font-weight: bold">modulo simple</span>:
                 <a onclick="Tab2Controller.cambiar_a_modulo_simple()">
-                    <div class='title'>Cambiar a modulo simple</div>
+                    <div>Haz click aqui para cambiar a modulo simple</div>
                 </a>
             @endif
-
-    </div>
+        </li>
+    </ul>
 </div>

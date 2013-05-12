@@ -3,15 +3,14 @@
 @section('tab')
 {{ HTML::script('semiems/js/src/tabs/tab7.js') }}
 
-<div id="paso-7" class="ui-tabs-panel">
-<h2>Añade Accesorios de exterior</h2>
+<div id="paso-7">
+<h1>Configura los accesorios de estructura</h1>
+<p>Haz click para seleccionar accesorios a la lista:</p>
 
- <a class='submit-button' onclick="popup.fetch({name: 'accesoriosExterior'});" data-intro="Click para añadir los accesorios de exterior" data-position="bottom">Agregar Accesorio</a>
+ <a class='button' onclick="popup.openPopup();popup.fetch({name: 'accesoriosExterior'});" data-intro="Click para añadir los accesorios de exterior" data-position="bottom">Agregar Accesorio</a>
 
  <div id="acc_sel"></div>
 
-<a class='next-tab mover' rel='8'>Siguiente &#187;</a>
-<a class='prev-tab mover' rel='6'>&#171; Atras</a>
 </div>
 
 

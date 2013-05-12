@@ -288,8 +288,10 @@ function pintamoduloNormal(x,y,z){
           async: false,
           success: function() {
             if(tab==3){
+              popup.openPopup();
               popup.fetch({name: "agregar_accesorios_interior"});
             }else{
+              popup.openPopup();
               popup.fetch({name: "modules"});
             }
           }

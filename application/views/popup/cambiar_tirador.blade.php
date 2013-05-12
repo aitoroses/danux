@@ -1,19 +1,21 @@
 <div class="content-popup">
-  <div class="close">
-    <a id="close2" onClick="popup.closePopup();"><img src="semiems/img/close.png"/></a>
-  </div>
-      <p id="title_popup">Seleccione el tirador</p>
-      <div id='handles'>
-        <div class='content'>
-          @foreach($handles as $ele) 
+  <h1 id="title_popup">Seleccione el tirador</h1>
+  <div id='handles'>
+    <div class='content'>
+      <ul class="small-block-grid-2 large-block-grid-5">
+        @foreach($handles as $ele)
+        <li>
           <div class="element" data-id="{{ $ele->id }}">
             <div class="picture">
               <img src="{{ 'semiems/contenido/Bibliotecas/tiradores/'.$ele->img }}"/>
             </div>
-            <h1 class="title">{{ $ele->tiradores.' / Ref.'.$ele->codigo.'('.$ele->desc.') Tamaño: '.$ele->largura.'mm' }}</h1>
+            <p>{{'Ref.'.$ele->codigo}}</p>
+            <p class="title">{{ $ele->tiradores.'('.$ele->desc.') Tamaño: '.$ele->largura.'mm' }}</p>
           </div>
-          @endforeach
-        </div>
-      </div>
+        </li>
+        @endforeach
+      </ul>
+    </div>
+  </div>
 </div>
 

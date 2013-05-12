@@ -1,14 +1,11 @@
 <div class="content-popup">  
-	<div class="close">
-		<a id="close2" onClick="popup.closePopup();"><img src="semiems/img/close.png"/></a>
-	</div>
-	<p id="title_popup">Seleccione el material del marco</p>
+	<h1 id="title_popup">Seleccione el material del marco</h1>
   	<div id="sel_material">
 		<div id="sel_parent">
-			<ul>
-				<li><a class='selector' onClick='Tab6Controller.getMarcoMaterials(3)'>Gama Duo</a></li>
-				<li><a class='selector' onClick='Tab6Controller.getMarcoMaterials(4)'>Gama Luxe</a></li>
-				<li><a class='selector' onClick='Tab6Controller.getMarcoMaterials(5)'>Maderas y Lacas</a></li>
+			<ul class="small-block-grid-2 large-block-grid-5">
+				<li><a class='button' onClick='Tab6Controller.getMarcoMaterials(3)'>Gama Duo</a></li>
+				<li><a class='button' onClick='Tab6Controller.getMarcoMaterials(4)'>Gama Luxe</a></li>
+				<li><a class='button' onClick='Tab6Controller.getMarcoMaterials(5)'>Maderas y Lacas</a></li>
 			</ul>
 		</div>
 		<div id="materiales">

@@ -3,18 +3,25 @@
 @section('tab')
 {{ HTML::script('semiems/js/src/tabs/tab6.js') }}
 
-
-
 <div id="paso-6" class="ui-tabs-panel">
-	<h2>Seleccione acabado del marco/jamba</h2>
-    <div id="containerp"></div>
-    <div id="sel_marco" data-intro="Click aqui para selecccionar el marco" data-position="left">
-	    <div id="marco_sel">No se ha cargado el marco.</div>
-	    <a class='submit-button' onClick="popup.fetch({name: 'marco'});">Cambiar Marco</a>
-	</div>	
 	
-<a class='next-tab mover' rel='7'>Siguiente &#187;</a>
-<a class='prev-tab mover' rel='5'>&#171; Atras</a>
+	<div class="row">
+		<div class="columns small-12 large-7">
+			<h1>Configure el enjambado</h1>
+			<br>
+		    <div id="containerp"></div>
+		</div>
+		<div class="columns small-12 large-5">
+		    <div id="sel_marco" data-intro="Click aqui para selecccionar el marco" data-position="left">
+			    <div id="marco_sel">No se ha cargado el marco.</div>
+			    <br>
+			    <a class='button' onClick="popup.openPopup();popup.fetch({name: 'marco'});">Cambiar Marco</a>
+			</div>
+		</div>
+	</div>
+	<br>
+	<p>Para continuar, haga click en <span style="font-weight: bold">siguiente</span> (menu superior derecha).</p>
+
 </div>
 
 @endsection

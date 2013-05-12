@@ -80,7 +80,7 @@ division = new Object({
     context.fillText(message, x+15, y);
     console.log(x+15)
     console.log(y)*/
-    $("#divinput").css({'top':y + 87,'left':x+270+this.borde,'position':'absolute','width':'19px'}).fadeIn('slow');
+    $("#divinput").css({'bottom':y - 195,'left':x - 15 +this.borde,'position':'relative','width':'19px'}).fadeIn('slow');
     document.getElementById('txt_input').value = message;
   },
   //dibuja el indicador o lo actualiza (3 lineas)

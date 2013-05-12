@@ -165,3 +165,66 @@ function puertas_impares_bat(){
 			}
 	}
 }
+
+// Validacion de campos en tiempo real
+
+var validate_real = function(context){
+	$context = $(context);
+	// Array of heights
+	var heights_to_validate = [ {name: 'malto', min: 500, max: 3000 },
+								{name: 'mancho', min: 500, max: 5000 },
+								{name: 'mprof', min: 500, max: 680 }
+								 ];
+	// Heights check
+	var check_limits = function(height) {
+		// Checks
+		if(height.from_context === ""){
+			return {status: false, message: "Hay que rellenar este campo"};
+		} else if(isNaN(height.from_context)){
+			return {status: false, message: "Solo se permiten números"};
+		} else if (height.from_context < height.min) {
+			return {status: false, message: "La medida es inferior al mínimo (" + height.min + "mm)"};
+		} else if (height.from_context > height.max) {
+			return {status: false, message: "La medida es superior al máximo (" + height.max + "mm)"};
+		} else {
+			return {status: true, message: "Correcto"};
+		}
+	}
+	// Callback
+	var callback = function(height) {
+		// Get numeric value or empty string
+		height.from_context = (function(){
+			if($context.val() !== "") {
+				return parseInt($context.val())
+			} else {
+				return $context.val();
+			}
+		}).call();
+		// Logging info
+		var logger = function() {
+			console.log('Attribute ' + height.name + ' changed to ' + $context.val());
+		}
+		
+		//**************************************
+		// Validation happens
+		var result;
+		if($context.attr('name') === height.name) {
+			logger();
+			result = check_limits(height);
+			console.log(result);
+			// If there is a result
+			if (result !== null) {
+				if(result.status === true) {
+					$context.css({background: 'rgba(124, 255, 95, 0.62)'});
+				} else {
+					$context.css({background: 'rgba(255, 49, 37, 0.35)'});
+				}
+				$context.parent().find('.message').text(result.message);
+			}
+		}
+
+		
+	}
+	// Iterate over heights
+	heights_to_validate.forEach(callback, this);
+}

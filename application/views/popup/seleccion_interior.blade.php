@@ -1,22 +1,27 @@
 
 <div class="content-popup">
-         <div class="close">
-            <a id="close2" onClick="popup.closePopup();"><img src="semiems/img/close.png"/></a>
-            <a onClick="popup.fetch({name: 'modules'})"><img src="semiems/img/back.png"/></a>
-        </div>  
-        <p id="title_popup">Tipos de interior</p>
+  <a onClick="popup.fetch({name: 'modules'})">Atras...</a>
+  <h1 id="title_popup">Distribuciones interiores posibles:</h1>
   <div id="sel_interiores">
-    <div class="content"> 
+    <div class="content">
+      <ul class="small-block-grid-2 large-block-grid-11">
         @foreach($modules as $module)
+        <!-- Using both block grids together for different layouts -->
+            
+          <li style="border: 1px solid #333">
+          
             <div class='element selectormat' data-ref="{{ $module->id }}">
               <div class='picture'>
-                <img src="{{ 'semiems/'.$module->image.'/'.$module->id.'.png' }}" ref="{{$module->id}}"/>
+                <img style="border: 1px solid rgba(0,0,0,0.4)" src="{{ 'semiems/'.$module->image.'/'.$module->id.'.png' }}" ref="{{$module->id}}"/>
               </div> 
               <div class='title'>
                 Ref."{{$module->id}}"
               </div>
             </div>
+
+          </li>
         @endforeach
+      </ul>
 
     </div>
  </div>          

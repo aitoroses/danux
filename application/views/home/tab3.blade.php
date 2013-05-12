@@ -2,15 +2,14 @@
 
 @section('tab')
 {{ HTML::script('semiems/js/src/tabs/tab3.js') }}
-<div id="paso-3" class="ui-tabs-panel">
-<h2>Añade Accesorios de interior</h2>
-
-<div id="containeri" data-intro="Seleccione los modulos para añadirles accesorios" data-position="top"></div>
-<div id="acc_ints" data-intro="Aqui ira la lista de accesorios que seleccione" data-position="top"></div>
-
-<a class='next-tab mover' rel='4'>Siguiente &#187;</a>
-<a class='prev-tab mover' rel='2'>&#171; Atras</a>
-
+<div id="paso-3">
+	<h1>Añadiendo accesorios de interior</h2>
+	<p>Haz click sobre uno de los módulos para elegir un accesorio.</p>
+	<div id="containeri"></div>
+	<br>
+	<div id="acc_ints"></div>
+	<br>
+	<p>Para continuar, haga click en <span style="font-weight: bold">siguiente</span> (menu superior derecha).</p>
 </div>
 
 
