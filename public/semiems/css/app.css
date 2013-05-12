@@ -2694,7 +2694,7 @@ form.custom {
     background: white;
     background: -moz-linear-gradient(top, white 0%, #f3f3f3 100%);
     background: -webkit-linear-gradient(top, white 0%, #f3f3f3 100%);
-    background: linear-gradient(to bottom, #ffffff 0%, #f3f3f3 100%);
+    background: linear-gradient(to bottom, white 0%, #f3f3f3 100%);
     -webkit-box-shadow: none;
     box-shadow: none;
     font-size: 0.875em;
@@ -5149,7 +5149,7 @@ kbd {
       background: white;
       background: -moz-linear-gradient(top, white 0%, #f2f2f2 100%);
       background: -webkit-linear-gradient(top, white 0%, #f2f2f2 100%);
-      background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%);
+      background: linear-gradient(to bottom, white 0%, #f2f2f2 100%);
       -webkit-box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.07), 1000px 0 0 1000px #e1f5d1, -2px 0 10px 0 rgba(0, 0, 0, 0.07), -1000px 0 0 1000px whitesmoke;
       box-shadow: 2px 0 10px 0 rgba(0, 0, 0, 0.07), 1000px 0 0 980px #e1f5d1, -2px 0 10px 0 rgba(0, 0, 0, 0.07), -1000px 0 0 1000px whitesmoke; }
     /* line 187, ../../../../../../../Users/aitoroses/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/zurb-foundation-4.1.6/scss/foundation/components/_switch.scss */
@@ -5157,7 +5157,7 @@ kbd {
       background: white;
       background: -moz-linear-gradient(top, white 0%, #e6e6e6 100%);
       background: -webkit-linear-gradient(top, white 0%, #e6e6e6 100%);
-      background: linear-gradient(to bottom, #ffffff 0%, #e6e6e6 100%); }
+      background: linear-gradient(to bottom, white 0%, #e6e6e6 100%); }
     /* line 195, ../../../../../../../Users/aitoroses/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/zurb-foundation-4.1.6/scss/foundation/components/_switch.scss */
     div.switch:active {
       background: transparent; }
@@ -5499,7 +5499,3 @@ a.th {
   /* line 147, ../../../../../../../Users/aitoroses/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/zurb-foundation-4.1.6/scss/foundation/components/_dropdown.scss */
   .f-dropdown.large {
     max-width: 800px; }
-
-/* line 1, ../sass/_custom_zurb.scss */
-a {
-  cursor: pointer; }
