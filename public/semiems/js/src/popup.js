@@ -32,14 +32,8 @@ popup = {
 		this.refresh();
 	},
 	closePopup: function(){
-<<<<<<< HEAD
 		$('#popup').foundation('reveal', 'close');
 		//$('.reveal-modal-bg').remove();
-=======
-		$('#popup').fadeOut('fast');
-    	var page_screen = document.getElementById('page_screen');
-    	page_screen.style.display = 'none';
->>>>>>> danibram-master
 	}
 };
 
