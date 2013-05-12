@@ -30,7 +30,6 @@ $(document).ready(function(){
 			popup.closePopup();
 
 		});
-
 	});
 	$(document).bind('sync_save', function(){
 			App.Navigator.goNext();
