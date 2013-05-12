@@ -1,14 +1,14 @@
 <div id="config" class="row">
 	
 
-	<div class="small-6 large-6 columns">
+	<div class="small-12 large-6 columns">
 		<div id="admin_functions">
 		<h1> Opciones de administrador </h1>
 		</div>
 		<p>En construcción...</p>
 		
 	</div>
-	<div class="small-6 large-6 columns">
+	<div class="small-12 large-6 columns">
 		<div id="normal_functions">
 			<h1> Diseña tu armario</h1>
 			<p>Todavia estamos de Pruebas, clicka en el boton da abajo para empezar</p>
