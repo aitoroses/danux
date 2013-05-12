@@ -111,7 +111,7 @@ function pintapuertas(){
         ycont = ycont + alto*doors[i];       	
 
         puerta.on('click', function(evt) {
-          var shape = evt.shape;
+          var shape = evt.targetNode;
           var aux=shape.getName();
           var idx = materialselect.indexOf(aux); // Find the index
           if(idx!=-1) {
@@ -119,7 +119,7 @@ function pintapuertas(){
           }else{
             materialselect.push(aux);
           } // Remove it if really found!
-          var shape = evt.shape;
+          var shape = evt.targetNode;
           var stroke = this.getStroke();
           switch (stroke){
             case "red":
@@ -143,7 +143,7 @@ function pintapuertas(){
         });
 
         puerta.on('mouseout', function(evt) {
-          var shape = evt.shape;
+          var shape = evt.targetNode;
           var stroke = this.getStroke();
           switch (stroke){
             case "red":
@@ -161,7 +161,7 @@ function pintapuertas(){
         });
 
         puerta.on('mouseover', function(evt) {
-          var shape = evt.shape;
+          var shape = evt.targetNode;
           var stroke = this.getStroke();
           colortemp= stroke;
           this.setStroke('red');
@@ -182,8 +182,8 @@ function pintapuertas(){
   layerp.draw();
 
   var shapes = stagep.get('.image');
-  // apply transition to all nodes in the array
-  shapes.apply('moveToBottom', {});
+  // each transition to all nodes in the array
+  shapes.each('moveToBottom', {});
 };	
 	
 //###################################################################  PINTA MODULOS NUEVA	  
@@ -237,8 +237,8 @@ function pintamodulos(){
   layer.draw();
 
   var shapes = stage.get('.image');
-  // apply transition to all nodes in the array
-  shapes.apply('moveToBottom', {});
+  // each transition to all nodes in the array
+  shapes.each('moveToBottom', {});
 };
 	
 //
@@ -272,7 +272,7 @@ function pintamoduloNormal(x,y,z){
         name: 'm'+i+'d'+j,
       });		 
       mod.on('click', function(evt) {
-        var shape = evt.shape;
+        var shape = evt.targetNode;
         var aux=shape.getName();
         moduleselect=aux;
         anchuratemp=shape.attrs.width;
@@ -297,7 +297,7 @@ function pintamoduloNormal(x,y,z){
       });
 
       mod.on('mouseout', function(evt) {
-      var shape = evt.shape;
+      var shape = evt.targetNode;
       var stroke = this.getStroke();
       switch (stroke){
       case "black":
@@ -313,7 +313,7 @@ function pintamoduloNormal(x,y,z){
       stage.draw();
       });
       mod.on('mouseover', function(evt) {
-        var shape = evt.shape;
+        var shape = evt.targetNode;
         var stroke = this.getStroke();
         switch (stroke){
           case "black":

@@ -15,7 +15,7 @@
             <span>ó</span>
    
             @if($double == 0)
-                <a onclick="popup.fetch({name:'divisioninterior', data: anchuratemp})">
+                <a onclick="popup.fetch({name:'menuasimetricosimetrico'})">
                     <div class='title' >Cambiar a modulo doble </div>
                 </a>
             @else

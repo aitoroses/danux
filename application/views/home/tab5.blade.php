@@ -17,9 +17,9 @@
 
 <div id="containerp" data-intro="Primero clicke aqui para seleccionar los modulos a configurar" data-position="top"></div>
 
-<a onClick="Tab5Controller.cambia_puerta('all')">Todas iguales</a>
+<!--- <a onClick="Tab5Controller.cambia_puerta('all')">Todas iguales</a>
 <a onClick="Tab5Controller.cambia_puerta('par')">Pares iguales</a>
-<a onClick="Tab5Controller.cambia_puerta('impar')">impares iguales</a>
+<a onClick="Tab5Controller.cambia_puerta('impar')">impares iguales</a> -->
 
 <!--- <div id="acabado_perfil">No hay datos para saberlo. (Añada mas materiales)</div> -->
 
