@@ -16,7 +16,7 @@
 	{{ HTML::script('semiems/js/lib/jquery-1.9.1.min.js') }}
 	{{ HTML::script('semiems/js/lib/jquery-migrate-1.1.1.min.js') }}
 
-	{{ HTML::script('semiems/js/lib/kinetic-v4.3.2.min.js') }}
+	{{ HTML::script('semiems/js/lib/kinetic-v4.5.0.min.js') }}
 
 	{{ HTML::script('semiems/js/lib/underscore-min.js') }}
 	{{ HTML::script('semiems/js/lib/backbone-min.js') }}
@@ -28,10 +28,12 @@
 	{{ HTML::script('semiems/js/src/modelo.js') }}
 	{{ HTML::script('semiems/js/src/popup.js') }}
 	{{ HTML::script('semiems/js/src/history.js') }}
+	
 
 	<!-- CUSTOM SCRIPTS -->
 	{{ HTML::script('semiems/js/src/helper.js') }}
 	{{ HTML::script('semiems/js/src/pinta_arm.js') }}
+	{{ HTML::script('semiems/js/src/indicator.js') }}
 
 	<!-- Init Variables -->
 	{{ HTML::script('semiems/js/src/init.js') }}

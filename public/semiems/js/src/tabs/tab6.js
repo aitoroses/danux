@@ -183,6 +183,6 @@ Tab6Controller = {
 
     var shapes = stagep.get('.image');
     // apply transition to all nodes in the array
-    shapes.apply('moveToBottom', {});
+    shapes.each('moveToBottom', {});
   }
 }
