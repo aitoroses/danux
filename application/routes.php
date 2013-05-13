@@ -34,7 +34,7 @@
 
 Route::get('/', array('uses' => 'home@index'));
 Route::get('/(:any)', array('uses' => 'home@tab', 'before' => 'auth'));
-Route::post('/session/(:any)', array('uses' => 'home@session'));
+Route::post('/session/(:any)', array('uses' => 'session@session'));
 
 // API Routes
 	// Budget
@@ -53,6 +53,7 @@ Route::post('/session/(:any)', array('uses' => 'home@session'));
 	
 	// Session Control Routes
 	Route::post('/API/session/(:any)/(:any)', array('uses' => 'session@set'));
+	Route::get('/API/session/flush', array('uses' => 'session@flush'));
 
 // User login
 Route::post('/register', array('as'=>'register', 'uses' => 'user@register'));
