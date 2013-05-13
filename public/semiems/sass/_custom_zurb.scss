@@ -5,10 +5,8 @@ a {
 }
 .row{
 	background: white;
+	@include box-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
 
-}
-.row_b{
-	@include grid-row(false);
 }
 body{
 	background: #e1c192 url(../img/wood_pattern_bn.jpg);

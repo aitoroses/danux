@@ -5506,36 +5506,22 @@ a {
 
 /* line 6, ../sass/_custom_zurb.scss */
 .row {
-  background: white; }
+  background: white;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5); }
 
-/* line 10, ../sass/_custom_zurb.scss */
-.row_b {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 62.5em;
-  *zoom: 1; }
-  /* line 101, ../../../../../../../Users/nemz00/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/zurb-foundation-4.1.6/scss/foundation/components/_global.scss */
-  .row_b:before, .row_b:after {
-    content: " ";
-    display: table; }
-  /* line 102, ../../../../../../../Users/nemz00/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/zurb-foundation-4.1.6/scss/foundation/components/_global.scss */
-  .row_b:after {
-    clear: both; }
-
-/* line 13, ../sass/_custom_zurb.scss */
+/* line 11, ../sass/_custom_zurb.scss */
 body {
   background: #e1c192 url(../img/wood_pattern_bn.jpg);
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
 
-/* line 17, ../sass/_custom_zurb.scss */
+/* line 15, ../sass/_custom_zurb.scss */
 .vcard {
   margin-top: 20px;
   background: white; }
 
-/* line 21, ../sass/_custom_zurb.scss */
+/* line 19, ../sass/_custom_zurb.scss */
 footer {
   padding: 10px 0 25px 0;
   margin-top: 20px;

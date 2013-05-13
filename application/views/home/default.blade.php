@@ -131,12 +131,10 @@
 		
 		<!--<div id="main">
 			<section id="content">
-				<div class="row">
-		<section class="row">-->
+				<div class="row">-->
 			@yield('tab')
-				<!--</div>
-		</section>
-		</div>
+		<!--</div>-->
+		<!--</div>
 		</div>-->
 		<!-- WARDROBE MENU 
 		<div style="display:none;" id="wardrobemenu" data-intro="Este es el menu para seleccionar el armario" data-position="right">
