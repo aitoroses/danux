@@ -2,7 +2,6 @@
 
 @section('tab')
 {{ HTML::script('semiems/js/src/tabs/tab4.js') }}
-{{ HTML::script('semiems/js/src/tabs/tab5.js') }}
 
 
 <div id="paso-4">

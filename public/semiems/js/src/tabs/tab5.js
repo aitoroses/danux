@@ -1,214 +1,188 @@
-//Documente ready
+//Documente ready 
 $(document).ready(function(){
-	//History
-	$(document).on('undo', function(){
-		App.History.undoWardrobe();
-		pintapuertas();		
-		WardrobeModel.save();
-	})
-	// Evento para guardar en stack
-	$(document).on('stack', function(){
-		App.History.saveWardrobe();
-	})
-	// Obtener el objeto
-	$(document).bind('sync',function(){
-		pintapuertas();
-		$(document).trigger('stack');
-	});
-	$(document).bind('sync_popup',function(){
-		if(document.getElementById('distribucionPuerta')){
-			$('#distribucionPuerta .element').click(function(){
-				$(document).trigger('stack');
-				// Comportamiento del click
-					//distribucion de puerta elegida
-					var id = $(this).data('id')
-					//divisiones que tiene el tipo de
-					// distribucion elegida
-					var div = $(this).data('div')
-					$.each(materialselect, function(i, selection){
-						//Extraemos el modulo seleccionado
-						var auxitem=selection.substring(1,2);
-						//le introducimos la distribucion de puerta elegida
-						WardrobeModel.wardrobe.doors[auxitem].type=id;
-						//hacemos un array con el numero de divisiones
-						// para guardar un material por cada division 
-						// de la puerta, lo iniciamos con 0App.Navigator.goNext();
-						var strout_div=[];
-						for (var iiii=0;iiii<div;iiii++)
-						{ 
-							strout_div.push(0);
-						}
-						//Una vez creamos el array con 0s, lo introducimos en el modelo
-						WardrobeModel.wardrobe.doors[auxitem].material=strout_div;
-					})
-					//reseteamos el array de selecciones
-					materialselect=[];
-					//Guardamos el modelo
-					WardrobeModel.save();
-					//Cerramos PopUp
-					popup.closePopup();
-			});
-		}
-	});
-	$(document).bind('sync_save',function(){
-		pintapuertas();
-	});
-	$(document).bind('error',function(){
-		$('#containerp').html('No se ha cargado el armario');
-	});
+    //History
+  $(document).on('undo', function(){
+    App.History.undoWardrobe();
+    Tab6Controller.pintarMarco();
+    Tab6Controller.KineticPintaPuertaMarco();
+    WardrobeModel.save();
+  })
+  // Evento para guardar en stack
+  $(document).on('stack', function(){
+    App.History.saveWardrobe();
+  })
+  // Eventos
+  $(document).bind('sync',function(){
+    Tab6Controller.pintarMarco();
+    Tab6Controller.KineticPintaPuertaMarco();
+    $(document).trigger('stack');
+  });
+  $(document).bind('sync_popup',function(){
+    
+  });
+  $(document).bind('sync_save',function(){
+    Tab6Controller.pintarMarco();
+    Tab6Controller.KineticPintaPuertaMarco();
+  });
+  $(document).bind('error',function(){
+    $('#containeri').html('No se ha cargado el armario');
+  });
 
-	WardrobeModel.fetch();
-
-
-
-	$('a.next-tab').on('click',function(e){
-		e.preventDefault();
-		App.Navigator.goNext();App.Navigator.goNext();
-	});
-	$('a.prev-tab').on('click',function(e){	
-		App.Navigator.goBack();
-
-	});
+  $('a.next-tab').on('click',function(e){
+    e.preventDefault();
+    App.Navigator.goNext();
+  });
+  $('a.prev-tab').on('click',function(e){ 
+    App.Navigator.goBack();
+  });
+//Ejecucion al iniciar la tab
+WardrobeModel.fetch();
 
 });
 
-Tab5Controller = {
+Tab6Controller = {
 
-	initialize: function(){
-	},
-	getDoorMaterials: function(type){
-		$.ajax({
-			type: 'GET',
-			url: 'API/popup/view/materialsView',
-			data: {
-				type: type
-			},
-			success: function(response){
-				$('#materiales').html(response);
-				$('#materiales .element').click(function(){
-					$(document).trigger('stack');
-					// Comportamiento del click
-					var id = $(this).data('id')
-					$.each(materialselect, function(i, selection){
-
-						var auxitem=selection.substring(1,2);
-						var auxitem2=selection.substring(3,4);
-						WardrobeModel.wardrobe.doors[auxitem].material[auxitem2]=id;
-
-					})
-					materialselect=[];
-					WardrobeModel.save();
-					popup.closePopup();
-				});
-			}
-		});
-	},
-	//Funcion que recorre las puertas y hace que la 
-	// distribucion y los materiales sean iguales 
-	// dependiendo de lo que selecciones 
-	// (Todas iguales, Pares iguales, Impares iguales)
-	cambia_puerta: function(tipo_de_cambio){
-		wardrobe = WardrobeModel.getWardrobe();
-		switch(tipo_de_cambio){
-			case 'all':
-			  for(var i in wardrobe.doors){
-					temp2=wardrobe.doors[0].type;
-				    wardrobe.doors[i].type=temp2;
-				   	var temp3=[];
-				    for(var j in wardrobe.doors[0].material){
-				    	temp=wardrobe.doors[0].material[j];
-				    	temp3.push(temp);
-				    }
-					wardrobe.doors[i].material=temp3;
-				}
-			  break;
-			case 'impar':
-			  for(var i in wardrobe.doors){
-					if(i%2==0){
-						temp2=wardrobe.doors[0].type;
-					    wardrobe.doors[i].type=temp2;
-					   	var temp3=[];
-					    for(var j in wardrobe.doors[0].material){
-					    	temp=wardrobe.doors[0].material[j];
-					    	temp3.push(temp);
-					    }
-						wardrobe.doors[i].material=temp3;
-					}	
-				}
-			  break;
-			case 'par':
-			  for(var i in wardrobe.doors){
-					if(i%2!=0){
-						temp2=wardrobe.doors[1].type;
-					    wardrobe.doors[i].type=temp2;
-					   	var temp3=[];
-					    for(var j in wardrobe.doors[1].material){
-					    	temp=wardrobe.doors[1].material[j];
-					    	temp3.push(temp);
-					    }
-						wardrobe.doors[i].material=temp3;
-					}		
-				}
-				break;
-		}
-		WardrobeModel.save();
-		pintapuertas();
-	}
-}
-
-
-
-
-/*************************************/
-function countRepeated(array){
-  var r = arguments[1] || [], i = 0;
-  for(; i < array.length; i++){
-    if(Object.prototype.hasOwnProperty.call(array, i)){
-      if(array[i] instanceof Array){
-        r = countRepeated(array[i], r);
-      } else {
-        if(r[array[i]])
-          r[array[i]]++;
-        else
-          r[array[i]] = 1;
-      }
-    }
-  }
-  return r;
-}
-/* Funciones del acabado del perfil Sin Usar
-
-function acabado_perfil(){
-
-	if(wardrobe.data.typedoor == 1){
-
-		if(wardrobe.data.tperfil == 3){ //Lisa
-			$('#acabado_perfil').html("No lleva Perfil.");  
-		}else{ //Con perfil
-			$('#acabado_perfil').html("Se ha seleccionado acabado 'Anonizado Plata'");
-		}
-
-	}else{
-
-		$.each(wardrobe.doors, function(i, door){
-
-			$.each(door.material, function(i, mat_door){
-
-				var repetidos = countRepeated(a);
-
-			})
-
-		})
-		$.ajax({
-       		type: 'POST',  
-            url: 'php/acabado_perf.php',
-            data: {
-            		"reps" : repetidos
-  				}, 
+  initialize: function(){
+  },
+  pintarMarco: function(){
+    //Borro y pongo espacio para que que 
+    // hay debajo del div no se mueva y 
+    // provoque errores visuales
+    $("#marco_sel").html("&nbsp"); 
+    $.ajax({
+          type: 'GET',  
+            url: 'API/asides/getMarco',
             success: function(data) {  
-                $('#acabado_perfil').html(data);  
+                $("#marco_sel").append(data)
             }  
-        })
-	}
+        })      
+  },
+  añadirMarco: function(id){
+    WardrobeModel.wardrobe.data.marco=id;
+    WardrobeModel.save();
+  },
+  getMarcoMaterials: function(type){
+    $.ajax({
+      type: 'GET',
+      url: 'API/popup/view/materialsView',
+      data: {type: type},
+      success: function(response){
+        $('#materiales').html(response);
+        $('#materiales .element').click(function(){
+          $(document).trigger('stack');
+          // Comportamiento del click
+          var id = $(this).data('id')
+          Tab6Controller.añadirMarco(id);
+          popup.closePopup();
+        });
+      }
+    });
+  },
+  KineticPintaPuertaMarco: function(){
+    //Limpiamos las Layers, stage y el container
+    layerp=new Kinetic.Layer();
+    layerpi=new Kinetic.Layer();
+    stagep.clear;
+    document.getElementById("containerp").innerHTML=""; 
+    // Obtenemos el Wardrobe
+    wardrobe = WardrobeModel.getWardrobe();
 
-}*/
+    //Dibujamos las puertas
+    var nmod = wardrobe.modules.length;
+
+    ancho= wardrobe.data.width*(666.8/4167);
+    alto=wardrobe.data.height*(300/2500);
+    //definimos la stage
+    stagep = new Kinetic.Stage({
+      container: 'containerp',
+      width: ancho,
+      height: alto
+    });
+    //pintamos el marco si tiene
+    pintamarco();
+    //cambiamos ancho y alto para dejar ver el marco
+    ancho=ancho-10;
+    alto=alto-10;
+    // desde donde empezamos a pintar en eje X
+    var xcont =5;
+    nmod = wardrobe.doors.length;
+    $.ajax({
+      type: "GET",
+      url: "content/door/",
+      dataType: "json",
+      async: false,
+      success: function(req){
+        data = req
+      }
+    });
+
+    for(x=0;x<nmod;x++){ //Bucle por puerta
+
+      var ycont =5;
+      var doors = data.types[x];
+      xx=0; //Bucle para pintar los materiales tiene que inicializarse a 0
+
+      for(y=0;y<doors.length;y++){ //Bucle para el diseño de la puerta
+        (function() {
+          var i=y;
+          var j=x;
+          // Anchura de perfil dependiendo del tipo de perfil
+          if (wardrobe.data.tperfil == 1){
+            var stroke_per=1
+          }else if (wardrobe.data.tperfil == 3){
+            var stroke_per=0
+          }else {
+            var stroke_per=3
+          } 
+          var puerta = new Kinetic.Rect({
+            x: xcont,
+            y: ycont,
+            width: ancho/wardrobe.doors.length,
+            height: alto*doors[i],
+            stroke: 'black',
+            fill: 'transparent',
+            strokeWidth:stroke_per,       
+            name: 'p'+j+'m'+i
+          });
+
+          //MATERIAL PUERTA
+          if(wardrobe.doors[j].material.length !== 0){
+            if (parseInt(wardrobe.doors[j].material[i])!=0){ //ref1
+              var iix=xcont;
+              var iiy=ycont;
+              var heighttemp=alto*doors[i];
+              var imageObj = new Image();
+              imageObj.onload = function() {
+                var mdoor = new Kinetic.Image({
+                  x: iix,
+                  y: iiy,
+                  width: ancho/wardrobe.doors.length,
+                  height: heighttemp,
+                  image: imageObj,
+                  name:'image'+i
+                }); 
+                layerpi.add(mdoor);
+                layerpi.draw();
+              }
+            imageObj.src = data.materials[j][0][xx];
+            xx=xx+1;            }
+          }
+          ycont = ycont + alto*doors[i];        
+          layerp.add(puerta);
+        })();     
+      }    //FINDE FOR Diseño puerta  
+      xcont = xcont + ancho/wardrobe.doors.length;
+    }//Finde FOR puerta
+
+
+    stagep.add(layerpi);
+    stagep.add(layerp);
+    stagep.draw();
+    layerpi.draw();
+    layerp.draw();
+
+    var shapes = stagep.get('.image');
+    // apply transition to all nodes in the array
+    shapes.each('moveToBottom', {});
+  }
+}
