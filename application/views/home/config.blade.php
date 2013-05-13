@@ -14,11 +14,11 @@
 			<p>Todavia estamos de Pruebas, clicka en el boton da abajo para empezar</p>
 			<button id="start-btn" onClick="App.Navigator.buttonConfig();">Empezar</button>
 			<h1>Historial de armarios</h1>
-			<ul>
+			<ul id="wardrobemenu">
 				<?php
 					if(isset($wardrobes)){
 						foreach($wardrobes as $ele){
-							echo "<li><a href=".'1#wardrobe-create'.">".$ele->name.'</a><div class="delete"></div></li>'; 
+							echo "<li><a wardrobe=".$ele->id." href=".'1#wardrobe-create'.">".$ele->name.'</a><div class="delete"></div></li>'; 
 						}
 					} else {
 						echo "No hay armarios";

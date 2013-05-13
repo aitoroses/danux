@@ -84,14 +84,13 @@
 	</div>
 	<div class="row" style="padding-top:10px">
 		<ul class="breadcrumbs">
-		  <li class="current"><a>Configuracion inicial</a></li>
-		  <li class="unavailable"><a>Distribucion interior</a></li>
-		  <li class="unavailable"><a>Accesorios de interior</a></li>
-		  <li class="unavailable"><a>Perfil o sin perfil</a></li>
-		  <li class="unavailable"><a>Puertas</a></li>
-		  <li class="unavailable"><a>Marco</a></li>
-		  <li class="unavailable"><a>Accesorios de estructura</a></li>
-		  <li class="unavailable"><a>Resumen final</a></li>
+		  <li data-tab="1" class="current"><a>Configuracion inicial</a></li>
+		  <li data-tab="2" class="unavailable"><a>Distribucion interior</a></li>
+		  <li data-tab="3" class="unavailable"><a>Accesorios de interior</a></li>
+		  <li data-tab="4" class="unavailable"><a>Puertas</a></li>
+		  <li data-tab="5" class="unavailable"><a>Marco</a></li>
+		  <li data-tab="6" class="unavailable"><a>Accesorios de estructura</a></li>
+		  <li data-tab="7" class="unavailable"><a>Resumen final</a></li>
 		</ul>	  
 	</div>
 	

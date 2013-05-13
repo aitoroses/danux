@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 	$('#wardrobemenu a').click(function(e){
 		e.preventDefault();
-		var id = $(this).attr('href');
+		var id = $(this).attr('wardrobe');
 		$.ajax({
 			type: 'POST',
 			url: 'session/' + id,
@@ -88,6 +88,7 @@ App.Navigator = {
 		myUrl = location.href;
 		var aux = myUrl.split('#');
 		this.tab=parseInt(aux[0].substring(aux[0].length-1));
+		this.styleNav(this.tab);
 	},
 	goNext: function(){
 		location.href = this.tab + 1; 
@@ -104,6 +105,22 @@ App.Navigator = {
 		} else {
 			// Default behavior
 			App.Router.navigate('config', {trigger: true});
+
+		}
+	},
+	styleNav: function(x){
+		lis = $('.breadcrumbs').find('li');
+		for (var i=0; i<lis.length; i++)
+		{
+			lis = $('.breadcrumbs').find('li')
+			if(i == this.tab-1){
+				lis[i].className = "current"
+			}else if (i<this.tab-1){
+				lis[i].className = "available"
+			}else if (i>this.tab-1){
+				lis[i].className = "unavailable"
+			}
+			console.log(lis[i])
 
 		}
 	}
