@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$('.breadcrumbs').fadeOut('slow');
 	
 	App.Navigator.initialize();
 
