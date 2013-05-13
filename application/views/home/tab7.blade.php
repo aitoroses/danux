@@ -3,21 +3,27 @@
 @section('tab')
 {{ HTML::script('semiems/js/src/tabs/tab7.js') }}
 
-<div id="paso-7">
-<h1>Configura los accesorios de estructura</h1>
-<p>Haz click para seleccionar accesorios a la lista:</p>
-
- <a class='button' onclick="popup.openPopup();popup.fetch({name: 'accesoriosExterior'});" data-intro="Click para añadir los accesorios de exterior" data-position="bottom">Agregar Accesorio</a>
-
- <div id="acc_sel"></div>
-
+<div id="paso-8" class="ui-tabs-panel">
+	<div class="row">
+	  <div class="small-10 large-11 small-centered large-centered columns">
+	  	<h1>Resumen del presupuesto</h1>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="small-12 large-10 small-centered large-centered columns">
+			<div id="presupuesto"></div>
+		</div>
+	</div>
+	<div id="presupuesto"></div>
 </div>
 
 
 @endsection
+
 @section('help')
+
 <div id="close-help"><a onClick="App.Help.close();"><img src="semiems/img/close.png"/></a></div>
-<h1>Ayuda Tab 7</h1>
+<h1>Ayuda Tab 8</h1>
 
 
 

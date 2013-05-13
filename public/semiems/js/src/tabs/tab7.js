@@ -1,31 +1,11 @@
 //Documente ready
 $(document).ready(function(){
-	$(document).on('undo', function(){
-		App.History.undoWardrobe();
-		Tab7Controller.pintarAccesorioExterior();
-		WardrobeModel.save();
-	})
-	// Evento para guardar en stack
-	$(document).on('stack', function(){
-		App.History.saveWardrobe();
-	})
-
 	// Obtener el objeto
 	$(document).bind('sync',function(){
-		Tab7Controller.pintarAccesorioExterior();
-		 $(document).trigger('stack');
-	});
-	$(document).bind('sync_popup',function(){
-		$('#mat_puerta .element').click(function(){
-			$(document).trigger('stack');
-			// Comportamiento del click
-			var id = $(this).data('id')
-			Tab7Controller.añadirAccesorioExterior(id);
-			popup.closePopup();
-		});
+		Tab8Controller.pintarPresupuesto();
 	});
 	$(document).bind('sync_save',function(){
-		Tab7Controller.pintarAccesorioExterior();
+		Tab8Controller.pintarPresupuesto();
 	});
 	$(document).bind('error',function(){
 	
@@ -43,35 +23,20 @@ $(document).ready(function(){
 	});
 });
 
-Tab7Controller = {
+Tab8Controller = {
 
 	initialize: function(){
 	},
-	pintarAccesorioExterior: function(){
+	pintarPresupuesto: function(){
 		//Borro y pongo espacio para que que 
 		// hay debajo del div no se mueva y 
 		// provoque errores visuales
-		$("#acc_sel").html("&nbsp"); 
 		$.ajax({
        		type: 'GET',  
-            url: 'API/asides/getAccExt',
+            url: 'API/asides/getPresupuesto',
             success: function(data) {  
-                $("#acc_sel").append(data)
+                $("#presupuesto").append(data)
             }  
         })			
-	},
-	añadirAccesorioExterior: function (id){
-		WardrobeModel.wardrobe.accext.push(id);
-		WardrobeModel.save();
-  		popup.closePopup();	
-	},
-	borrarAccesorioExterior: function (id){
-		$(document).trigger('stack');
-	// Funcion que destruye el elemento actual una vez echo el click
-		var idx = WardrobeModel.wardrobe.accext.indexOf(id); // Find the index
-	    if(idx!=-1) {
-	    	WardrobeModel.wardrobe.accext.splice(idx, 1);
-	    }
-	    WardrobeModel.save();
 	}
 }
