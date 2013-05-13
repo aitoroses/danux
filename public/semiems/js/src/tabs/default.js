@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$('.breadcrumbs').fadeOut('slow');
-	
+
 	App.Navigator.initialize();
 
 	$('#wardrobemenu a').click(function(e){
@@ -49,6 +49,23 @@ WardrobeMenuController = {
 	close: function(){
 		$("#wardrobemenu").removeClass("show")
 	},
+	flushWardrobe: function(){
+		$.ajax({
+			type: 'GET',
+			url: 'API/session/flush',
+			success: function(response) {
+				//alert('Se ha cargado el armario con ID '+ response)
+				if (location.href !== "1#wardrobe-create"){
+					location.href = "1";
+				}else{
+					location.reload();
+				}
+			},
+			error: function(){
+				alert('Hubo un error al cargar el identificador');
+			}
+		});
+	}
 }
 /*
 App.Help = {
@@ -92,9 +109,11 @@ App.Navigator = {
 		this.styleNav(this.tab);
 	},
 	goNext: function(){
+		$('.breadcrumbs').fadeIn('slow');
 		location.href = this.tab + 1; 
 	},
 	goBack: function(){
+		$('.breadcrumbs').fadeIn('slow');
 		location.href = this.tab - 1;
 	},
 	buttonConfig: function(){
@@ -167,7 +186,7 @@ App.Router =  new (Backbone.Router.extend({
 			});
 			$('#wardrobe-create').addClass('show');
 			// Interrumpimos la animacion con un evento timer
-			setTimeout(function(){$('#wardrobe-create').show();},0);
+			setTimeout(function(){$('#wardrobe-create').show();$('.breadcrumbs').fadeIn('slow');},0);
 			//$('#wardrobe-create').show();
 		});
 	},

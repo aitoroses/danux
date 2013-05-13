@@ -74,7 +74,7 @@
 			          <li><label>Aplicacion</label></li>
 			          <li><a onClick="App.Navigator.buttonConfig();">Volver a inicio</a></li>
 					  <li>
-					  	<a id="new-wardrobe">Crear un nuevo Armario</a>
+					  	<a id="new-wardrobe" onClick="WardrobeMenuController.flushWardrobe();">Crear un nuevo Armario</a>
 					  </li>
 			          <li class="divider"></li>
 			          <li><label>Logueado como {{ $username }}</label></li>
@@ -113,29 +113,32 @@
 		</nav>
 	</div>
 	<div class="row" style="padding-top:10px">
-		<ul class="breadcrumbs">
-		  <li data-tab="1" class="current"><a>Configuracion inicial</a></li>
-		  <li data-tab="2" class="unavailable"><a>Distribucion interior</a></li>
-		  <li data-tab="3" class="unavailable"><a>Accesorios de interior</a></li>
-		  <li data-tab="4" class="unavailable"><a>Puertas</a></li>
-		  <li data-tab="5" class="unavailable"><a>Marco</a></li>
-		  <li data-tab="6" class="unavailable"><a>Accesorios de estructura</a></li>
-		  <li data-tab="7" class="unavailable"><a>Resumen final</a></li>
-		</ul>	  
+		<div class="small-12 large-12 columns">
+			<ul class="breadcrumbs">
+			  <li data-tab="1" class="current"><a>Configuracion inicial</a></li>
+			  <li data-tab="2" class="unavailable"><a>Distribucion interior</a></li>
+			  <li data-tab="3" class="unavailable"><a>Accesorios de interior</a></li>
+			  <li data-tab="4" class="unavailable"><a>Puertas</a></li>
+			  <li data-tab="5" class="unavailable"><a>Marco</a></li>
+			  <li data-tab="6" class="unavailable"><a>Accesorios de estructura</a></li>
+			  <li data-tab="7" class="unavailable"><a>Resumen final</a></li>
+			</ul>
+		</div>  
 	</div>
 	
 	
 	<div id="wardrobe-create" class="section">
 		
-		<div id="main">
+		<!--<div id="main">
 			<section id="content">
 				<div class="row">
-					@yield('tab')
-				</div>
-			</section>
-			</div>
+		<section class="row">-->
+			@yield('tab')
+				<!--</div>
+		</section>
 		</div>
-		<!-- WARDROBE MENU -->
+		</div>-->
+		<!-- WARDROBE MENU 
 		<div style="display:none;" id="wardrobemenu" data-intro="Este es el menu para seleccionar el armario" data-position="right">
 			<h1>Tus armarios</h1>
 			<ul>
@@ -151,9 +154,8 @@
 				
 			</ul>
 			<span id="link"></span>
-		</div>
+		</div>-->
 	</div>
-
 	<!-- POPUP -->
 	<div id="popup" class="reveal-modal">
 		<div class="content"></div>
@@ -170,6 +172,9 @@
 		</div>
 		<div class="page-screen"></div>
 	</div>-->
+	@include('home.footer')
+
+
 	<script src="semiems/js/foundation/foundation.js"></script>
 	<script src="semiems/js/foundation/foundation.alerts.js"></script>
 	<script src="semiems/js/foundation/foundation.clearing.js"></script>
@@ -192,5 +197,6 @@
 	$(document).ready(function(){
 		$('#content').animate({opacity: 1}, 500);
 	});
+</script>
 
 </html>

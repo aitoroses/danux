@@ -1,3 +1,20 @@
+//@include sticky-footer(1px,"footer");
 a {
 	cursor: pointer;
+}
+.row{
+	background: white;
+
+}
+.row_b{
+	@include grid-row(false);
+}
+body{
+	background: #e1c192 url(../img/wood_pattern_bn.jpg);
+}
+footer{
+	margin-top:50px;
+	background-color: #efefef;
+	background: #3f3f3f;
+
 }

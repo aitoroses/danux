@@ -19,9 +19,14 @@
 			</div>
 		</div>
 	</div>
-	<br>
-	<p>Para continuar, haga click en <span style="font-weight: bold">siguiente</span> (menu superior derecha).</p>
-
+	<div class="row">
+		<div class="small-12 large-6 large-offset-6 columns">
+			<br>
+			<br>
+			<br>
+			<p>Para continuar, haga click en <span style="font-weight: bold">siguiente</span> (menu superior derecha).</p>
+		</div>
+	</div>	
 </div>
 
 @endsection

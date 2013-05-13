@@ -5,24 +5,25 @@
 <div id="errors"></div>
 <div id="paso-1">
 	<div class="row">
-	  <div class="small-10 small-centered large-centered columns">
+	  <div class="small-10 large-9 small-centered large-centered columns">
 	  	<h1>Configuración inicial del armario</h1>
 	  </div>
 	</div>
 	<div class="row">
 		@include('home.errors')
 		{{ Form::open('API/budget', 'POST', array('id' => 'frm', 'name' => 'frm')) }}
+		<div class="small-12 large-12 columns">	
 			<fieldset>
 		 		<p class="editable"><label style="font-weight: bold;"> Nombre: </label>
 		 		{{ Form::text('name', Input::old('name'), array('size' => 40, 'id' => 'name', 'data-intro' => "Introduce el nombre del presupuesto", 'data-position' => "top")) }}</p>
 		 	</fieldset>
-
+		</div>
 		 	<div class="medidas">
-		 		<div class="row">
-		 			<div class="small-6 large-6 columns">
+		 		<!--<div class="row">-->
+		 			<div class="small-12 large-6 columns">
 		 				<img style="width: 100%" class="closet" src="semiems/img/cubo.svg">
 		 			</div>
-		 			<div class="small-6 large-6 columns">
+		 			<div class="small-12 large-6 columns">
 		 				<h2 class="heights-text">Introduce las medidas:</h2>
 					 	<fieldset class="alto" data-intro="Alto del hueco en milimetros" data-position="left">
 							<label> Alto (mm): </label>
@@ -43,26 +44,25 @@
 							<label class="message"></label>
 						</fieldset>
 		 			</div>
-		 		</div>
-		 		<div class="small-12 large-6 large-offset-6 columns">
-			 		<div class="type-of-doors">
-						<fieldset>
-							<h2>Tipo y numero de puertas:</h2>
-							<label> Tipo de puertas</label>
-							{{ Form::select('puerta', array('3' => '', '2' => 'Armario sin puertas', '1' => 'Batientes', '0' => 'Correderas' ), Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)", 'data-intro' => "Tipos de armarios", 'data-position' => "right")) }}
-						</fieldset>
-						<fieldset>
-							<label>Numero de <span id="type">puertas</span>: </label>
-							<select name="npuertas" onChange="puertas_impares_bat()" data-intro="Numero de puertas" data-position="right"></select>
-							<div id="puertas_imp_bat"></div>
-						</fieldset>
+					<div class="small-12 large-6 large-offset-6 columns">
+				 		<div class="type-of-doors">
+							<fieldset>
+								<h2>Tipo y numero de puertas:</h2>
+								<label> Tipo de puertas</label>
+								{{ Form::select('puerta', array('3' => '', '2' => 'Armario sin puertas', '1' => 'Batientes', '0' => 'Correderas' ), Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)", 'data-intro' => "Tipos de armarios", 'data-position' => "right")) }}
+							</fieldset>
+							<fieldset>
+								<label>Numero de <span id="type">puertas</span>: </label>
+								<select name="npuertas" onChange="puertas_impares_bat()" data-intro="Numero de puertas" data-position="right"></select>
+								<div id="puertas_imp_bat"></div>
+							</fieldset>
+						</div>
+						{{ Form::close() }}
+						<p>Haz click en <span style="font-weight: bold">Siguiente</span> en la barra superior para continuar.</p>
 					</div>
-					{{ Form::close() }}
-					<p>Haz click en <span style="font-weight: bold">Siguiente</span> en la barra superior para continuar.</p>
-				</div>
+		 		<!--</div>-->		 		
 			</div>
-			
-		
+	</div>
 </div>
 
 <script type="text/javascript">

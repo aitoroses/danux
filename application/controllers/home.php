@@ -35,9 +35,4 @@ class Home_Controller extends Base_Controller {
 
 	}
 
-	public function post_session($id){
-		Session::put('wardrobe_id', $id);
-		return $id;
-	}
-
 }

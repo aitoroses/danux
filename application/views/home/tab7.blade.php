@@ -4,6 +4,16 @@
 {{ HTML::script('semiems/js/src/tabs/tab7.js') }}
 
 <div id="paso-8" class="ui-tabs-panel">
+	<div class="row">
+	  <div class="small-10 large-11 small-centered large-centered columns">
+	  	<h1>Resumen del presupuesto</h1>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="small-12 large-10 small-centered large-centered columns">
+			<div id="presupuesto"></div>
+		</div>
+	</div>
 	<div id="presupuesto"></div>
 </div>
 
