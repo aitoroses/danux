@@ -171,9 +171,11 @@ App.Router =  new (Backbone.Router.extend({
 		});
 	},
 	config: function() {
-		this.navigateToSection('#config');
+		$('.breadcrumbs').fadeOut('slow');
+		this.navigateToSection('#config');	
 	},
 	wardrobe: function() {
+		$('.breadcrumbs').fadeIn('slow');
 		this.navigateToSection('#wardrobe-create');
 	}
 }));

@@ -5,7 +5,11 @@
 <div id="errors"></div>
 <div id="paso-1">
 	<div class="row">
-		<h1>Configuración inicial del armario</h1>
+	  <div class="small-10 small-centered large-centered columns">
+	  	<h1>Configuración inicial del armario</h1>
+	  </div>
+	</div>
+	<div class="row">
 		@include('home.errors')
 		{{ Form::open('API/budget', 'POST', array('id' => 'frm', 'name' => 'frm')) }}
 			<fieldset>
@@ -40,7 +44,7 @@
 						</fieldset>
 		 			</div>
 		 		</div>
-		 		<div class="small-6 large-6 large-offset-6">
+		 		<div class="small-12 large-6 large-offset-6 columns">
 			 		<div class="type-of-doors">
 						<fieldset>
 							<h2>Tipo y numero de puertas:</h2>

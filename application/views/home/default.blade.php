@@ -22,6 +22,7 @@
 	{{ HTML::script('semiems/js/lib/backbone-min.js') }}
 	
 	{{ HTML::script('semiems/js/lib/chardinjs.min.js') }}
+	{{ HTML::script('semiems/js/lib/modernizr.js') }}
 
 
 	<!-- OBJECT SCRIPTS -->
@@ -50,23 +51,42 @@
 			      	<h1><a>Semiems</a></h1>
 			    </li>
 			    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-			    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+			    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
 	  		</ul>
 	  		<section class="top-bar-section">
 			    <!-- Left Nav Section -->
 			    <ul class="left">
-			      <li class="divider"></li>
+			      <!--<li class="divider"></li>
 			      <li><a><div id="help-btn"><div class="background"></div><div class="desc">Instrucciones</div></div></a></li>
 			      <li class="divider"></li>
 			      <li><a><div id="config-btn" onClick="App.Navigator.buttonConfig();"><div class="background"></div><div class="desc">Configuración</div></div></a></li>
 			      <li class="divider"></li>
 				  <li class="has-form">
 				  	<a id="new-wardrobe" class="button">Nuevo Armario</a>
-				  </li>
+				  </li>-->
+				  <li class="divider hide-for-small"></li>
+			      <li class="has-dropdown"><a href="#">Menu</a>
+			        <ul class="dropdown">
+			          <li class="divider"></li>
+			          <li><label>Ayuda</label></li>
+			          <li><a><div id="help-btn"><div class="background"></div><div class="desc">Instrucciones</div></div></a></li>
+			          <li class="divider"></li>
+			          <li><label>Aplicacion</label></li>
+			          <li><a onClick="App.Navigator.buttonConfig();">Volver a inicio</a></li>
+					  <li>
+					  	<a id="new-wardrobe">Crear un nuevo Armario</a>
+					  </li>
+			          <li class="divider"></li>
+			          <li><label>Logueado como {{ $username }}</label></li>
+			          <li class="has-form">
+						<a href="logout" class="alert button">Cerrar Sesión!</a>
+					  </li>
+			        </ul>
+			      </li>
 			    </ul>
 
 			    <!-- Right Nav Section -->
-			    <ul class="right">
+			   <!-- <ul class="right">
 			      <li><a><div id="back-btn" onclick="App.History.back_button_action();"><div class="background"></div><div class="desc">Deshacer cambios <span id="back-count">0</span></div></div></a></li>
 			      <li class="divider"></li>
 			      <li><a class='prev-tab mover' >&#171; Atras</a></li>
@@ -78,7 +98,17 @@
 			      </li>
 			      <li class="divider"></li>
 			      <li><a>{{ $username }}</a></li>
+			    </ul> -->
+			        <!-- Right Nav Section -->
+			    <ul class="right">
+			    	<li class="divider"></li>
+			      <li><a><div id="back-btn" onclick="App.History.back_button_action();"><div class="background"></div><div class="desc">Deshacer cambios <span id="back-count">0</span></div></div></a></li>
+			      <li class="divider hide-for-small"></li>
+			      <li><a class='prev-tab mover' >&#171; Paso atras</a></li>
+			      <li class="divider hide-for-small"></li>
+			      <li><a class='next-tab mover'>Siguiente &#187;</a></li>
 			    </ul>
+
 			</section>
 		</nav>
 	</div>
