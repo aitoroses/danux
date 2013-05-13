@@ -7,8 +7,8 @@
       </div>
 
       <div class="large-4 columns">
-        <h6><strong>Using Foundation?</strong></h6>
-        <p>Let us know how you're using Foundation and we might feature you as an example! <a href="mailto:foundation@zurb.com?subject=I'm%20using%20Foundation">Get in touch →</a></p>
+        <h6><strong>Desarrolladores</strong></h6>
+        <p>Conoce quienes hicieron posible la aplicacion, si tienes alguna duda escribir </p>
       </div>
 
       <div class="large-4 columns">
