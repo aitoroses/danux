@@ -100,7 +100,7 @@
 		
 		<div id="main">
 			<section id="content">
-				<div class="row">
+				<div id="main-content" class="row">
 					@yield('tab')
 				</div>
 			</section>
