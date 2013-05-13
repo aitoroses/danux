@@ -5527,14 +5527,15 @@ a {
 
 /* line 13, ../sass/_custom_zurb.scss */
 body {
-  background: #e1c192 url(../img/wood_pattern_bn.jpg); }
+  background: #e1c192 url(../img/wood_pattern_bn.jpg);
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
 
-/* line 16, ../sass/_custom_zurb.scss */
+/* line 17, ../sass/_custom_zurb.scss */
 .vcard {
   margin-top: 20px;
   background: white; }
 
-/* line 20, ../sass/_custom_zurb.scss */
+/* line 21, ../sass/_custom_zurb.scss */
 footer {
   padding: 10px 0 25px 0;
   margin-top: 20px;

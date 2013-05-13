@@ -7,8 +7,13 @@
       </div>
 
       <div class="large-4 columns">
-        <h6><strong>Desarrolladores</strong></h6>
-        <p>Conoce quienes hicieron posible la aplicacion, si tienes alguna duda escribir </p>
+        <h6><strong>Ayuda</strong></h6>
+        <p>Necesitas ayuda? Hemos preparado unos tutoriales guiados, para ayudarte. 
+        	<ul>
+        	<li>Click aqui para empezar el tutorial</li>
+        	<li>Hemos preparado unos videos, click aqui para empezar</li>
+        	</ul>
+        </p>
       </div>
 
       <div class="large-4 columns">
