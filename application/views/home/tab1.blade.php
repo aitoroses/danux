@@ -20,7 +20,7 @@
 		 	<div class="medidas">
 		 		<div class="row">
 		 			<div class="small-6 large-6 columns">
-		 				<img style="width: 100%" class="closet" src="semiems/img/closet.jpg">
+		 				<img style="width: 100%" class="closet" src="semiems/img/cubo.svg">
 		 			</div>
 		 			<div class="small-6 large-6 columns">
 		 				<h2 class="heights-text">Introduce las medidas:</h2>
