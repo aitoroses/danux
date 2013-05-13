@@ -5500,15 +5500,15 @@ a.th {
   .f-dropdown.large {
     max-width: 800px; }
 
-/* line 2, ../sass/_custom_zurb.scss */
+/* line 3, ../sass/_custom_zurb.scss */
 a {
   cursor: pointer; }
 
-/* line 5, ../sass/_custom_zurb.scss */
+/* line 6, ../sass/_custom_zurb.scss */
 .row {
   background: white; }
 
-/* line 9, ../sass/_custom_zurb.scss */
+/* line 10, ../sass/_custom_zurb.scss */
 .row_b {
   width: 100%;
   margin-left: auto;
@@ -5525,12 +5525,14 @@ a {
   .row_b:after {
     clear: both; }
 
-/* line 12, ../sass/_custom_zurb.scss */
+/* line 13, ../sass/_custom_zurb.scss */
 body {
   background: #e1c192 url(../img/wood_pattern_bn.jpg); }
 
-/* line 15, ../sass/_custom_zurb.scss */
+/* line 16, ../sass/_custom_zurb.scss */
 footer {
-  margin-top: 50px;
-  background-color: #efefef;
-  background: #3f3f3f; }
+  padding: 10px 0 25px 0;
+  margin-top: 40px;
+  color: #fff;
+  background: #aaa;
+  height: 10px; }
