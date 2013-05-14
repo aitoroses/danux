@@ -1,6 +1,4 @@
 <div id="config" class="row">
-	
-
 	<div class="small-12 large-6 columns">
 		<div id="admin_functions">
 		<h1> Opciones de administrador </h1>
