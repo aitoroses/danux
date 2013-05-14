@@ -5500,46 +5500,232 @@ a.th {
   .f-dropdown.large {
     max-width: 800px; }
 
-/* line 10, ../../../../../../../Users/nemz00/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+@keyframes shake {
+  /* line 5, ../sass/login_zurb.scss */
+  from {
+    top: 185px; }
+
+  /* line 6, ../sass/login_zurb.scss */
+  to {
+    top: 230px; } }
+
+@-moz-keyframes shake {
+  /* line 11, ../sass/login_zurb.scss */
+  from {
+    top: 185px; }
+
+  /* line 12, ../sass/login_zurb.scss */
+  to {
+    top: 230px; } }
+
+@-webkit-keyframes shake {
+  /* line 17, ../sass/login_zurb.scss */
+  from {
+    top: 185px; }
+
+  /* line 18, ../sass/login_zurb.scss */
+  to {
+    top: 230px; } }
+
+@-o-keyframes shake {
+  /* line 23, ../sass/login_zurb.scss */
+  from {
+    top: 185px; }
+
+  /* line 24, ../sass/login_zurb.scss */
+  to {
+    top: 230px; } }
+
+/* line 28, ../sass/login_zurb.scss */
 html, body {
   height: 100%; }
 
-/* line 12, ../../../../../../../Users/nemz00/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
-#all-footer {
-  clear: both;
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin-bottom: -30px; }
-  /* line 18, ../../../../../../../Users/nemz00/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
-  #all-footer #pushfooter {
-    height: 30px; }
-
-/* line 20, ../../../../../../../Users/nemz00/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
-footer {
-  clear: both;
-  position: relative;
-  height: 30px; }
-
-/* line 3, ../sass/_custom_zurb.scss */
-a {
-  cursor: pointer; }
-
-/* line 6, ../sass/_custom_zurb.scss */
-.row {
-  background: white;
-  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5); }
-
-/* line 11, ../sass/_custom_zurb.scss */
+/* line 32, ../sass/login_zurb.scss */
 body {
-  background: #e1c192 url(../img/wood_pattern_bn.jpg);
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+  font: 12px 'Lucida Sans Unicode', 'Trebuchet MS', Arial, Helvetica;
+  margin: 0;
+  background: #e1c192 url(../img/wood_pattern_bn.jpg); }
 
-/* line 17, ../sass/_custom_zurb.scss */
-footer {
-  color: #fff;
-  background: #3f3f3f !important;
-  padding: 5px;
-  height: 30px; }
+/*--------------------*/
+/* line 39, ../sass/login_zurb.scss */
+#login, #register {
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#eeeeee));
+  background-image: -webkit-linear-gradient(top, white, #eeeeee);
+  background-image: -moz-linear-gradient(top, white, #eeeeee);
+  background-image: -o-linear-gradient(top, white, #eeeeee);
+  background-image: -ms-linear-gradient(top, white, #eeeeee);
+  background-image: linear-gradient(top, #ffffff, #eeeeee);
+  /*height: 240px;*/
+  width: 400px;
+  margin: -150px 0 0 -230px;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  /*border-radius: 3px;*/
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 0 1px 5px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 0 1px 5px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(255, 255, 255, 0.4);
+  -webkit-transform: translate3d(200%, 0, 0) scale3d(0.2, 0.2, 0.2);
+  -moz-transform: translate3d(200%, 0, 0) scale3d(0.2, 0.2, 0.2);
+  -ms-transform: translate3d(200%, 0, 0) scale3d(0.2, 0.2, 0.2);
+  -o-transform: translate3d(200%, 0, 0) scale3d(0.2, 0.2, 0.2);
+  transform: translate3d(200%, 0, 0) scale3d(0.2, 0.2, 0.2);
+  -webkit-transition: -webkit-transform 500ms ease, opacity 800ms ease;
+  -moz-transition: -moz-transform 500ms ease, opacity 800ms ease;
+  -o-transition: -o-transform 500ms ease, opacity 800ms ease;
+  transition: transform 500ms ease, opacity 800ms ease; }
+
+/* line 73, ../sass/login_zurb.scss */
+#login.show, #register.show {
+  -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  -o-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  opacity: 1; }
+
+/* line 81, ../sass/login_zurb.scss */
+#login.shake, #register.shake {
+  animation: shake .1s ease-in-out .1s 5 alternate;
+  -moz-animation: shake .1s ease-in-out .1s 5 alternate;
+  /* Firefox */
+  -webkit-animation: shake .1s ease-in-out .1s 5 alternate;
+  /* Safari and Chrome */
+  -o-animation: shake .1s ease-in-out .1s 5 alternate;
+  /* Opera */ }
+
+/* line 90, ../sass/login_zurb.scss */
+#login:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border: 1px dashed #ccc;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  -webkit-box-shadow: 0 0 0 1px #fff;
+  box-shadow: 0 0 0 1px #fff; }
+
+/*--------------------*/
+/* line 105, ../sass/login_zurb.scss */
+h1 {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7), 0px 2px 0 rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  text-align: center;
+  color: #666;
+  margin: 0 0 30px 0;
+  letter-spacing: 4px;
+  font: normal 26px/1 Verdana, Helvetica;
+  position: relative; }
+
+/*--------------------*/
+/* line 117, ../sass/login_zurb.scss */
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0; }
+
+/*--------------------*/
+/* line 124, ../sass/login_zurb.scss */
+#inputs input {
+  background: #f1f1f1 url(../img/login-sprite.png) no-repeat;
+  padding: 15px 15px 15px 30px;
+  margin: 0 0 10px 0;
+  width: 100%;
+  /* 353 + 2 + 45 = 400 */
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+  box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff; }
+
+/* line 136, ../sass/login_zurb.scss */
+#username {
+  background-position: 9px -9px !important; }
+
+/* line 140, ../sass/login_zurb.scss */
+#password {
+  background-position: 9px -58px !important; }
+
+/* line 144, ../sass/login_zurb.scss */
+#inputs input:focus {
+  background-color: #fff;
+  border-color: #e8c291;
+  outline: none;
+  -webkit-box-shadow: 0 0 0 1px #e8c291 inset;
+  box-shadow: 0 0 0 1px #e8c291 inset; }
+
+/*--------------------*/
+/* line 154, ../sass/login_zurb.scss */
+#actions {
+  margin: 12px 0 0 0; }
+
+/* line 158, ../sass/login_zurb.scss */
+#submit {
+  /*    background-color: #ffb94b;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#fddb6f), to(#ffb94b));
+  
+      background-image: -webkit-linear-gradient(top, #fddb6f, #ffb94b);
+      background-image: -moz-linear-gradient(top, #fddb6f, #ffb94b);
+      background-image: -o-linear-gradient(top, #fddb6f, #ffb94b);
+      background-image: -ms-linear-gradient(top, #fddb6f, #ffb94b);
+      background-image: linear-gradient(top, #fddb6f, #ffb94b);
+      border-radius: 3px;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  
+      -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #d69e31 #e3a037 #d5982d #e3a037;
+      float: left;
+      height: 45px;
+      padding: 0;
+      width: 400px;
+      cursor: pointer;
+      font: bold 15px Arial, Helvetica;
+      color: #8f5a0a;*/
+  width: 100%; }
+
+/* line 185, ../sass/login_zurb.scss */
+#submit:hover, #submit:focus {
+  /*    background-color: #fddb6f;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));
+  
+      background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
+      background-image: -moz-linear-gradient(top, #ffb94b, #fddb6f);
+      background-image: -o-linear-gradient(top, #ffb94b, #fddb6f);
+      background-image: -ms-linear-gradient(top, #ffb94b, #fddb6f);
+      background-image: linear-gradient(top, #ffb94b, #fddb6f); */ }
+
+/*
+#submit:active {
+    outline: none;
+
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+}
+
+#submit::-moz-focus-inner {
+    border: none;
+}
+*/
+/*--------------------*/
+/* line 209, ../sass/login_zurb.scss */
+#back {
+  display: block;
+  text-align: center;
+  position: relative;
+  top: 60px;
+  color: #000; }
+
+/* line 217, ../sass/login_zurb.scss */
+.create-account, .login-account {
+  color: #4988b6;
+  text-align: center;
+  padding: 20px 0 0 0;
+  font-variant: small-caps;
+  font-size: 1.3em;
+  cursor: pointer; }

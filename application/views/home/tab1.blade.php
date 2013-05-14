@@ -8,8 +8,6 @@
 	  <div class="small-10 large-9 small-centered large-centered columns">
 	  	<h1>Configuración inicial del armario</h1>
 	  </div>
-	</div>
-	<div class="row">
 		@include('home.errors')
 		{{ Form::open('API/budget', 'POST', array('id' => 'frm', 'name' => 'frm')) }}
 		<div class="small-12 large-12 columns">	
@@ -49,11 +47,11 @@
 							<fieldset>
 								<h2>Tipo y numero de puertas:</h2>
 								<label> Tipo de puertas</label>
-								{{ Form::select('puerta', array('3' => '', '2' => 'Armario sin puertas', '1' => 'Batientes', '0' => 'Correderas' ), Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)", 'data-intro' => "Tipos de armarios", 'data-position' => "right")) }}
+								{{ Form::select('puerta', array('3' => '', '2' => 'Armario sin puertas', '1' => 'Batientes', '0' => 'Correderas' ), Input::old('name'), array('onChange' => "calculo_puertas(document.frm.npuertas)")) }}
 							</fieldset>
 							<fieldset>
 								<label>Numero de <span id="type">puertas</span>: </label>
-								<select name="npuertas" onChange="puertas_impares_bat()" data-intro="Numero de puertas" data-position="right"></select>
+								<select id="custom dropdown small" class="medium" name="npuertas" onChange="puertas_impares_bat()"></select>
 								<div id="puertas_imp_bat"></div>
 							</fieldset>
 						</div>

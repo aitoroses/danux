@@ -43,117 +43,128 @@
 
 </head>
 <body data-wardrobe={{ $id_wardrobe }}>
-	<div class="fixed">
-		<nav class="top-bar">
-			<ul class="title-area">
-			    <!-- Title Area -->
-			    <li class="name">
-			      	<h1><a>Semiems</a></h1>
-			    </li>
-			    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-			    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-	  		</ul>
-	  		<section class="top-bar-section">
-			    <!-- Left Nav Section -->
-			    <ul class="left">
-			      <!--<li class="divider"></li>
-			      <li><a><div id="help-btn"><div class="background"></div><div class="desc">Instrucciones</div></div></a></li>
-			      <li class="divider"></li>
-			      <li><a><div id="config-btn" onClick="App.Navigator.buttonConfig();"><div class="background"></div><div class="desc">Configuración</div></div></a></li>
-			      <li class="divider"></li>
-				  <li class="has-form">
-				  	<a id="new-wardrobe" class="button">Nuevo Armario</a>
-				  </li>-->
-				  <li class="divider hide-for-small"></li>
-			      <li class="has-dropdown"><a href="#">Menu</a>
-			        <ul class="dropdown">
-			          <li class="divider"></li>
-			          <li><label>Ayuda</label></li>
-			          <li><a><div id="help-btn"><div class="background"></div><div class="desc">Instrucciones</div></div></a></li>
-			          <li class="divider"></li>
-			          <li><label>Aplicacion</label></li>
-			          <li><a onClick="App.Navigator.buttonConfig();">Volver a inicio</a></li>
-					  <li>
-					  	<a id="new-wardrobe" onClick="WardrobeMenuController.flushWardrobe();">Crear un nuevo Armario</a>
-					  </li>
-			          <li class="divider"></li>
-			          <li><label>Logueado como {{ $username }}</label></li>
-			          <li class="has-form">
-						<a href="logout" class="alert button">Cerrar Sesión!</a>
-					  </li>
-			        </ul>
-			      </li>
-			    </ul>
 
-			    <!-- Right Nav Section -->
-			   <!-- <ul class="right">
-			      <li><a><div id="back-btn" onclick="App.History.back_button_action();"><div class="background"></div><div class="desc">Deshacer cambios <span id="back-count">0</span></div></div></a></li>
-			      <li class="divider"></li>
-			      <li><a class='prev-tab mover' >&#171; Atras</a></li>
-			      <li class="divider"></li>
-			      <li><a class='next-tab mover'>Siguiente &#187;</a></li>
-			      <li class="divider hide-for-small"></li>
-			      <li class="has-form">
-			        <a href="logout" class="alert button">Cerrar Sesión!</a>
-			      </li>
-			      <li class="divider"></li>
-			      <li><a>{{ $username }}</a></li>
-			    </ul> -->
-			        <!-- Right Nav Section -->
-			    <ul class="right">
-			    	<li class="divider"></li>
-			      <li><a><div id="back-btn" onclick="App.History.back_button_action();"><div class="background"></div><div class="desc">Deshacer cambios <span id="back-count">0</span></div></div></a></li>
-			      <li class="divider hide-for-small"></li>
-			      <li><a class='prev-tab mover' >&#171; Paso atras</a></li>
-			      <li class="divider hide-for-small"></li>
-			      <li><a class='next-tab mover'>Siguiente &#187;</a></li>
-			    </ul>
+	<div id="all-footer">
+		<div class="fixed">
+			<nav class="top-bar">
+				<ul class="title-area">
+				    <!-- Title Area -->
+				    <li class="name">
+				      	<h1><a>Semiems</a></h1>
+				    </li>
+				    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+				    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+		  		</ul>
+		  		<section class="top-bar-section">
+				    <!-- Left Nav Section -->
+				    <ul class="left">
+				      <!--<li class="divider"></li>
+				      <li><a><div id="help-btn"><div class="background"></div><div class="desc">Instrucciones</div></div></a></li>
+				      <li class="divider"></li>
+				      <li><a><div id="config-btn" onClick="App.Navigator.buttonConfig();"><div class="background"></div><div class="desc">Configuración</div></div></a></li>
+				      <li class="divider"></li>
+					  <li class="has-form">
+					  	<a id="new-wardrobe" class="button">Nuevo Armario</a>
+					  </li>-->
+					  <li class="divider hide-for-small"></li>
+				      <li class="has-dropdown"><a href="#">Menu</a>
+				        <ul class="dropdown">
+				          <li class="divider"></li>
+				          <li><label>Ayuda</label></li>
+				          <li><a><div id="help-btn"><div class="background"></div><div class="desc">Instrucciones</div></div></a></li>
+				          <li class="divider"></li>
+				          <li><label>Aplicacion</label></li>
+				          <li><a onClick="App.Navigator.buttonConfig();">Volver a inicio</a></li>
+						  <li>
+						  	<a id="new-wardrobe" onClick="WardrobeMenuController.flushWardrobe();">Crear un nuevo Armario</a>
+						  </li>
+				          <li class="divider"></li>
+				          <li><label>Logueado como {{ $username }}</label></li>
+				          <li class="has-form">
+							<a href="logout" class="alert button">Cerrar Sesión!</a>
+						  </li>
+				        </ul>
+				      </li>
+				    </ul>
 
-			</section>
-		</nav>
-	</div>
-	<div class="row" style="padding-top:10px">
-		<div class="small-12 large-12 columns">
-			<ul class="breadcrumbs">
-			  <li data-tab="1" class="current"><a>Configuracion inicial</a></li>
-			  <li data-tab="2" class="unavailable"><a>Distribucion interior</a></li>
-			  <li data-tab="3" class="unavailable"><a>Accesorios de interior</a></li>
-			  <li data-tab="4" class="unavailable"><a>Puertas</a></li>
-			  <li data-tab="5" class="unavailable"><a>Marco</a></li>
-			  <li data-tab="6" class="unavailable"><a>Accesorios de estructura</a></li>
-			  <li data-tab="7" class="unavailable"><a>Resumen final</a></li>
-			</ul>
-		</div>  
-	</div>
-	
-	
-	<div id="wardrobe-create" class="section">
+				    <!-- Right Nav Section -->
+				   <!-- <ul class="right">
+				      <li><a><div id="back-btn" onclick="App.History.back_button_action();"><div class="background"></div><div class="desc">Deshacer cambios <span id="back-count">0</span></div></div></a></li>
+				      <li class="divider"></li>
+				      <li><a class='prev-tab mover' >&#171; Atras</a></li>
+				      <li class="divider"></li>
+				      <li><a class='next-tab mover'>Siguiente &#187;</a></li>
+				      <li class="divider hide-for-small"></li>
+				      <li class="has-form">
+				        <a href="logout" class="alert button">Cerrar Sesión!</a>
+				      </li>
+				      <li class="divider"></li>
+				      <li><a>{{ $username }}</a></li>
+				    </ul> -->
+				        <!-- Right Nav Section -->
+				    <ul class="right">
+				    	<li class="divider"></li>
+				      <li><a><div id="back-btn" onclick="App.History.back_button_action();"><div class="background"></div><div class="desc">Deshacer cambios <span id="back-count">0</span></div></div></a></li>
+				      <li class="divider hide-for-small"></li>
+				      <li><a class='prev-tab mover' >&#171; Paso atras</a></li>
+				      <li class="divider hide-for-small"></li>
+				      <li><a class='next-tab mover'>Siguiente &#187;</a></li>
+				    </ul>
+
+				</section>
+			</nav>
+		</div>
+		<div class="row" style="padding-top:10px">
+			<div class="small-12 large-12 columns">
+				<ul class="breadcrumbs">
+				  <li data-tab="1" class="current"><a>Configuracion inicial</a></li>
+				  <li data-tab="2" class="unavailable"><a>Distribucion interior</a></li>
+				  <li data-tab="3" class="unavailable"><a>Accesorios de interior</a></li>
+				  <li data-tab="4" class="unavailable"><a>Puertas</a></li>
+				  <li data-tab="5" class="unavailable"><a>Marco</a></li>
+				  <li data-tab="6" class="unavailable"><a>Accesorios de estructura</a></li>
+				  <li data-tab="7" class="unavailable"><a>Resumen final</a></li>
+				</ul>
+			</div>  
+		</div>
 		
-		<!--<div id="main">
-			<section id="content">
-				<div class="row">-->
-			@yield('tab')
-		<!--</div>-->
-		<!--</div>
-		</div>-->
-		<!-- WARDROBE MENU 
-		<div style="display:none;" id="wardrobemenu" data-intro="Este es el menu para seleccionar el armario" data-position="right">
-			<h1>Tus armarios</h1>
-			<ul>
-				<?php
-					if(isset($wardrobes)){
-						foreach($wardrobes as $ele){
-							echo "<li><a href=".$ele->id.">".$ele->name.'</a><div class="delete"></div></li>'; 
+		
+		<div id="wardrobe-create" class="section">
+			
+			<!--<div id="main">
+				<section id="content">
+					<div class="row">-->
+				@yield('tab')
+			<!--</div>-->
+			<!--</div>
+			</div>-->
+			<!-- WARDROBE MENU 
+			<div style="display:none;" id="wardrobemenu" data-intro="Este es el menu para seleccionar el armario" data-position="right">
+				<h1>Tus armarios</h1>
+				<ul>
+					<?php
+						if(isset($wardrobes)){
+							foreach($wardrobes as $ele){
+								echo "<li><a href=".$ele->id.">".$ele->name.'</a><div class="delete"></div></li>'; 
+							}
+						} else {
+							echo "No hay armarios";
 						}
-					} else {
-						echo "No hay armarios";
-					}
-				?>
-				
-			</ul>
-			<span id="link"></span>
-		</div>-->
+					?>
+					
+				</ul>
+				<span id="link"></span>
+			</div>-->
+		</div>
+		<!-- WELCOME -->
+		@include('home.config')
+		<div id="pushfooter"></div>
 	</div>
+	
+	@include('home.footer')
+
+
+
 	<!-- POPUP -->
 	<div id="popup" class="reveal-modal">
 		<div class="content"></div>
@@ -161,8 +172,7 @@
 	</div>
 	<!-- END POPUP -->
 
-	<!-- WELCOME -->
-	@include('home.config')
+	
 	<!-- HELP NOTICE 
 	<div id="help">
 		<div class="content">
@@ -170,7 +180,7 @@
 		</div>
 		<div class="page-screen"></div>
 	</div>-->
-	@include('home.footer')
+	
 
 
 	<script src="semiems/js/foundation/foundation.js"></script>

@@ -1,5 +1,3 @@
-@import "compass/layout/sticky-footer";
-
 @import "compass/css3";
 
 @import "app";	// Zurb-foundation
@@ -15,5 +13,6 @@
 //@import "sections";
 
 //@import "tabs";
+@import "compass/layout/sticky-footer";
 
 @import "custom_zurb";
