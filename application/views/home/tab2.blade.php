@@ -5,21 +5,26 @@
 
 <div id="paso-2">
 	<div class="row">
+	  <div class="small-10 large-9 small-centered large-centered columns">
+	  	<h1>Configurando el interior</h1>
+	  </div>
+	</div>
+	<div class="row">
 		<div class="columns small-12 large-8">
-			<h1>Configurando el interior</h1>
 			<p>Haga click en cada uno de los modulos para agregar accesorios.</p>
 			<div id="containeri"></div>
 			
 		</div>
 	</div>
 	<div class="row">
-		<div class="columns small-12 large-8">
+		<div class="small-12 large-6 large-offset-6 columns">
+			<br>
+			<br>
 			<br>
 			<p>Para continuar, haga click en <span style="font-weight: bold">siguiente</span> (menu superior derecha).</p>
 		</div>
 	</div>
 </div>
-
 @endsection
 @section('help')
 <div id="close-help"><a onClick="App.Help.close();"><img src="semiems/img/close.png"/></a></div>

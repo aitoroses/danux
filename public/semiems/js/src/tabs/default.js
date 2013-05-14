@@ -1,10 +1,11 @@
 $(document).ready(function(){
-	
+	$('.breadcrumbs').fadeOut('slow');
+
 	App.Navigator.initialize();
 
 	$('#wardrobemenu a').click(function(e){
 		e.preventDefault();
-		var id = $(this).attr('href');
+		var id = $(this).attr('wardrobe');
 		$.ajax({
 			type: 'POST',
 			url: 'session/' + id,
@@ -48,6 +49,23 @@ WardrobeMenuController = {
 	close: function(){
 		$("#wardrobemenu").removeClass("show")
 	},
+	flushWardrobe: function(){
+		$.ajax({
+			type: 'GET',
+			url: 'API/session/flush',
+			success: function(response) {
+				//alert('Se ha cargado el armario con ID '+ response)
+				if (location.href !== "1#wardrobe-create"){
+					location.href = "1";
+				}else{
+					location.reload();
+				}
+			},
+			error: function(){
+				alert('Hubo un error al cargar el identificador');
+			}
+		});
+	}
 }
 /*
 App.Help = {
@@ -88,11 +106,14 @@ App.Navigator = {
 		myUrl = location.href;
 		var aux = myUrl.split('#');
 		this.tab=parseInt(aux[0].substring(aux[0].length-1));
+		this.styleNav(this.tab);
 	},
 	goNext: function(){
+		$('.breadcrumbs').fadeIn('slow');
 		location.href = this.tab + 1; 
 	},
 	goBack: function(){
+		$('.breadcrumbs').fadeIn('slow');
 		location.href = this.tab - 1;
 	},
 	buttonConfig: function(){
@@ -104,6 +125,22 @@ App.Navigator = {
 		} else {
 			// Default behavior
 			App.Router.navigate('config', {trigger: true});
+
+		}
+	},
+	styleNav: function(x){
+		lis = $('.breadcrumbs').find('li');
+		for (var i=0; i<lis.length; i++)
+		{
+			lis = $('.breadcrumbs').find('li')
+			if(i == this.tab-1){
+				lis[i].className = "current"
+			}else if (i<this.tab-1){
+				lis[i].className = "available"
+			}else if (i>this.tab-1){
+				lis[i].className = "unavailable"
+			}
+			console.log(lis[i])
 
 		}
 	}
@@ -149,14 +186,16 @@ App.Router =  new (Backbone.Router.extend({
 			});
 			$('#wardrobe-create').addClass('show');
 			// Interrumpimos la animacion con un evento timer
-			setTimeout(function(){$('#wardrobe-create').show();},0);
+			setTimeout(function(){$('#wardrobe-create').show();$('.breadcrumbs').fadeIn('slow');},0);
 			//$('#wardrobe-create').show();
 		});
 	},
 	config: function() {
-		this.navigateToSection('#config');
+		$('.breadcrumbs').fadeOut('slow');
+		this.navigateToSection('#config');	
 	},
 	wardrobe: function() {
+		$('.breadcrumbs').fadeIn('slow');
 		this.navigateToSection('#wardrobe-create');
 	}
 }));
