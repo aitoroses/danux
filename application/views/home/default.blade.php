@@ -138,7 +138,6 @@
 				<a class="close-reveal-modal">&#215;</a>
 			</div>
 			<!-- END POPUP -->
-
 			<!-- WELCOME -->
 			@include('home.config')
 			<!-- HELP NOTICE 

@@ -27,8 +27,11 @@ Class Api_Popup_Controller extends Base_Controller {
                 return View::make('popup.agregar_accesorios_interior')->with('accs', $accs);
                 break;
             case "handle":
+                $id_wardrobe = Session::get('wardrobe_id');
+                $wardrobe = Wardrobe::find($id_wardrobe);
+                $type = $wardrobe->typedoor;
                 // Query del tirador
-                $handles = DB::table('l_biblioteca_tiradores')->get();
+                $handles = DB::table('l_biblioteca_tiradores')->where_type_door($type)->get();
                 return View::make('popup.cambiar_tirador')->with('handles', $handles);
                 break;
             case "perfil":
