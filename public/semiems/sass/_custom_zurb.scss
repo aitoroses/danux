@@ -1,4 +1,4 @@
-//@include sticky-footer(10px,"footer");
+@include sticky-footer(30px,"#all-footer","#pushfooter","footer");
 
 a {
 	cursor: pointer;
@@ -11,15 +11,16 @@ a {
 body{
 	background: #e1c192 url(../img/wood_pattern_bn.jpg);
 	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	//height:auto !important;
+	//margin-bottom:30px;  
 }
-.vcard{
-		margin-top: 20px;
-		background: white;
-	}
 footer{
-	padding: 10px 0 25px 0;
-	margin-top: 20px;
 	color:#fff;
-	background: #3f3f3f;
-	height:10px;
+	background: #3f3f3f !important;
+	padding:5px;
+	height:30px;
+	//margin-top:30px !important;
+}
+#all-footer{
+	//margin-bottom:30px;  
 }

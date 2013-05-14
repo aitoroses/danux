@@ -8,8 +8,6 @@
 	  <div class="small-10 large-9 small-centered large-centered columns">
 	  	<h1>Configuración inicial del armario</h1>
 	  </div>
-	</div>
-	<div class="row">
 		@include('home.errors')
 		{{ Form::open('API/budget', 'POST', array('id' => 'frm', 'name' => 'frm')) }}
 		<div class="small-12 large-12 columns">	
