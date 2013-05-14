@@ -1,25 +1,66 @@
-//@include sticky-footer(10px,"footer");
+
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
 
 a {
 	cursor: pointer;
 }
 .row{
-	background: white;
 	@include box-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
-
+	background: white;
 }
 body{
-	background: #e1c192 url(../img/wood_pattern_bn.jpg);
 	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	height: 100%;
+}
+#outer{
+	height: 100%;
+	background: #e1c192 url(../img/wood_pattern_bn.jpg);
+	overflow: scroll;
+}
+#inner {
+	height: auto;
+	min-height: 92%;
 }
 .vcard{
 		margin-top: 20px;
 		background: white;
 	}
-footer{
+#footer{
 	padding: 10px 0 25px 0;
-	margin-top: 20px;
 	color:#fff;
 	background: #3f3f3f;
 	height:10px;
+
+}
+
+#errors {
+	display: none;
+	position: fixed;
+	background: white;
+	z-index: 1;
+	border: 1px dashed #333;
+	padding: 15px 0 0px 30px;
+	box-shadow: 8px 9px 10px -5px rgba(0,0,0,0.4);
+	margin-left: 10px;
+	color: #A30000;
+	font-weight: 300;
+}
+
+#wardrobe-create {
+	height: auto;
+	min-height: 84%;
+	margin-bottom: 20px;
+}
+#config {
+	margin-bottom: 20px;
+	display: none;
+
 }

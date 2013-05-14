@@ -1,5 +1,6 @@
 //Document ready
 $(document).ready(function(){
+	App.errors();
 	$('a.next-tab').on('click',function(e){
 		//e.preventDefault();     
         if($("body").data('wardrobe')==""){
@@ -10,7 +11,6 @@ $(document).ready(function(){
         	WardrobeModel.rebuildData();
         	WardrobeModel.save();
         }
-        
 	});
 
 	App.History.saveWardrobe();
