@@ -114,7 +114,7 @@ class Module extends Eloquent
         $configuration = json_decode($this->configuration);
         // is stdClass Object
         if($configuration->type->parentness == "parent"){
-            $child_ids = json_decode($configuration->type->relationships);
+            $child_ids = $configuration->type->relationships;
             $childs_array = null;          
             if(sizeof($child_ids) > 0){
                 $childs = Module::where_in('id', $child_ids)->get();
