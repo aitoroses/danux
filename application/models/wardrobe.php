@@ -67,21 +67,22 @@ class Wardrobe extends Eloquent
 
         return $module_model;
     }
-
-    public function rebuild_for_client() {
-        $modules = $this->modules()->get();
-        $doors = $this->doors()->get();
-        $accext = $this->accexts()->get();
+    // STATIC METHOD FOR BUILDING THE WARDROBE
+    public static function rebuild_for_client($id) {
+        $wardrobe = Wardrobe::find($id);
+        $modules = $wardrobe->modules()->get();
+        $doors = $wardrobe->doors()->get();
+        $accext = $wardrobe->accexts()->get();
         // Arrays
         // modules
         $modules_array = array_map(function($object){
             // Rebuild the childs
             $object->rebuild_submodules();
-            // Rebuild the module itself
-            $object_array = $object->rebuild_module();
-            return $object_array;
+            // Rebuild the parent
+            $rebuilt = $object->rebuild_module();
+            //return $rebuilt->new_conf('parent');
+            return $rebuilt;
         }, $modules);
-        // Doors
         $doors_array = array_map(function($object){
             // Obtenemos los materiales de cada puerta
             $materials = $object->materials()->get();
@@ -99,13 +100,11 @@ class Wardrobe extends Eloquent
         }, $doors);
 
         $json = array(
-            'data' => $this->to_array(),
+            'data' => $wardrobe->to_array(),
             'modules' => $modules_array,
             'doors' => $doors_array,
             'accext' => $accext,
-
-
         );
+        return $json;
     }
-
 }

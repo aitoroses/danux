@@ -87,42 +87,7 @@ class Api_Controller extends Base_Controller {
 	public function get_json($id){
 
 		// OBTENER EL MODEL COMPLETO
-
-		$wardrobe = Wardrobe::find($id);
-		$modules = $wardrobe->modules()->get();
-		$doors = $wardrobe->doors()->get();
-		$accext = $wardrobe->accexts()->get();
-		// Arrays
-		// modules
-		$modules_array = array_map(function($object){
-			// Rebuild the childs
-			$object->rebuild_submodules();
-			// Rebuild the module itself
-			$object_array = $object->rebuild_module();
-			return $object_array;
-		}, $modules);
-		$doors_array = array_map(function($object){
-			// Obtenemos los materiales de cada puerta
-			$materials = $object->materials()->get();
-			// Obtenemos los identificadores de las puertas
-			$materialdoor = DB::table('l_door_material_relation_table')->where_door_id($object->id)->get();
-			//componemos el array de salida
-			$materials_ids = array_map(function($material){
-				return intval($material->doormaterial_id);
-			}, $materialdoor);
-
-			$result = $object->to_array();
-			$result["material"] = $materials_ids;
-			
-			return $result;
-		}, $doors);
-
-		$json = array(
-			'data' => $wardrobe->to_array(),
-			'modules' => $modules_array,
-			'doors' => $doors_array,
-			'accext' => $accext,
-		);
+		$json = Wardrobe::rebuild_for_client($id);
 		return Response::json($json);
 	}
 	public function put_json($id){

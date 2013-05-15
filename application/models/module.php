@@ -4,9 +4,27 @@ class Module extends Eloquent
 {
 	public static $table = 'l_modules_table';
 
+    // Relationships
+
     public function accints()
     {
         return $this->has_many_and_belongs_to('accint', 'l_accint_module_relation_table');
+    }
+
+    // Static Methods
+
+    public static function create_child() {
+    
+    }
+
+    // Non-Static methods
+
+    public function getConf(){
+        // Get configuration
+        $conf = $this->configuration;
+        // Build the json object
+        $conf = (array) json_decode($conf);
+        return $conf;
     }
 
     public function get_childs() {
@@ -23,6 +41,7 @@ class Module extends Eloquent
     	// Return array of childs, else return null object (parent case)
     	return $childs;
     }
+
     public function get_parent() {
     	$conf = $this->getConf();
     	// Check type of parentness
@@ -35,6 +54,7 @@ class Module extends Eloquent
     	}
     	return $parent;
     }
+
     public function set_childs($childs_array) {
         if ($childs_array != null){
         	// Obtain childs id
@@ -51,6 +71,7 @@ class Module extends Eloquent
         //return print_r($this);
     	$this->save();
     }
+
     public function set_parent($parent) {
     	// Obtain parent id
     	$parent_id = $parent->id;
@@ -93,30 +114,34 @@ class Module extends Eloquent
         $configuration = json_decode($this->configuration);
         // is stdClass Object
         if($configuration->type->parentness == "parent"){
-            $child_ids = $configuration->type->relationships;
-            if(sizeof($child_ids)> 0){
+            $child_ids = json_decode($configuration->type->relationships);
+            $childs_array = null;          
+            if(sizeof($child_ids) > 0){
                 $childs = Module::where_in('id', $child_ids)->get();
                 // Rebuild the childs
                 $childs_array = array_map(function($child){
-                    return $child->rebuild_module();
+                    $child->rebuild_module();
+                    // New configuration
+                    $conf = json_decode($child->configuration);
+                    $conf->type->parentness = 'child';
+                    $conf->type->relationships = json_decode($conf->type->relationships);
+                    $child->configuration = $conf;
+                    return $child->to_array();
                 },$childs);
             } else {
+                // Parent has no childs
                 $childs_array = [];
             }
-            // return
-           $relationships = $childs_array;
-            // this are a stdCass we need array
-            $type = (array) $configuration->type;
-            $type["relationships"] = $relationships;
-            $configuration->type = $type;
-            $this->configuration = (array) $configuration;
-            return true;
+            // $childs_array contains the relationships for client
+            $this->new_conf('parent', $childs_array);
+            return;
         } else {
             // Is child
+            return;
         }
-        return false;
     }
     public function rebuild_module(){
+
         // Converts a module object to a client
         $module_array = $this->to_array();
         //Accesorios
@@ -131,13 +156,12 @@ class Module extends Eloquent
         return $module_array;
     }
 
-    public function getConf(){
-		// Get configuration
-		$conf = $this->configuration;
-		// Build the json object
-		$conf = (array) json_decode($conf);
-		return $conf;
-	}
+    public function new_conf($parentness, $modules_as_array){
+        $conf = json_decode($this->configuration);
+        $conf->type->parentness = $parentness;
+        $conf->type->relationships = $modules_as_array;
+        $this->configuration = $conf;
+    }
 
 }
 
