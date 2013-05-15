@@ -1,3 +1,4 @@
+
 //###################################################################  PINTA PUERTAS
 function pintapuertas(){
   //Limpiamos las Layers, stage y el container
@@ -58,12 +59,12 @@ function pintapuertas(){
         var i=y;
         var j=x;
         // Anchura de perfil dependiendo del tipo de perfil
-        if (wardrobe.data.tperfil == 1){
-          var stroke_per=1
+        if (wardrobe.data.tperfil == 2){
+          var stroke_per=4
         }else if (wardrobe.data.tperfil == 3){
-          var stroke_per=0
+          var stroke_per=1
         }else {
-          var stroke_per=3
+          var stroke_per=2
         } 
         var puerta = new Kinetic.Rect({
           x: xcont,
@@ -113,6 +114,7 @@ function pintapuertas(){
         puerta.on('click', function(evt) {
           var shape = evt.targetNode;
           var aux=shape.getName();
+
           var idx = materialselect.indexOf(aux); // Find the index
           if(idx!=-1) {
             materialselect.splice(idx, 1);
@@ -121,30 +123,37 @@ function pintapuertas(){
           } // Remove it if really found!
           var shape = evt.targetNode;
           var stroke = this.getStroke();
+          canvasMessage.pinta_notifications();
           switch (stroke){
             case "red":
               if (colortemp=='black'){
                 this.setStroke('orange')
-                this.moveToTop();                  
+                this.moveToTop();
+                stagep.draw();
+              }else if (colortemp=='red'){
+                this.setStroke('orange')
+                this.moveToTop();
+                stagep.draw();
               }else{
                 this.setStroke('red')
                 colortemp ='black';
                 this.moveToBottom();
+                stagep.draw();
               }
               break;
             case "orange":
-              this.setStroke('red')
-              colortemp ='black';
-              this.moveToTop();
+              if (colortemp=='black'){
+                this.setStroke('red')
+                this.moveToTop();
+                stagep.draw();                
+              }
               break;
           }
-
-          stagep.draw();
         });
 
         puerta.on('mouseout', function(evt) {
           var shape = evt.targetNode;
-          var stroke = this.getStroke();
+          var stroke = shape.getStroke();
           switch (stroke){
             case "red":
               this.setStroke(colortemp);
@@ -154,10 +163,10 @@ function pintapuertas(){
               }else{
                 this.moveToBottom();
               }
-
               break;
           }
           stagep.draw();
+          layertext.draw();
         });
 
         puerta.on('mouseover', function(evt) {
@@ -177,9 +186,10 @@ function pintapuertas(){
 
   stagep.add(layerpi);
   stagep.add(layerp);
-  stagep.draw();
+/*  stagep.draw();
   layerpi.draw();
   layerp.draw();
+  layertext.draw();*/
 
   var shapes = stagep.get('.image');
   // each transition to all nodes in the array
@@ -299,20 +309,18 @@ function pintamoduloNormal(x,y,z){
       });
 
       mod.on('mouseout', function(evt) {
-      var shape = evt.targetNode;
-      var stroke = this.getStroke();
-      switch (stroke){
-      case "black":
-      this.setStroke('orange')
-      break;
-      case "orange":
-      this.setStroke('black')
-      break;
-
-
-      }
-      this.moveToTop();
-      stage.draw();
+        var shape = evt.targetNode;
+        var stroke = this.getStroke();
+        switch (stroke){
+          case "black":
+            this.setStroke('orange')
+            break;
+          case "orange":
+            this.setStroke('black')
+            break;
+        }
+        this.moveToTop();
+        stage.draw();
       });
       mod.on('mouseover', function(evt) {
         var shape = evt.targetNode;
@@ -385,45 +393,128 @@ function pintamoduloNormal(x,y,z){
 
 //###################################################################  PINTA MARCO 
 function pintamarco(){
-layerm=new Kinetic.Layer();
-wardrobe = WardrobeModel.getWardrobe();
-anchop= wardrobe.data.width*(666.8/4167);
-altop=wardrobe.data.height*(300/2500);
-var fond = new Kinetic.Rect({
-  x: 5,
-  y: 5,
-  width: anchop-10,
-  height: altop-10,
-  stroke: 'black',
-  fill: 'white',
-  strokeWidth:0
-});
-if (wardrobe.data.marco != 0){
-  var imageObj33 = new Image();
-  imageObj33.onload = function() {
-  var marc = new Kinetic.Image({
-      x: 0,
-      y: 0,
-      image: imageObj33,
-      width: anchop,
-      height: altop,
-      name:'image2'
-    });
-  layerm.add(marc);
-  layerm.add(fond);
-  stagep.add(layerm);
-  stagep.draw();
-  layerm.draw();
-  layerm.moveToBottom();
-  }
-  var id = wardrobe.data.marco;     
-  var srcc = $.ajax({
-type: "GET",
-    url: "content/materialsource/"+id,
-    async: false,
-    success: function(data){
-      imageObj33.src = data;
-    }
+  layerm=new Kinetic.Layer();
+  wardrobe = WardrobeModel.getWardrobe();
+  anchop= wardrobe.data.width*(666.8/4167);
+  altop=wardrobe.data.height*(300/2500);
+  var fond = new Kinetic.Rect({
+    x: 5,
+    y: 5,
+    width: anchop-10,
+    height: altop-10,
+    stroke: 'black',
+    fill: 'white',
+    strokeWidth:0
   });
-}
+  if (wardrobe.data.marco != 0){
+    var imageObj33 = new Image();
+    imageObj33.onload = function() {
+    var marc = new Kinetic.Image({
+        x: 0,
+        y: 0,
+        image: imageObj33,
+        width: anchop,
+        height: altop,
+        name:'image2'
+      });
+    layerm.add(marc);
+    layerm.add(fond);
+    stagep.add(layerm);
+    stagep.draw();
+    layerm.draw();
+    layerm.moveToBottom();
+    }
+    var id = wardrobe.data.marco;     
+    var srcc = $.ajax({
+  type: "GET",
+      url: "content/materialsource/"+id,
+      async: false,
+      success: function(data){
+        imageObj33.src = data;
+      }
+    });
+  }
 };
+
+canvasMessage = new Object({
+  message: new Kinetic.Text(),
+  initialize: function(){
+
+  },
+  pinta_notifications: function(){
+    layertext.destroy();
+    layertext = new Kinetic.Layer();
+
+    this.hline = new Kinetic.Line({
+      points: [0, 0, 0, 0],
+      stroke: "black"
+    });
+    layertext.add(this.hline);
+    this.vline = new Kinetic.Line({
+      points: [0, 0, 0, 0],
+      stroke: "black"
+    });
+    layertext.add(this.vline);
+
+    
+    nmod = wardrobe.doors.length;
+    for(x=0;x<materialselect.length;x++){ //Bucle por puerta
+      var ele = stagep.get('.' + materialselect[x])
+      this.createMessage('add_X',ele[0].getX(),ele[0].getY(),ele[0].getWidth(),ele[0].getHeight())
+      layertext.draw();
+    }
+    stagep.add(layertext);
+    layertext.moveDown();
+    stagep.draw();
+  },
+  createMessage: function(type_message,x,y,width,height){
+    if(type_message == 'add_door'){
+      /*this.message = new Kinetic.Text({
+        x: x,
+        y: y-y/2,
+        text: 'Modulo \n Seleccionado',
+        fontSize: 16,
+        fontFamily: 'Calibri',
+        fill: 'black',
+        align: 'center'
+      });*/
+      hline = new Kinetic.Line({
+        points: [x+20,y+height/2,x+width-20,y+height/2],
+        stroke: "black",
+        strokeWidth:8 
+      }); 
+      layertext.add(hline);
+      vline = new Kinetic.Line({
+        points: [x+width/2,y+height/2+width/2-20,x+width/2,y+height/2-width/2+20],
+        stroke: "black",
+        strokeWidth:8  
+      });
+      layertext.add(vline);
+    }else if(type_message == 'add_X'){
+      hline = new Kinetic.Line({
+        points: [x+18,y+height/2+width/2-18,x+width-18,y+height/2-width/2+18],
+        stroke: "black",
+        strokeWidth:14 
+      }); 
+      layertext.add(hline);
+      vline = new Kinetic.Line({
+        points: [x+width/2+width/2-18,y+height/2+width/2-18,x+width/2-width/2+18,y+height/2-width/2+18],
+        stroke: "black",
+        strokeWidth:14 
+      });
+      layertext.add(vline);
+      hline1 = new Kinetic.Line({
+        points: [x+20,y+height/2+width/2-20,x+width-20,y+height/2-width/2+20],
+        stroke: "white",
+        strokeWidth:8 
+      }); 
+      layertext.add(hline1);
+      vline1 = new Kinetic.Line({
+        points: [x+width/2+width/2-20,y+height/2+width/2-20,x+width/2-width/2+20,y+height/2-width/2+20],
+        stroke: "white",
+        strokeWidth:8  
+      });
+      layertext.add(vline1);
+    }
+  }
+})
