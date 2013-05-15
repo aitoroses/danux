@@ -67,7 +67,8 @@ Route::get('/content/door', array('uses' => 'content@door'));
 Route::get('/content/materialsource/(:any)', array('uses' => 'content@materialsource'));
 Route::get('/content/materials/(:any)', array('uses' => 'content@materials'));
 
-
+//Debuggin routes
+Route::get('/debugger/module', array('uses' => 'debugger@module_save'));
 
 
 /*

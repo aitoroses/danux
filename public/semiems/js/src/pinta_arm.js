@@ -396,7 +396,7 @@ var fond = new Kinetic.Rect({
   height: altop-10,
   stroke: 'black',
   fill: 'white',
-  strokeWidth:0
+  strokeWidth:1
 });
 if (wardrobe.data.marco != 0){
   var imageObj33 = new Image();

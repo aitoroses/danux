@@ -3,9 +3,15 @@
 @section('tab')
 {{ HTML::script('semiems/js/src/tabs/tab5.js') }}
 
+<style type="text/css">
+	canvas {
+		border: ;
+	}
+</style>
+
 <div id="paso-6" class="ui-tabs-panel">
 	
-	<div class="row">
+	<div class="row shadow bg">
 		<div class="columns small-12 large-7">
 			<h1>Configure el enjambado</h1>
 			<br>
@@ -19,7 +25,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row shadow bg">
 		<div class="small-12 large-6 large-offset-6 columns">
 			<br>
 			<br>

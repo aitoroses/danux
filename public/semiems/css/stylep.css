@@ -5518,42 +5518,46 @@ html {
 a {
   cursor: pointer; }
 
-/* line 14, ../sass/_custom_zurb.scss */
-.row {
+/* line 15, ../sass/_custom_zurb.scss */
+.shadow {
+  background: white;
   -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5); }
+
+/* line 19, ../sass/_custom_zurb.scss */
+.bg {
   background: white; }
 
-/* line 18, ../sass/_custom_zurb.scss */
+/* line 22, ../sass/_custom_zurb.scss */
 body {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   height: 100%; }
 
-/* line 22, ../sass/_custom_zurb.scss */
+/* line 26, ../sass/_custom_zurb.scss */
 #outer {
   height: 100%;
   background: #e1c192 url(../img/wood_pattern_bn.jpg);
   overflow: scroll; }
 
-/* line 27, ../sass/_custom_zurb.scss */
+/* line 31, ../sass/_custom_zurb.scss */
 #inner {
   height: auto;
   min-height: 92%; }
 
-/* line 31, ../sass/_custom_zurb.scss */
+/* line 35, ../sass/_custom_zurb.scss */
 .vcard {
   margin-top: 20px;
   background: white; }
 
-/* line 35, ../sass/_custom_zurb.scss */
+/* line 39, ../sass/_custom_zurb.scss */
 #footer {
   padding: 10px 0 25px 0;
   color: #fff;
   background: #3f3f3f;
   height: 10px; }
 
-/* line 44, ../sass/_custom_zurb.scss */
+/* line 48, ../sass/_custom_zurb.scss */
 #errors {
   display: none;
   position: fixed;
@@ -5566,13 +5570,13 @@ body {
   color: #A30000;
   font-weight: 300; }
 
-/* line 57, ../sass/_custom_zurb.scss */
+/* line 61, ../sass/_custom_zurb.scss */
 #wardrobe-create {
   height: auto;
   min-height: 84%;
   margin-bottom: 20px; }
 
-/* line 62, ../sass/_custom_zurb.scss */
+/* line 66, ../sass/_custom_zurb.scss */
 #config {
   margin-bottom: 20px;
   display: none; }

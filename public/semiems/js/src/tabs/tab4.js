@@ -64,6 +64,7 @@ $(document).ready(function(){
 		pintapuertas();
     Tab4Controller.pintarPerfil();
     Tab4Controller.pintarTirador();
+    App.validate_controls();
 	});
 	$(document).bind('error',function(){
 		$('#containerp').html('No se ha cargado el armario');
@@ -179,7 +180,20 @@ Tab4Controller = {
   }
 }
 
+// Verificacion de controles
 
+App.validate_controls = function() {
+  // tipo de perfil
+  var type = parseInt(WardrobeModel.getWardrobe().data.tperfil);
+  // Si el perfil es liso, no se puede seleccionar estructura de puerta
+  var $btn = $('#btn-estructura');
+  if(type == 3) {
+    $btn.addClass('disabled alert')
+  } else {
+    $btn.removeClass('disabled alert');
+  }
+
+}
 
 
 

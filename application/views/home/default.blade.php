@@ -114,7 +114,7 @@
 					</section>
 				</nav>
 			</div>
-			<div class="row" style="padding-top:10px">
+			<div class="row shadow bg" style="padding-top:10px">
 				<div class="small-12 large-12 columns">
 					<ul class="breadcrumbs">
 					  <li data-tab="1" class="current"><a>Configuracion inicial</a></li>

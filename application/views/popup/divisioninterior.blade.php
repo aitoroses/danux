@@ -5,9 +5,16 @@
     <p>El modulo elegido tiene {{ $anchuratemp }} mm,distancia a la que colocar la division:</p>
     <div id="contdiv"></div>
     <div  id="divinput" style="display:none;">
-        <input id="txt_input" name="distancia_doble" type=text style=' width: 29px; display: hidden;' onkeyup ='division.onMouseOverFixed(this)'></input> mm
+        <div class="row collapse" style="width: 85px;">
+          <div class="large-7 columns">
+            <input id="txt_input" name="distancia_doble" type=text style=' display: hidden;' onkeyup ='division.onMouseOverFixed(this)'></input>
+          </div>
+          <div class="large-5 columns">
+            <span class="postfix">mm</span>
+          </div>
+        </div>
     </div>
-    <input value="Guardar" class="button" type='submit' onClick="Tab2Controller.cambia_modulo_doble(document.getElementById('txt_input').value)"/>
+    <a style="position:relative; top: 20px;" class="button" onClick="Tab2Controller.cambia_modulo_doble(document.getElementById('txt_input').value)">Guardar</a>
 </div>  
 
 <script>

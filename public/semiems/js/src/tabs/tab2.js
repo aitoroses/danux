@@ -52,6 +52,43 @@ $(document).ready(function(){
 
 });
 Tab2Controller = {
+	module_factory: function(parent, width){
+		var module = {
+			configuration: {
+				type: {
+					parentness: 'child', 
+					relationships: []
+				},
+			},
+			accint:[],
+			ddouble: "0", 
+			double:"0", 
+			height: "1234", 
+			ref1: "0", 
+			ref2: "0", 
+			width: width
+		};
+
+		if (parent.configuration != null) {
+			var relationships = parent.configuration.type.relationships;
+			relationships.push(module);
+			parent_configuration = {
+				type: {
+					parentness: 'parent',
+					relationships: relationships
+				}
+			}
+		} else {
+			parent_configuration = {
+				type: {
+					parentness: 'parent',
+					relationships: [module]
+				}
+			}
+		}
+		
+		parent.configuration = parent_configuration;
+	},
 	cambia_modulo_doble: function(dist){
 		$(document).trigger('stack');
 		moduleselect_temp=moduleselect.substring(1,2);

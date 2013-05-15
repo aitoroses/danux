@@ -5,12 +5,12 @@
 
 
 <div id="paso-4">
-	<div class="row">
+	<div class="row shadow bg">
 	  <div class="small-10 large-9 small-centered large-centered columns">
 	  	<h1>Configuracion de las puertas</h1>
 	  </div>
 	</div>
-	<div class="row">
+	<div class="row shadow bg">
 		<div class="small-12 large-10 small-centered large-centered columns">
 			<h3>En 3 pasos</h3>
 			<br>
@@ -44,7 +44,7 @@
 						<div id="containerp"></div>
 						<br>
 						<div id="sel2">
-							<a class="button" onClick="popup.openPopup();popup.fetch({name: 'distribucionPuerta'});">Estructura de las puertas</a>
+							<a id="btn-estructura" class="button disabled alert" onClick="if(!$(this).hasClass('disabled')){popup.openPopup();popup.fetch({name: 'distribucionPuerta'});}">Estructura de las puertas</a>
 							<a class="button" onClick="popup.openPopup();popup.fetch({name: 'materialesPuerta'});">Elige el tipo de material</a> 
 						</div>
 						<!--- <div id="acabado_perfil">No hay datos para saberlo. (Añada mas materiales)</div> -->
@@ -63,7 +63,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row shadow bg">
 		<div class="small-12 large-6 large-offset-6 columns">
 			<br>
 			<br>
