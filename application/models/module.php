@@ -10,20 +10,21 @@ class Module extends Eloquent
     }
 
     public function get_childs() {
-    	$conf = getConf();
+    	$conf = $this->getConf();
+        return;
     	// Check type of parentness
     	if($conf["type"]["parentness"] == 'child') {
     		// Is child, return NULL
     		return null;
     	} else {
     		// is parent, return childs array
-    		$childs = Module::where_in('id', $conf["type"]["relationships"]);
+    		$childs = Module::where_in('id', $conf["type"]["relationships"])->get();
     	}
     	// Return array of childs, else return null object (parent case)
     	return $childs;
     }
     public function get_parent() {
-    	$conf = getConf();
+    	$conf = $this->getConf();
     	// Check type of parentness
     	if($conf["type"]["parentness"] == 'child') {
     		// Is child, return parent
@@ -62,13 +63,25 @@ class Module extends Eloquent
 
     public function save_childs($childs, $wardrobe){
         $child_ids = [];
+        // Refreshing the childs
+        // delete actual childs
+        $childs_to_delete = $this->get_childs();
+        
+        if($childs_to_delete != NULL) {
+           foreach ($childs_to_delete as $child) {
+                $child->delete();
+            } 
+        }
+        // Insert new childs
         foreach ($childs as $child) {
+            // Create a child in the DB
+            $child = Module::insert($child);
             // Save the child
-            $child_module = $wardrobe->save_module_and_accesories($child);
+            //$child_module = $wardrobe->save_module_and_accesories($child);
             // Configure the child
-            $child_module->set_parent($this);
+            //$child_module->set_parent($this);
             // Return the id
-            $id = $child;
+            $id = $child->id;
             $child_ids[] = $id;
         }
     	// Set this parent
@@ -80,7 +93,7 @@ class Module extends Eloquent
         $configuration = json_decode($this->configuration);
         // is stdClass Object
         if($configuration->type->parentness == "parent"){
-            $child_ids = (array) json_decode($configuration->type->relationships);
+            $child_ids = $configuration->type->relationships;
             if(sizeof($child_ids)> 0){
                 $childs = Module::where_in('id', $child_ids)->get();
                 // Rebuild the childs
@@ -118,11 +131,11 @@ class Module extends Eloquent
         return $module_array;
     }
 
-    private function getConf(){
+    public function getConf(){
 		// Get configuration
 		$conf = $this->configuration;
 		// Build the json object
-		$conf = json_decode($conf);
+		$conf = (array) json_decode($conf);
 		return $conf;
 	}
 

@@ -40,29 +40,29 @@ class Wardrobe extends Eloquent
         $module["configuration"] = json_encode($module["configuration"]);
         $module_model = null;
         // Save the accesories for the module
-        if(isset($module["accint"])){
-            // si existe el array 
-            $accs_int = $module["accint"];
-            //extraigo el array
-            unset($module["accint"]);
-            //actualizo modelo          
-            Module::update($module["id"], $module);
-            //Guardado de materiales
-            $module_model = Module::find($module["id"]); 
-            // Borro lo que hay por seguridad
-            // sino 'sync' hace cosas raras cuando guardas un ID que ya esta en la BD
-            // Asi funciona bien
-            $module_model->accints()->delete();
-            $module_model->accints()->sync($accs_int);
-        }else{
-            Module::update($module["id"], $module);
-            //si no estan definidos los accesorios los borro de la base de datos
-            // esto soluciona el problema de que quites todos los accesorios y guardes
-            // asi todo OK
-            $module_model = Module::find($module["id"]); 
-            $module_model->accints()->delete();
-
-
+        if($module != null){
+            if(isset($module["accint"])){
+                // si existe el array 
+                $accs_int = $module["accint"];
+                //extraigo el array
+                unset($module["accint"]);
+                //actualizo modelo          
+                Module::update($module["id"], $module);
+                //Guardado de materiales
+                $module_model = Module::find($module["id"]); 
+                // Borro lo que hay por seguridad
+                // sino 'sync' hace cosas raras cuando guardas un ID que ya esta en la BD
+                // Asi funciona bien
+                $module_model->accints()->delete();
+                $module_model->accints()->sync($accs_int);
+            }else{
+                Module::update($module["id"], $module);
+                //si no estan definidos los accesorios los borro de la base de datos
+                // esto soluciona el problema de que quites todos los accesorios y guardes
+                // asi todo OK
+                $module_model = Module::find($module["id"]); 
+                $module_model->accints()->delete();
+            }
         }
 
         return $module_model;
