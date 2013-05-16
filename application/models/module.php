@@ -111,21 +111,18 @@ class Module extends Eloquent
 
     public function rebuild_submodules(){
         // Get the childs and if its parent
-        $configuration = json_decode($this->configuration);
-        // is stdClass Object
-        if($configuration->type->parentness == "parent"){
-            $child_ids = $configuration->type->relationships;
-            $childs_array = null;          
-            if(sizeof($child_ids) > 0){
+        $configuration = object_to_array(json_decode($this->configuration));
+        if($configuration["type"]["parentness"] == "parent"){
+            $child_ids = $configuration["type"]["relationships"];
+            $childs_array = null;
+            if(sizeof($child_ids) > 0){       
                 $childs = Module::where_in('id', $child_ids)->get();
                 // Rebuild the childs
                 $childs_array = array_map(function($child){
                     $child->rebuild_module();
                     // New configuration
-                    $conf = json_decode($child->configuration);
-                    $conf->type->parentness = 'child';
-                    $conf->type->relationships = json_decode($conf->type->relationships);
-                    $child->configuration = $conf;
+                    $conf = object_to_array(json_decode($child->configuration));
+                    $child->new_conf('child', $conf["type"]["relationships"]);
                     return $child->to_array();
                 },$childs);
             } else {
@@ -157,9 +154,9 @@ class Module extends Eloquent
     }
 
     public function new_conf($parentness, $modules_as_array){
-        $conf = json_decode($this->configuration);
-        $conf->type->parentness = $parentness;
-        $conf->type->relationships = $modules_as_array;
+        $conf = object_to_array(json_decode($this->configuration));
+        $conf["type"]["parentness"] = $parentness;
+        $conf["type"]["relationships"] = $modules_as_array;
         $this->configuration = $conf;
     }
 

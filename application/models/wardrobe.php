@@ -34,38 +34,56 @@ class Wardrobe extends Eloquent
 
     public function save_module_and_accesories($module) {
         // We first get the conf
-        $conf = $module->configuration;
+        $conf = $module["configuration"];
         // Now we have to check if there are relationships
-        $relationships = $conf->type->relationships;
+        $relationships = $conf["type"]["relationships"];
         if(sizeof($relationships) > 0){
             // if there are relations
-            // We have to save that modules
-            foreach ($relationships as $child) {
-                //Module::
+            // We have to erase existing child modules
+            $saved_modules = $this->modules()->get();
+            foreach ($saved_modules as $ele) {
+                // Delete actual childs for $ele parent
+                // we get the ids
+                $ids = object_to_array(json_decode($ele->configuration))["type"]["relationships"];
+                //delete the modules
+                /*$array = Module::where_in('id', $ids)->get();
+                foreach ($array as $ele) {
+                    $ele->delete();
+                }*/
             }
-
+            // Now, we have to save that new child modules
+            // we also need the new relations
+            $new_relations = [];
+            foreach ($relationships as $child) {
+                Module::insert($child);
+                $new_relations[] = $child["id"];
+            }
+            var_dump($new_relations);
+            return;
+            // we now use this new relations to link parent-child
+            // parent-child object linking
+            $module["configuration"]["type"]["relationships"] = $new_relations;
         }
-
-        $module->configuration = json_encode($module->configuration);
+        $module["configuration"] = json_encode($module["configuration"]);
         $module_model = null;
         // Save the accesories for the module
         if($module != null){
-            if(isset($module->accint)){
+            if(isset($module["accint"])){
                 // si existe el array 
-                $accs_int = $module->accint;
+                $accs_int = $module["accint"];
                 //extraigo el array
-                unset($module->accint);
+                unset($module["accint"]);
                 //actualizo modelo          
-                Module::update($module->id, (array) $module);
+                Module::update($module["id"], $module);
                 //Guardado de materiales
-                $module_model = Module::find($module->id); 
+                $module_model = Module::find($module["id"]); 
                 // Borro lo que hay por seguridad
                 // sino 'sync' hace cosas raras cuando guardas un ID que ya esta en la BD
                 // Asi funciona bien
                 $module_model->accints()->delete();
                 $module_model->accints()->sync($accs_int);
             }else{
-                Module::update($module->id, $module);
+                Module::update($module["id"], $module);
                 //si no estan definidos los accesorios los borro de la base de datos
                 // esto soluciona el problema de que quites todos los accesorios y guardes
                 // asi todo OK
@@ -89,7 +107,6 @@ class Wardrobe extends Eloquent
             $object->rebuild_submodules();
             // Rebuild the parent
             $rebuilt = $object->rebuild_module();
-            //return $rebuilt->new_conf('parent');
             return $rebuilt;
         }, $modules);
         $doors_array = array_map(function($object){
@@ -118,12 +135,13 @@ class Wardrobe extends Eloquent
     }
     public static function rebuild_from_client($json_wardrobe){
         // Necesitamos descomponer el armario
-        $id = $json_wardrobe->data->id;
+        $wardrobe_array = object_to_array($json_wardrobe);
+        $id = $wardrobe_array["data"]["id"];
         $wardrobe = Wardrobe::find($id);
         // UPDATE DATA
-        Wardrobe::update($id, (array) $json_wardrobe->data);
+        Wardrobe::update($id, $wardrobe_array["data"]);
         // UPDATE MODULES
-        foreach ( (array) $json_wardrobe->modules as $module) {
+        foreach ( $wardrobe_array["modules"] as $module) {
             // Save the parent module
             $parent_module = $wardrobe->save_module_and_accesories($module);
             // The module is returned, now we save special configuration
@@ -179,5 +197,4 @@ class Wardrobe extends Eloquent
         }*/
     
     }
-
 }
