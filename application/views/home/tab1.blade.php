@@ -4,7 +4,7 @@
 {{ HTML::script('semiems/js/src/tabs/tab1.js') }}
 <div id="errors"></div>
 <div id="paso-1">
-	<div class="row">
+	<div class="row shadow bg">
 	  <div class="small-10 large-9 small-centered large-centered columns">
 	  	<h1>Configuración inicial del armario</h1>
 	  </div>
@@ -17,7 +17,7 @@
 		 	</fieldset>
 		</div>
 		 	<div class="medidas">
-		 		<!--<div class="row">-->
+		 		<!--<div class="row shadow bg">-->
 		 			<div class="small-12 large-6 columns">
 		 				<img style="width: 100%" class="closet" src="semiems/img/cubo.svg">
 		 			</div>

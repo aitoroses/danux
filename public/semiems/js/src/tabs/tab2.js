@@ -52,11 +52,55 @@ $(document).ready(function(){
 
 });
 Tab2Controller = {
+	module_factory: function(parent, width){
+		var module = {
+			configuration: {
+				type: {
+					parentness: 'child', 
+					relationships: []
+				},
+			},
+			accint:[],
+			ddouble: "0", 
+			double:"0", 
+			height: parent.height, 
+			ref1: "0", 
+			ref2: "0", 
+			width: width
+		};
+
+		if (parent.configuration != null) {
+			var relationships = parent.configuration.type.relationships;
+			relationships.push(module);
+			parent_configuration = {
+				type: {
+					parentness: 'parent',
+					relationships: relationships
+				}
+			}
+		} else {
+			parent_configuration = {
+				type: {
+					parentness: 'parent',
+					relationships: [module]
+				}
+			}
+		}
+		parent.configuration = parent_configuration;
+	},
+	generar_submodulos_division: function(div_dist, parent){
+		var div1 = div_dist;
+		var div2 = parent.width - div1;
+		this.module_factory(parent, div1);
+		this.module_factory(parent, div2);
+	},
 	cambia_modulo_doble: function(dist){
 		$(document).trigger('stack');
 		moduleselect_temp=moduleselect.substring(1,2);
-		wardrobe.modules[moduleselect_temp].double=1;
-		wardrobe.modules[moduleselect_temp].ddouble=dist;
+		module = wardrobe.modules[moduleselect_temp]
+		module.double=1;
+		module.ddouble=dist;
+		this.generar_submodulos_division(dist, module) // Generar submodulos
 		pintamodulos();
 	    popup.closePopup();
 
@@ -64,9 +108,11 @@ Tab2Controller = {
 	cambia_modulo_doble_simetrico: function(){
 		$(document).trigger('stack');
 		moduleselect_temp=moduleselect.substring(1,2);
-		wardrobe.modules[moduleselect_temp].double=1;
-		dist=wardrobe.modules[moduleselect_temp].width;
-		wardrobe.modules[moduleselect_temp].ddouble=dist/2;
+		module = wardrobe.modules[moduleselect_temp]
+		module.double=1;
+		dist=module.width;
+		double.ddouble=dist/2;
+		this.generar_submodulos_division(dist/2, module) // Generar submodulos
 		pintamodulos();
 	    popup.closePopup();
 	},

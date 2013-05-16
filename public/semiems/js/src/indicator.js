@@ -80,7 +80,7 @@ division = new Object({
     context.fillText(message, x+15, y);
     console.log(x+15)
     console.log(y)*/
-    $("#divinput").css({'top':y + 87,'left':x+270+this.borde,'position':'absolute','width':'19px'}).fadeIn('slow');
+    $("#divinput").css({'bottom':y - 170,'left':x+10+this.borde,'position':'absolute'}).fadeIn('slow');
     document.getElementById('txt_input').value = message;
   },
   //dibuja el indicador o lo actualiza (3 lineas)
@@ -92,14 +92,14 @@ division = new Object({
     this.hline.getPoints()[1].y = y;  
 
     this.vline1.getPoints()[0].x = x0;
-    this.vline1.getPoints()[0].y = y-5;
+    this.vline1.getPoints()[0].y = y-10;
     this.vline1.getPoints()[1].x = x0;
-    this.vline1.getPoints()[1].y = y+5;
+    this.vline1.getPoints()[1].y = y+10;
 
     this.vline2.getPoints()[0].x = x1;
-    this.vline2.getPoints()[0].y = y-5;
+    this.vline2.getPoints()[0].y = y-10;
     this.vline2.getPoints()[1].x = x1;
-    this.vline2.getPoints()[1].y = y+5;
+    this.vline2.getPoints()[1].y = y+10;
     this.indicatorLayer.draw();
   },
   //Esta funcion es llamada a traves del raton 
@@ -112,7 +112,7 @@ division = new Object({
     this.line.getPoints()[1].x = x;
     this.line.getPoints()[1].y = this.background.getHeight();
     this.overLayer.draw();
-    this.write_indication(this.borde,x,this.alto_f+10);
+    this.write_indication(this.borde,x,this.alto_f+20);
     this.writeMessage(this.messageLayer, this.measuresAdjust(x-this.borde) ,(x-this.borde)/2,this.alto_f);
   },
   //Esta funcion es llamada a traves de un input al que se le pasa la medida
@@ -128,7 +128,7 @@ division = new Object({
       this.line.getPoints()[1].x = x;
       this.line.getPoints()[1].y = this.background.getHeight();
       this.overLayer.draw();
-      this.write_indication(this.borde,x,this.alto_f+10); 
+      this.write_indication(this.borde,x,this.alto_f+20); 
       this.writeMessage(this.messageLayer, message ,(x-this.borde)/2,this.alto_f);
    }
   },

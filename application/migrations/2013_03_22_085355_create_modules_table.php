@@ -18,6 +18,8 @@ class Create_Modules_Table {
 			$table->integer('height');
 			$table->integer('ref1');
 			$table->integer('ref2');
+			$table->text('configuration');
+			$table->integer('module_id');
 			$table->timestamps();
 		});
 	}

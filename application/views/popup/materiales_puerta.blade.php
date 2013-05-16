@@ -2,7 +2,7 @@
 	<h1>Seleccione un material para su selección</h1>
   	<div id="sel_material">
 		<div id="sel_parent">
-			<ul class="small-block-grid-2 large-block-grid-5">
+			<ul class="small-block-grid-2 large-block-grid-6">
 				@if($material["all"] == 1)
 				<li><a class='selector button' onClick='Tab5Controller.getDoorMaterials(1)'>Cristales porcelanicos</a></li>
 				<li><a class='selector button' onClick='Tab5Controller.getDoorMaterials(2)'>Gama imaprint</a></li>

@@ -4,12 +4,12 @@
 {{ HTML::script('semiems/js/src/tabs/tab6.js') }}
 
 <div id="paso-7">
-	<div class="row">
+	<div class="row shadow bg">
 	  <div class="small-10 large-11 small-centered large-centered columns">
 	  	<h1>Configura los accesorios de estructura</h1>
 	  </div>
 	</div>
-	<div class="row">
+	<div class="row shadow bg">
 		<div class="small-12 large-10 small-centered large-centered columns">
 
 			<p>Haz click para seleccionar accesorios a la lista:</p>
@@ -19,7 +19,7 @@
 			 <div id="acc_sel"></div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row shadow bg">
 		<div class="small-12 large-6 large-offset-6 columns">
 			<br>
 			<br>

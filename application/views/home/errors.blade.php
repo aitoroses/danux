@@ -1,5 +1,5 @@
 @if($errors->has())
-<ul id="errors">
+<ul>
 	<li>{{ $errors->first('name') }}</li>
 	<li>{{ $errors->first('width') }}</li>
 	<li>{{ $errors->first('height') }}</li>

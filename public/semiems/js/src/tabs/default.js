@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('.breadcrumbs').fadeOut('slow');
+	//$('.breadcrumbs').fadeOut('slow');
 
 	App.Navigator.initialize();
 
@@ -110,7 +110,7 @@ App.Navigator = {
 	},
 	goNext: function(){
 		$('.breadcrumbs').fadeIn('slow');
-		location.href = this.tab + 1; 
+		location.href = this.tab + 1;
 	},
 	goBack: function(){
 		$('.breadcrumbs').fadeIn('slow');
@@ -243,6 +243,14 @@ App.History = $.extend({
 		this.evaluateController();		
 	}
 }, new History());
+
+// Error display
+App.errors = function() {
+	$errors = $('#errors ul li');
+	if($errors.size() > 0) {
+		$errors.parent().parent().show();
+	}
+}
 
 
 

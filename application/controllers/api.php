@@ -41,9 +41,13 @@ class Api_Controller extends Base_Controller {
 			if(isset($object["modules"]))
 			{
 				$modules_array = $object['modules'];
-				$module_objects = array_map(function($module_array){
-					return $model = new Module($module_array);
-				}, $modules_array);
+				$module_objects = [];
+				foreach ($modules_array as $module_array) {
+					$model = new Module($module_array);
+					$model->set_childs(array());
+					$module_objects[]=$model;
+				}
+				
 				foreach ($module_objects as $ele) {
 					$wardrobe->modules()->insert($ele);
 				}
@@ -79,89 +83,37 @@ class Api_Controller extends Base_Controller {
 	public function get_json($id){
 
 		// OBTENER EL MODEL COMPLETO
-
-		$wardrobe = Wardrobe::find($id);
-		$modules = $wardrobe->modules()->get();
-		$doors = $wardrobe->doors()->get();
-		$accext = $wardrobe->accexts()->get();
-		// Arrays
-		// modules
-		$modules_array = array_map(function($object){
-			$object_array = $object->to_array();
-			//Accesorios
-
-			$accints = $object->accints()->get();
-			// Obtenemos los identificadores
-			$accints_ids = array_map(function($accint){
-				return $accint->id;
-			}, $accints);
-			// Meterlos en el Arrayyyy
-			$object_array = $object->to_array();
-			$object_array["accint"] = $accints_ids;
-
-
-			return $object_array;
-		}, $modules);
-		
-		$doors_array = array_map(function($object){
-			// Obtenemos los materiales de cada puerta
-
-			$materials = $object->materials()->get();
-			// Obtenemos los identificadores de las puertas
-			$materialdoor = DB::table('l_door_material_relation_table')->where_door_id($object->id)->get();
-			//componemos el array de salida
-			$materials_ids = array_map(function($material){
-				return intval($material->doormaterial_id);
-			}, $materialdoor);
-
-			$result = $object->to_array();
-			$result["material"] = $materials_ids;
-			
-			return $result;
-		}, $doors);
-
-		$json = array(
-			'data' => $wardrobe->to_array(),
-			'modules' => $modules_array,
-			'doors' => $doors_array,
-			'accext' => $accext,
-
-
-		);
-
+		$json = Wardrobe::rebuild_for_client($id);
 		return Response::json($json);
-
-
 	}
 	public function put_json($id){
 		$wardrobe = Wardrobe::find($id);
-		// UPDATE DATA
+		$wardrobe->rebuild_from_client(Input::get('wardrobe'));
+	}
+		/*// UPDATE DATA
 		Wardrobe::update($id, Input::get('wardrobe')["data"]);
 		// UPDATE MODULES
-		array_map(function($module){
-			//if (Input::has($module["accint"])){
-			if(isset($module["accint"])){
-				// si existe el array 
-				$accs_int = $module["accint"];
-				//extraigo el array
-				unset($module["accint"]);
-				//actualizo modelo			
-				Module::update($module["id"], $module);
-				//Guardado de materiales
-				$module_model = Module::find($module["id"]); 
-				// Borro lo que hay por seguridad
-				// sino 'sync' hace cosas raras cuando guardas un ID que ya esta en la BD
-				// Asi funciona bien
-				$module_model->accints()->delete();
-				$module_model->accints()->sync($accs_int);
-			}else{
-				Module::update($module["id"], $module);
-				//si no estan definidos los accesorios los borro de la base de datos
-				// esto soluciona el problema de que quites todos los accesorios y guardes
-				// asi todo OK
-				$module_model = Module::find($module["id"]); 
-				$module_model->accints()->delete();
+		foreach (Input::get('wardrobe')["modules"] as $module) {
+			// Save the parent module
+			$parent_module = $wardrobe->save_module_and_accesories($module);
+			// The module is returned, now we save special configuration
+			if(isset($module["configuration"]["type"])){
+				// Special configuration
+				if(isset($module["configuration"]["type"]["relationships"])){
+					$child_modules = $module["configuration"]["type"]["relationships"];
+					if(sizeof($child_modules > 0)) {
+						$parent_module->save_childs($child_modules, $wardrobe);
+					}
+				}
+				
+			} else {
+				// Set parent
+				$parent_module->set_childs(null);
 			}
+
+		}
+		array_map(function($module){
+			
 		}, Input::get('wardrobe')["modules"]);
 		// UPDATE DOORS
 		array_map(function($door){
@@ -199,6 +151,6 @@ class Api_Controller extends Base_Controller {
 			$wardrobe_model = Wardrobe::find($id);
 			$wardrobe_model->accexts()->delete();
 		}
-	}
+	}*/
 
 }

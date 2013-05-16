@@ -1,5 +1,16 @@
 <?php
-
+//HELPER FUNCTIONS
+function object_to_array($obj) {
+    if(is_object($obj)) $obj = (array) $obj;
+    if(is_array($obj)) {
+        $new = array();
+        foreach($obj as $key => $val) {
+            $new[$key] = object_to_array($val);
+        }
+    }
+    else $new = $obj;
+    return $new;       
+}
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -66,6 +77,13 @@ Route::get('/content/module/(:any)', array('uses' => 'content@module'));
 Route::get('/content/door', array('uses' => 'content@door'));
 Route::get('/content/materialsource/(:any)', array('uses' => 'content@materialsource'));
 Route::get('/content/materials/(:any)', array('uses' => 'content@materials'));
+
+//Debuggin routes
+Route::get('/debugger/wardrobe', array('uses' => 'debugger@wardrobe'));
+Route::get('/debugger/module', array('uses' => 'debugger@module'));
+Route::get('/debugger/savemodule', array('uses' => 'debugger@savemodule'));
+Route::get('/debugger/save', array('uses' => 'debugger@save'));
+
 
 
 

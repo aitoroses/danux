@@ -10,7 +10,6 @@ $(document).ready(function(){
         	WardrobeModel.rebuildData();
         	WardrobeModel.save();
         }
-        
 	});
 
 	App.History.saveWardrobe();
