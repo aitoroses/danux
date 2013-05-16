@@ -44,19 +44,30 @@ class Wardrobe extends Eloquent
         if(sizeof($relationships) > 0){
             // if there are relations
             // We have to erase existing child modules
-            $saved_modules = $this->modules()->get();
+            /*$saved_modules = $this->modules()->get();
             foreach ($saved_modules as $ele) {
                 // Delete actual childs for $ele parent
                 // we get the ids
                 $ids = object_to_array(json_decode($ele->configuration))["type"]["relationships"];
                 //delete the modules
                 if($ids != array()){
-                    var_dump($ids);
-                    return;
                     $array = Module::where_in('id', $ids)->get();  
                     foreach ($array as $ele) {
                         $ele->delete();
                     }
+                }
+            }*/
+            $mod_ant=Module::find($module["id"]);
+            //get past configuration
+            $conf_ant = object_to_array(json_decode($mod_ant->configuration));
+            if(isset($conf_ant["type"]["relationships"])){
+                $relations = $conf_ant["type"]["relationships"];
+                if(sizeof($relations) > 0){
+                    $array = Module::where_in('id', $relations)->get();  
+                    foreach ($array as $ele) {
+                        $ele->delete();
+                    }
+                    //Ou yeah
                 }
             }
             // Now, we have to save that new child modules
@@ -75,6 +86,22 @@ class Wardrobe extends Eloquent
 
             $module["configuration"]["type"]["relationships"] = $new_relations;
         } else {
+            // delete database childs (Past relationships)
+            // Find and destroy childs in database
+            $mod_ant=Module::find($module["id"]);
+            //get past configuration
+            $conf_ant = object_to_array(json_decode($mod_ant->configuration));
+            if(isset($conf_ant["type"]["relationships"])){
+                $relations = $conf_ant["type"]["relationships"];
+                if(sizeof($relations) > 0){
+                    $array = Module::where_in('id', $relations)->get();  
+                    foreach ($array as $ele) {
+                        $ele->delete();
+                    }
+                    //Ou yeah
+                }
+            }
+              
             $module["configuration"]["type"]["relationships"] = array();
         }
         // Convert to string configuration for saveing

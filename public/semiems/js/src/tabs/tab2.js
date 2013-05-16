@@ -111,7 +111,7 @@ Tab2Controller = {
 		module = wardrobe.modules[moduleselect_temp]
 		module.double=1;
 		dist=module.width;
-		double.ddouble=dist/2;
+		module.ddouble=dist/2;
 		this.generar_submodulos_division(dist/2, module) // Generar submodulos
 		pintamodulos();
 	    popup.closePopup();
@@ -121,6 +121,7 @@ Tab2Controller = {
 		moduleselect_temp=moduleselect.substring(1,2);
 		wardrobe.modules[moduleselect_temp].double=0;
 		wardrobe.modules[moduleselect_temp].ddouble=0;
+		wardrobe.modules[moduleselect_temp].configuration.type.relationships = [];
 		pintamodulos();
 	    popup.closePopup();
 
