@@ -35,7 +35,7 @@ class Wardrobe extends Eloquent
     public function save_module_and_accesories($module) {
         // We first get the conf
         $conf = $module["configuration"];
-        // Now we have to check if there are relationships
+        // Now we have to check if there are relationships (modules)
         $relationships = $conf["type"]["relationships"];
         if(sizeof($relationships) > 0){
             // if there are relations
@@ -46,24 +46,30 @@ class Wardrobe extends Eloquent
                 // we get the ids
                 $ids = object_to_array(json_decode($ele->configuration))["type"]["relationships"];
                 //delete the modules
-                /*$array = Module::where_in('id', $ids)->get();
-                foreach ($array as $ele) {
-                    $ele->delete();
-                }*/
+                if($ids != []){
+                    $array = Module::where_in('id', $ids)->get();  
+                    foreach ($array as $ele) {
+                        $ele->delete();
+                    }
+                }
             }
+
             // Now, we have to save that new child modules
             // we also need the new relations
             $new_relations = [];
             foreach ($relationships as $child) {
-                Module::insert($child);
-                $new_relations[] = $child["id"];
+                $child["configuration"] = json_encode($child["configuration"]);
+                $child_model = Module::create($child);
+                $new_relations[] = $child_model->id;  
             }
-            var_dump($new_relations);
-            return;
+
             // we now use this new relations to link parent-child
-            // parent-child object linking
+            // parent-child object linking ids
+
             $module["configuration"]["type"]["relationships"] = $new_relations;
         }
+        // Convert to string configuration for saveing
+
         $module["configuration"] = json_encode($module["configuration"]);
         $module_model = null;
         // Save the accesories for the module
@@ -160,7 +166,7 @@ class Wardrobe extends Eloquent
             }*/
         }
         // UPDATE DOORS
-        /*array_map(function($door){
+        array_map(function($door){
             if(isset($door->material)){ 
                 //si existen los materiales
                 $materials = $door["material"];
@@ -194,7 +200,7 @@ class Wardrobe extends Eloquent
         }else{
             $wardrobe_model = Wardrobe::find($id);
             $wardrobe_model->accexts()->delete();
-        }*/
-    
+        }
+        return true;
     }
 }

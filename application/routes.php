@@ -82,6 +82,8 @@ Route::get('/content/materials/(:any)', array('uses' => 'content@materials'));
 Route::get('/debugger/wardrobe', array('uses' => 'debugger@wardrobe'));
 Route::get('/debugger/module', array('uses' => 'debugger@module'));
 Route::get('/debugger/savemodule', array('uses' => 'debugger@savemodule'));
+Route::get('/debugger/save', array('uses' => 'debugger@save'));
+
 
 
 
