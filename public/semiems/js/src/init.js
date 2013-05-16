@@ -23,7 +23,6 @@ var	layeri = new Kinetic.Layer();
 var	layerp = new Kinetic.Layer();
 var	layerpi = new Kinetic.Layer();
 var	layerm = new Kinetic.Layer();
-var layertext = new Kinetic.Layer();
 
 var alto="";
 var ancho="";

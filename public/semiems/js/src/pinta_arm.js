@@ -4,6 +4,7 @@ function pintapuertas(){
   //Limpiamos las Layers, stage y el container
   layerp=new Kinetic.Layer();
   layerpi=new Kinetic.Layer();
+  layertext=new Kinetic.Layer();
   stagep.clear;
   document.getElementById("containerp").innerHTML="";	
   // Obtenemos el Wardrobe
@@ -23,10 +24,9 @@ function pintapuertas(){
   //pintamos el marco si tiene
   pintamarco();
   //cambiamos ancho y alto para dejar ver el marco
-  ancho=ancho-10;
-  alto=alto-10;
-  // desde donde empezamos a pintar en eje X
-  var xcont =5;
+  ancho=ancho-20;
+  alto=alto-20;
+  
   nmod = wardrobe.doors.length;
   //Obtencion previa de la infomacion de las puertas del armario =)
   $.ajax({
@@ -38,20 +38,12 @@ function pintapuertas(){
       data = req
     }
   });
-  
+
+  // desde donde empezamos a pintar en eje X
+  var xcont =10;
   for(x=0;x<nmod;x++){ //Bucle por puerta
 
-    var ycont =5;
-/* Optimizado de llamadas
-    var id = wardrobe.doors[x].type;
-    var doors = 0;     
-    $.ajax({
-      type: "GET",
-      url: "content/door/"+id,
-      dataType: "json",
-      async: false,
-      success: function(data){
-        */
+    var ycont =10;
     var doors = data.types[x];
     xx=0; //Bucle para pintar los materiales tiene que inicializarse a 0
     for(y=0;y<doors.length;y++){ //Bucle para el diseño de la puerta
@@ -123,7 +115,7 @@ function pintapuertas(){
           } // Remove it if really found!
           var shape = evt.targetNode;
           var stroke = this.getStroke();
-          canvasMessage.pinta_notifications();
+          canvasMessage.pinta_notifications('add_X',stagep);
           switch (stroke){
             case "red":
               if (colortemp=='black'){
@@ -135,9 +127,9 @@ function pintapuertas(){
                 this.moveToTop();
                 stagep.draw();
               }else{
-                this.setStroke('red')
+                this.setStroke('red');
                 colortemp ='black';
-                this.moveToBottom();
+                this.moveToTop();
                 stagep.draw();
               }
               break;
@@ -157,7 +149,6 @@ function pintapuertas(){
           switch (stroke){
             case "red":
               this.setStroke(colortemp);
-              this.moveToBottom();
               if (colortemp=='orange'){
                 this.moveToTop();                  
               }else{
@@ -215,8 +206,8 @@ function pintamodulos(){
     width: ancho,
     height: alto
   });
-  ancho=ancho-10;
-  alto=alto-10;
+  ancho=ancho-20;
+  alto=alto-20;
   //Dibujamos el interior		
   for(x=0;x<nmod;x++){
     var xcont=5;
@@ -311,6 +302,7 @@ function pintamoduloNormal(x,y,z){
       mod.on('mouseout', function(evt) {
         var shape = evt.targetNode;
         var stroke = this.getStroke();
+        canvasMessage.destroy_layers();
         switch (stroke){
           case "black":
             this.setStroke('orange')
@@ -325,6 +317,7 @@ function pintamoduloNormal(x,y,z){
       mod.on('mouseover', function(evt) {
         var shape = evt.targetNode;
         var stroke = this.getStroke();
+        canvasMessage.pinta_notifications_accesorios('add_+',stage,shape);
         switch (stroke){
           case "black":
             this.setStroke('orange')
@@ -397,11 +390,20 @@ function pintamarco(){
   wardrobe = WardrobeModel.getWardrobe();
   anchop= wardrobe.data.width*(666.8/4167);
   altop=wardrobe.data.height*(300/2500);
+  var borde = new Kinetic.Rect({
+    x: 0,
+    y: 0,
+    width: anchop,
+    height: altop,
+    stroke: 'black',
+    fill: 'transparent',
+    strokeWidth:2
+  });
   var fond = new Kinetic.Rect({
-    x: 5,
-    y: 5,
-    width: anchop-10,
-    height: altop-10,
+    x: 10,
+    y: 10,
+    width: anchop-20,
+    height: altop-20,
     stroke: 'black',
     fill: 'white',
     strokeWidth:0
@@ -415,9 +417,13 @@ function pintamarco(){
         image: imageObj33,
         width: anchop,
         height: altop,
-        name:'image2'
+        name:'image2',
+        stroke:'black',
+        strokeWidth:1
       });
+    
     layerm.add(marc);
+    layerm.add(borde);
     layerm.add(fond);
     stagep.add(layerm);
     stagep.draw();
@@ -438,37 +444,38 @@ function pintamarco(){
 
 canvasMessage = new Object({
   message: new Kinetic.Text(),
+  layertext: new Kinetic.Layer(),
+
   initialize: function(){
 
   },
-  pinta_notifications: function(){
-    layertext.destroy();
-    layertext = new Kinetic.Layer();
-
-    this.hline = new Kinetic.Line({
-      points: [0, 0, 0, 0],
-      stroke: "black"
-    });
-    layertext.add(this.hline);
-    this.vline = new Kinetic.Line({
-      points: [0, 0, 0, 0],
-      stroke: "black"
-    });
-    layertext.add(this.vline);
-
-    
+  destroy_layers: function(){
+    this.layertext.destroy();
+  },
+  pinta_notifications_accesorios: function(type_message,stage,ele){
+    this.layertext.destroy();
+    this.layertext = new Kinetic.Layer();
+    this.createMessage(type_message,ele.getX(),ele.getY(),ele.getWidth(),ele.getHeight())
+    this.layertext.draw();
+    stage.add(this.layertext);
+    this.layertext.moveDown();
+    stage.draw();
+  },
+  pinta_notifications: function(type_message,stage){
+    this.layertext.destroy();
+    this.layertext = new Kinetic.Layer();
     nmod = wardrobe.doors.length;
     for(x=0;x<materialselect.length;x++){ //Bucle por puerta
-      var ele = stagep.get('.' + materialselect[x])
-      this.createMessage('add_X',ele[0].getX(),ele[0].getY(),ele[0].getWidth(),ele[0].getHeight())
-      layertext.draw();
+      var ele = stage.get('.' + materialselect[x])
+      this.createMessage(type_message,ele[0].getX(),ele[0].getY(),ele[0].getWidth(),ele[0].getHeight())
+      this.layertext.draw();
     }
-    stagep.add(layertext);
-    layertext.moveDown();
-    stagep.draw();
+    stage.add(this.layertext);
+    this.layertext.moveDown();
+    stage.draw();
   },
   createMessage: function(type_message,x,y,width,height){
-    if(type_message == 'add_door'){
+    if(type_message == 'add_+'){
       /*this.message = new Kinetic.Text({
         x: x,
         y: y-y/2,
@@ -478,43 +485,59 @@ canvasMessage = new Object({
         fill: 'black',
         align: 'center'
       });*/
+      anch1 = (8/90)*width;
+      anch2 = (14/90)*width;
+      offset = 20 - (anch2-anch1)/2;
+
+      hline = new Kinetic.Line({
+        points: [x+offset,y+height/2,x+width-offset,y+height/2],
+        stroke: "black",
+        strokeWidth:anch2 
+      }); 
+      this.layertext.add(hline);
+      vline = new Kinetic.Line({
+        points: [x+width/2,y+height/2+width/2-offset,x+width/2,y+height/2-width/2+offset],
+        stroke: "black",
+        strokeWidth:anch2 
+      });
+      this.layertext.add(vline);
       hline = new Kinetic.Line({
         points: [x+20,y+height/2,x+width-20,y+height/2],
-        stroke: "black",
-        strokeWidth:8 
+        stroke: "white",
+        strokeWidth:anch1
       }); 
-      layertext.add(hline);
+      this.layertext.add(hline);
       vline = new Kinetic.Line({
         points: [x+width/2,y+height/2+width/2-20,x+width/2,y+height/2-width/2+20],
-        stroke: "black",
-        strokeWidth:8  
+        stroke: "white",
+        strokeWidth:anch1  
       });
-      layertext.add(vline);
+      this.layertext.add(vline);
     }else if(type_message == 'add_X'){
       hline = new Kinetic.Line({
         points: [x+18,y+height/2+width/2-18,x+width-18,y+height/2-width/2+18],
         stroke: "black",
         strokeWidth:14 
       }); 
-      layertext.add(hline);
+      this.layertext.add(hline);
       vline = new Kinetic.Line({
         points: [x+width/2+width/2-18,y+height/2+width/2-18,x+width/2-width/2+18,y+height/2-width/2+18],
         stroke: "black",
         strokeWidth:14 
       });
-      layertext.add(vline);
+      this.layertext.add(vline);
       hline1 = new Kinetic.Line({
         points: [x+20,y+height/2+width/2-20,x+width-20,y+height/2-width/2+20],
         stroke: "white",
         strokeWidth:8 
       }); 
-      layertext.add(hline1);
+      this.layertext.add(hline1);
       vline1 = new Kinetic.Line({
         points: [x+width/2+width/2-20,y+height/2+width/2-20,x+width/2-width/2+20,y+height/2-width/2+20],
         stroke: "white",
         strokeWidth:8  
       });
-      layertext.add(vline1);
+      this.layertext.add(vline1);
     }
   }
 })
