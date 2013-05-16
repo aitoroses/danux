@@ -42,19 +42,6 @@ class Module extends Eloquent
     	return $childs;
     }
 
-    public function get_parent() {
-    	$conf = $this->getConf();
-    	// Check type of parentness
-    	if($conf["type"]["parentness"] == 'child') {
-    		// Is child, return parent
-    		$parent = Module::find($conf["type"]["relationships"]);
-    	} else {
-    		// is parent, return NULL
-    		return null;
-    	}
-    	return $parent;
-    }
-
     public function set_childs($childs_array) {
         if ($childs_array != null){
         	// Obtain childs id
@@ -62,9 +49,9 @@ class Module extends Eloquent
         		return $module->id;
         	}, $childs_array);
             // Create configuration
-            $conf = array('type' => array('parentness' => 'parent', 'relationships' => json_encode($child_ids)));
+            $conf = array('type' => array('parentness' => 'parent', 'relationships' => $child_ids));
         } else {
-            $conf = array('type' => array('parentness' => 'parent', 'relationships' => json_encode([])));
+            $conf = array('type' => array('parentness' => 'parent', 'relationships' => array()));
         }
     	$this->configuration = json_encode($conf);
     	// Save
@@ -72,41 +59,14 @@ class Module extends Eloquent
     	$this->save();
     }
 
-    public function set_parent($parent) {
+    public function set_parent($id) {
     	// Obtain parent id
-    	$parent_id = $parent->id;
+    	$parent_id = $id;
     	// Create configuration
-    	$conf = array('type' => array('parentness' => 'child', 'relationships' => json_encode($parent_id)));
-    	$this->configuration = $conf;
+    	$conf = array('type' => array('parentness' => 'child', 'relationships' => $parent_id));
+    	$this->configuration = json_encode($conf);
     	// Save
     	$this->save();
-    }
-
-    public function save_childs($childs, $wardrobe){
-        $child_ids = [];
-        // Refreshing the childs
-        // delete actual childs
-        $childs_to_delete = $this->get_childs();
-        
-        if($childs_to_delete != NULL) {
-           foreach ($childs_to_delete as $child) {
-                $child->delete();
-            } 
-        }
-        // Insert new childs
-        foreach ($childs as $child) {
-            // Create a child in the DB
-            $child = Module::insert($child);
-            // Save the child
-            //$child_module = $wardrobe->save_module_and_accesories($child);
-            // Configure the child
-            //$child_module->set_parent($this);
-            // Return the id
-            $id = $child->id;
-            $child_ids[] = $id;
-        }
-    	// Set this parent
-    	$this->set_childs($child_ids);
     }
 
     public function rebuild_submodules(){
@@ -127,7 +87,7 @@ class Module extends Eloquent
                 },$childs);
             } else {
                 // Parent has no childs
-                $childs_array = [];
+                $childs_array = array();
             }
             // $childs_array contains the relationships for client
             $this->new_conf('parent', $childs_array);

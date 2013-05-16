@@ -44,14 +44,10 @@ class Api_Controller extends Base_Controller {
 				$module_objects = [];
 				foreach ($modules_array as $module_array) {
 					$model = new Module($module_array);
-					$model->set_childs(null);
+					$model->set_childs(array());
 					$module_objects[]=$model;
 				}
-				/*$module_objects = array_map(function($module_array){
-					$model = new Module($module_array);
-					$model->save_childs(null, $wardrobe);
-					return $model;
-				}, $modules_array);*/
+				
 				foreach ($module_objects as $ele) {
 					$wardrobe->modules()->insert($ele);
 				}
@@ -92,7 +88,9 @@ class Api_Controller extends Base_Controller {
 	}
 	public function put_json($id){
 		$wardrobe = Wardrobe::find($id);
-		// UPDATE DATA
+		$wardrobe->rebuild_from_client(Input::get('wardrobe'));
+	}
+		/*// UPDATE DATA
 		Wardrobe::update($id, Input::get('wardrobe')["data"]);
 		// UPDATE MODULES
 		foreach (Input::get('wardrobe')["modules"] as $module) {
@@ -153,6 +151,6 @@ class Api_Controller extends Base_Controller {
 			$wardrobe_model = Wardrobe::find($id);
 			$wardrobe_model->accexts()->delete();
 		}
-	}
+	}*/
 
 }

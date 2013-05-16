@@ -36,6 +36,10 @@ class Wardrobe extends Eloquent
         // We first get the conf
         $conf = $module["configuration"];
         // Now we have to check if there are relationships (modules)
+        if(!isset($conf["type"]["relationships"])){
+            // Fixes the problem with the json coming from the client with empty array
+            $conf["type"]["relationships"] = array();
+        }
         $relationships = $conf["type"]["relationships"];
         if(sizeof($relationships) > 0){
             // if there are relations
@@ -46,20 +50,23 @@ class Wardrobe extends Eloquent
                 // we get the ids
                 $ids = object_to_array(json_decode($ele->configuration))["type"]["relationships"];
                 //delete the modules
-                if($ids != []){
+                if($ids != array()){
+                    var_dump($ids);
+                    return;
                     $array = Module::where_in('id', $ids)->get();  
                     foreach ($array as $ele) {
                         $ele->delete();
                     }
                 }
             }
-
             // Now, we have to save that new child modules
             // we also need the new relations
-            $new_relations = [];
+            $new_relations = array();
             foreach ($relationships as $child) {
                 $child["configuration"] = json_encode($child["configuration"]);
                 $child_model = Module::create($child);
+                // Childs have parents id
+                $child_model->set_parent($module["id"]);
                 $new_relations[] = $child_model->id;  
             }
 
@@ -67,9 +74,10 @@ class Wardrobe extends Eloquent
             // parent-child object linking ids
 
             $module["configuration"]["type"]["relationships"] = $new_relations;
+        } else {
+            $module["configuration"]["type"]["relationships"] = array();
         }
         // Convert to string configuration for saveing
-
         $module["configuration"] = json_encode($module["configuration"]);
         $module_model = null;
         // Save the accesories for the module
@@ -93,7 +101,7 @@ class Wardrobe extends Eloquent
                 //si no estan definidos los accesorios los borro de la base de datos
                 // esto soluciona el problema de que quites todos los accesorios y guardes
                 // asi todo OK
-                $module_model = Module::find($module->id); 
+                $module_model = Module::find($module["id"]); 
                 $module_model->accints()->delete();
             }
         }
@@ -150,20 +158,6 @@ class Wardrobe extends Eloquent
         foreach ( $wardrobe_array["modules"] as $module) {
             // Save the parent module
             $parent_module = $wardrobe->save_module_and_accesories($module);
-            // The module is returned, now we save special configuration
-            // We get the special configuration
-            /*if(isset($module->configuration->type)){
-                // Special configuration
-                    $child_modules = $module->configuration->type->relationships;
-                    if(sizeof($child_modules > 0)) {
-                        $parent_module->save_childs($child_modules, $wardrobe);
-                    }
-                }
-                
-            } else {
-                // Has no special configuration, so create one
-                $parent_module->set_childs(null);
-            }*/
         }
         // UPDATE DOORS
         array_map(function($door){

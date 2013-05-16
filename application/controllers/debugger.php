@@ -12,19 +12,19 @@ class Debugger_Controller extends Base_Controller {
 	}
 
 	public function get_module() {
-		$module = Module::find(1);
+		$module = Module::find(2);
 		// Testing submodules
 		$module->rebuild_submodules();
 		return Response::json($module->to_array());
 	}
 
 	public function get_savemodule(){
-		$json = object_to_array(json_decode('{"data":{"id":"1","budget_id":"1","name":"rap","width":"2500","height":"1234","prof":"680","nmods":"3","doors":"5","typedoor":"1","paritypos":"1","handle":"0","tperfil":"3","perfil":"0","marco":"141","created_at":"2013-05-15 15:34:47","updated_at":"2013-05-15 18:58:08"},"modules":[{"id":"1","wardrobe_id":"1","double":"0","ddouble":"0","width":"500","height":"1234","ref1":"0","ref2":"0","configuration":{"type":{"parentness":"parent","relationships":[{"wardrobe_id":"1","double":"0","ddouble":"0","width":"1000","height":"1234","ref1":"0","ref2":"0","configuration":{"type":{"parentness":"child","relationships":[]}},"module_id":"0","created_at":"2013-05-15 15:34:47","updated_at":"2013-05-15 18:58:08"}]}},"module_id":"0","created_at":"2013-05-15 15:34:47","updated_at":"2013-05-15 18:58:08","accint":[]},{"id":"2","wardrobe_id":"1","double":"0","ddouble":"0","width":"1000","height":"1234","ref1":"0","ref2":"0","configuration":{"type":{"parentness":"parent","relationships":[]}},"module_id":"0","created_at":"2013-05-15 15:34:47","updated_at":"2013-05-15 18:58:08","accint":[]}],"doors":[{"id":"1","wardrobe_id":"1","type":"1","created_at":"2013-05-15 18:57:27","updated_at":"2013-05-15 18:57:27","material":[]},{"id":"2","wardrobe_id":"1","type":"1","created_at":"2013-05-15 18:57:27","updated_at":"2013-05-15 18:57:27","material":[]},{"id":"3","wardrobe_id":"1","type":"1","created_at":"2013-05-15 18:57:27","updated_at":"2013-05-15 18:57:27","material":[]}],"accext":[]}'));
+		$json = object_to_array(json_decode('{"id":"","wardrobe_id":"2","double":"1","ddouble":"493","width":"823","height":"1234","ref1":"0","ref2":"0","configuration":{"type":{"parentness":"parent","relationships":[{"id":"3","wardrobe_id":"0","double":"0","ddouble":"0","width":"493","height":"1234","ref1":"0","ref2":"0","configuration":{"type":{"parentness":"child","relationships":"2"}},"module_id":"0","created_at":"2013-05-16 19:13:50","updated_at":"2013-05-16 19:13:50"},{"id":"4","wardrobe_id":"0","double":"0","ddouble":"0","width":"330","height":"1234","ref1":"0","ref2":"0","configuration":{"type":{"parentness":"child","relationships":"2"}},"module_id":"0","created_at":"2013-05-16 19:13:50","updated_at":"2013-05-16 19:13:50"}]}},"module_id":"0","created_at":"2013-05-16 19:13:33","updated_at":"2013-05-16 19:15:12"}'));
 		return print_r(Wardrobe::rebuild_from_client($json));
 	}
 	public function get_save(){
 		$wardrobe = Wardrobe::find(1);
-		$json=object_to_array(json_decode('{"id":"1","wardrobe_id":"1","double":"0","ddouble":"0","width":"500","height":"1234","ref1":"0","ref2":"0","configuration":{"type":{"parentness":"parent","relationships":[{"wardrobe_id":"1","double":"0","ddouble":"0","width":"1000","height":"1234","ref1":"0","ref2":"0","configuration":{"type":{"parentness":"child","relationships":[]}},"module_id":"0","created_at":"2013-05-15 15:34:47","updated_at":"2013-05-15 18:58:08"}]}},"module_id":"0","created_at":"2013-05-15 15:34:47","updated_at":"2013-05-15 18:58:08","accint":[]}'));
+		$json=object_to_array(json_decode('{"id":"2","wardrobe_id":"1","double":"1","ddouble":"534","width":"823","height":"1234","ref1":"0","ref2":"0","configuration":{"type":{"parentness":"parent","relationships":[{"id":"3","wardrobe_id":"0","double":"0","ddouble":"0","width":"534","height":"1234","ref1":"0","ref2":"0","configuration":{"type":{"parentness":"child","relationships":"2"}},"module_id":"0","created_at":"2013-05-16 19:28:14","updated_at":"2013-05-16 19:28:14"},{"id":"4","wardrobe_id":"0","double":"0","ddouble":"0","width":"289","height":"1234","ref1":"0","ref2":"0","configuration":{"type":{"parentness":"child","relationships":"2"}},"module_id":"0","created_at":"2013-05-16 19:28:14","updated_at":"2013-05-16 19:28:14"}]}},"module_id":"0","created_at":"2013-05-16 19:27:15","updated_at":"2013-05-16 19:28:14"}'));
 		return print_r($wardrobe->save_module_and_accesories($json));
 	}
 
