@@ -5500,83 +5500,46 @@ a.th {
   .f-dropdown.large {
     max-width: 800px; }
 
-@-ms-viewport {
-  width: device-width; }
-
-@-o-viewport {
-  width: device-width; }
-
-@viewport {
-  width: device-width; }
-
-/* line 6, ../sass/_custom_zurb.scss */
-html {
-  width: 100%;
+/* line 10, ../../../../../../../Users/nemz00/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+html, body {
   height: 100%; }
 
-/* line 11, ../sass/_custom_zurb.scss */
+/* line 12, ../../../../../../../Users/nemz00/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+#all-footer {
+  clear: both;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -30px; }
+  /* line 18, ../../../../../../../Users/nemz00/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+  #all-footer #pushfooter {
+    height: 30px; }
+
+/* line 20, ../../../../../../../Users/nemz00/.rbenv/versions/2.0.0-rc2/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
+footer {
+  clear: both;
+  position: relative;
+  height: 30px; }
+
+/* line 3, ../sass/_custom_zurb.scss */
 a {
   cursor: pointer; }
 
-/* line 15, ../sass/_custom_zurb.scss */
-.shadow {
+/* line 6, ../sass/_custom_zurb.scss */
+.row {
   background: white;
   -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5); }
 
-/* line 19, ../sass/_custom_zurb.scss */
-.bg {
-  background: white; }
-
-/* line 22, ../sass/_custom_zurb.scss */
+/* line 11, ../sass/_custom_zurb.scss */
 body {
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  height: 100%; }
-
-/* line 26, ../sass/_custom_zurb.scss */
-#outer {
-  height: 100%;
   background: #e1c192 url(../img/wood_pattern_bn.jpg);
-  overflow: scroll; }
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
 
-/* line 31, ../sass/_custom_zurb.scss */
-#inner {
-  height: auto;
-  min-height: 92%; }
-
-/* line 35, ../sass/_custom_zurb.scss */
-.vcard {
-  margin-top: 20px;
-  background: white; }
-
-/* line 39, ../sass/_custom_zurb.scss */
-#footer {
-  padding: 10px 0 25px 0;
+/* line 17, ../sass/_custom_zurb.scss */
+footer {
   color: #fff;
-  background: #3f3f3f;
-  height: 10px; }
-
-/* line 48, ../sass/_custom_zurb.scss */
-#errors {
-  display: none;
-  position: fixed;
-  background: white;
-  z-index: 1;
-  border: 1px dashed #333;
-  padding: 15px 0 0px 30px;
-  box-shadow: 8px 9px 10px -5px rgba(0, 0, 0, 0.4);
-  margin-left: 10px;
-  color: #A30000;
-  font-weight: 300; }
-
-/* line 61, ../sass/_custom_zurb.scss */
-#wardrobe-create {
-  height: auto;
-  min-height: 84%;
-  margin-bottom: 20px; }
-
-/* line 66, ../sass/_custom_zurb.scss */
-#config {
-  margin-bottom: 20px;
-  display: none; }
+  background: #3f3f3f !important;
+  padding: 5px;
+  height: 30px; }
