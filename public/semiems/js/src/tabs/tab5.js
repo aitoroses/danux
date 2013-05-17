@@ -101,10 +101,10 @@ Tab6Controller = {
     //pintamos el marco si tiene
     pintamarco();
     //cambiamos ancho y alto para dejar ver el marco
-    ancho=ancho-10;
-    alto=alto-10;
+    ancho=ancho-20;
+    alto=alto-20;
     // desde donde empezamos a pintar en eje X
-    var xcont =5;
+    var xcont =10;
     nmod = wardrobe.doors.length;
     $.ajax({
       type: "GET",
@@ -118,7 +118,7 @@ Tab6Controller = {
 
     for(x=0;x<nmod;x++){ //Bucle por puerta
 
-      var ycont =5;
+      var ycont =10;
       var doors = data.types[x];
       xx=0; //Bucle para pintar los materiales tiene que inicializarse a 0
 
