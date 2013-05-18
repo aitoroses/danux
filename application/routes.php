@@ -44,6 +44,8 @@ function object_to_array($obj) {
 */
 
 Route::get('/', array('uses' => 'home@index'));
+Route::get('/coupon', array('as'=>'coupon', 'uses' => 'home@coupon'));
+Route::get('/confirm', array('as'=>'confirm_account', 'uses' => 'home@confirm'));
 Route::get('/(:any)', array('uses' => 'home@tab', 'before' => 'auth'));
 Route::post('/session/(:any)', array('uses' => 'session@session'));
 
@@ -67,7 +69,9 @@ Route::post('/session/(:any)', array('uses' => 'session@session'));
 	Route::get('/API/session/flush', array('uses' => 'session@flush'));
 
 // User login
-Route::post('/register', array('as'=>'register', 'uses' => 'user@register'));
+
+Route::post('/account', array('as'=>'account', 'uses' => 'user@account'));
+Route::get('/register', array('as'=>'register', 'uses' => 'user@register'));
 Route::post('/login', array('as'=>'login', 'uses' => 'user@login','before'=>'csrf'));
 Route::get('/logout', array('uses' => 'user@logout', 'before' => 'auth'));
 Route::get('/check', array('uses' => 'user@check'));

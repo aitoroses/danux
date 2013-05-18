@@ -6,6 +6,8 @@
 <head>
     <!-- STYLES -->
     {{ HTML::style('semiems/css/login_zurb.css') }}
+    <!-- {{ HTML::style('semiems/css/stylep.css') }} -->
+
     {{ HTML::script('semiems/js/lib/jquery-1.9.1.min.js') }}
 
 </head>
@@ -42,13 +44,12 @@
 
 <!-- REGISTER -->
 
-        {{ Form::open('register', 'POST', array('id' => 'register')) }}
+        {{ Form::open('register', 'GET', array('id' => 'register')) }}
         {{ Form::token() }}
             <!-- username field -->
             <h1>Registra un usuario</h1>
         <fieldset id="inputs">
             {{ Form::text('username',null,array('id'=>'username','placeholder'=>'Usuario')) }}
-
             <!-- password field -->
             {{ Form::password('password', array('id'=>'password','placeholder'=>'Contraseña')) }}
         </fieldset>
@@ -57,9 +58,8 @@
             {{ Form::submit('Registrar', array('id'=>'submit','class'=>'button')) }}
         </fieldset>
         <div class="login-account">Entra con tu cuenta ahora.</div>
-
+    
         {{ Form::close() }}
-
 <!--ZURBing style!!-->
 <script src="semiems/js/foundation/foundation.js"></script>
 <script src="semiems/js/foundation/foundation.alerts.js"></script>

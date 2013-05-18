@@ -9,6 +9,22 @@ class Home_Controller extends Base_Controller {
 		return View::make('home.login')
 			->with('title','Semiems. Crea tu propio armario.');
 	}
+
+	public function get_coupon(){
+
+        return View::make('home.coupon');
+    }
+
+    public function get_confirm(){
+
+    	$username = Session::get('username');
+    	$password = Session::get('password');
+
+    	return View::make('home.confirm')
+    		->with('username', $username)
+    		->with('password', $password);
+    }
+
 	public function get_tab($id)
 	{
 
