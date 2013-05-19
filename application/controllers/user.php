@@ -2,26 +2,30 @@
 
 class User_Controller extends Base_Controller {
 
-	public $restful = true;    
+	public $restful = true;
 
-	public function post_register()
+    /*public function post_account(){
+
+        if(isset(Session::get('username'))){
+            $usr = new User;
+            $usr->username = $user;
+            $usr->password = $pass;
+            $usr->save();
+            $usr->roles()->delete();
+            $usr->roles()->attach(3);
+        }
+        return View::make();
+    } */
+
+	public function get_register()
     {
         $user = Input::get('username');
         $pass = Input::get('password');
 
-        /*User::insert(array(
-            'username' => $user,
-            'password' => Hash::make($pass),
-        ));*/
-        $user = new User;
-        $user->username = $user;
-        $user->password = $pass;
-        $user->save();
-        $user->roles()->delete();
-        $user->roles()->attach(3);
+        Session::put('username', $user);
+        Session::put('password', $pass);
 
-        return Redirect::to('/')
-                ->with('log_createUser', true);
+        return Redirect::to('coupon');
     }    
 
 	public function post_login()

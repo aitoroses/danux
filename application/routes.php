@@ -45,8 +45,14 @@ function object_to_array($obj) {
 Route::controller('admin.welcome');
 Route::controller('admin.distributors');
 
+
 Route::get('admin', array('uses' => 'admin.welcome@index'));
 Route::any('admin/(:any?)', array('defaults' => 'index', 'uses' => 'admin.welcome@(:1)'));
+
+//Coupon and register Distributors routes
+Route::get('/coupon', array('as'=>'coupon', 'uses' => 'home@coupon'));
+Route::get('/confirm', array('as'=>'confirm_account', 'uses' => 'home@confirm'));
+
 
 // API Routes
 	// Budget
@@ -68,7 +74,9 @@ Route::any('admin/(:any?)', array('defaults' => 'index', 'uses' => 'admin.welcom
 	Route::get('/API/session/flush', array('uses' => 'session@flush'));
 
 // User login
-Route::post('/register', array('as'=>'register', 'uses' => 'user@register'));
+
+Route::post('/account', array('as'=>'account', 'uses' => 'user@account'));
+Route::get('/register', array('as'=>'register', 'uses' => 'user@register'));
 Route::post('/login', array('as'=>'login', 'uses' => 'user@login','before'=>'csrf'));
 Route::get('/logout', array('uses' => 'user@logout', 'before' => 'auth'));
 Route::get('/check', array('uses' => 'user@check'));
