@@ -21,9 +21,18 @@ class Home_Controller extends Base_Controller {
     	$username = Session::get('username');
     	$password = Session::get('password');
 
+    	$coupon = Input::get('coupon');
+
+    	Session::put('coupon', $coupon);
+
+    	$distribuidor = DB::table('l_distributors_table')
+    		->where('coupon', '=', $coupon)->first();
+
     	return View::make('home.confirm')
     		->with('username', $username)
-    		->with('password', $password);
+    		->with('password', $password)
+    		->with('coupon', $coupon)
+    		->with('distribuidor', $distribuidor);
     }
 
 	public function get_tab($id)

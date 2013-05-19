@@ -12,6 +12,7 @@
 
 </head>
 <body>
+    
     <!-- check for login errors flash var -->
     @if (Session::has('log_error'))
      <div style="padding:6px; background:#FDE0CE; color:#FD5E5E; font-weight:bold; border:solid 1px #FE9592; text-align:center;">Error!! Usuario o Contraseña invalido</div>
