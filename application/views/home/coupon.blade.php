@@ -12,12 +12,13 @@
 </head>
 <body>
 <!-- COUPON -->
-        <div class="row" style="position:relative;top:100px;">
+        <h1 style="width: 200px;margin-left:10px">SEMIEMS</h1>
+        <div class="row">
             <div style="background: #fff; padding:40px;" class="shadow bg white columns large-8 large-offset-2 small-8 small-offset-2">
             {{ Form::open('confirm', 'GET', array('id' => 'coupon')) }}
             {{ Form::token() }}
                 <!-- username field -->
-                <h1>Crea una cuenta en Semiems</h1>
+                <h1>Crea una cuenta</h1>
                 <p style="text-align: center;">Pide tu código a semiems para registrar una cuenta</p>
             <fieldset id="inputs">
                 {{ Form::text('coupon',null,array('id'=>'username', 'style' => 'text-align: center;', 'placeholder'=>'Cupon (Código)')) }}
