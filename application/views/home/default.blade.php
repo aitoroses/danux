@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>{{$title}}</title>
+	<title>{{ $title }}</title>
 	<meta name = "viewport" content = "height=device-height, width=device-width, maximum-scale = 1, minimum-scale=1" />	
 	<!-- STYLES -->
 	<!-- {{ HTML::style('semiems/css/example.css') }} -->
@@ -79,28 +79,13 @@
 							  	<a id="new-wardrobe" onClick="WardrobeMenuController.flushWardrobe();">Crear un nuevo Armario</a>
 							  </li>
 					          <li class="divider"></li>
-					          <li><label>Logueado como {{ $username }}</label></li>
+					          <li><label>Logueado como {{ $user->username }}</label></li>
 					          <li class="has-form">
 								<a href="logout" class="alert button">Cerrar Sesión!</a>
 							  </li>
 					        </ul>
 					      </li>
 					    </ul>
-
-					    <!-- Right Nav Section -->
-					   <!-- <ul class="right">
-					      <li><a><div id="back-btn" onclick="App.History.back_button_action();"><div class="background"></div><div class="desc">Deshacer cambios <span id="back-count">0</span></div></div></a></li>
-					      <li class="divider"></li>
-					      <li><a class='prev-tab mover' >&#171; Atras</a></li>
-					      <li class="divider"></li>
-					      <li><a class='next-tab mover'>Siguiente &#187;</a></li>
-					      <li class="divider hide-for-small"></li>
-					      <li class="has-form">
-					        <a href="logout" class="alert button">Cerrar Sesión!</a>
-					      </li>
-					      <li class="divider"></li>
-					      <li><a>{{ $username }}</a></li>
-					    </ul> -->
 					        <!-- Right Nav Section -->
 					    <ul class="right">
 					    	<li class="divider"></li>

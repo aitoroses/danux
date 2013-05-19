@@ -42,10 +42,11 @@ function object_to_array($obj) {
 |		});
 |
 */
+Route::controller('admin.welcome');
+Route::controller('admin.distributors');
 
-Route::get('/', array('uses' => 'home@index'));
-Route::get('/(:any)', array('uses' => 'home@tab', 'before' => 'auth'));
-Route::post('/session/(:any)', array('uses' => 'session@session'));
+Route::get('admin', array('uses' => 'admin.welcome@index'));
+Route::any('admin/(:any?)', array('defaults' => 'index', 'uses' => 'admin.welcome@(:1)'));
 
 // API Routes
 	// Budget
@@ -84,7 +85,9 @@ Route::get('/debugger/module', array('uses' => 'debugger@module'));
 Route::get('/debugger/savemodule', array('uses' => 'debugger@savemodule'));
 Route::get('/debugger/save', array('uses' => 'debugger@save'));
 
-
+Route::get('/', array('uses' => 'home@index'));
+Route::get('/(:any)', array('uses' => 'home@tab', 'before' => 'auth'));
+Route::post('/session/(:any)', array('uses' => 'session@session'));
 
 
 
@@ -159,4 +162,22 @@ Route::filter('csrf', function()
 Route::filter('auth', function()
 {
 	if (Auth::guest()) return Redirect::to('/');
+});
+Route::filter('admin', function()
+{
+	if (Auth::guest()){
+        return Redirect::to('/')
+                ->with('log_roleUser', true);
+    }else{
+        if(Auth::user()->roles()->first() != null){
+        	//return var_dump(Auth::user()->roles()->first());
+            if(Auth::user()->roles()->first()->name != 'admin'){
+                return Redirect::to('/')
+                	->with('log_roleUser', true);
+            }
+        }else{
+        	return Redirect::to('/')
+        		->with('log_roleUser', true);
+        }
+    }
 });

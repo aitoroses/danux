@@ -13,12 +13,12 @@ class User_Controller extends Base_Controller {
             'username' => $user,
             'password' => Hash::make($pass),
         ));*/
-        $usr = new User;
-        $usr->username = $user;
-        $usr->password = $pass;
-        $usr->save();
-        $usr->roles()->delete();
-        $usr->roles()->attach(3);
+        $user = new User;
+        $user->username = $user;
+        $user->password = $pass;
+        $user->save();
+        $user->roles()->delete();
+        $user->roles()->attach(3);
 
         return Redirect::to('/')
                 ->with('log_createUser', true);

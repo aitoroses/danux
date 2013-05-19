@@ -2,7 +2,8 @@
 
 class Home_Controller extends Base_Controller {
 
-	public $restful = true;    
+	public $restful = true;   
+
 
 	public function get_index()
 	{
@@ -11,8 +12,10 @@ class Home_Controller extends Base_Controller {
 	}
 	public function get_tab($id)
 	{
+		$this->data['user'] = Auth::user(); 
 
 		$budget = Auth::user()->budgets()->first();
+
 		if($budget){
 			$wardrobes = $budget->wardrobe()->get();
 		}
@@ -25,13 +28,11 @@ class Home_Controller extends Base_Controller {
 		} else {
 			$id_wardrobe = Session::get('wardrobe_id');
 		}
-		return View::make('home.tab'.$id)
+		return View::make('home.tab'.$id, $this->data)
 			->with('title','Paso '.$id.' Creacion de armario. Semiems')
-			->with('username',Auth::user()->username)
 			->with('id',$id)
 			->with('id_wardrobe', $id_wardrobe)
-			->with('wardrobes', $wardrobes)
-			->with('role',Auth::user()->type_user);
+			->with('wardrobes', $wardrobes);
 
 	}
 
