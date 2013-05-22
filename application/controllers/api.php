@@ -79,6 +79,29 @@ class Api_Controller extends Base_Controller {
 		$budget = Budget::find($id);
 		$budget->wardrobe()->update(Input::get('wardrobe')['data']);
 	}
+
+	public function delete_wardrobe(){
+		$id = Input::get('id');
+
+		$wardrobe = Wardrobe::find($id)->first();
+
+		$modules = $wardrobe->modules();
+		$modules_models = $modules->get();
+		foreach ($modules_models as $obj) {
+			$obj->accints->delete();
+		}
+		$modules->delete();
+
+		$wardrobe->doors()->delete();
+		
+		$wardrobe->accexts()->delete();
+		
+		Wardrobe::find($id)->delete();
+
+		Session::forget('wardrobe_id');
+
+		return Redirect::to('/1#config');
+	}
 	
 	public function get_json($id){
 

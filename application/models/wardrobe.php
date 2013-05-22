@@ -12,7 +12,6 @@ class Wardrobe extends Eloquent
         'typedoor' => 'required|in:0,1,2'
     );
 
-    
     public static function validate($data){
         return Validator::make($data, static::$rules);
     }

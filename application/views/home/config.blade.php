@@ -14,7 +14,7 @@
 	
 	@endif
 		<div id="normal_functions">
-			<h1> Diseña tu armario</h1>
+			<h1> Diseña un armario</h1>
 			<p>Para empezar, haz click en el botón:</p>
 			<button id="start-btn" onClick="App.Navigator.buttonConfig();WardrobeMenuController.flushWardrobe();">Empezar</button>
 			<h1>Historial de armarios</h1>
@@ -33,7 +33,7 @@
 								<td>{{ '<a wardrobe="'.$ele->id.'" href="1#wardrobe-create" style="text-decoration: underline;" >'.$ele->name.'</a>' }}</td>
 								<td>{{ $ele->created_at }}</td>
 								<td>
-									{{ Form::open('admin/delete', 'DELETE', array('style' => 'margin: 0')) }}
+									{{ Form::open('API/wardrobe', 'DELETE', array('style' => 'margin: 0')) }}
 									{{ Form::hidden('id', $ele->id) }}
 									{{ Form::submit('Borrar', array('style' => 'background: none; border: none; text-decoration: underline; color: #2ba6cb')) }}</td>
 									{{ Form::close() }}
