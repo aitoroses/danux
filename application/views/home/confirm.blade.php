@@ -81,7 +81,7 @@
                     <br>
                     <div class="row">
                         <div class="large-4 large-offset-8 small-7 small-offset-5">
-                            <div style="width: 100%" id="submit-coupon" class="button" style="text-align: center;">Confirmar</div>
+                            {{ Form::button('Confirmar', array('class' => 'button')) }}
                         </div>
                     </div>
                 </div>

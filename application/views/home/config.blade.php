@@ -7,10 +7,11 @@
 		        <a class="button" href="{{ action('admin.distributors@index') }}"> Lista de Distribuidores</a>
 			</div>
 		</div>
-	<div class="small-12 large-6 columns">
+		<div class="small-12 large-6 columns">
+		@else
+		<div class="small-12 large-12 columns">
 		@endif
-	@else
-	<div class="small-12 large-12 columns">
+	
 	@endif
 		<div id="normal_functions">
 			<h1> Diseña tu armario</h1>
@@ -31,10 +32,10 @@
 								<td>{{ $ele->id }}</td>
 								<td>{{ '<a wardrobe="'.$ele->id.'" href="1#wardrobe-create" style="text-decoration: underline;" >'.$ele->name.'</a>' }}</td>
 								<td>{{ $ele->created_at }}</td>
-								<th>
+								<td>
 									{{ Form::open('admin/delete', 'DELETE', array('style' => 'margin: 0')) }}
 									{{ Form::hidden('id', $ele->id) }}
-									{{ Form::submit('Borrar', array('style' => 'background: none; border: none; text-decoration: underline; color: #2ba6cb')) }}</th>
+									{{ Form::submit('Borrar', array('style' => 'background: none; border: none; text-decoration: underline; color: #2ba6cb')) }}</td>
 									{{ Form::close() }}
 									<!-- '<a wardrobe=".$ele->id.">Borrar</a>' -->
 							</tr>
