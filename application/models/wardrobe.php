@@ -187,7 +187,7 @@ class Wardrobe extends Eloquent
         }
         // UPDATE DOORS
         array_map(function($door){
-            if(isset($door->material)){ 
+            if(isset($door["material"])){ 
                 //si existen los materiales
                 $materials = $door["material"];
                 //extraemos el array
