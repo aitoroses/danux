@@ -62,6 +62,7 @@ Route::get('/confirm', array('as'=>'confirm_account', 'uses' => 'home@confirm'))
 	Route::put('API/budget/(:any)/wardrobe', array('uses' => 'api@wardrobe'));
 	Route::get('API/json/(:any)', array('uses' => 'api@json'));
 	Route::put('API/json/(:any)', array('uses' => 'api@json'));
+	Route::delete('API/wardrobe', array('uses' => 'api@wardrobe'));
 	//Popup
 	Route::get('API/popup/(:any)', array('uses' => 'api_popup@popup', 'before' => 'auth'));
 	Route::get('API/popup/view/(:any)', array('uses' => 'api_popup@view'));

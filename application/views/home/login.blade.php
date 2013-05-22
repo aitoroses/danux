@@ -26,6 +26,15 @@
     @if (Session::has('log_roleUser'))
      <div style="padding:6px; background:#FDE0CE; color:#FD5E5E; font-weight:bold; border:solid 1px #FE9592; text-align:center;">Error!! Necesitas ser administrador para acceder</div>
     @endif
+    @if($errors->has())
+        <div style="padding:6px; background:#FDE0CE; color:#FD5E5E; font-weight:bold; border:solid 1px #FE9592; text-align:center;"> 
+            <ul id="errors">
+                <li>{{ $errors->first('username') }}</li>
+                <li>{{ $errors->first('password') }}</li>
+            </ul>
+        </div>
+    @endif
+
 
 
 <!-- LOGIN -->
