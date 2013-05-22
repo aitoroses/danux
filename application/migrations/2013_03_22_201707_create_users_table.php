@@ -14,16 +14,20 @@ class Create_Users_Table {
 			$table->increments('id');
 			$table->string('username');
 			$table->string('password');
-			$table->string('type_user');
 			$table->timestamps();
 		});
 
 		DB::table('l_user_table')->insert(array(
 			'username' => 'admin',
 			'password' => Hash::make('admin'),
-			'type_user' => 1,
 			'updated_at' => date('y-m-d H:m:s')
 		));
+		DB::table('l_user_table')->insert(array(
+			'username' => 'dani',
+			'password' => Hash::make('dani'),
+			'updated_at' => date('y-m-d H:m:s')
+		));
+
 	}
 
 	/**

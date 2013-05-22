@@ -1,6 +1,8 @@
 <?php
 class Role extends Eloquent {
+
 	public static $timestamps = true;
+	public static $table = "l_roles_table";
 
 	public function users()
 	{

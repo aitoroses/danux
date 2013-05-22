@@ -26,22 +26,6 @@ class User_Controller extends Base_Controller {
         Session::put('password', $pass);
 
         return Redirect::to('coupon');
-
-        /*User::insert(array(
-            'username' => $user,
-            'password' => Hash::make($pass),
-        ));*/
-        
-        /*$usr = new User;
-        $usr->username = $user;
-        $usr->password = $pass;
-        $usr->save();
-        $usr->roles()->delete();
-        $usr->roles()->attach(3);
-
-        return Redirect::to('/')
-                ->with('log_createUser', true);
-        */
     }    
 
 	public function post_login()

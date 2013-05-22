@@ -23,6 +23,10 @@
     @if (Session::has('log_createUser'))
      <div style="background:#DCFDC8; border:solid 1px #A0EB70; color:#030; text-align:center; font-weight:bold; padding:4px;">Usuario creado, inicia sesion.</div>
     @endif
+    @if (Session::has('log_roleUser'))
+     <div style="padding:6px; background:#FDE0CE; color:#FD5E5E; font-weight:bold; border:solid 1px #FE9592; text-align:center;">Error!! Necesitas ser administrador para acceder</div>
+    @endif
+
 
 <!-- LOGIN -->
         {{ Form::open('login', 'POST', array('id' => 'login')) }}
