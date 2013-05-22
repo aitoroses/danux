@@ -22,11 +22,11 @@
 	              <thead>
 	                <tr>
 	                  <th>ID</th>
-	                  <th>Nombre Com</th>
+	                  <th>Nombre</th>
 	                  <th>Username</th>
 	                  <th>Nº Cupon</th>
 	                  <th>Created </th>
-	                  <th>Actions</th>
+	                  <!-- <th>Actions</th> -->
 	                </tr>
 	              </thead>
 	              <tbody>
@@ -37,7 +37,7 @@
 	                  <td>{{ $usr->email  }}</td>
 	                  <td>{{ $usr->coupon  }}</td>
 	                  {{ ( $usr->created ? '<td class="succes label"> Yes </td>' : '<td class="alert label"> No </td>' )  }}
-	                  <td><a class="btn btn-primary" href="'.action('admin.users@edit', array($usr->id)).'">Edit</a> <a class="delete_toggler btn btn-danger" rel="'.$usr->id.'">Delete</a></td>
+	                  <!-- <td><a class="btn btn-primary" href="'.action('admin.users@edit', array($usr->id)).'">Edit</a> <a class="delete_toggler btn btn-danger" rel="'.$usr->id.'">Delete</a></td> -->
 	                </tr>
 	              @endforeach
 	              </tbody>

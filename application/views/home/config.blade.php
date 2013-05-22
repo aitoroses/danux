@@ -17,17 +17,34 @@
 			<p>Para empezar, haz click en el botón:</p>
 			<button id="start-btn" onClick="App.Navigator.buttonConfig();WardrobeMenuController.flushWardrobe();">Empezar</button>
 			<h1>Historial de armarios</h1>
-			<ul id="wardrobemenu">
-				<?php
-					if(isset($wardrobes)){
-						foreach($wardrobes as $ele){
-							echo "<li><a wardrobe=".$ele->id." href=".'1#wardrobe-create'.">".$ele->name.'</a><div class="delete"></div></li>'; 
-						}
-					} else {
-						echo "No hay armarios";
-					}
-				?>	
-			</ul>
+			@if(isset($wardrobes))
+				<table width="100%">
+					<thead>
+						<th>ID</th>
+						<th>Nombre</th>
+						<th>Fecha de creación</th>
+						<th>Acciones</th>
+					</thead>
+					<tbody>
+						@foreach($wardrobes as $ele)
+							<tr>
+								<td>{{ $ele->id }}</td>
+								<td>{{ '<a wardrobe="'.$ele->id.'" href="1#wardrobe-create" style="text-decoration: underline;" >'.$ele->name.'</a>' }}</td>
+								<td>{{ $ele->created_at }}</td>
+								<th>
+									{{ Form::open('admin/delete', 'DELETE', array('style' => 'margin: 0')) }}
+									{{ Form::hidden('id', $ele->id) }}
+									{{ Form::submit('Borrar', array('style' => 'background: none; border: none; text-decoration: underline; color: #2ba6cb')) }}</th>
+									{{ Form::close() }}
+									<!-- '<a wardrobe=".$ele->id.">Borrar</a>' -->
+							</tr>
+						@endforeach
+					</tbody>
+				</table>
+				
+			@else
+				{{ "<h3>No hay armarios</h3>" }}
+			@endif
 		</div>
 	</div>
 </div>
