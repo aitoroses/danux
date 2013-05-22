@@ -5,6 +5,8 @@
 			<div id="admin_functions">
 				<h1> Opciones de administrador </h1>
 		        <a class="button" href="{{ action('admin.distributors@index') }}"> Lista de Distribuidores</a>
+		        <a class="button" href="{{ action('admin.users@index') }}"> Lista de Usuarios</a>
+		        <a class="button" href="{{ action('admin.materials@index') }}"> Lista de Materiales</a>
 			</div>
 		</div>
 	<div class="small-12 large-6 columns">

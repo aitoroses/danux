@@ -1,9 +1,10 @@
+
 <?php
 
-class Admin_Users_Controller extends Admin_Controller {
+class Admin_Materials_Controller extends Admin_Controller {
 
 	public $restful = true;
-	public $views = 'users';
+	public $views = 'materials';
 
 	protected $valid_filters = array(
         'id'
@@ -39,7 +40,7 @@ class Admin_Users_Controller extends Admin_Controller {
 	        endforeach;
 	        // Get the list of countries.
 	        //
-	        $query = User::order_by( $orderBy, $orderType )/*->where('id','>',200)*/;
+	        $query = DoorMaterial::order_by( $orderBy, $orderType )/*->where('id','>',200)*/;
 
 	        // Search filter.
 	        //
