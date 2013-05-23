@@ -32,7 +32,7 @@
 						@foreach($wardrobes as $ele)
 							<tr>
 								<td>{{ $ele->id }}</td>
-								<td>{{ '<a wardrobe="'.$ele->id.'" href="1#wardrobe-create" style="text-decoration: underline;" >'.$ele->name.'</a>' }}</td>
+								<td id="wardrobemenu">{{ '<a wardrobe="'.$ele->id.'" href="1#wardrobe-create" style="text-decoration: underline;" >'.$ele->name.'</a>' }}</td>
 								<td>{{ $ele->created_at }}</td>
 								<td>
 									{{ Form::open('API/wardrobe', 'DELETE', array('style' => 'margin: 0')) }}
