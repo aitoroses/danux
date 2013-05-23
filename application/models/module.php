@@ -29,14 +29,14 @@ class Module extends Eloquent
 
     public function get_childs() {
     	$conf = $this->getConf();
-        return;
+
     	// Check type of parentness
-    	if($conf["type"]["parentness"] == 'child') {
+    	if($conf["type"]->parentness == 'child') {
     		// Is child, return NULL
     		return null;
     	} else {
     		// is parent, return childs array
-    		$childs = Module::where_in('id', $conf["type"]["relationships"])->get();
+    		$childs = Module::where_in('id', $conf["type"]->relationships)->get();
     	}
     	// Return array of childs, else return null object (parent case)
     	return $childs;
@@ -108,8 +108,8 @@ class Module extends Eloquent
             return $accint->id;
         }, $accints);
         // Meterlos en el Arrayyyy
+        $this->accint = $accints_ids;
         $module_array = $this->to_array();
-        $module_array["accint"] = $accints_ids;
         return $module_array;
     }
 

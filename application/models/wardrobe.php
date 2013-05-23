@@ -43,19 +43,6 @@ class Wardrobe extends Eloquent
         if(sizeof($relationships) > 0){
             // if there are relations
             // We have to erase existing child modules
-            /*$saved_modules = $this->modules()->get();
-            foreach ($saved_modules as $ele) {
-                // Delete actual childs for $ele parent
-                // we get the ids
-                $ids = object_to_array(json_decode($ele->configuration))["type"]["relationships"];
-                //delete the modules
-                if($ids != array()){
-                    $array = Module::where_in('id', $ids)->get();  
-                    foreach ($array as $ele) {
-                        $ele->delete();
-                    }
-                }
-            }*/
             $mod_ant=Module::find($module["id"]);
             //get past configuration
             $conf_ant = object_to_array(json_decode($mod_ant->configuration));
@@ -74,8 +61,22 @@ class Wardrobe extends Eloquent
             $new_relations = array();
             foreach ($relationships as $child) {
                 $child["configuration"] = json_encode($child["configuration"]);
+                //extraemos los accesorio
+                if(isset($child["accint"])){
+                    // si existe el array 
+                    $accs_int_temp = $child["accint"];
+                    //extraigo el array
+                    unset($child["accint"]);
+                }else{
+                    $accs_int_temp = [];
+                }
                 $child_model = Module::create($child);
                 // Childs have parents id
+                    // Borro lo que hay por seguridad
+                    // sino 'sync' hace cosas raras cuando guardas un ID que ya esta en la BD
+                    // Asi funciona bien
+                    $child_model->accints()->delete();
+                    $child_model->accints()->sync($accs_int_temp);
                 $child_model->set_parent($module["id"]);
                 $new_relations[] = $child_model->id;  
             }
@@ -187,7 +188,7 @@ class Wardrobe extends Eloquent
         }
         // UPDATE DOORS
         array_map(function($door){
-            if(isset($door->material)){ 
+            if(isset($door["material"])){ 
                 //si existen los materiales
                 $materials = $door["material"];
                 //extraemos el array

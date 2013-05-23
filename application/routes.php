@@ -44,6 +44,8 @@ function object_to_array($obj) {
 */
 Route::controller('admin.welcome');
 Route::controller('admin.distributors');
+Route::controller('admin.users');
+Route::controller('admin.materials');
 
 
 Route::get('admin', array('uses' => 'admin.welcome@index'));
