@@ -3,7 +3,7 @@
     @foreach($accint as $accesorios)
         <li class="module">
             @if($accesorios[0]=='1' )
-                <h4>Accesorios del módulo {{ $i }}   <span style="margin-left: 20px; font-size: 0.68em; color: #555 ">({{ sizeof($accesorios[1]) + sizeof($accesorios[2]) }} accesorios)</span></h4>
+                <h4>Accesorios del módulo {{ $i }}   <span style="margin-left: 20px; font-size: 0.68em; color: #555 ">({{ sizeof($accesorios[1]) + sizeof($accesorios[2]) }} accesorios totales)</span></h4>
                 <ul>
                     <li>
                         <h5>Accesorios del submódulo 1   <span style="margin-left: 20px; font-size: 0.68em; color: #555 ">({{sizeof($accesorios[1])}} accesorios)</span></h5>
