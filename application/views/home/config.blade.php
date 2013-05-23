@@ -5,6 +5,8 @@
 			<div id="admin_functions">
 				<h1> Opciones de administrador </h1>
 		        <a class="button" href="{{ action('admin.distributors@index') }}"> Lista de Distribuidores</a>
+		        <a class="button" href="{{ action('admin.users@index') }}"> Lista de Usuarios</a>
+		        <a class="button" href="{{ action('admin.materials@index') }}"> Lista de Materiales</a>
 			</div>
 		</div>
 		<div class="small-12 large-6 columns">
@@ -30,7 +32,7 @@
 						@foreach($wardrobes as $ele)
 							<tr>
 								<td>{{ $ele->id }}</td>
-								<td>{{ '<a wardrobe="'.$ele->id.'" href="1#wardrobe-create" style="text-decoration: underline;" >'.$ele->name.'</a>' }}</td>
+								<td id="wardrobemenu">{{ '<a wardrobe="'.$ele->id.'" href="1#wardrobe-create" style="text-decoration: underline;" >'.$ele->name.'</a>' }}</td>
 								<td>{{ $ele->created_at }}</td>
 								<td>
 									{{ Form::open('API/wardrobe', 'DELETE', array('style' => 'margin: 0')) }}

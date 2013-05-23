@@ -12,16 +12,28 @@ class Asides_Controller extends Base_Controller {
         		$wardrobe = Wardrobe::find($id_wardrobe);
         		$modules = $wardrobe->modules()->get();
     			// Obtenemos los identificadores
+                $accints = [];
     			$accesory_groups = array_map(function($module){
+
+                    if ($module->double == 1){
+                        $childs = $module->get_childs();
+                        $i = 1;
+                        foreach ($childs as $child) {
+                            $accints[$i] = $child->accints()->get();
+                            $i=$i+1;
+                        }
+                    }else{
+                        $accints[1]= $module->accints()->get();
+                    }
                     /*$accints_all= $module->accints()->get();*/ 
-                    $accints[0]= $module->accints()->get();
+                    
                     /*$accints[4] = array_map(function($acc){
                         var_dump($acc->id);
                         
                     }, $accints_all);*/
 
 
-                    $accints[3]= $module->double; //devolvemos tambien si el modulo es doble
+                    $accints[0]= $module->double; //devolvemos tambien si el modulo es doble
     				return $accints;
     			}, $modules);
     			return View::make('asides.accesorios_interior')->with('accint', $accesory_groups);

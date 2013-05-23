@@ -22,7 +22,7 @@ $(document).ready(function(){
 		$('#mat_puerta .element').click(function(){
 			$(document).trigger('stack');
 			var ref = parseInt($(this).data('ref'));
-			var auxitem=moduleselect.substring(1,2);
+			var auxitem=moduleselect;
 			Tab3Controller.añadirAccesorioInterior(ref,auxitem);
 			popup.closePopup();
 		});
@@ -61,17 +61,31 @@ Tab3Controller = {
             }  
         })			
 	},
-	borrarAccesorioInterior: function (id,modulo){
+	borrarAccesorioInterior: function (id,modulo,submodulo){
 		$(document).trigger('stack');
 	// Funcion que destruye el elemento actual una vez echo el click
-		var idx = WardrobeModel.wardrobe.modules[modulo].accint.indexOf(id.toString()); // Find the index
-	    if(idx!=-1) {
-	    	WardrobeModel.wardrobe.modules[modulo].accint.splice(idx, 1);
-	    }
+		if (WardrobeModel.wardrobe.modules[modulo].double == 0){
+			var idx = WardrobeModel.wardrobe.modules[modulo].accint.indexOf(id.toString()); // Find the index
+		    if(idx!=-1) {
+		    	WardrobeModel.wardrobe.modules[modulo].accint.splice(idx, 1);
+		    }
+		}else{
+			var idx = WardrobeModel.wardrobe.modules[modulo].configuration.type.relationships[submodulo].accint.indexOf(id.toString()); // Find the index
+		    if(idx!=-1) {
+		    	WardrobeModel.wardrobe.modules[modulo].configuration.type.relationships[submodulo].accint.splice(idx, 1);
+		    }
+		}
 	    WardrobeModel.save();
 	},
 	añadirAccesorioInterior: function(id,modulo){
-		WardrobeModel.wardrobe.modules[modulo].accint.push(id.toString());
+		modulo_select = modulo.substring(1,2);
+		submodulo_select = modulo.substring(3,4)-1;
+		if (WardrobeModel.wardrobe.modules[modulo_select].double == 0){
+			WardrobeModel.wardrobe.modules[modulo_select].accint.push(id.toString());
+		}else{
+			WardrobeModel.wardrobe.modules[modulo_select].accint = [];
+			WardrobeModel.wardrobe.modules[modulo_select].configuration.type.relationships[submodulo_select].accint.push(id.toString());
+		}
 		WardrobeModel.save();
 	}
 }
