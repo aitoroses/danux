@@ -5,6 +5,7 @@ $(document).ready(function(){
 		App.History.undoWardrobe();
 		pintapuertas();		
 		WardrobeModel.save();
+    App.validate_controls();
 	})
 	// Evento para guardar en stack
 	$(document).on('stack', function(){
@@ -16,6 +17,7 @@ $(document).ready(function(){
 		$(document).trigger('stack');
     Tab4Controller.pintarPerfil();
     Tab4Controller.pintarTirador();
+    App.validate_controls();
 	});
 	$(document).bind('sync_popup',function(){
     if(document.getElementById('handles')){
@@ -71,7 +73,6 @@ $(document).ready(function(){
 	});
 
 	WardrobeModel.fetch();
-
 
 
 	$('a.next-tab').on('click',function(e){
