@@ -32,6 +32,8 @@
 						  <li class="divider hide-for-small"></li>
 				          <li class="divider"></li>
 				          <li><a href="{{ action('admin.distributors@index') }}">Distribuidores</a></li>
+				          <li><a href="{{ action('admin.users@index') }}">Usuarios</a></li>
+				          <li><a href="{{ action('admin.materials@index') }}">Materiales</a></li>
 				          <li><a href="../../1#config">Volver a inicio</a></li>
 					    </ul>
 					    <!-- Right Nav Section -->

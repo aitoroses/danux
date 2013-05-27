@@ -6,7 +6,7 @@
           <p>Tabla de distribuidores Semiems.</p>
   
 
-		<div class="columns small-12 large-4 right">
+		<div class="row small-12 large-4 right" style="margin-right: 16px;">
 			<dl class="sub-nav">
 			<dt>Por pagina:</dt>
 			<dd id="All"><a href="?perPage={{ $distributors->total }}">All</a></dd>
@@ -16,6 +16,9 @@
 			<dd id="100"><a href="?perPage=100">100</a></dd>
 			</dl>
 		</div>
+		<div class="columns small-12 large-6 large-centered">
+			{{ $distributors->links(); }}
+		</div>
 		<div class="columns small-12 large-12">
           @if($distributors)
               <table class="large-12 small-12 columns">
@@ -23,9 +26,9 @@
 	                <tr>
 	                  <th>ID</th>
 	                  <th>Nombre</th>
-	                  <th>Username</th>
+	                  <th>Email</th>
 	                  <th>Nº Cupon</th>
-	                  <th>Created </th>
+	                  <th>Activada</th>
 	                  <!-- <th>Actions</th> -->
 	                </tr>
 	              </thead>
