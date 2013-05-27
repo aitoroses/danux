@@ -4,9 +4,11 @@
 		<div class="small-12 large-5 large-offset-1 columns">
 			<div id="admin_functions">
 				<h1> Opciones de administrador </h1>
-		        <a class="button" href="{{ action('admin.distributors@index') }}"> Lista de Distribuidores</a>
-		        <a class="button" href="{{ action('admin.users@index') }}"> Lista de Usuarios</a>
-		        <a class="button" href="{{ action('admin.materials@index') }}"> Lista de Materiales</a>
+				<div class="large-9 large-centered columns">
+		        <a class="button small-12 large-12" href="{{ action('admin.distributors@index') }}"> Lista de Distribuidores</a>
+		        <a class="button small-12 large-12" href="{{ action('admin.users@index') }}"> Lista de Usuarios</a>
+		        <a class="button small-12 large-12" href="{{ action('admin.materials@index') }}"> Lista de Materiales</a>
+				</div>
 			</div>
 		</div>
 		<div class="small-12 large-6 columns">
