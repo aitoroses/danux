@@ -11,7 +11,7 @@
 	</div>
 	<div class="row shadow bg">
 		<div class="columns small-12 large-8">
-			<p>Haga click en cada uno de los modulos para agregar accesorios.</p>
+			<p>Haga click en cada uno de los modulos para configurarlo.</p>
 			<div id="containeri"></div>
 			
 		</div>
