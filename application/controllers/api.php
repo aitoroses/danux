@@ -107,7 +107,12 @@ class Api_Controller extends Base_Controller {
 
 		// OBTENER EL MODEL COMPLETO
 		$json = Wardrobe::rebuild_for_client($id);
-		return Response::json($json);
+
+		$response = Response::make(json_encode($json, JSON_NUMERIC_CHECK), 200);
+
+		$response->header('Content-Type', 'application/json');
+
+		return $response;
 	}
 	public function put_json($id){
 		$wardrobe = Wardrobe::find($id);

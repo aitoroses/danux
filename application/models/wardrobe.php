@@ -166,11 +166,15 @@ class Wardrobe extends Eloquent
             return $result;
         }, $doors);
 
+        $accext_array = array_map(function($object){
+            return $object->id;
+        }, $accext);
+
         $json = array(
             'data' => $wardrobe->to_array(),
             'modules' => $modules_array,
             'doors' => $doors_array,
-            'accext' => $accext,
+            'accext' => $accext_array,
         );
         return $json;
     }

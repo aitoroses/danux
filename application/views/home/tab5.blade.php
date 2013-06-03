@@ -21,7 +21,7 @@
 		    <div id="sel_marco" data-intro="Click aqui para selecccionar el marco" data-position="left">
 			    <div id="marco_sel">No se ha cargado el marco.</div>
 			    <br>
-			    <a class='button' onClick="popup.openPopup();popup.fetch({name: 'marco'});">Cambiar Marco</a>
+			    <a class='button' onClick="popup.openPopup();popup.fetch({name: 'marco'});">Elegir Marco</a>
 			</div>
 		</div>
 	</div>
