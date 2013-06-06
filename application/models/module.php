@@ -36,6 +36,9 @@ class Module extends Eloquent
     		return null;
     	} else {
     		// is parent, return childs array
+            if($conf["type"]->relationships == array()){
+                return array();
+            }
     		$childs = Module::where_in('id', $conf["type"]->relationships)->get();
     	}
     	// Return array of childs, else return null object (parent case)
@@ -114,7 +117,7 @@ class Module extends Eloquent
     }
 
     public function new_conf($parentness, $modules_as_array){
-        $conf = object_to_array(json_decode($this->configuration));
+        $conf = object_to_array(json_decode($this->configuration, JSON_NUMERIC_CHECK));
         $conf["type"]["parentness"] = $parentness;
         $conf["type"]["relationships"] = $modules_as_array;
         $this->configuration = $conf;

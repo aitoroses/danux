@@ -88,7 +88,12 @@ class Api_Controller extends Base_Controller {
 		$modules = $wardrobe->modules();
 		$modules_models = $modules->get();
 		foreach ($modules_models as $obj) {
-			$obj->accints->delete();
+			$childs_to_delete = $obj->get_childs();
+			foreach ($childs_to_delete as $child) {
+				$child->accints()->delete();
+				$child->delete();
+			}
+			$obj->accints()->delete();
 		}
 		$modules->delete();
 
