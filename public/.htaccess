@@ -1,5 +1,5 @@
- AddType x-mapp-php6 .php
- AddHandler x-mapp-php6 .php
+AddType x-mapp-php6 .php
+AddHandler x-mapp-php6 .php
 
 # Apache configuration file
 # http://httpd.apache.org/docs/2.2/mod/quickreference.html
