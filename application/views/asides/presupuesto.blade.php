@@ -40,75 +40,17 @@ $total_modulos=0;
 	font-weight: bold;
 	cursor: pointer;
 }
-.collapse {
-	-webkit-transition: height 0.5s ease;
-   -moz-transition: height 0.5s ease;
-   -o-transition: height 0.5s ease;
-   -webkit-transition: height 0.5s ease;
-   height: auto;
-   overflow: hidden;
+
+.under {
+	border-bottom: 1px dashed #888;
 }
 
-.collapse.hide{
-	height: 0;
-	
-}
-.row div {
-	text-align: center;
-	padding-top: 3px;
-	padding-bottom: 3px;
-}
-.row.under {
-	border-bottom: 1px solid #333;
+.off{
+	position: relative;
+	right: 25px;
 }
 </style>
 
-<div id="headers" class="bold">
-	<div class="row under">
-		<div class="columns large-2 small-2">Sección</div>
-		<div class="columns large-2 small-2">Pieza</div>
-		<div class="columns large-2 small-2">Unidades</div>
-		<div class="columns large-2 small-2">Precio/unidad</div>
-		<div class="columns large-2 small-2">Subtotal</div>
-		<div class="columns large-2 small-2">Total</div>
-	</div>
-</div>
-<div id="armazon">
-	<div class="row under">
-		<div class="columns large-2 small-2 bold">Armazón</div>
-		<div class="columns large-2 small-2">-</div>
-		<div class="columns large-2 small-2">-</div>
-		<div class="columns large-2 small-2">-</div>
-		<div class="columns large-2 small-2">-</div>
-		<div class="columns large-2 small-2 bold">NaN €</div>
-	</div>
-	<div class="collapse">
-		<div class="row under">
-			<div class="columns large-2 small-2 bold">-</div>
-			<div class="columns large-2 small-2">Pieza 1</div>
-			<div class="columns large-2 small-2">-</div>
-			<div class="columns large-2 small-2">-</div>
-			<div class="columns large-2 small-2">-</div>
-			<div class="columns large-2 small-2 bold">NaN €</div>
-		</div>
-		<div class="row under">
-			<div class="columns large-2 small-2 bold">-</div>
-			<div class="columns large-2 small-2">Pieza 2</div>
-			<div class="columns large-2 small-2">-</div>
-			<div class="columns large-2 small-2">-</div>
-			<div class="columns large-2 small-2">-</div>
-			<div class="columns large-2 small-2 bold">NaN €</div>
-		</div>
-		<div class="row under">
-			<div class="columns large-2 small-2 bold">-</div>
-			<div class="columns large-2 small-2">Pieza 2</div>
-			<div class="columns large-2 small-2">-</div>
-			<div class="columns large-2 small-2">-</div>
-			<div class="columns large-2 small-2">-</div>
-			<div class="columns large-2 small-2 bold">NaN €</div>
-		</div>
-	</div>
-</div>
 
 <br>
 <table class="align" style="width: 100%">
@@ -123,190 +65,300 @@ $total_modulos=0;
 	<tbody>
 		<!-- ARMAZON -->
 		<tr>
-			<td class="bold">Armazón</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td class="bold">NaN €</td>
+			<td class="bold">
+				<i class="icon-caret-right"></i>
+				Armazón
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
 		</tr>
-		<div class="collapse">
+		<div>
 			<tr>
-				<td class="bold">-</td>
+				<td class="bold">&nbsp;</td>
 				<td>Pieza 1</td>
 				<td>NaN</td>
 				<td>NaN €</td>
 				<td>NaN €</td>
-				<td>-</td>
+				<td>&nbsp;</td>
 			</tr>
 			<tr>
-				<td class="bold">-</td>
+				<td class="bold">&nbsp;</td>
 				<td>Pieza 2</td>
 				<td>NaN</td>
 				<td>NaN €</td>
 				<td>NaN €</td>
-				<td>-</td>
+				<td>&nbsp;</td>
 			</tr>
 			<tr>
-				<td class="bold">-</td>
+				<td class="bold">&nbsp;</td>
 				<td>Pieza 3</td>
 				<td>NaN</td>
 				<td>NaN €</td>
 				<td>NaN €</td>
-				<td>-</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td class="bold">NaN €</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
 			</tr>
 		</div>
 	</tbody>
 	<tbody>
 		<!-- PUERTAS -->
 		<tr>
-			<td class="bold">Puertas</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td class="bold">NaN €</td>
+			<td class="bold">
+				<i class="icon-caret-right"></i>
+				Puertas
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
 		</tr>
-		<div class="collapse">
+		<div>
 			<tr>
-				<td class="bold">-</td>
-				<td class="bold">Puerta 1</td>
-				<td>-</td>
-				<td>-</td>
-				<td class="bold">NaN €</td>
-				<td>-</td>
+				<td class="bold">&nbsp;</td>
+				<td class="bold off">
+					<i class="icon-caret-right"></i>
+					Puerta 1
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
 			</tr>
-			<div class="collapse">
+			<div>
 				<tr>
-					<td class="bold">-</td>
+					<td>&nbsp;</td>
 					<td>Pieza 1</td>
 					<td>NaN</td>
 					<td>NaN €</td>
 					<td>NaN €</td>
-					<td>-</td>
+					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td class="bold">-</td>
+					<td class="bold">&nbsp;</td>
 					<td>Pieza 2</td>
 					<td>NaN</td>
 					<td>NaN €</td>
 					<td>NaN €</td>
-					<td>-</td>
+					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td class="bold">-</td>
+					<td class="bold">&nbsp;</td>
 					<td>Pieza 3</td>
 					<td>NaN</td>
 					<td>NaN €</td>
 					<td>NaN €</td>
-					<td>-</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="bold">NaN €</td>
+					<td>&nbsp;</td>
 				</tr>
 			</div>
 			<tr>
-				<td class="bold">-</td>
-				<td class="bold">Puerta 2</td>
-				<td>-</td>
-				<td>-</td>
-				<td class="bold">NaN €</td>
-				<td>-</td>
+				<td class="bold">&nbsp;</td>
+				<td class="bold off">
+					<i class="icon-caret-right"></i>
+					Puerta 2
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
 			</tr>
-			<div class="collapse">
+			<div>
 				<tr>
-					<td class="bold">-</td>
+					<td class="bold">&nbsp;</td>
 					<td>Pieza 1</td>
 					<td>NaN</td>
 					<td>NaN €</td>
 					<td>NaN €</td>
-					<td>-</td>
+					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td class="bold">-</td>
+					<td class="bold">&nbsp;</td>
 					<td>Pieza 2</td>
 					<td>NaN</td>
 					<td>NaN €</td>
 					<td>NaN €</td>
-					<td>-</td>
+					<td>&nbsp;</td>
 				</tr>
 			</div>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td class="bold">NaN €</td>
+				<td>&nbsp;</td>
+
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td class="bold">NaN €</td>
+			</tr>
 		</div>
 		<!-- MODULOS -->
 		<tr>
-			<td class="bold">Módulos</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td class="bold">NaN €</td>
+			<td class="bold">
+				<i class="icon-caret-right"></i>
+				Módulos
+			</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
 		</tr>
-		<div class="collapse">
+		<div>
 			<tr>
-				<td class="bold">-</td>
-				<td class="bold">Modulo 1</td>
-				<td>-</td>
-				<td>-</td>
-				<td class="bold">NaN €</td>
-				<td>-</td>
+				<td>&nbsp;</td>
+				<td class="bold off">
+					<i class="icon-caret-right"></i>
+					Modulo 1
+				</td>				
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
 			</tr>
-			<div class="collapse">
+			<div>
 				<tr>
-					<td class="bold">-</td>
+					<td class="bold">&nbsp;</td>
 					<td>Estructura</td>
 					<td>NaN</td>
 					<td>NaN €</td>
 					<td>NaN €</td>
-					<td>-</td>
+					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td class="bold">-</td>
+					<td class="bold">&nbsp;</td>
 					<td>Accesorio 1</td>
 					<td>NaN</td>
 					<td>NaN €</td>
 					<td>NaN €</td>
-					<td>-</td>
+					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td class="bold">-</td>
+					<td class="bold">&nbsp;</td>
 					<td>Accesorio 2</td>
 					<td>NaN</td>
 					<td>NaN €</td>
 					<td>NaN €</td>
-					<td>-</td>
+					<td>&nbsp;</td>
 				</tr>
 			</div>
 			<tr>
-				<td class="bold">-</td>
-				<td class="bold">Modulo 2</td>
-				<td>-</td>
-				<td>-</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
 				<td class="bold">NaN €</td>
-				<td>-</td>
+				<td>&nbsp;</td>
 			</tr>
-			<div class="collapse">
+			<tr>
+				<td>&nbsp;</td>
+				<td class="bold off">
+					<i class="icon-caret-right"></i>
+					Modulo 2
+				</td>				
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<div>
 				<tr>
-					<td class="bold">-</td>
+					<td class="bold">&nbsp;</td>
 					<td>Estructura</td>
 					<td>NaN</td>
 					<td>NaN €</td>
 					<td>NaN €</td>
-					<td>-</td>
+					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td class="bold">-</td>
+					<td class="bold">&nbsp;</td>
 					<td>Accesorio 1</td>
 					<td>NaN</td>
 					<td>NaN €</td>
 					<td>NaN €</td>
-					<td>-</td>
+					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td class="bold">-</td>
+					<td class="bold">&nbsp;</td>
 					<td>Accesorio 2</td>
 					<td>NaN</td>
 					<td>NaN €</td>
 					<td>NaN €</td>
-					<td>-</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="bold">NaN €</td>
+					<td>&nbsp;</td>
 				</tr>
 			</div>
+			<tr class="under">
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td class="bold">NaN €</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="bold">Importe total</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td class="bold">NaN €</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
 		</div>
 	</tbody>
 </table>

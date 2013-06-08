@@ -7,6 +7,7 @@
 	<div class="row shadow bg">
 	  <div class="small-10 large-11 small-centered large-centered columns">
 	  	<h1>Resumen del presupuesto</h1>
+	  	<h3>(Plantilla de test, NaN = "Numero no válido")</h3>
 	  </div>
 	</div>
 	<div class="row shadow bg">
