@@ -69,10 +69,10 @@ return array(
 
 		'mysql' => array(
 			'driver'   => 'mysql',
-			'host'     => '127.0.0.1',
-			'database' => 'semiems',
-			'username' => 'murray900',
-			'password' => 'raiden400',
+			'host'     => 'db447227416.db.1and1.com',
+			'database' => 'db447227416',
+			'username' => 'dbo447227416',
+			'password' => '583r196',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 		),
