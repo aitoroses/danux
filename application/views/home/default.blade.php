@@ -9,7 +9,10 @@
 	<!-- {{ HTML::style('semiems/css/example.css') }} -->
 	{{ HTML::style('semiems/css/stylep.css') }}
 	<!-- {{ HTML::style('semiems/css/tables.css') }} -->
-	{{ HTML::style('semiems/css/chardinjs.css') }}
+
+	<!-- FONT-AWESOME -->
+	{{ HTML::style('lib/font-awesome/css/font-awesome.min.css') }}
+	<!-- {{ HTML::style('lib/css/chardinjs.css') }} -->
 
 	
 	<!-- SCRIPTS -->
