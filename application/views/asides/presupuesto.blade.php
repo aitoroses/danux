@@ -53,7 +53,7 @@ $total_modulos=0;
 
 
 <br>
-<table class="align" style="width: 100%">
+<table id="presupuestoTable" class="align" style="width: 100%">
 	<thead>
 		<th>Seccion</th>
 		<th>Pieza</th>
@@ -362,4 +362,5 @@ $total_modulos=0;
 		</div>
 	</tbody>
 </table>
+
 
