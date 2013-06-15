@@ -9,7 +9,7 @@ function object_to_array($obj) {
         }
     }
     else $new = $obj;
-    return $new;       
+    return $new;
 }
 /*
 |--------------------------------------------------------------------------
